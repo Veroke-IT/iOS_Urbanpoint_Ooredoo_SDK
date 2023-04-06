@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04E68AE329B9A80800573B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE229B9A80800573B2A /* AppDelegate.swift */; };
+		04E68AE529B9A80800573B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE429B9A80800573B2A /* SceneDelegate.swift */; };
+		04E68AE729B9A80800573B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE629B9A80800573B2A /* ViewController.swift */; };
+		04E68AEA29B9A80800573B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E68AE829B9A80800573B2A /* Main.storyboard */; };
+		04E68AEC29B9A80900573B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E68AEB29B9A80900573B2A /* Assets.xcassets */; };
+		04E68AEF29B9A80900573B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E68AED29B9A80900573B2A /* LaunchScreen.storyboard */; };
+		04E68AFA29B9A80900573B2A /* OredooMoneyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AF929B9A80900573B2A /* OredooMoneyAppTests.swift */; };
+		04E68B0429B9A80A00573B2A /* OredooMoneyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68B0329B9A80A00573B2A /* OredooMoneyAppUITests.swift */; };
+		04E68B0629B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68B0529B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift */; };
+		04E68B1C29B9A82300573B2A /* UrbanPoint_OM_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E68B1829B9A81700573B2A /* UrbanPoint_OM_SDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04E68AF629B9A80900573B2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E68AD729B9A80800573B2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04E68ADE29B9A80800573B2A;
+			remoteInfo = OredooMoneyApp;
+		};
+		04E68B0029B9A80A00573B2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E68AD729B9A80800573B2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04E68ADE29B9A80800573B2A;
+			remoteInfo = OredooMoneyApp;
+		};
+		04E68B1729B9A81700573B2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04E68A9829B8AABE00573B2A;
+			remoteInfo = "UrbanPoint OM SDK";
+		};
+		04E68B1929B9A81700573B2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04E68AA229B8AABE00573B2A;
+			remoteInfo = "UrbanPoint OM SDKTests";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04E68ADF29B9A80800573B2A /* OredooMoneyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OredooMoneyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E68AE229B9A80800573B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04E68AE429B9A80800573B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04E68AE629B9A80800573B2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04E68AE929B9A80800573B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04E68AEB29B9A80900573B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04E68AEE29B9A80900573B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04E68AF029B9A80900573B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E68AF529B9A80900573B2A /* OredooMoneyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OredooMoneyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E68AF929B9A80900573B2A /* OredooMoneyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OredooMoneyAppTests.swift; sourceTree = "<group>"; };
+		04E68AFF29B9A80A00573B2A /* OredooMoneyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OredooMoneyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E68B0329B9A80A00573B2A /* OredooMoneyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OredooMoneyAppUITests.swift; sourceTree = "<group>"; };
+		04E68B0529B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OredooMoneyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UrbanPoint OM SDK.xcodeproj"; path = "../UrbanPoint OM SDK/UrbanPoint OM SDK.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04E68ADC29B9A80800573B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E68B1C29B9A82300573B2A /* UrbanPoint_OM_SDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E68AF229B9A80900573B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E68AFC29B9A80A00573B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04E68AD629B9A80800573B2A = {
+			isa = PBXGroup;
+			children = (
+				04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */,
+				04E68AE129B9A80800573B2A /* OredooMoneyApp */,
+				04E68AF829B9A80900573B2A /* OredooMoneyAppTests */,
+				04E68B0229B9A80A00573B2A /* OredooMoneyAppUITests */,
+				04E68AE029B9A80800573B2A /* Products */,
+				04E68B1B29B9A82300573B2A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04E68AE029B9A80800573B2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04E68ADF29B9A80800573B2A /* OredooMoneyApp.app */,
+				04E68AF529B9A80900573B2A /* OredooMoneyAppTests.xctest */,
+				04E68AFF29B9A80A00573B2A /* OredooMoneyAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04E68AE129B9A80800573B2A /* OredooMoneyApp */ = {
+			isa = PBXGroup;
+			children = (
+				04E68AE229B9A80800573B2A /* AppDelegate.swift */,
+				04E68AE429B9A80800573B2A /* SceneDelegate.swift */,
+				04E68AE629B9A80800573B2A /* ViewController.swift */,
+				04E68AE829B9A80800573B2A /* Main.storyboard */,
+				04E68AEB29B9A80900573B2A /* Assets.xcassets */,
+				04E68AED29B9A80900573B2A /* LaunchScreen.storyboard */,
+				04E68AF029B9A80900573B2A /* Info.plist */,
+			);
+			path = OredooMoneyApp;
+			sourceTree = "<group>";
+		};
+		04E68AF829B9A80900573B2A /* OredooMoneyAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				04E68AF929B9A80900573B2A /* OredooMoneyAppTests.swift */,
+			);
+			path = OredooMoneyAppTests;
+			sourceTree = "<group>";
+		};
+		04E68B0229B9A80A00573B2A /* OredooMoneyAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04E68B0329B9A80A00573B2A /* OredooMoneyAppUITests.swift */,
+				04E68B0529B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift */,
+			);
+			path = OredooMoneyAppUITests;
+			sourceTree = "<group>";
+		};
+		04E68B1329B9A81700573B2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04E68B1829B9A81700573B2A /* UrbanPoint_OM_SDK.framework */,
+				04E68B1A29B9A81700573B2A /* UrbanPoint OM SDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04E68B1B29B9A82300573B2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04E68ADE29B9A80800573B2A /* OredooMoneyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04E68B0929B9A80A00573B2A /* Build configuration list for PBXNativeTarget "OredooMoneyApp" */;
+			buildPhases = (
+				04E68ADB29B9A80800573B2A /* Sources */,
+				04E68ADC29B9A80800573B2A /* Frameworks */,
+				04E68ADD29B9A80800573B2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OredooMoneyApp;
+			productName = OredooMoneyApp;
+			productReference = 04E68ADF29B9A80800573B2A /* OredooMoneyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04E68AF429B9A80900573B2A /* OredooMoneyAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04E68B0C29B9A80A00573B2A /* Build configuration list for PBXNativeTarget "OredooMoneyAppTests" */;
+			buildPhases = (
+				04E68AF129B9A80900573B2A /* Sources */,
+				04E68AF229B9A80900573B2A /* Frameworks */,
+				04E68AF329B9A80900573B2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04E68AF729B9A80900573B2A /* PBXTargetDependency */,
+			);
+			name = OredooMoneyAppTests;
+			productName = OredooMoneyAppTests;
+			productReference = 04E68AF529B9A80900573B2A /* OredooMoneyAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04E68AFE29B9A80A00573B2A /* OredooMoneyAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04E68B0F29B9A80A00573B2A /* Build configuration list for PBXNativeTarget "OredooMoneyAppUITests" */;
+			buildPhases = (
+				04E68AFB29B9A80A00573B2A /* Sources */,
+				04E68AFC29B9A80A00573B2A /* Frameworks */,
+				04E68AFD29B9A80A00573B2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04E68B0129B9A80A00573B2A /* PBXTargetDependency */,
+			);
+			name = OredooMoneyAppUITests;
+			productName = OredooMoneyAppUITests;
+			productReference = 04E68AFF29B9A80A00573B2A /* OredooMoneyAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04E68AD729B9A80800573B2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					04E68ADE29B9A80800573B2A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					04E68AF429B9A80900573B2A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 04E68ADE29B9A80800573B2A;
+					};
+					04E68AFE29B9A80A00573B2A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 04E68ADE29B9A80800573B2A;
+					};
+				};
+			};
+			buildConfigurationList = 04E68ADA29B9A80800573B2A /* Build configuration list for PBXProject "OredooMoneyApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04E68AD629B9A80800573B2A;
+			productRefGroup = 04E68AE029B9A80800573B2A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04E68B1329B9A81700573B2A /* Products */;
+					ProjectRef = 04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				04E68ADE29B9A80800573B2A /* OredooMoneyApp */,
+				04E68AF429B9A80900573B2A /* OredooMoneyAppTests */,
+				04E68AFE29B9A80A00573B2A /* OredooMoneyAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		04E68B1829B9A81700573B2A /* UrbanPoint_OM_SDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UrbanPoint_OM_SDK.framework;
+			remoteRef = 04E68B1729B9A81700573B2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E68B1A29B9A81700573B2A /* UrbanPoint OM SDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "UrbanPoint OM SDKTests.xctest";
+			remoteRef = 04E68B1929B9A81700573B2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04E68ADD29B9A80800573B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E68AEF29B9A80900573B2A /* LaunchScreen.storyboard in Resources */,
+				04E68AEC29B9A80900573B2A /* Assets.xcassets in Resources */,
+				04E68AEA29B9A80800573B2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E68AF329B9A80900573B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E68AFD29B9A80A00573B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04E68ADB29B9A80800573B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E68AE729B9A80800573B2A /* ViewController.swift in Sources */,
+				04E68AE329B9A80800573B2A /* AppDelegate.swift in Sources */,
+				04E68AE529B9A80800573B2A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E68AF129B9A80900573B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E68AFA29B9A80900573B2A /* OredooMoneyAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04E68AFB29B9A80A00573B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E68B0429B9A80A00573B2A /* OredooMoneyAppUITests.swift in Sources */,
+				04E68B0629B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04E68AF729B9A80900573B2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04E68ADE29B9A80800573B2A /* OredooMoneyApp */;
+			targetProxy = 04E68AF629B9A80900573B2A /* PBXContainerItemProxy */;
+		};
+		04E68B0129B9A80A00573B2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04E68ADE29B9A80800573B2A /* OredooMoneyApp */;
+			targetProxy = 04E68B0029B9A80A00573B2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04E68AE829B9A80800573B2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E68AE929B9A80800573B2A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04E68AED29B9A80900573B2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E68AEE29B9A80900573B2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04E68B0729B9A80A00573B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04E68B0829B9A80A00573B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04E68B0A29B9A80A00573B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OredooMoneyApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OredooMoneyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04E68B0B29B9A80A00573B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OredooMoneyApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OredooMoneyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04E68B0D29B9A80A00573B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OredooMoneyAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OredooMoneyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OredooMoneyApp";
+			};
+			name = Debug;
+		};
+		04E68B0E29B9A80A00573B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OredooMoneyAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OredooMoneyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OredooMoneyApp";
+			};
+			name = Release;
+		};
+		04E68B1029B9A80A00573B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OredooMoneyAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OredooMoneyApp;
+			};
+			name = Debug;
+		};
+		04E68B1129B9A80A00573B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OredooMoneyAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OredooMoneyApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04E68ADA29B9A80800573B2A /* Build configuration list for PBXProject "OredooMoneyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E68B0729B9A80A00573B2A /* Debug */,
+				04E68B0829B9A80A00573B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04E68B0929B9A80A00573B2A /* Build configuration list for PBXNativeTarget "OredooMoneyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E68B0A29B9A80A00573B2A /* Debug */,
+				04E68B0B29B9A80A00573B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04E68B0C29B9A80A00573B2A /* Build configuration list for PBXNativeTarget "OredooMoneyAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E68B0D29B9A80A00573B2A /* Debug */,
+				04E68B0E29B9A80A00573B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04E68B0F29B9A80A00573B2A /* Build configuration list for PBXNativeTarget "OredooMoneyAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04E68B1029B9A80A00573B2A /* Debug */,
+				04E68B1129B9A80A00573B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04E68AD729B9A80800573B2A /* Project object */;
+}
