@@ -26,7 +26,9 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
 
                                           shadowRadius: 1,
                                           shadowOpacity: 0.3)
-
+        
+             
+        categoryImageView.sd_setImage(with: viewModel.categoryImage)
     }
     
     

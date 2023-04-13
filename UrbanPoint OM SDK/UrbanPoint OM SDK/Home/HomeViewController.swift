@@ -9,14 +9,30 @@ import UIKit
 
 class UPHomeViewController: UIViewController {
 
-    let homePresenter: UPHomeViewModel = UPHomeViewModel(homeService: HttpHomeService(httpClient: UPURLSessionHttpClient(session: URLSession(configuration: .ephemeral))))
-    
+    var homePresenter: UPHomeViewModel
     var isPopularCategoriesListExpanded: Bool = false
+  
     @IBOutlet weak var tableView: UITableView!
+    
+    //Events
+    
+    var showOutletDetail: ((Int) -> Void)?
+    var showUseAgainOffer: ((Int) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    init?(coder: NSCoder, presenter: UPHomeViewModel) {
+        self.homePresenter = presenter
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("You must create this view controller with a home view model.")
+    }
+    
+
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -125,37 +141,29 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
     private func onCategorySelected(category: Category){}
     
     private func onViewAllUsedOffersTapped(){}
-    private func onUsedOfferSelected(category: UseAgainOffer){}
+    private func onUsedOfferSelected(category: UseAgainOffer){
+        showUseAgainOffer?(category.id)
+    }
     
     private func onViewAllNewBrandTapped(){
-        
-        let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPCategoriesViewController") as! UPCategoriesViewController
-    
-        let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
-        let outletRespository = URLSessionOutletRepository(httpClient: httpClient)
-        let outletPresenter = OutletListingPresenter(outletRepository: outletRespository)
- 
-        viewController.titleString = "New Brands"
-        viewController.listingViewModel = outletPresenter
-        navigationController?.pushViewController(viewController, animated: true)
-        
-        
     }
-    private func onNewBrandSelected(_ brand: NewBrand){}
+   
+    private func onNewBrandSelected(_ brand: NewBrand){
+        guard let id = Int(brand.id) else { return }
+      showOutletDetail?(id)
+    }
     
     private func onViewAllNearbyTapped(){
+        let httpClient = UPURLSessionHttpClient(session: .shared)
+        let repository = URLSessionOutletRepository(httpClient: httpClient)
+        let viewModel = OutletListingPresenter(outletRepository: repository)
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPCategoriesViewController") as! UPCategoriesViewController
-        let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
-        let outletRespository = URLSessionOutletRepository(httpClient: httpClient)
-        let outletPresenter = OutletListingPresenter(outletRepository: outletRespository)
-
-        viewController.titleString = "Nearby Outlets"
-        viewController.listingViewModel = outletPresenter
+        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(identifier: "UPCategoriesViewController") as! UPCategoriesViewController
+        viewController.listingViewModel = viewModel
         navigationController?.pushViewController(viewController, animated: true)
-        
     }
-    private func onNeerbyOutletSelected(_ nearbyOutlet: NearbyOutlet){}
+    private func onNeerbyOutletSelected(_ nearbyOutlet: NearbyOutlet){
+        showOutletDetail?(nearbyOutlet.id)
+    }
     
 }

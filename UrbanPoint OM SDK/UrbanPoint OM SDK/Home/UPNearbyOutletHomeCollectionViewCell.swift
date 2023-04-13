@@ -19,7 +19,9 @@ class UPNearbyOutletHomeCollectionViewCell: UICollectionViewCell {
     
     internal func configureOutletCellWith(_ outlet: NearbyOutlet){
         if let url = URL(string: "https://urbanpoint-storage.azureedge.net/test/uploads_staging/uploads/" + outlet.image){
-    //        task = outletImageView.downloadImageFromURL(url: url)
+            
+            outletImageView.sd_setImage(with: url)
+            
         }
         outletCategoryLabel.text = outlet.linkedOutletCategory.first?.name
         outletTitleLabel.text = outlet.name

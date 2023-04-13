@@ -19,9 +19,10 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let navigationController = UINavigationController()
-        let up = UrbanPoint(navigationController: navigationController,context: self)
+
+   
+        let nav = UINavigationController()
+        let up = UrbanPoint(navigationController: nav, context: self)
         up.start()
     }
 

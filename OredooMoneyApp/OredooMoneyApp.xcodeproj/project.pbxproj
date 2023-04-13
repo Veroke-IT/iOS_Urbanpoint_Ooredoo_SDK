@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040981FE29E400740042009B /* UrbanPoint_OM_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040981FD29E400630042009B /* UrbanPoint_OM_SDK.framework */; };
 		04E68AE329B9A80800573B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE229B9A80800573B2A /* AppDelegate.swift */; };
 		04E68AE529B9A80800573B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE429B9A80800573B2A /* SceneDelegate.swift */; };
 		04E68AE729B9A80800573B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE629B9A80800573B2A /* ViewController.swift */; };
@@ -16,10 +17,16 @@
 		04E68AFA29B9A80900573B2A /* OredooMoneyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AF929B9A80900573B2A /* OredooMoneyAppTests.swift */; };
 		04E68B0429B9A80A00573B2A /* OredooMoneyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68B0329B9A80A00573B2A /* OredooMoneyAppUITests.swift */; };
 		04E68B0629B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68B0529B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift */; };
-		04E68B1C29B9A82300573B2A /* UrbanPoint_OM_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E68B1829B9A81700573B2A /* UrbanPoint_OM_SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		040981FC29E400630042009B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040981F829E400630042009B /* UrbanPoint OM SDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04E68A9829B8AABE00573B2A;
+			remoteInfo = "UrbanPoint OM SDK";
+		};
 		04E68AF629B9A80900573B2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04E68AD729B9A80800573B2A /* Project object */;
@@ -34,23 +41,10 @@
 			remoteGlobalIDString = 04E68ADE29B9A80800573B2A;
 			remoteInfo = OredooMoneyApp;
 		};
-		04E68B1729B9A81700573B2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 04E68A9829B8AABE00573B2A;
-			remoteInfo = "UrbanPoint OM SDK";
-		};
-		04E68B1929B9A81700573B2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 04E68AA229B8AABE00573B2A;
-			remoteInfo = "UrbanPoint OM SDKTests";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040981F829E400630042009B /* UrbanPoint OM SDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UrbanPoint OM SDK.xcodeproj"; path = "../UrbanPoint OM SDK/UrbanPoint OM SDK.xcodeproj"; sourceTree = "<group>"; };
 		04E68ADF29B9A80800573B2A /* OredooMoneyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OredooMoneyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E68AE229B9A80800573B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E68AE429B9A80800573B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +58,6 @@
 		04E68AFF29B9A80A00573B2A /* OredooMoneyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OredooMoneyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E68B0329B9A80A00573B2A /* OredooMoneyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OredooMoneyAppUITests.swift; sourceTree = "<group>"; };
 		04E68B0529B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OredooMoneyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UrbanPoint OM SDK.xcodeproj"; path = "../UrbanPoint OM SDK/UrbanPoint OM SDK.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E68B1C29B9A82300573B2A /* UrbanPoint_OM_SDK.framework in Frameworks */,
+				040981FE29E400740042009B /* UrbanPoint_OM_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,15 +86,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04097F6A29E3FD360042009B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		040981F929E400630042009B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				040981FD29E400630042009B /* UrbanPoint_OM_SDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		04E68AD629B9A80800573B2A = {
 			isa = PBXGroup;
 			children = (
-				04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */,
+				040981F829E400630042009B /* UrbanPoint OM SDK.xcodeproj */,
 				04E68AE129B9A80800573B2A /* OredooMoneyApp */,
 				04E68AF829B9A80900573B2A /* OredooMoneyAppTests */,
 				04E68B0229B9A80A00573B2A /* OredooMoneyAppUITests */,
 				04E68AE029B9A80800573B2A /* Products */,
-				04E68B1B29B9A82300573B2A /* Frameworks */,
+				04097F6A29E3FD360042009B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,22 +152,6 @@
 				04E68B0529B9A80A00573B2A /* OredooMoneyAppUITestsLaunchTests.swift */,
 			);
 			path = OredooMoneyAppUITests;
-			sourceTree = "<group>";
-		};
-		04E68B1329B9A81700573B2A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				04E68B1829B9A81700573B2A /* UrbanPoint_OM_SDK.framework */,
-				04E68B1A29B9A81700573B2A /* UrbanPoint OM SDKTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		04E68B1B29B9A82300573B2A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,14 +240,19 @@
 			knownRegions = (
 				en,
 				Base,
+				"hi-In",
+				"hi-IN",
+				"pt-br",
+				"pt-BR",
+				ru,
 			);
 			mainGroup = 04E68AD629B9A80800573B2A;
 			productRefGroup = 04E68AE029B9A80800573B2A /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 04E68B1329B9A81700573B2A /* Products */;
-					ProjectRef = 04E68B1229B9A81700573B2A /* UrbanPoint OM SDK.xcodeproj */;
+					ProductGroup = 040981F929E400630042009B /* Products */;
+					ProjectRef = 040981F829E400630042009B /* UrbanPoint OM SDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -268,18 +265,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		04E68B1829B9A81700573B2A /* UrbanPoint_OM_SDK.framework */ = {
+		040981FD29E400630042009B /* UrbanPoint_OM_SDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = UrbanPoint_OM_SDK.framework;
-			remoteRef = 04E68B1729B9A81700573B2A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		04E68B1A29B9A81700573B2A /* UrbanPoint OM SDKTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "UrbanPoint OM SDKTests.xctest";
-			remoteRef = 04E68B1929B9A81700573B2A /* PBXContainerItemProxy */;
+			remoteRef = 040981FC29E400630042009B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -495,6 +485,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OredooMoneyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

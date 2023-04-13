@@ -19,20 +19,23 @@ final public class UrbanPoint{
     
     public func start(){
         
-        let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "HomeView", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPHomeViewController") as! UPHomeViewController
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.isNavigationBarHidden = true
+        
         FontLoader.loadFont(name: "Roboto-Medium")
         FontLoader.loadFont(name: "Roboto-Bold")
         FontLoader.loadFont(name: "Roboto-Regular")
 
         let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
-        let outletRespository = URLSessionOutletRepository(httpClient: httpClient)
-        let outletPresenter = OutletListingPresenter(outletRepository: outletRespository)
 
+        let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
         
-        navigationController.pushViewController(viewController, animated: true)
-        navigationController.modalPresentationStyle = .fullScreen
-        navigationController.isNavigationBarHidden = true
+        
+        let repository = URLSessionOfferRepository(httpClient: httpClient)
+        var homeViewController = UIStoryboard(name: "RedeemOffer", bundle: storyBoardBundle)
+            .instantiateViewController(withIdentifier: "UPRedeemOfferViewController") as! UPRedeemOfferViewController
+        homeViewController.viewModel = UPRedeemOfferViewModel(offerRepository: repository, offerData: UPRedeemOfferViewModel.RedeemOfferViewModel(outletName: "OutletName", offerDetails: "OfferDetails", offerID: 515, outletID: 200, outletImage: nil))
+        navigationController.pushViewController(homeViewController, animated: true)
         context.present(navigationController, animated: true)
     }
     

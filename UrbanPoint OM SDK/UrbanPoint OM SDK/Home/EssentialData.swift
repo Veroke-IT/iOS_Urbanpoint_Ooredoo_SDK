@@ -123,5 +123,7 @@ struct LinkedOutletCategory: Codable {
 
 
 
-struct UseAgainOffer: Codable{}
+struct UseAgainOffer: Codable{
+    let id: Int
+}
 struct SubscriptionBanner: Codable{}

@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thR-n8-hsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="79"/>
+            <point key="canvasLocation" x="314" y="553"/>
         </scene>
         <!--Outlet Listing Container View Controller-->
         <scene sceneID="m6p-50-PYd">
@@ -270,7 +270,7 @@
                                                                     <real key="value" value="40"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" red="1" green="0.042158646559999999" blue="0.24676374270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="value" name="UrbanPointGrey"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="1"/>

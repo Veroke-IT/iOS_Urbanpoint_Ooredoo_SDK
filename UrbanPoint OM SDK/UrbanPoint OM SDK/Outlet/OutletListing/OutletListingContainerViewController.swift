@@ -17,37 +17,50 @@ class OutletListingContainerViewController: UIViewController {
     //MARK: UI State
     private var index: Int = 1
     private var outletListingViewController: OutletListingViewController?
+    private var selectedSortCondition: OutletRepositoryParam.Sort = .nearby
     
     //MARK: Events
-    internal var onNearbyButtonTapped: ((@escaping ([UPOutletListingTableViewCell.Outlet]) -> Void) -> Void)?
-    internal var onAlphabaticalButtonTapped: ((@escaping ([UPOutletListingTableViewCell.Outlet]) -> Void) -> Void)?
+    internal var fetchOutlets: ((Int,
+                                 OutletRepositoryParam.Sort,
+                                         @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void) -> Void)?
     internal var onBackButtonPressed: (() -> Void)?
     internal var onOutletSelected: ((UPOutletListingTableViewCell.Outlet) -> Void)?
     internal var onOfferSelected: ((UPOffer) -> Void)?
     internal var onTabledEndPointReached: ((Int) -> Void)?
+    private var currentlyShownOutlets: [UPOutletListingTableViewCell.Outlet] = []
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func onAlphabaticalButtonTouched(_ sender: Any){
+        selectedSortCondition = .alphabatical
         setupButton(selectedButton: alphaBaticalButton, unSelectedButton: nearbyButton)
-        onAlphabaticalButtonTapped?(){outlets in
-            DispatchQueue.main.async {[weak self] in
-                if let vc = self?.outletListingViewController{
-                   vc.showOutletData(outlets)
-                }
-            }
-        }
+        index = 1
+        fetchOutletsForListing()
     }
     
     //MARK: On Nearby Button Tapped
     @IBAction func onNearbyButtonTouched(_ sender: Any){
+        selectedSortCondition = .nearby
         setupButton(selectedButton: nearbyButton, unSelectedButton: alphaBaticalButton)
-        onNearbyButtonTapped?(){outlets in
+        index = 1
+        fetchOutletsForListing()
+    }
+    
+    private func fetchOutletsForListing(){
+        
+        fetchOutlets?(index,selectedSortCondition){ outlets in
             DispatchQueue.main.async {[weak self] in
-                if let vc = self?.outletListingViewController{
-                   vc.showOutletData(outlets)
+                guard let strongSelf = self else { return }
+                if let vc = strongSelf.outletListingViewController{
+                    if strongSelf.index == 1 {
+                        strongSelf.currentlyShownOutlets = []
+                    }
+                    strongSelf.currentlyShownOutlets.append(contentsOf: outlets)
+                    vc.showOutletData(strongSelf.currentlyShownOutlets)
                 }
             }
         }
@@ -74,5 +87,9 @@ class OutletListingContainerViewController: UIViewController {
     
     private func onOutletSelected(_ outlet: UPOutletListingTableViewCell.Outlet){ onOutletSelected?(outlet) }
     private func onOfferSelected(_ offer: UPOffer){ onOfferSelected?(offer) }
-    private func onTableViewEndPositionReached(){ onTabledEndPointReached?(index) }
+   
+    private func onTableViewEndPositionReached(){
+        index += 1
+        fetchOutletsForListing()
+    }
 }

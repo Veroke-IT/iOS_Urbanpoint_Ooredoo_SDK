@@ -72,4 +72,8 @@ extension NewBrandsTableViewCell: UICollectionViewDataSource,UICollectionViewDel
         return CGSize(width:  150, height: collectionView.bounds.height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        onOutletSelected?(data[indexPath.row])
+    }
+    
 }

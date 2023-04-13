@@ -12,7 +12,7 @@ class UPOutletListingTableViewCell: UITableViewCell {
     struct Outlet{
         let id: Int
         let outletName: String
-        let image: String
+        let image: URL?
         let distance: String
         var isExpanded: Bool
         let offers: [UPOffer]
@@ -78,6 +78,9 @@ class UPOutletListingTableViewCell: UITableViewCell {
         if let outlet{
             outletNameLabel.text = outlet.outletName
             outletAddressLabel.text = outlet.distance
+            if let url = outlet.image{
+                outletImageView.sd_setImage(with: url)
+            }
         }
     }
     @IBAction func nextButtonTouched(_ sender: Any){}

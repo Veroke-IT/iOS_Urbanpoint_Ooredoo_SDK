@@ -47,7 +47,7 @@ final class UPOutletSearchViewModel{
     }
     
     internal func fetchOutlet(index: Int, completion:@escaping (String?) -> Void){
-        outletRespository.fetchOutlet(param: ["search":searchText]) {[weak self] result in
+        outletRespository.fetchOutlet(param: [.searchOutlets(searchText)]) {[weak self] result in
             
             guard let strongSelf = self else {
                 completion("Oops something went wrong")
@@ -58,7 +58,8 @@ final class UPOutletSearchViewModel{
             switch result {
             case .success(let data):
                 self?.outlets.append(contentsOf: data.map({ outlet in
-                    UPOutletListingTableViewCell.Outlet(id: outlet.outletID, outletName: outlet.outletName, image: outlet.outletImage, distance: outlet.outletDistance, isExpanded: false, offers: outlet.offers)
+                    UPOutletListingTableViewCell.Outlet(id: outlet.id, outletName: outlet.name, image: URL(string:  imageBaseURL + outlet.image), distance: outlet.distance ?? "", isExpanded: false, offers: outlet.offers)
+                    
                 }))
                 completion(nil)
             case .failure(let error):
