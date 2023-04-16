@@ -57,10 +57,10 @@ final class UPOutletSearchViewModel{
             strongSelf.trendingSearchRespository.addSearchToStoredSearches(searchText: strongSelf.searchText)
             switch result {
             case .success(let data):
-                self?.outlets.append(contentsOf: data.map({ outlet in
-                    UPOutletListingTableViewCell.Outlet(id: outlet.id, outletName: outlet.name, image: URL(string:  imageBaseURL + outlet.image), distance: outlet.distance ?? "", isExpanded: false, offers: outlet.offers)
-                    
-                }))
+//                self?.outlets.append(contentsOf: data.map({ outlet in
+//                    UPOutletListingTableViewCell.Outlet(id: outlet.id, outletName: outlet.name, image: URL(string:  imageBaseURL + outlet.image), distance: outlet.distance ?? "", isExpanded: false, offers: outlet.offers)
+//                    
+//                }))
                 completion(nil)
             case .failure(let error):
                 completion(error.localizedDescription)

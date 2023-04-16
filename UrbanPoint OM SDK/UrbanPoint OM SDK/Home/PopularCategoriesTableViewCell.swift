@@ -65,4 +65,7 @@ extension UPPopularCategoriesTableViewCell: UICollectionViewDataSource,UICollect
         return CGSize(width:  size, height: size)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        onPopularCategoruSelected?(data[indexPath.row])
+    }
 }

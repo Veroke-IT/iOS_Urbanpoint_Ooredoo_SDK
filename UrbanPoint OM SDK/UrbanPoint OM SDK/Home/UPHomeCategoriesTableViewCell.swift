@@ -12,13 +12,13 @@ class UPHomeCategoriesTableViewCell: UITableViewCell {
     static let reuseIdentifier = "UPHomeCategoriesTableViewCell"
     @IBOutlet weak var collectionView: UICollectionView!
     var data: [Category] = []
-    private var onViewAllTapped: (() -> Void)? = nil
+    private var categorySelected: ((Category) -> Void)? = nil
     
     
     internal func configureCell(with data: [Category],
-                                onViewAllTapped: @escaping () -> Void){
+                                onCategorySelected: @escaping (Category) -> Void){
         self.data = data
-        self.onViewAllTapped = onViewAllTapped
+        self.categorySelected = onCategorySelected
         collectionView.reloadData()
     }
     
@@ -64,6 +64,10 @@ extension UPHomeCategoriesTableViewCell: UICollectionViewDataSource,UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.bounds.height, height: collectionView.bounds.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        categorySelected?(data[indexPath.row])
     }
     
 }

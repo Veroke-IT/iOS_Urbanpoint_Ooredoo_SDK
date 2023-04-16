@@ -8,16 +8,35 @@
 import Foundation
 import CoreLocation
 
+protocol OutletListingPresenterContract: UPLocationManagerDelegate{
+    
+    var outletRepository: OutletRepository { get  }
+    
+    func fetchOutletNearby(searchText: String?,
+                           categoryID: Int?,
+                     collectionID: Int?,
+                     index: Int,
+                    
+                           completion: @escaping (([UPOutletListingTableViewCell.Outlet],String?)) -> Void)
+    
+    func fetchOutletAlphabatical(searchText: String?,
+                                 categoryID: Int?,
+                     collectionID: Int?,
+                     index: Int,
+                    
+                                 completion: @escaping (([UPOutletListingTableViewCell.Outlet],String?)) -> Void)
+    
+    func fetchUserLocation()
+
+}
+
 
 final class OutletListingPresenter:UPLocationManagerDelegate{
  
-    
-
     struct Outlet: Decodable{
         let outletID: Int
         let outletName: String
         let outletImage: String
-        let isNewBrand: Bool
         let outletDistance: String
         let offers: [UPOffer]
     }
@@ -44,7 +63,7 @@ final class OutletListingPresenter:UPLocationManagerDelegate{
                 switch result{
                 case .success(let data):
                       let outlets = data.map({ outlet in
-                          OutletListingPresenter.Outlet(outletID: outlet.id, outletName: outlet.name, outletImage: outlet.image, isNewBrand: outlet.isnewBrand == "1", outletDistance: outlet.distance ?? "", offers: outlet.offers)
+                          OutletListingPresenter.Outlet(outletID: outlet.id ?? -1, outletName: outlet.name ?? "", outletImage: outlet.image ?? "", outletDistance:  "", offers: [])
                         })
                     completion((outlets,nil))
                 case .failure(let error):
@@ -54,15 +73,35 @@ final class OutletListingPresenter:UPLocationManagerDelegate{
         }
     }
     
-    func fetchOutlet(index: Int,sortCondition: OutletRepositoryParam.Sort,completion: @escaping (([Outlet],String?)) -> Void){
-        
-       
-        
+    func fetchOutletAlphabatical(categoryID: Int? = nil,
+                     collectionID: Int? = nil,
+                     index: Int,
+                     sortCondition: OutletRepositoryParam.Sort,
+                     completion: @escaping (([Outlet],String?)) -> Void){
         outletRepository.fetchOutlet(param:[.childOutlets(parentID),.sortBy(sortCondition),.paggingIndex(String(index))]) { result in
             switch result{
             case .success(let data):
                   let outlets = data.map({ outlet in
-                      OutletListingPresenter.Outlet(outletID: outlet.id, outletName: outlet.name, outletImage: outlet.image, isNewBrand: outlet.isnewBrand == "1", outletDistance: outlet.distance ?? "", offers: outlet.offers)
+                      OutletListingPresenter.Outlet(outletID: outlet.id ?? -1, outletName: outlet.name ?? "", outletImage: outlet.image ?? "",  outletDistance: "", offers: [])
+                    })
+                completion((outlets,nil))
+            case .failure(let error):
+                completion(([],error.localizedDescription))
+            }
+        }
+    }
+    
+    func fetchParentOutlet(categoryID: Int? = nil,
+                           collectionID: Int? = nil,
+                           index: Int,
+                           sortCondition: OutletRepositoryParam.Sort,
+                           completion: @escaping (([Outlet],String?)) -> Void){
+        outletRepository.fetchParentOutlet(param:[.childOutlets(parentID),.sortBy(sortCondition),.paggingIndex(String(index))]) { result in
+            switch result{
+            case .success(let data):
+                  let outlets = data.map({ outlet in
+                      OutletListingPresenter.Outlet(outletID: outlet.id ?? -1, outletName: outlet.name ?? "", outletImage: outlet.logo ?? "", outletDistance:  "",offers: [])
+//                                                    offers: outlet.outlets.count > 1 ? [] : (outlet.outlets.first?.offers ?? []))
                     })
                 completion((outlets,nil))
             case .failure(let error):

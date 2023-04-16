@@ -10,8 +10,9 @@ import UIKit
 class OutletListingViewController: UIViewController {
 
     @IBOutlet weak var outletTableView: UITableView!
+   
     var outlets: [UPOutletListingTableViewCell.Outlet] = []
-    
+  
     var onOfferSelected: ((UPOffer) -> Void)? = nil
     var onTableEndPoisitionReached: (() -> Void)? = nil
     var onOutletSelected: ((UPOutletListingTableViewCell.Outlet) -> Void)? = nil
@@ -53,7 +54,7 @@ extension OutletListingViewController: UITableViewDataSource,UITableViewDelegate
     
     private func makeCell(tableView: UITableView,indexPath: IndexPath) -> UITableViewCell{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UPOutletListingTableViewCell.reuseIdentifier, for: indexPath) as? UPOutletListingTableViewCell  else { return UITableViewCell() }
-        cell.configureCell(outlet: outlets[indexPath.row], onCellExpanded: onCellExpanded, onOfferSelected: onOfferSelected, indexPath: indexPath)
+        cell.configureCell(outlet: outlets[indexPath.row], onOutletSelected: onOutletSelected ?? {_ in }, onCellExpanded: onCellExpanded, onOfferSelected: onOfferSelected, indexPath: indexPath)
         return cell
     }
     
@@ -68,7 +69,5 @@ extension OutletListingViewController: UITableViewDataSource,UITableViewDelegate
         if indexPath.row == outlets.count - 1 { onTableEndPoisitionReached?() }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onOutletSelected?(outlets[indexPath.row])
-    }
+   
 }

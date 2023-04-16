@@ -19,6 +19,12 @@ class UPHomeViewController: UIViewController {
     var showOutletDetail: ((Int) -> Void)?
     var showUseAgainOffer: ((Int) -> Void)?
     
+    
+    var onNewBrandsTapped: (() -> Void)?
+    var onViewAllNearbyOutletsTapped: (() -> Void)?
+    
+    var onCategorySelected: ((Int) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,21 +38,22 @@ class UPHomeViewController: UIViewController {
         fatalError("You must create this view controller with a home view model.")
     }
     
-
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
-        homePresenter.fetchEssentialData { errorString in
+        showActivityIndicator()
+        homePresenter.fetchEssentialData {[weak self] errorString in
             if let errorString{
+                self?.hideActivityIndicator()
                 debugPrint(errorString)
             }else{
-                self.homePresenter.fetchCachedData { errorString in
+                self?.homePresenter.fetchCachedData {[weak self]  errorString in
+                    self?.hideActivityIndicator()
                     if let errorString{
                         debugPrint(errorString)
                     }else{
                         DispatchQueue.main.async {
-                            self.tableView.reloadData()
+                            self?.tableView.reloadData()
                         }
                     }
                 }
@@ -104,7 +111,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         switch indexPath.row{
         case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: UPHomeCategoriesTableViewCell.reuseIdentifier, for: indexPath) as! UPHomeCategoriesTableViewCell
-            cell.configureCell(with: homePresenter.categories, onViewAllTapped: onViewAllCategoriesTapped)
+            cell.configureCell(with: homePresenter.categories, onCategorySelected: onCategorySelected)
                 return cell
             
         case 1:
@@ -119,6 +126,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPPopularCategoriesTableViewCell.reuseIdentifier, for: indexPath) as! UPPopularCategoriesTableViewCell
             cell.configureCell(with: homePresenter.popularCategories)
+            cell.onPopularCategoruSelected = onPopularCategorySelected
             cell.onShowAllPopularCategoriesTapped = {
                 self.isPopularCategoriesListExpanded.toggle()
                 self.tableView.reloadRows(at: [indexPath], with: .none)
@@ -137,8 +145,19 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     
+    private func onPopularCategorySelected(category: PopularCategory){
+        
+        onCategorySelected?(category.id)
+        
+    }
+    
     private func onViewAllCategoriesTapped(){}
-    private func onCategorySelected(category: Category){}
+  
+    private func onCategorySelected(category: Category){
+        if let id = Int(category.id){
+            onCategorySelected?(id)
+        }
+    }
     
     private func onViewAllUsedOffersTapped(){}
     private func onUsedOfferSelected(category: UseAgainOffer){
@@ -146,22 +165,18 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     private func onViewAllNewBrandTapped(){
+        onNewBrandsTapped?()
     }
    
     private func onNewBrandSelected(_ brand: NewBrand){
         guard let id = Int(brand.id) else { return }
-      showOutletDetail?(id)
+        showOutletDetail?(id)
     }
     
     private func onViewAllNearbyTapped(){
-        let httpClient = UPURLSessionHttpClient(session: .shared)
-        let repository = URLSessionOutletRepository(httpClient: httpClient)
-        let viewModel = OutletListingPresenter(outletRepository: repository)
-        let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(identifier: "UPCategoriesViewController") as! UPCategoriesViewController
-        viewController.listingViewModel = viewModel
-        navigationController?.pushViewController(viewController, animated: true)
+        onViewAllNearbyOutletsTapped?()
     }
+    
     private func onNeerbyOutletSelected(_ nearbyOutlet: NearbyOutlet){
         showOutletDetail?(nearbyOutlet.id)
     }

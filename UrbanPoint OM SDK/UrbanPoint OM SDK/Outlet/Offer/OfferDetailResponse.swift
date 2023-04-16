@@ -14,17 +14,17 @@ struct OfferDetailApiResponse: Codable {
     let data: [Offer]
     
     struct Offer: Codable {
-        let title, image, searchTags: String
-        let outletID, price, specialPrice, approxSaving: Int
-        let description: String
-        let id: Int
-        let sku, interestTags, percentageSaving, startDatetime: String
-        let endDatetime, validFor, special, usageAllowance: String
-        let specialType, renew: String
-        let redemptions, redeemed, perUser, ordersCount: Int
-        let active, rulesOfPurchase, discountType: String
-        let outlet: Outlet
-        let isRedeeme, isFavorite: Bool
+        let title, image, searchTags: String?
+        let outletID, price, specialPrice, approxSaving: Int?
+        let description: String?
+        let id: Int?
+        let sku, interestTags, percentageSaving, startDatetime: String?
+        let endDatetime, validFor, special, usageAllowance: String?
+        let specialType, renew: String?
+        let redemptions, redeemed, perUser, ordersCount: Int?
+        let active, rulesOfPurchase, discountType: String?
+        let outlet: Outlet?
+        let isRedeeme, isFavorite: Bool?
 
         enum CodingKeys: String, CodingKey {
             case title, image
@@ -54,10 +54,10 @@ struct OfferDetailApiResponse: Codable {
         
         
         struct Outlet: Codable {
-            let name, logo: String
-            let latitude, longitude: Double
-            let address, locationImage: String
-            let linkedOutletCategory: [LinkedOutletCategory]
+            let name, logo: String?
+            let latitude, longitude: Double?
+            let address, locationImage: String?
+            let linkedOutletCategory: [LinkedOutletCategory]?
 
             enum CodingKeys: String, CodingKey {
                 case name, logo, latitude, longitude, address

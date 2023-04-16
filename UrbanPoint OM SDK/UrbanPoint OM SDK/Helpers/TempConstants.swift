@@ -9,3 +9,4 @@ import Foundation
 
 
 let imageBaseURL = "https://urbanpoint-storage.azureedge.net/test/uploads_staging/uploads/"
+let Appbundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")

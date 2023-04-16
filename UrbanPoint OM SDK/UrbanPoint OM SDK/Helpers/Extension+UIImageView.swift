@@ -7,4 +7,8 @@
 
 import UIKit
 
-// MARK: TODO: Implement Image Loader to show Images
+extension UIImage{
+    static func loadImageWithName(_ name: String) -> UIImage? {
+        return UIImage(named: name, in: Appbundle, with: nil)
+    }
+}

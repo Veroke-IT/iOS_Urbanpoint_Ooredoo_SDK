@@ -40,11 +40,11 @@ class OfferDetailViewController: UIViewController {
     private func setupOfferDetailUI(){
         guard let offer = offerDetailViewModel?.offer else { return }
         
-        outletNameLabel.text = offer.outlet.name
+        outletNameLabel.text = offer.outlet?.name
         offerDetailLabel.text = offer.description
         offerNameLabel.text = offer.title
         expiryDateLabel.text = offer.endDatetime
-        savingLabel.text = "Save QAR " + String(offer.approxSaving)
+        savingLabel.text = "Save QAR " + String(offer.approxSaving ?? 0)
         detailExclusionLabel.text = offer.rulesOfPurchase
         
     }

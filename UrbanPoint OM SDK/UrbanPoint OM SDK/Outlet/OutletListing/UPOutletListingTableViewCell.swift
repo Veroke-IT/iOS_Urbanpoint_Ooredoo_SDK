@@ -16,6 +16,7 @@ class UPOutletListingTableViewCell: UITableViewCell {
         let distance: String
         var isExpanded: Bool
         let offers: [UPOffer]
+        let isParentOutlet: Bool 
         var numberOfOffers: Int {
             offers.count
         }
@@ -34,8 +35,9 @@ class UPOutletListingTableViewCell: UITableViewCell {
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var seperatorView: UIView!
     
-    var onOfferSelected: ((UPOffer) -> Void)?
+    private var onOfferSelected: ((UPOffer) -> Void)?
     private var onCellExpanded:  ((UPOutletListingTableViewCell.Outlet,IndexPath) -> Void)?
+    private var onOutletSelected: ((UPOutletListingTableViewCell.Outlet) -> Void)?
   
     var outlet: UPOutletListingTableViewCell.Outlet?{
         didSet{
@@ -63,13 +65,16 @@ class UPOutletListingTableViewCell: UITableViewCell {
     }
     
     internal func configureCell(outlet: UPOutletListingTableViewCell.Outlet,
+                                onOutletSelected: @escaping ((UPOutletListingTableViewCell.Outlet) -> Void),
                                 onCellExpanded:@escaping (UPOutletListingTableViewCell.Outlet,IndexPath) -> Void,
                                 onOfferSelected: ((UPOffer) -> Void)? = nil,
                                 indexPath: IndexPath){
+        
         self.indexPath = indexPath
         self.outlet = outlet
         self.onCellExpanded = onCellExpanded
         self.onOfferSelected = onOfferSelected
+        self.onOutletSelected = onOutletSelected
         offerTableView.reloadData()
         setupCellUI()
     }
@@ -83,7 +88,11 @@ class UPOutletListingTableViewCell: UITableViewCell {
             }
         }
     }
-    @IBAction func nextButtonTouched(_ sender: Any){}
+    @IBAction func nextButtonTouched(_ sender: Any){
+        if let outlet{
+            onOutletSelected?(outlet)
+        }
+    }
     @IBAction func offersButtonTouched(_ sender: Any){
         if let outlet,
         let indexPath{

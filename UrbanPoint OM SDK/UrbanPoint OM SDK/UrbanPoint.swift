@@ -28,14 +28,10 @@ final public class UrbanPoint{
 
         let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
 
-        let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        
-        
-        let repository = URLSessionOfferRepository(httpClient: httpClient)
-        var homeViewController = UIStoryboard(name: "RedeemOffer", bundle: storyBoardBundle)
-            .instantiateViewController(withIdentifier: "UPRedeemOfferViewController") as! UPRedeemOfferViewController
-        homeViewController.viewModel = UPRedeemOfferViewModel(offerRepository: repository, offerData: UPRedeemOfferViewModel.RedeemOfferViewModel(outletName: "OutletName", offerDetails: "OfferDetails", offerID: 515, outletID: 200, outletImage: nil))
-        navigationController.pushViewController(homeViewController, animated: true)
+
+        let homeViewController = UPHomeViewComposer(navigationController: navigationController, httpClient: httpClient)
+
+        homeViewController.start()
         context.present(navigationController, animated: true)
     }
     

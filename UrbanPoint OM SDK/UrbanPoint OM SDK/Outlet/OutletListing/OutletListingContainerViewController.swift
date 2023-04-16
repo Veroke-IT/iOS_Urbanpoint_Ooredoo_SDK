@@ -20,8 +20,12 @@ class OutletListingContainerViewController: UIViewController {
     private var selectedSortCondition: OutletRepositoryParam.Sort = .nearby
     
     //MARK: Events
-    internal var fetchOutlets: ((Int,
-                                 OutletRepositoryParam.Sort,
+    internal var fetchOutletsNearby: ((Int,
+                                 
+                                         @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void) -> Void)?
+    
+    internal var fetchOutletsAlphabatical: ((Int,
+                                
                                          @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void) -> Void)?
     internal var onBackButtonPressed: (() -> Void)?
     internal var onOutletSelected: ((UPOutletListingTableViewCell.Outlet) -> Void)?
@@ -36,23 +40,20 @@ class OutletListingContainerViewController: UIViewController {
     }
     
     @IBAction func onAlphabaticalButtonTouched(_ sender: Any){
-        selectedSortCondition = .alphabatical
-        setupButton(selectedButton: alphaBaticalButton, unSelectedButton: nearbyButton)
         index = 1
-        fetchOutletsForListing()
+        fetchOutletsForListingAlphabatical()
     }
     
     //MARK: On Nearby Button Tapped
     @IBAction func onNearbyButtonTouched(_ sender: Any){
-        selectedSortCondition = .nearby
-        setupButton(selectedButton: nearbyButton, unSelectedButton: alphaBaticalButton)
         index = 1
-        fetchOutletsForListing()
+        fetchOutletsForListingNearby()
     }
     
-    private func fetchOutletsForListing(){
-        
-        fetchOutlets?(index,selectedSortCondition){ outlets in
+    internal func fetchOutletsForListingNearby(){
+        selectedSortCondition = .nearby
+        setupButton(selectedButton: nearbyButton, unSelectedButton: alphaBaticalButton)
+        fetchOutletsNearby?(index){ outlets in
             DispatchQueue.main.async {[weak self] in
                 guard let strongSelf = self else { return }
                 if let vc = strongSelf.outletListingViewController{
@@ -66,12 +67,36 @@ class OutletListingContainerViewController: UIViewController {
         }
     }
     
+    internal func fetchOutletsForListingAlphabatical(){
+        
+        selectedSortCondition = .alphabatical
+        setupButton(selectedButton: alphaBaticalButton, unSelectedButton: nearbyButton)
+        fetchOutletsAlphabatical?(index){ outlets in
+            DispatchQueue.main.async {[weak self] in
+                guard let strongSelf = self else { return }
+                if let vc = strongSelf.outletListingViewController{
+                    if strongSelf.index == 1 {
+                        strongSelf.currentlyShownOutlets = []
+                    }
+                    strongSelf.currentlyShownOutlets.append(contentsOf: outlets)
+                    vc.showOutletData(strongSelf.currentlyShownOutlets)
+                }
+            }
+        }
+    }
+    
+    
+    
+    
     //MARK: Setups Button UI
     private func setupButton(selectedButton: UIButton, unSelectedButton: UIButton){
-        selectedButton.backgroundColor = Colors.urbanPointRed
-        unSelectedButton.backgroundColor = .white
-        selectedButton.setTitleColor(.white, for: .normal)
-        unSelectedButton.setTitleColor(.black, for: .normal)
+        DispatchQueue.main.async {[weak self] in
+            guard let _ = self else { return }
+            selectedButton.backgroundColor = Colors.urbanPointRed
+            unSelectedButton.backgroundColor = .white
+            selectedButton.setTitleColor(.white, for: .normal)
+            unSelectedButton.setTitleColor(.black, for: .normal)
+        }
     }
     
     
@@ -90,6 +115,6 @@ class OutletListingContainerViewController: UIViewController {
    
     private func onTableViewEndPositionReached(){
         index += 1
-        fetchOutletsForListing()
+        (selectedSortCondition == .nearby) ? fetchOutletsForListingNearby() : fetchOutletsForListingAlphabatical()
     }
 }

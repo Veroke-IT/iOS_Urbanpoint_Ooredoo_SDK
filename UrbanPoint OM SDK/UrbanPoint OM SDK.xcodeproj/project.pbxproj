@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0409783A29E3CC9F0042009B /* UPOutletMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409783929E3CC9F0042009B /* UPOutletMenuViewController.swift */; };
+		0409783A29E3CC9F0042009B /* UPWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409783929E3CC9F0042009B /* UPWebViewController.swift */; };
 		040981F729E400200042009B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 040981F629E400200042009B /* SDWebImage */; };
 		0409820029E4015D0042009B /* TempConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040981FF29E4015D0042009B /* TempConstants.swift */; };
 		0409820229E4049E0042009B /* UPOutletDetailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409820129E4049E0042009B /* UPOutletDetailComposer.swift */; };
@@ -20,6 +20,9 @@
 		04313A5529DFDD0400E3CCC8 /* OutletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5429DFDD0400E3CCC8 /* OutletDetailViewController.swift */; };
 		04313A5729DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */; };
 		04313A5929DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */; };
+		0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0471208D29EBBFFB003EA8DA /* MBProgressHUD */; };
+		0471209129EBC324003EA8DA /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0471209029EBC324003EA8DA /* WebView.storyboard */; };
+		0471209329EBC375003EA8DA /* UPWebViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209229EBC375003EA8DA /* UPWebViewComposer.swift */; };
 		047439B729D408E7005CB671 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047439B629D408E7005CB671 /* HttpClient.swift */; };
 		047439BA29D40B6F005CB671 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047439B929D40B6F005CB671 /* HomeService.swift */; };
 		047439BC29D40D1D005CB671 /* Extension+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047439BB29D40D1D005CB671 /* Extension+URLRequest.swift */; };
@@ -35,6 +38,20 @@
 		0479971029D6B01D00DDD948 /* OutletRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479970F29D6B01D00DDD948 /* OutletRepository.swift */; };
 		0479971229D6B1CD00DDD948 /* OutletSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479971129D6B1CD00DDD948 /* OutletSearchViewModel.swift */; };
 		047EBD5E29E7E2D200953AF9 /* UPRedeemOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD5D29E7E2D200953AF9 /* UPRedeemOfferViewModel.swift */; };
+		047EBD6029E7F0BA00953AF9 /* UPOutletParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD5F29E7F0BA00953AF9 /* UPOutletParent.swift */; };
+		047EBD6229E801C800953AF9 /* CategoryApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6129E801C800953AF9 /* CategoryApiResponse.swift */; };
+		047EBD6429E8023D00953AF9 /* UPCataegoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6329E8023D00953AF9 /* UPCataegoryViewModel.swift */; };
+		047EBD6829E9525500953AF9 /* NewBrands.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047EBD6729E9525500953AF9 /* NewBrands.storyboard */; };
+		047EBD6A29E9536C00953AF9 /* NewBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6929E9536C00953AF9 /* NewBrandViewController.swift */; };
+		047EBD6C29E9539000953AF9 /* NewBrandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6B29E9539000953AF9 /* NewBrandViewModel.swift */; };
+		047EBD6F29E954CF00953AF9 /* NewBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6E29E954CF00953AF9 /* NewBrand.swift */; };
+		047EBD7129E9559300953AF9 /* OutletService+Extension+NewBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD7029E9559300953AF9 /* OutletService+Extension+NewBrands.swift */; };
+		047EBD7429E9620E00953AF9 /* NewBrandComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD7329E9620E00953AF9 /* NewBrandComposer.swift */; };
+		047EBD7629E9702E00953AF9 /* OutletService+NearbyOutlets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD7529E9702E00953AF9 /* OutletService+NearbyOutlets.swift */; };
+		047EBD7929E970D000953AF9 /* NearbyOutletListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD7829E970D000953AF9 /* NearbyOutletListingViewModel.swift */; };
+		047EBD7F29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD7E29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift */; };
+		047EBD8129EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD8029EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift */; };
+		047EBD8329EAA25C00953AF9 /* ChildOutletListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD8229EAA25C00953AF9 /* ChildOutletListingViewModel.swift */; };
 		04E68A9D29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */; };
 		04E68AB529B8B16600573B2A /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E68AB429B8B16600573B2A /* HomeView.storyboard */; };
 		04E68AB729B8B17200573B2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AB629B8B17200573B2A /* HomeViewController.swift */; };
@@ -89,7 +106,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0409783929E3CC9F0042009B /* UPOutletMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletMenuViewController.swift; sourceTree = "<group>"; };
+		0409783929E3CC9F0042009B /* UPWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPWebViewController.swift; sourceTree = "<group>"; };
 		040981FF29E4015D0042009B /* TempConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempConstants.swift; sourceTree = "<group>"; };
 		0409820129E4049E0042009B /* UPOutletDetailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletDetailComposer.swift; sourceTree = "<group>"; };
 		0409820329E405AB0042009B /* UPHomeViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPHomeViewComposer.swift; sourceTree = "<group>"; };
@@ -101,6 +118,8 @@
 		04313A5429DFDD0400E3CCC8 /* OutletDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailViewController.swift; sourceTree = "<group>"; };
 		04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletDetailViewModel.swift; sourceTree = "<group>"; };
+		0471209029EBC324003EA8DA /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		0471209229EBC375003EA8DA /* UPWebViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPWebViewComposer.swift; sourceTree = "<group>"; };
 		047439B629D408E7005CB671 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		047439B929D40B6F005CB671 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		047439BB29D40D1D005CB671 /* Extension+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLRequest.swift"; sourceTree = "<group>"; };
@@ -116,6 +135,20 @@
 		0479970F29D6B01D00DDD948 /* OutletRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletRepository.swift; sourceTree = "<group>"; };
 		0479971129D6B1CD00DDD948 /* OutletSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletSearchViewModel.swift; sourceTree = "<group>"; };
 		047EBD5D29E7E2D200953AF9 /* UPRedeemOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPRedeemOfferViewModel.swift; sourceTree = "<group>"; };
+		047EBD5F29E7F0BA00953AF9 /* UPOutletParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletParent.swift; sourceTree = "<group>"; };
+		047EBD6129E801C800953AF9 /* CategoryApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryApiResponse.swift; sourceTree = "<group>"; };
+		047EBD6329E8023D00953AF9 /* UPCataegoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCataegoryViewModel.swift; sourceTree = "<group>"; };
+		047EBD6729E9525500953AF9 /* NewBrands.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBrands.storyboard; sourceTree = "<group>"; };
+		047EBD6929E9536C00953AF9 /* NewBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrandViewController.swift; sourceTree = "<group>"; };
+		047EBD6B29E9539000953AF9 /* NewBrandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrandViewModel.swift; sourceTree = "<group>"; };
+		047EBD6E29E954CF00953AF9 /* NewBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrand.swift; sourceTree = "<group>"; };
+		047EBD7029E9559300953AF9 /* OutletService+Extension+NewBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OutletService+Extension+NewBrands.swift"; sourceTree = "<group>"; };
+		047EBD7329E9620E00953AF9 /* NewBrandComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrandComposer.swift; sourceTree = "<group>"; };
+		047EBD7529E9702E00953AF9 /* OutletService+NearbyOutlets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OutletService+NearbyOutlets.swift"; sourceTree = "<group>"; };
+		047EBD7829E970D000953AF9 /* NearbyOutletListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyOutletListingViewModel.swift; sourceTree = "<group>"; };
+		047EBD7E29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCategoriesListingViewComposer.swift; sourceTree = "<group>"; };
+		047EBD8029EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		047EBD8229EAA25C00953AF9 /* ChildOutletListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOutletListingViewModel.swift; sourceTree = "<group>"; };
 		04E68A9829B8AABE00573B2A /* UrbanPoint_OM_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UrbanPoint_OM_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UrbanPoint_OM_SDK.docc; sourceTree = "<group>"; };
 		04E68AB429B8B16600573B2A /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
@@ -175,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */,
 				040981F729E400200042009B /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +229,7 @@
 		04313A5029DFDC9300E3CCC8 /* Outlet */ = {
 			isa = PBXGroup;
 			children = (
+				047EBD6D29E954B700953AF9 /* OutletRepository */,
 				0409820A29E680FC0042009B /* RedeemOffer */,
 				0479970E29D6B00400DDD948 /* OutletSearchService */,
 				04313A5129DFDCA900E3CCC8 /* OutletDetail */,
@@ -212,10 +247,19 @@
 				04313A5429DFDD0400E3CCC8 /* OutletDetailViewController.swift */,
 				04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */,
 				04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */,
-				0409783929E3CC9F0042009B /* UPOutletMenuViewController.swift */,
 				0409820129E4049E0042009B /* UPOutletDetailComposer.swift */,
 			);
 			path = OutletDetail;
+			sourceTree = "<group>";
+		};
+		0471208F29EBC30F003EA8DA /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				0471209029EBC324003EA8DA /* WebView.storyboard */,
+				0409783929E3CC9F0042009B /* UPWebViewController.swift */,
+				0471209229EBC375003EA8DA /* UPWebViewComposer.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		047439B529D408D4005CB671 /* HttpClient */ = {
@@ -232,6 +276,7 @@
 				047439B929D40B6F005CB671 /* HomeService.swift */,
 				047439BD29D413B1005CB671 /* EssentialData.swift */,
 				04FC746D29D978160099E8C5 /* RedisCacheResponse.swift */,
+				047EBD6129E801C800953AF9 /* CategoryApiResponse.swift */,
 			);
 			name = HomeService;
 			sourceTree = "<group>";
@@ -281,6 +326,54 @@
 			path = OutletSearchService;
 			sourceTree = "<group>";
 		};
+		047EBD6629E9520A00953AF9 /* NewBrandsListing */ = {
+			isa = PBXGroup;
+			children = (
+				047EBD6729E9525500953AF9 /* NewBrands.storyboard */,
+				047EBD6929E9536C00953AF9 /* NewBrandViewController.swift */,
+				047EBD6B29E9539000953AF9 /* NewBrandViewModel.swift */,
+				047EBD7329E9620E00953AF9 /* NewBrandComposer.swift */,
+			);
+			path = NewBrandsListing;
+			sourceTree = "<group>";
+		};
+		047EBD6D29E954B700953AF9 /* OutletRepository */ = {
+			isa = PBXGroup;
+			children = (
+				04FC748029DAAF690099E8C5 /* OutletService.swift */,
+				047EBD7029E9559300953AF9 /* OutletService+Extension+NewBrands.swift */,
+				047EBD7529E9702E00953AF9 /* OutletService+NearbyOutlets.swift */,
+				047EBD7229E955AE00953AF9 /* Models */,
+			);
+			path = OutletRepository;
+			sourceTree = "<group>";
+		};
+		047EBD7229E955AE00953AF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04FC748229DAB23E0099E8C5 /* UPOutlet.swift */,
+				047EBD6E29E954CF00953AF9 /* NewBrand.swift */,
+				047EBD5F29E7F0BA00953AF9 /* UPOutletParent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		047EBD7729E970BD00953AF9 /* NearbyOutletListing */ = {
+			isa = PBXGroup;
+			children = (
+				047EBD7829E970D000953AF9 /* NearbyOutletListingViewModel.swift */,
+			);
+			path = NearbyOutletListing;
+			sourceTree = "<group>";
+		};
+		047EBD8429EAA26100953AF9 /* ChildOutletListing */ = {
+			isa = PBXGroup;
+			children = (
+				047EBD8229EAA25C00953AF9 /* ChildOutletListingViewModel.swift */,
+			);
+			path = ChildOutletListing;
+			sourceTree = "<group>";
+		};
 		04E68A8E29B8AABE00573B2A = {
 			isa = PBXGroup;
 			children = (
@@ -300,11 +393,11 @@
 		04E68A9A29B8AABE00573B2A /* UrbanPoint OM SDK */ = {
 			isa = PBXGroup;
 			children = (
+				0471208F29EBC30F003EA8DA /* WebView */,
 				04FC748A29DAD9970099E8C5 /* Assets */,
 				047439B529D408D4005CB671 /* HttpClient */,
 				04E68AB829B8B18C00573B2A /* Helpers */,
 				04313A5029DFDC9300E3CCC8 /* Outlet */,
-				04FC74C829DD4D7F0099E8C5 /* Cateogories */,
 				04E68AB229B8B13B00573B2A /* Home */,
 				04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */,
 				04E68ABB29B8B5F700573B2A /* Assets.xcassets */,
@@ -316,6 +409,7 @@
 		04E68AB229B8B13B00573B2A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04FC74C829DD4D7F0099E8C5 /* Cateogories */,
 				047439B829D40B5F005CB671 /* HomeService */,
 				04E68AB329B8B15300573B2A /* HomeView */,
 			);
@@ -381,14 +475,15 @@
 		04FC747729DA986D0099E8C5 /* OutletListing */ = {
 			isa = PBXGroup;
 			children = (
+				047EBD8429EAA26100953AF9 /* ChildOutletListing */,
+				047EBD7729E970BD00953AF9 /* NearbyOutletListing */,
+				047EBD6629E9520A00953AF9 /* NewBrandsListing */,
 				04FC747829DA98870099E8C5 /* OutletListing.storyboard */,
 				04FC747A29DA9A260099E8C5 /* OutletListingViewController.swift */,
+				04FC748629DAC1500099E8C5 /* OutletListingContainerViewController.swift */,
 				04FC747C29DA9E750099E8C5 /* UPOutletListingTableViewCell.swift */,
 				04FC747E29DAA8510099E8C5 /* UPOfferTableViewCell.swift */,
-				04FC748029DAAF690099E8C5 /* OutletService.swift */,
-				04FC748229DAB23E0099E8C5 /* UPOutlet.swift */,
 				04FC748429DAB4070099E8C5 /* OutletListingPresenter.swift */,
-				04FC748629DAC1500099E8C5 /* OutletListingContainerViewController.swift */,
 			);
 			path = OutletListing;
 			sourceTree = "<group>";
@@ -447,6 +542,9 @@
 			isa = PBXGroup;
 			children = (
 				04FC74C929DD4D980099E8C5 /* UPCategoriesViewController.swift */,
+				047EBD6329E8023D00953AF9 /* UPCataegoryViewModel.swift */,
+				047EBD7E29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift */,
+				047EBD8029EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift */,
 			);
 			path = Cateogories;
 			sourceTree = "<group>";
@@ -480,6 +578,7 @@
 			name = "UrbanPoint OM SDK";
 			packageProductDependencies = (
 				040981F629E400200042009B /* SDWebImage */,
+				0471208D29EBBFFB003EA8DA /* MBProgressHUD */,
 			);
 			productName = "UrbanPoint OM SDK";
 			productReference = 04E68A9829B8AABE00573B2A /* UrbanPoint_OM_SDK.framework */;
@@ -511,6 +610,7 @@
 			mainGroup = 04E68A8E29B8AABE00573B2A;
 			packageReferences = (
 				040981F529E400200042009B /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				0471208C29EBBFFB003EA8DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 			);
 			productRefGroup = 04E68A9929B8AABE00573B2A /* Products */;
 			projectDirPath = "";
@@ -534,6 +634,7 @@
 				04FC74AD29DADA180099E8C5 /* Roboto-LightItalic.ttf in Resources */,
 				04E68ABC29B8B5F700573B2A /* Assets.xcassets in Resources */,
 				04FC74AC29DADA180099E8C5 /* Roboto-BoldItalic.ttf in Resources */,
+				0471209129EBC324003EA8DA /* WebView.storyboard in Resources */,
 				0409820C29E6810A0042009B /* RedeemOffer.storyboard in Resources */,
 				04FC74A329DADA180099E8C5 /* Roboto-Light.ttf in Resources */,
 				04FC74A429DADA180099E8C5 /* Roboto-Medium.ttf in Resources */,
@@ -545,6 +646,7 @@
 				04FC74AE29DADA180099E8C5 /* proxima_nova_alt_thin.ttf in Resources */,
 				04FC747929DA98870099E8C5 /* OutletListing.storyboard in Resources */,
 				04FC74B529DADA180099E8C5 /* Roboto-Bold.ttf in Resources */,
+				047EBD6829E9525500953AF9 /* NewBrands.storyboard in Resources */,
 				04FC74A929DADA180099E8C5 /* Roboto-BlackItalic.ttf in Resources */,
 				04FC74A729DADA180099E8C5 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */,
 				04E68AB529B8B16600573B2A /* HomeView.storyboard in Resources */,
@@ -570,14 +672,20 @@
 				04FC748329DAB23E0099E8C5 /* UPOutlet.swift in Sources */,
 				04E68A9D29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc in Sources */,
 				047439C029D41489005CB671 /* HomeViewModel.swift in Sources */,
+				0471209329EBC375003EA8DA /* UPWebViewComposer.swift in Sources */,
 				04FC748529DAB4070099E8C5 /* OutletListingPresenter.swift in Sources */,
+				047EBD7929E970D000953AF9 /* NearbyOutletListingViewModel.swift in Sources */,
 				04E68B2229B9DDC000573B2A /* Colors.swift in Sources */,
+				047EBD7129E9559300953AF9 /* OutletService+Extension+NewBrands.swift in Sources */,
+				047EBD8329EAA25C00953AF9 /* ChildOutletListingViewModel.swift in Sources */,
 				04E68AC129B9A62800573B2A /* UrbanPoint.swift in Sources */,
 				04E68AB729B8B17200573B2A /* HomeViewController.swift in Sources */,
 				04FC748929DAC2A50099E8C5 /* Extension+UIViewController.swift in Sources */,
 				04FC747D29DA9E750099E8C5 /* UPOutletListingTableViewCell.swift in Sources */,
+				047EBD6C29E9539000953AF9 /* NewBrandViewModel.swift in Sources */,
 				0409820429E405AB0042009B /* UPHomeViewComposer.swift in Sources */,
 				04FC74C229DBE3F90099E8C5 /* OfferRepository.swift in Sources */,
+				047EBD6A29E9536C00953AF9 /* NewBrandViewController.swift in Sources */,
 				04FC747129D9C8B20099E8C5 /* Extension+UIImageView.swift in Sources */,
 				04FC746B29D966DA0099E8C5 /* UPNearbyOutletHomeCollectionViewCell.swift in Sources */,
 				04313A5729DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift in Sources */,
@@ -585,6 +693,7 @@
 				0476759029D6E3C00004C885 /* PopularCategoriesTableViewCell.swift in Sources */,
 				04FC74C429DBE6B50099E8C5 /* OfferDetailResponse.swift in Sources */,
 				0409820029E4015D0042009B /* TempConstants.swift in Sources */,
+				047EBD6F29E954CF00953AF9 /* NewBrand.swift in Sources */,
 				04FC74CA29DD4D980099E8C5 /* UPCategoriesViewController.swift in Sources */,
 				0479971229D6B1CD00DDD948 /* OutletSearchViewModel.swift in Sources */,
 				047EBD5E29E7E2D200953AF9 /* UPRedeemOfferViewModel.swift in Sources */,
@@ -594,25 +703,32 @@
 				04E68ABA29B8B1AD00573B2A /* Extension+UIView.swift in Sources */,
 				0409820229E4049E0042009B /* UPOutletDetailComposer.swift in Sources */,
 				0476758529D6BED10004C885 /* StoredSearchesTableViewCell.swift in Sources */,
+				047EBD7429E9620E00953AF9 /* NewBrandComposer.swift in Sources */,
 				0409820E29E68D200042009B /* UPRedeemOfferViewController.swift in Sources */,
 				04FC74C029DBE3990099E8C5 /* OfferDetailViewModel.swift in Sources */,
 				0476758929D6DE0F0004C885 /* UPHomeCategoriesTableViewCell.swift in Sources */,
 				047439BA29D40B6F005CB671 /* HomeService.swift in Sources */,
 				0479970929D565CF00DDD948 /* OutletSearchViewController.swift in Sources */,
-				0409783A29E3CC9F0042009B /* UPOutletMenuViewController.swift in Sources */,
+				0409783A29E3CC9F0042009B /* UPWebViewController.swift in Sources */,
 				04FC747629D9CFD00099E8C5 /* NewBrandsTableViewCell.swift in Sources */,
 				0409820629E40BDC0042009B /* OfferDetailComposer.swift in Sources */,
+				047EBD8129EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift in Sources */,
 				04E68B2029B9D5FB00573B2A /* CategoriesCollectionViewCell.swift in Sources */,
 				0476758D29D6E1DB0004C885 /* UPUseAgainOfferHomeTableViewCell.swift in Sources */,
+				047EBD6029E7F0BA00953AF9 /* UPOutletParent.swift in Sources */,
 				0479971029D6B01D00DDD948 /* OutletRepository.swift in Sources */,
+				047EBD6429E8023D00953AF9 /* UPCataegoryViewModel.swift in Sources */,
 				04313A5529DFDD0400E3CCC8 /* OutletDetailViewController.swift in Sources */,
+				047EBD7629E9702E00953AF9 /* OutletService+NearbyOutlets.swift in Sources */,
 				04FC747429D9CFC10099E8C5 /* NewBrandsHomeCollectionViewCell.swift in Sources */,
 				04FC748129DAAF690099E8C5 /* OutletService.swift in Sources */,
+				047EBD7F29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift in Sources */,
 				04FC746E29D978160099E8C5 /* RedisCacheResponse.swift in Sources */,
 				0479970C29D56A2E00DDD948 /* TrendingTableViewCell.swift in Sources */,
 				04FC746929D966480099E8C5 /* UPNearbyOutletHomeTableViewCell.swift in Sources */,
 				04FC748729DAC1500099E8C5 /* OutletListingContainerViewController.swift in Sources */,
 				04FC74BE29DBDE9C0099E8C5 /* OfferDetailViewController.swift in Sources */,
+				047EBD6229E801C800953AF9 /* CategoryApiResponse.swift in Sources */,
 				04FC747F29DAA8510099E8C5 /* UPOfferTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -834,6 +950,14 @@
 				kind = branch;
 			};
 		};
+		0471208C29EBBFFB003EA8DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -841,6 +965,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 040981F529E400200042009B /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		0471208D29EBBFFB003EA8DA /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0471208C29EBBFFB003EA8DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

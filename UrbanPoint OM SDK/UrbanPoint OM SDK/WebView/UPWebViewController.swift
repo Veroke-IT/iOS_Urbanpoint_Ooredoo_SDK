@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class UPOutletMenuViewController: UIViewController {
+class UPWebViewController: UIViewController {
 
     
     @IBOutlet weak var webView: WKWebView!
@@ -17,8 +17,6 @@ class UPOutletMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

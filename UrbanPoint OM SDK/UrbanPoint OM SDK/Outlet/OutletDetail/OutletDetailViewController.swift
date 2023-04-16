@@ -155,10 +155,10 @@ class OutletDetailViewController: UIViewController {
   
     
     @IBAction func onMenuTapped(_ sender: Any){
-            let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-            let viewController = UIStoryboard(name: "OutletDetail", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPOutletMenuViewController") as! UPOutletMenuViewController
-            viewController.urlToResource = URL(string: "https://www.google.com")
-            self.navigationController?.pushViewController(viewController, animated: true)
+//            let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
+//            let viewController = UIStoryboard(name: "OutletDetail", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPOutletMenuViewController") as! UPOutletMenuViewController
+//            viewController.urlToResource = URL(string: "https://www.google.com")
+//            self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func onUberTapped(_ sender: Any){

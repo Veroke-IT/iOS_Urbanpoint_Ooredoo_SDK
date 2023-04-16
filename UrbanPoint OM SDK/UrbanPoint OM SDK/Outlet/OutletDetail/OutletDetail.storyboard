@@ -673,40 +673,6 @@
             </objects>
             <point key="canvasLocation" x="-684.73282442748086" y="18.30985915492958"/>
         </scene>
-        <!--Outlet Menu View Controller-->
-        <scene sceneID="7g9-d1-61A">
-            <objects>
-                <viewController storyboardIdentifier="UPOutletMenuViewController" id="FYo-Ro-0sN" customClass="UPOutletMenuViewController" customModule="UrbanPoint_OM_SDK" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="59C-Py-pEB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-rd-CKC">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="hTm-6U-hhO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="hTm-6U-hhO" firstAttribute="trailing" secondItem="fXT-rd-CKC" secondAttribute="trailing" id="TJo-Ly-zzf"/>
-                            <constraint firstItem="fXT-rd-CKC" firstAttribute="leading" secondItem="hTm-6U-hhO" secondAttribute="leading" id="eya-Vi-4IN"/>
-                            <constraint firstItem="hTm-6U-hhO" firstAttribute="bottom" secondItem="fXT-rd-CKC" secondAttribute="bottom" id="ugq-xd-vn5"/>
-                            <constraint firstItem="fXT-rd-CKC" firstAttribute="top" secondItem="hTm-6U-hhO" secondAttribute="top" id="xRe-gF-cmj"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="fXT-rd-CKC" id="0re-aW-NJU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2P4-zu-M8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-41" y="-38"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Gift_Light" width="24.666666030883789" height="28"/>
