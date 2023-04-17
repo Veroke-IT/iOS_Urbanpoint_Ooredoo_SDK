@@ -114,6 +114,7 @@ class OutletListingContainerViewController: UIViewController {
     private func onOfferSelected(_ offer: UPOffer){ onOfferSelected?(offer) }
    
     private func onTableViewEndPositionReached(){
+        if currentlyShownOutlets.count < 20 { return }
         index += 1
         (selectedSortCondition == .nearby) ? fetchOutletsForListingNearby() : fetchOutletsForListingAlphabatical()
     }

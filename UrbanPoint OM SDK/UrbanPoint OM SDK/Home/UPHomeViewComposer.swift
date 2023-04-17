@@ -65,6 +65,7 @@ final class UPHomeViewComposer{
         let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
         let nearbyListingViewModel = UPNewBrandViewModel(outletService: outletRepository)
         let newBrandVC = NewBrandComposer.createNewBrandViewController(viewModel: nearbyListingViewModel, titleString: "New Brands", onBackButtonTapped: pop)
+        
         self.navigationController.pushViewController(newBrandVC, animated: true)
     }
     
@@ -78,7 +79,9 @@ final class UPHomeViewComposer{
     private func onPoularCategorySelected(id: Int,categoryName: String){
         let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
         let nearbyListingViewModel = UPPopularCategoryViewModel(outletRepository: outletRepository, selectedPopularCategoryID: id)
-        let newBrandVC = NewBrandComposer.createNewBrandViewController(viewModel: nearbyListingViewModel, titleString: categoryName, onBackButtonTapped: pop)
+        let searchRepository = UPTrendingSearchHttpRepository(httpClient: httpClient)
+        let searchViewModel = UPOutletSearchViewModel(trendingSearchRespository: searchRepository, outletRespository: outletRepository)
+        let newBrandVC = NewBrandComposer.createNewBrandViewController(viewModel: nearbyListingViewModel, titleString: categoryName,searchViewModel: searchViewModel ,onBackButtonTapped: pop)
         self.navigationController.pushViewController(newBrandVC, animated: true)
     }
     

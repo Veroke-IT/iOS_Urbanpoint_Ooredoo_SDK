@@ -10,26 +10,39 @@ import UIKit
 class NewBrandViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var searchBarView: UIView!
+    @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchImageView: UIImageView!
     
     private(set) var titleString = ""
     var viewModel: OutletListingPresenterContract
+    var searchingViewModel: UPOutletSearchViewModel? = nil
     var listingViewContainer: OutletListingContainerViewController? = nil
-    
+
     var onBackButtonTapped: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchUserLocation()
         titleLabel.text = titleString
+        searchBarView.isHidden = true
+        if searchingViewModel == nil{
+            searchButton.isHidden = true
+            searchImageView.isHidden = true
+            searchButton.isEnabled = false
+        }
         
     }
     
     init?(coder: NSCoder,
           viewModel: OutletListingPresenterContract,
           titleString: String,
+          searchViewModel: UPOutletSearchViewModel? = nil,
           onBackButtonTapped: @escaping () -> Void) {
         self.titleString = titleString
         self.viewModel = viewModel
+        self.searchingViewModel = searchViewModel
         self.onBackButtonTapped = onBackButtonTapped
         super.init(coder: coder)
     }
@@ -40,6 +53,11 @@ class NewBrandViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        fetchListing()
+    }
+    
+    private func fetchListing(){
         if let listingController = self.listingViewContainer{
             if self.viewModel.currentLocation != nil{
                 listingController.fetchOutletsForListingNearby()
@@ -47,6 +65,19 @@ class NewBrandViewController: UIViewController {
                 listingController.fetchOutletsForListingAlphabatical()
             }
         }
+    }
+    
+    @IBAction func onShowSearchBarTapped(_ sender: Any){
+        shouldShowSearchBar(true)
+    }
+    
+    @IBAction func onHideSearchBarTapped(_ sender: Any){
+        searchBar.text = ""
+        shouldShowSearchBar(false)
+    }
+    
+    private func shouldShowSearchBar(_ visiblity: Bool){
+        searchBarView.isHidden = !visiblity
     }
     
     @IBAction func onBackButtonTapped(_ sender: Any){
@@ -68,10 +99,7 @@ class NewBrandViewController: UIViewController {
                 
             }
             listingViewContainer?.onOfferSelected = { offer in
-                let httpClient = UPURLSessionHttpClient(session: .shared)
-                
-                let viewController = UPOfferDetailComposer.createOfferDetailView(offerID: offer.id, httpClient: httpClient)
-                self.navigationController?.present(viewController,animated: true)
+
                 
             }
         }
@@ -95,7 +123,7 @@ class NewBrandViewController: UIViewController {
                               completion: @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void){
         
         showActivityIndicator()
-        viewModel.fetchOutletNearby(searchText: nil, categoryID: nil, collectionID: nil, index: index){[weak self] response in
+        viewModel.fetchOutletNearby(searchText: searchBar.text, categoryID: nil, collectionID: nil, index: index){[weak self] response in
             self?.hideActivityIndicator()
             if let error = response.1{
                 self?.showAlert(title: .alert, message: error)
@@ -109,7 +137,7 @@ class NewBrandViewController: UIViewController {
     private func fetchOutletsAlphabatical(index: Int,
                               completion: @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void){
         showActivityIndicator()
-        viewModel.fetchOutletAlphabatical(searchText: nil, categoryID: nil, collectionID: nil, index: index){[weak self] response in
+        viewModel.fetchOutletAlphabatical(searchText: searchBar.text, categoryID: nil, collectionID: nil, index: index){[weak self] response in
                 self?.hideActivityIndicator()
                 if let error = response.1{
                     self?.showAlert(title: .alert, message: error)
@@ -123,3 +151,15 @@ class NewBrandViewController: UIViewController {
 }
     
 
+extension NewBrandViewController: UITextFieldDelegate{
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+        if let searchText = textField.text,!searchText.isEmpty{
+           fetchListing()
+        }
+        return true
+    }
+    
+    
+}

@@ -13,6 +13,8 @@ import SDWebImage
 
 class OutletDetailViewController: UIViewController {
     
+    var recentlyVisitEventDelegate: RecentlyViewedOutletEventDelegate? = nil
+    
     @IBOutlet weak var offerTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
@@ -63,7 +65,6 @@ class OutletDetailViewController: UIViewController {
                 self?.showAlert(title: .alert, message: errorString,onOkTapped: {
                     self?.navigationController?.popViewController(animated: true)
                 })
-                
             }else{
                 DispatchQueue.main.async {[weak self] in
                     self?.setupUIWithOutlet()
@@ -90,6 +91,7 @@ class OutletDetailViewController: UIViewController {
     
     private func setupUIWithOutlet(){
         
+        recentlyVisitEventDelegate?.saveOutlet(outletName: viewModel?.outlet?.outletName ?? "", outletID: viewModel?.outlet?.id ?? -1 , outletLogoURL: viewModel?.outlet?.outletImage?.absoluteString ?? "")
         outletTitle.text = viewModel?.outlet?.outletName
         outletDescription.text = viewModel?.outlet?.outletDescription
         
@@ -220,6 +222,7 @@ extension OutletDetailViewController: UITableViewDataSource,UITableViewDelegate{
         if let offer = viewModel?.outlet?.outletOffers[indexPath.row]{
             cell.configureCellWith(offer)
         }
+        setupShadowForTopButtons(button: cell.mainView)
         return cell
     }
     
@@ -230,7 +233,7 @@ extension OutletDetailViewController: UITableViewDataSource,UITableViewDelegate{
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let offer = viewModel?.outlet?.outletOffers[indexPath.row]{
-            onOfferSelected?(offer.id)
+            onOfferSelected?(offer.id ?? -1)
         }
     }
 }

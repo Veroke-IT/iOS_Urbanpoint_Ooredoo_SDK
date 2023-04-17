@@ -72,10 +72,10 @@ class UPCategoriesViewController: UIViewController {
             listingViewController?.fetchOutletsNearby = fetchOutletsNearby
             listingViewController?.fetchOutletsAlphabatical = fetchOutletsAlphabatical
             listingViewController?.onOfferSelected = { offer in
-                let httpClient = UPURLSessionHttpClient(session: .shared)
-              
-                    let viewController = UPOfferDetailComposer.createOfferDetailView(offerID: offer.id, httpClient: httpClient)
-                self.navigationController?.present(viewController,animated: true)
+//                let httpClient = UPURLSessionHttpClient(session: .shared)
+//              
+//                    let viewController = UPOfferDetailComposer.createOfferDetailView(offerID: offer.id, httpClient: httpClient)
+//                self.navigationController?.present(viewController,animated: true)
                 
             }
         }

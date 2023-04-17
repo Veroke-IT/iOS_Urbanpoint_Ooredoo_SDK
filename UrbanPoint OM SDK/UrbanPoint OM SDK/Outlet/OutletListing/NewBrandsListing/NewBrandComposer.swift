@@ -20,10 +20,13 @@ final class NewBrandComposer{
     
     static func createNewBrandViewController(viewModel: OutletListingPresenterContract,
                                              titleString: String,
+                                             searchViewModel: UPOutletSearchViewModel? = nil,
                                              onBackButtonTapped: @escaping () -> Void) -> UIViewController{
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
         let viewController = UIStoryboard(name: "NewBrands", bundle: storyBoardBundle).instantiateViewController(identifier: "NewBrandViewController") { coder in
-            NewBrandViewController(coder: coder, viewModel: viewModel, titleString: titleString, onBackButtonTapped: onBackButtonTapped)
+            
+   
+            NewBrandViewController(coder: coder, viewModel: viewModel, titleString: titleString, searchViewModel: searchViewModel, onBackButtonTapped: onBackButtonTapped)
         }
         
        // viewController.homePresenter = viewModel

@@ -17,7 +17,7 @@ class NewBrandsHomeCollectionViewCell: UICollectionViewCell {
     
     internal func configureOutletCellWith(_ outlet: NewBrand){
 
-        if let url = URL(string: "https://urbanpoint-storage.azureedge.net/test/uploads_staging/uploads/" + outlet.outletImage){
+        if let url = URL(string: imageBaseURL + outlet.outletImage){
             outletImageView.sd_setImage(with: url)
         }
         outletCategoryLabel.text = outlet.categoryName

@@ -34,6 +34,7 @@ class UPOutletListingTableViewCell: UITableViewCell {
     @IBOutlet weak var offerButtonLabel: UILabel!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var seperatorView: UIView!
+    @IBOutlet weak var showOfferButton: UIButton!
     
     private var onOfferSelected: ((UPOffer) -> Void)?
     private var onCellExpanded:  ((UPOutletListingTableViewCell.Outlet,IndexPath) -> Void)?
@@ -85,6 +86,11 @@ class UPOutletListingTableViewCell: UITableViewCell {
             outletAddressLabel.text = outlet.distance
             if let url = outlet.image{
                 outletImageView.sd_setImage(with: url)
+            }
+            if outlet.offers.count == 0{
+                offerButtonLabel.isHidden = true
+                arrowImageView.isHidden = true
+                showOfferButton.isEnabled = false
             }
         }
     }

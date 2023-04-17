@@ -7,15 +7,22 @@
 
 import Foundation
 
+struct RecentlyViewedOutlet: Identifiable,Codable{
+    var id: Int
+    let outletName: String
+    let outletLogoURL: String
+}
+
 final class UPHomeViewModel{
     
     private let homeService: HomeService
-    
+    private(set) var recentlyViewedOutlet: [RecentlyViewedOutlet] = []
     private(set) var nearbyOutlet: [NearbyOutlet] = []
     private(set) var useAgainOffers: [UseAgainOffer] = []
     private(set) var popularCategories: [PopularCategory] = []
     private(set) var categories: [Category] = []
     private(set) var newBrand: [NewBrand] = []
+    
     
     init(homeService: HomeService) {
         self.homeService = homeService
@@ -44,6 +51,11 @@ final class UPHomeViewModel{
             case .failure(let error): completion(error.localizedDescription)
             }
         }
+    }
+    
+    internal func fetchRecentlyViewedOutlets(){
+        recentlyViewedOutlet = UserDefaultsRecentlyViewedOutletWrapper.sharedInstance
+            .getRecentlyViewedOutlet()
     }
     
 }

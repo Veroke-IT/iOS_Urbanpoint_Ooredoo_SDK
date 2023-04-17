@@ -191,12 +191,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-4C-kKm">
                                         <rect key="frame" x="29.333333333333343" y="450.99999999999994" width="334.33333333333326" height="50"/>
-                                        <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="UrbanPointRed"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="e5M-wN-qsf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                        <state key="normal" title="Offer used">
+                                        <state key="normal" title="Redeem Offer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

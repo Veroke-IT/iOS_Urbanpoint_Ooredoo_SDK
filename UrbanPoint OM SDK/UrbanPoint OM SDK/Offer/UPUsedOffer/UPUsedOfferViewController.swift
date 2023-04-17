@@ -55,7 +55,7 @@ extension UPUsedOfferViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     private func createModel(with offer: UPOffer) -> UPUsedOfferTableViewCell.Offer{
-        UPUsedOfferTableViewCell.Offer(outletName: offer.outletName, description: offer.description, confirmationCode: String(offer.id), date: offer.endDatetime, image: URL(string: imageBaseURL + offer.image))
+        UPUsedOfferTableViewCell.Offer(outletName: offer.outletName ?? "", description: offer.description ?? "", confirmationCode: String(offer.id ?? -1), date: offer.endDatetime ?? "", image: URL(string: imageBaseURL + (offer.image ?? "")))
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

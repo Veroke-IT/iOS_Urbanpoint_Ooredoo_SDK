@@ -42,16 +42,30 @@ final class UPOutletDetailViewModel{
             switch result {
             case .success(let data):
                 if let data = data.first{
-                    self.outlet = UPOutletDetailViewModel.Outlet(id: data.id ?? -1 , outletName: data.name ?? "", outletDescription: data.description ?? "", outletAddress: data.address ?? "", outletOffers: data.offers ?? [], outletTimings: data.outletTiming ?? "", outletImage: URL(string: imageBaseURL + (data.image ?? "")), outletLongitude: data.longitude, outletLatitude: data.latitude , outletPhonenNumber: [data.phones ?? ""], outletMenu:  [], bannerImages:data.outletImages.isEmpty ? [URL(string:  imageBaseURL + data.image)] : data.outletImages.compactMap({ URL(string: imageBaseURL + $0.file )
-                    }) )
+                    self.outlet = self.convertUPOutletToOutlet(outlet: data)
+                    
+                    
                     completion(nil)
-                }else{
+                }
+                else{
                     completion("Oops something went wrong")
                 }
             case .failure(let failure):
                 completion(failure.localizedDescription)
             }
         }
+    }
+    
+    private func convertUPOutletToOutlet(outlet: UPOutlet) -> UPOutletDetailViewModel.Outlet{
+        var bannerImages = [URL(string: imageBaseURL + ( outlet.image ?? ""))]
+        
+        if let images = outlet.outletImages, !images.isEmpty{
+            bannerImages = images.compactMap({ image in
+                URL(string:  imageBaseURL + (image.file ?? ""))
+            })
+        }
+        
+        return UPOutletDetailViewModel.Outlet(id: outlet.id ?? -1 , outletName: outlet.name ?? "" , outletDescription: outlet.description ?? "" , outletAddress: outlet.address ?? "", outletOffers: outlet.offers ?? [], outletTimings: outlet.timings ?? "" , outletImage: URL(string: imageBaseURL + (outlet.image ?? "")), outletLongitude: outlet.longitude ?? 0, outletLatitude: outlet.latitude ?? 0, outletPhonenNumber: [outlet.phones ?? ""], outletMenu: outlet.outletMenu ?? [], bannerImages: bannerImages)
     }
     
 }

@@ -33,11 +33,71 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Brands" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2t-Fr-RTu">
-                                        <rect key="frame" x="68" y="20.666666666666671" width="309" height="19"/>
+                                        <rect key="frame" x="68" y="15.666666666666673" width="309" height="28.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <color key="textColor" name="UrbanPointRed"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nto-uX-T1F">
+                                        <rect key="frame" x="348" y="0.0" width="21" height="60"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-5N-Zp9">
+                                        <rect key="frame" x="68" y="8.6666666666666714" width="309" height="43"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-hX-qsf">
+                                                <rect key="frame" x="16" y="4" width="21" height="35"/>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search offers" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-7l-iiX">
+                                                <rect key="frame" x="40.999999999999986" y="0.0" width="201.66666666666663" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="TLg-XP-1iP" id="onM-jI-GTF"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqC-yW-Dbh">
+                                                <rect key="frame" x="242.66666666666671" y="4" width="56.333333333333343" height="35"/>
+                                                <color key="tintColor" name="UrbanPointDarkGrey"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="cross.fill" catalog="system" title=" "/>
+                                                <connections>
+                                                    <action selector="onHideSearchBarTapped:" destination="TLg-XP-1iP" eventType="touchUpInside" id="yUG-KU-z5G"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="HC7-7l-iiX" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" id="A8L-MK-Pb0"/>
+                                            <constraint firstAttribute="bottom" secondItem="qBq-hX-qsf" secondAttribute="bottom" constant="4" id="OyZ-UM-hCz"/>
+                                            <constraint firstItem="XqC-yW-Dbh" firstAttribute="leading" secondItem="HC7-7l-iiX" secondAttribute="trailing" id="TWq-3s-XiT"/>
+                                            <constraint firstItem="HC7-7l-iiX" firstAttribute="leading" secondItem="qBq-hX-qsf" secondAttribute="trailing" constant="4" id="U1x-5f-Oe6"/>
+                                            <constraint firstItem="XqC-yW-Dbh" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" constant="4" id="Uqw-2P-Dog"/>
+                                            <constraint firstItem="qBq-hX-qsf" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" constant="4" id="WsP-Dm-dBQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="XqC-yW-Dbh" secondAttribute="bottom" constant="4" id="g25-CD-O19"/>
+                                            <constraint firstAttribute="trailing" secondItem="XqC-yW-Dbh" secondAttribute="trailing" constant="10" id="mq6-em-GKM"/>
+                                            <constraint firstItem="qBq-hX-qsf" firstAttribute="leading" secondItem="wmm-5N-Zp9" secondAttribute="leading" constant="16" id="pG1-vb-G9f"/>
+                                            <constraint firstAttribute="bottom" secondItem="HC7-7l-iiX" secondAttribute="bottom" id="xFo-nh-INU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="UrbanPointDarkGrey"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4C-cb-3lK">
+                                        <rect key="frame" x="337.66666666666669" y="0.0" width="42" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="onShowSearchBarTapped:" destination="TLg-XP-1iP" eventType="touchUpInside" id="U4g-RE-NlZ"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJn-A2-Rsa">
                                         <rect key="frame" x="19" y="12.666666666666671" width="30" height="35"/>
                                         <state key="normal" title="Button"/>
@@ -52,12 +112,23 @@
                                     <constraint firstItem="c2t-Fr-RTu" firstAttribute="centerY" secondItem="WWI-aO-BqL" secondAttribute="centerY" id="0DU-lz-h6v"/>
                                     <constraint firstAttribute="trailing" secondItem="c2t-Fr-RTu" secondAttribute="trailing" constant="16" id="3EY-qx-GHG"/>
                                     <constraint firstItem="aJn-A2-Rsa" firstAttribute="centerX" secondItem="wem-bg-7HE" secondAttribute="centerX" id="59d-6n-bVt"/>
+                                    <constraint firstItem="nto-uX-T1F" firstAttribute="top" secondItem="WWI-aO-BqL" secondAttribute="top" id="CEi-rh-JML"/>
                                     <constraint firstItem="wem-bg-7HE" firstAttribute="leading" secondItem="WWI-aO-BqL" secondAttribute="leading" constant="24" id="Cf5-Bb-xHd"/>
                                     <constraint firstItem="aJn-A2-Rsa" firstAttribute="width" secondItem="wem-bg-7HE" secondAttribute="width" multiplier="1.5" id="H0x-bK-l0v"/>
                                     <constraint firstAttribute="height" constant="60" id="NpU-CX-SSC"/>
+                                    <constraint firstAttribute="trailing" secondItem="nto-uX-T1F" secondAttribute="trailing" constant="24" id="P3e-C7-wkL"/>
                                     <constraint firstItem="aJn-A2-Rsa" firstAttribute="centerY" secondItem="wem-bg-7HE" secondAttribute="centerY" id="P6Y-Hw-FhB"/>
+                                    <constraint firstItem="wmm-5N-Zp9" firstAttribute="centerX" secondItem="c2t-Fr-RTu" secondAttribute="centerX" id="PIN-6e-rc7"/>
+                                    <constraint firstItem="wmm-5N-Zp9" firstAttribute="height" secondItem="c2t-Fr-RTu" secondAttribute="height" multiplier="1.5" id="QMa-pf-Gwh"/>
+                                    <constraint firstItem="wmm-5N-Zp9" firstAttribute="centerY" secondItem="c2t-Fr-RTu" secondAttribute="centerY" id="SVT-PM-Bys"/>
+                                    <constraint firstItem="o4C-cb-3lK" firstAttribute="centerX" secondItem="nto-uX-T1F" secondAttribute="centerX" id="T4Y-al-T1g"/>
+                                    <constraint firstItem="o4C-cb-3lK" firstAttribute="width" secondItem="nto-uX-T1F" secondAttribute="width" multiplier="2" id="Ucd-uJ-tZQ"/>
+                                    <constraint firstItem="wmm-5N-Zp9" firstAttribute="width" secondItem="c2t-Fr-RTu" secondAttribute="width" id="WKg-f4-43p"/>
+                                    <constraint firstAttribute="bottom" secondItem="nto-uX-T1F" secondAttribute="bottom" id="bGT-rF-3Wk"/>
                                     <constraint firstItem="c2t-Fr-RTu" firstAttribute="leading" secondItem="wem-bg-7HE" secondAttribute="trailing" constant="24" id="cWq-Jb-x03"/>
+                                    <constraint firstItem="o4C-cb-3lK" firstAttribute="centerY" secondItem="nto-uX-T1F" secondAttribute="centerY" id="h8K-Lp-3nm"/>
                                     <constraint firstItem="aJn-A2-Rsa" firstAttribute="height" secondItem="wem-bg-7HE" secondAttribute="height" multiplier="1.75" id="uXy-Vj-RXg"/>
+                                    <constraint firstItem="o4C-cb-3lK" firstAttribute="height" secondItem="nto-uX-T1F" secondAttribute="height" id="ug7-Q4-qAm"/>
                                     <constraint firstItem="wem-bg-7HE" firstAttribute="centerY" secondItem="WWI-aO-BqL" secondAttribute="centerY" id="xPN-z4-B63"/>
                                 </constraints>
                             </view>
@@ -81,6 +152,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="HC7-7l-iiX" id="WlY-uA-z3h"/>
+                        <outlet property="searchBarView" destination="wmm-5N-Zp9" id="Kfq-Dd-yqy"/>
+                        <outlet property="searchButton" destination="o4C-cb-3lK" id="0c5-9t-XbY"/>
+                        <outlet property="searchImageView" destination="nto-uX-T1F" id="EJf-NE-DE3"/>
                         <outlet property="titleLabel" destination="c2t-Fr-RTu" id="5HP-La-H6a"/>
                     </connections>
                 </viewController>
@@ -99,6 +174,11 @@
     </scenes>
     <resources>
         <image name="back_button" width="27" height="20"/>
+        <image name="cross.fill" catalog="system" width="128" height="116"/>
+        <image name="search_icon" width="21" height="20.5"/>
+        <namedColor name="UrbanPointDarkGrey">
+            <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="UrbanPointRed">
             <color red="1" green="0.0" blue="0.12099999934434891" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

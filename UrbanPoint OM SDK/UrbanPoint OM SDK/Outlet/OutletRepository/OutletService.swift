@@ -118,6 +118,17 @@ final class URLSessionOutletRepository: OutletRepository{
                         let jsonDecoded = try JSONDecoder().decode(UPOutletParentApiResponse.self, from: response.0)
                         completion(.success(jsonDecoded.data))
                     }
+                    catch DecodingError.keyNotFound(let key, let context) {
+                        Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
+                    } catch DecodingError.valueNotFound(let type, let context) {
+                        Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
+                    } catch DecodingError.typeMismatch(let type, let context) {
+                        Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+                    } catch DecodingError.dataCorrupted(let context) {
+                        Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
+                    } catch let error as NSError {
+                        NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
+                    }
                     catch let error{
                         completion(.failure(error))
                     }
@@ -162,6 +173,17 @@ final class URLSessionOutletRepository: OutletRepository{
                     do{
                         let jsonDecoded = try JSONDecoder().decode(UPOutletApiResponse.self, from: response.0)
                         completion(.success(jsonDecoded.data))
+                    }
+                    catch DecodingError.keyNotFound(let key, let context) {
+                        Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
+                    } catch DecodingError.valueNotFound(let type, let context) {
+                        Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
+                    } catch DecodingError.typeMismatch(let type, let context) {
+                        Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+                    } catch DecodingError.dataCorrupted(let context) {
+                        Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
+                    } catch let error as NSError {
+                        NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
                     }
                     catch let error{
                         completion(.failure(error))

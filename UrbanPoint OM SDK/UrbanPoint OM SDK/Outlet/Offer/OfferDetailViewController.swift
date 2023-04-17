@@ -71,6 +71,9 @@ class OfferDetailViewController: UIViewController {
     @IBAction func onTermsAndConditionTapped(_ sender: Any){
         TermsAndConditions?()
     }
-    @IBAction func onRedeemOfferTapped(_ sender: Any){}
+    
+    @IBAction func onRedeemOfferTapped(_ sender: Any){
+        redeemOffer?()
+    }
     
 }

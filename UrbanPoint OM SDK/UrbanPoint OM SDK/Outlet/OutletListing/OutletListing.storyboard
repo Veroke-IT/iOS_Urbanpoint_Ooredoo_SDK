@@ -308,7 +308,6 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50h-Nm-Lfw">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="100"/>
-                                                            <color key="backgroundColor" red="1" green="0.68286195620000001" blue="0.90864874529999995" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="4Y5-It-Dl9"/>
                                                             </constraints>
@@ -547,6 +546,7 @@
                                             <outlet property="outletImageView" destination="N0e-hv-Thj" id="vEk-66-g0Y"/>
                                             <outlet property="outletNameLabel" destination="Ko2-h0-uVM" id="yuM-Y4-E32"/>
                                             <outlet property="seperatorView" destination="eZq-Td-F75" id="HER-ac-hAl"/>
+                                            <outlet property="showOfferButton" destination="5oy-AV-wtN" id="XXz-xl-dP5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

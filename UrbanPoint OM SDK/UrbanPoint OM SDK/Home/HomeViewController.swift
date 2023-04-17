@@ -47,14 +47,15 @@ class UPHomeViewController: UIViewController {
         homePresenter.fetchEssentialData {[weak self] errorString in
             if let errorString{
                 self?.hideActivityIndicator()
-                debugPrint(errorString)
+                self?.showAlert(title: .alert, message: errorString)
             }else{
                 self?.homePresenter.fetchCachedData {[weak self]  errorString in
                     self?.hideActivityIndicator()
                     if let errorString{
-                        debugPrint(errorString)
+                        self?.showAlert(title: .alert, message: errorString)
                     }else{
                         DispatchQueue.main.async {
+                            self?.homePresenter.fetchRecentlyViewedOutlets()
                             self?.tableView.reloadData()
                         }
                     }
@@ -79,17 +80,20 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
             return homePresenter.categories.count > 0 ? UITableView.automaticDimension : 0
         }
         else if indexPath.row == 1{
-            return (homePresenter.useAgainOffers.count > 0) ? UITableView.automaticDimension : 0
+            return (homePresenter.recentlyViewedOutlet.count > 0) ? UITableView.automaticDimension : 0
         }
         else if indexPath.row == 2{
-            return (homePresenter.nearbyOutlet.count > 0) ? UITableView.automaticDimension : 0
+            return (homePresenter.useAgainOffers.count > 0) ? UITableView.automaticDimension : 0
         }
         else if indexPath.row == 3{
+            return (homePresenter.nearbyOutlet.count > 0) ? UITableView.automaticDimension : 0
+        }
+        else if indexPath.row == 4{
             
             return (homePresenter.popularCategories.count > 0) ? fetchTableRowSizeForPopularCategories() : 0
             
         }
-        else if indexPath.row == 4{
+        else if indexPath.row == 5{
             return (homePresenter.newBrand.count > 0) ?
                 UITableView.automaticDimension : 0
         }
@@ -105,7 +109,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,17 +119,21 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
                 let cell = tableView.dequeueReusableCell(withIdentifier: UPHomeCategoriesTableViewCell.reuseIdentifier, for: indexPath) as! UPHomeCategoriesTableViewCell
             cell.configureCell(with: homePresenter.categories, onCategorySelected: onCategorySelected)
                 return cell
-            
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPRecentlyViewedTableViewCell.reuseIdentifier, for: indexPath)
+            as! UPRecentlyViewedTableViewCell
+            cell.configureCell(with: homePresenter.recentlyViewedOutlet, onOutletSelected: onRecentlyViewedOutletSelected)
+            return cell
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPUseAgainOfferHomeTableViewCell.reuseIdentifier, for: indexPath) as! UPUseAgainOfferHomeTableViewCell
             cell.configureCell(data: [], onOfferSelected: onUsedOfferSelected, onViewAllTapped: onViewAllUsedOffersTapped )
             return cell
-        case 2:
+        case 3:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: UPNearbyOutletHomeTableViewCell.reuseIdentifier, for: indexPath) as! UPNearbyOutletHomeTableViewCell
             cell.configureCell(data: homePresenter.nearbyOutlet, onViewAllTapped: onViewAllNearbyTapped, onOutletSelected: onNeerbyOutletSelected)
             return cell
-        case 3:
+        case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPPopularCategoriesTableViewCell.reuseIdentifier, for: indexPath) as! UPPopularCategoriesTableViewCell
             cell.configureCell(with: homePresenter.popularCategories)
             cell.onPopularCategoruSelected = onPopularCategorySelected
@@ -134,7 +142,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
                 self.tableView.reloadRows(at: [indexPath], with: .none)
             }
             return cell
-        case 4:
+        case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: NewBrandsTableViewCell.reuseIdentifier, for: indexPath) as! NewBrandsTableViewCell
             cell.configureCell(data: homePresenter.newBrand,
                                onViewAllTapped: onViewAllNewBrandTapped,
@@ -182,4 +190,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         showOutletDetail?(nearbyOutlet.id)
     }
     
+    private func onRecentlyViewedOutletSelected(_ id: Int){
+        showOutletDetail?(id)
+    }
 }

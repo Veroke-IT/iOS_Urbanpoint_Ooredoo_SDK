@@ -25,6 +25,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw7-g7-0fk">
+                                <rect key="frame" x="6.6666666666666643" y="85.666666666666671" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                <connections>
+                                    <action selector="onBackButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0xK-Ha-saD"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button" translatesAutoresizingMaskIntoConstraints="NO" id="1Xc-et-Zkf">
                                 <rect key="frame" x="24" y="83" width="40" height="40"/>
                                 <color key="tintColor" name="UrbanPointGrey"/>
@@ -193,7 +201,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pw7-g7-0fk" firstAttribute="width" secondItem="1Xc-et-Zkf" secondAttribute="width" multiplier="1.875" id="3vc-t5-02Y"/>
                             <constraint firstItem="AYk-dm-jTS" firstAttribute="top" secondItem="1Xc-et-Zkf" secondAttribute="bottom" constant="30" id="4Wk-uP-3T4"/>
+                            <constraint firstItem="pw7-g7-0fk" firstAttribute="centerY" secondItem="1Xc-et-Zkf" secondAttribute="centerY" id="69v-QO-bQq"/>
                             <constraint firstItem="3qu-lL-OZN" firstAttribute="leading" secondItem="CAf-Ho-gjZ" secondAttribute="leading" id="80k-hU-BBu"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ec9-8J-FpA" secondAttribute="trailing" constant="16" id="8n0-Bm-deB"/>
                             <constraint firstItem="kuc-bL-WBH" firstAttribute="top" secondItem="1Xc-et-Zkf" secondAttribute="bottom" constant="67" id="Mgo-dF-ZIx"/>
@@ -207,10 +217,12 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AYk-dm-jTS" secondAttribute="trailing" constant="16" id="j4I-uh-KrE"/>
                             <constraint firstItem="AYk-dm-jTS" firstAttribute="leading" secondItem="1Xc-et-Zkf" secondAttribute="leading" id="jVL-43-JEU"/>
                             <constraint firstItem="CAf-Ho-gjZ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="mhS-Rl-jVX"/>
+                            <constraint firstItem="pw7-g7-0fk" firstAttribute="centerX" secondItem="1Xc-et-Zkf" secondAttribute="centerX" id="reO-pc-bGo"/>
                             <constraint firstItem="3qu-lL-OZN" firstAttribute="top" secondItem="CAf-Ho-gjZ" secondAttribute="top" constant="24" id="ruv-hR-cgH"/>
                             <constraint firstAttribute="trailing" secondItem="CAf-Ho-gjZ" secondAttribute="trailing" id="rve-j5-HJZ"/>
                             <constraint firstItem="kuc-bL-WBH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="sbV-Zb-b7l"/>
                             <constraint firstItem="3qu-lL-OZN" firstAttribute="trailing" secondItem="CAf-Ho-gjZ" secondAttribute="trailing" id="uHu-Rj-kDJ"/>
+                            <constraint firstItem="pw7-g7-0fk" firstAttribute="height" secondItem="1Xc-et-Zkf" secondAttribute="height" multiplier="0.875" id="zxy-uE-gsb"/>
                         </constraints>
                     </view>
                     <connections>

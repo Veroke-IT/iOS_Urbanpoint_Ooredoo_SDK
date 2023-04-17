@@ -22,6 +22,7 @@ final class UPOutletDetailComposer{
     internal func start(){
         let outletDetailVC = UPOutletDetailComposer.createOutletDetailView(outletID: outletID, httpClient: httpClient) as! OutletDetailViewController
         outletDetailVC.onOfferSelected = onOfferSelected
+        outletDetailVC.recentlyVisitEventDelegate = UserDefaultsRecentlyViewedOutletWrapper.sharedInstance
         navigationController.pushViewController(outletDetailVC, animated: true)
         
     }
