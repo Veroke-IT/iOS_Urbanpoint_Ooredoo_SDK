@@ -19,13 +19,15 @@ class UPHomeViewController: UIViewController {
     var showOutletDetail: ((Int) -> Void)?
     var showUseAgainOffer: ((Int) -> Void)?
     
-    
     var onNewBrandsTapped: (() -> Void)?
+    var onParentBrandSelected: ((Int,String) -> Void)?
     var onViewAllNearbyOutletsTapped: (() -> Void)?
     
     var onCategorySelected: ((Int) -> Void)?
     var onPopoularCategorySelected: ((Int,String) -> Void)?
     
+    var onSettingButtonTapped: (() -> Void)?
+    var onTopBarTapped: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +66,13 @@ class UPHomeViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction private func onSettingsButtonTapped(_ sender: Any){
+        onSettingButtonTapped?()
+    }
   
     @IBAction private func onTopBarTapped(_ sender: Any){
-        let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletSearch", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "OutletSearchViewController") as! OutletSearchViewController
-        navigationController?.pushViewController(viewController, animated: true)
+        onTopBarTapped?()
     }
     
 }
@@ -178,8 +182,13 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
     }
    
     private func onNewBrandSelected(_ brand: NewBrand){
+        
         guard let id = Int(brand.id) else { return }
-        showOutletDetail?(id)
+        if brand.isMultipleChild{
+            onParentBrandSelected?(id,brand.parentOutletName)
+        }else{
+            showOutletDetail?(id)
+        }
     }
     
     private func onViewAllNearbyTapped(){

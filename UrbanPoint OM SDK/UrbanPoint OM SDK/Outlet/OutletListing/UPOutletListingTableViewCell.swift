@@ -92,6 +92,9 @@ class UPOutletListingTableViewCell: UITableViewCell {
                 arrowImageView.isHidden = true
                 showOfferButton.isEnabled = false
             }
+            if outlet.isExpanded{
+                offerButtonLabel.text = "Hide all offers"
+            }
         }
     }
     @IBAction func nextButtonTouched(_ sender: Any){

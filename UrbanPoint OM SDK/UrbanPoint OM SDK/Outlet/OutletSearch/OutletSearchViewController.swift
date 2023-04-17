@@ -20,6 +20,10 @@ class OutletSearchViewController: UIViewController {
         return viewModel
     }()
     
+    var onBackButtonTapped: (() -> Void)?
+    var showOutlet: ((UPOutletListingTableViewCell.Outlet) -> Void)?
+    var onOfferSelected: ((UPOffer) -> Void)?
+    
     //MARK: UIState Variables
     var isShowingTrendingSearches: Bool = true{
         didSet{
@@ -40,18 +44,10 @@ class OutletSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         setupInitialUI()
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         fetchTrendingSearches()
     }
+    
     
     private func setupInitialUI(){
         outletListinContainerView.isHidden = true
@@ -121,8 +117,10 @@ class OutletSearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OutletListing"{
             outletListingController = segue.destination as? OutletListingViewController
-            outletListingController?.onOfferSelected = onOfferSelected
             outletListingController?.onTableEndPoisitionReached = onTableEndReached
+            outletListingController?.onOfferSelected = onOfferSelected
+            outletListingController?.onOutletSelected = showOutlet 
+            
         }
     }
     
@@ -155,18 +153,6 @@ class OutletSearchViewController: UIViewController {
         }
     }
     
-    private func onOfferSelected(offer: UPOffer){
-        
-        let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
-        let offerRepository = URLSessionOfferRepository(httpClient: httpClient)
-        let viewModel = OfferDetailViewModel(offerID: offer.id, offerRepository: offerRepository)
-        let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "Offer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "OfferDetailViewController") as! OfferDetailViewController
-        
-        viewController.offerDetailViewModel = viewModel
-        navigationController?.present(viewController, animated: true)
-        
-    }
 }
 
 extension OutletSearchViewController: UITableViewDataSource,UITableViewDelegate{

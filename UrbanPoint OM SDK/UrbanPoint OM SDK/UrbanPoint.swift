@@ -27,10 +27,11 @@ final public class UrbanPoint{
         FontLoader.loadFont(name: "Roboto-Regular")
 
         let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
-
+//        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
+//        let offerRepository = URLSessionOfferRepository(httpClient: httpClient)
+//        let homeService = HttpHomeService(httpClient: httpClient)
 
         let homeViewController = UPHomeViewComposer(navigationController: navigationController, httpClient: httpClient)
-
         homeViewController.start()
         context.present(navigationController, animated: true)
     }

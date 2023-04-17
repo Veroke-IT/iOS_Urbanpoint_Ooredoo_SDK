@@ -9,14 +9,19 @@ import UIKit
 
 class UPCategoriesViewController: UIViewController {
 
-     @IBOutlet private weak var collectionView: UICollectionView!
-     @IBOutlet private weak var titleLabel: UILabel!
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var listingContainer: UIView!
     
     var titleString: String = ""
     
     private var listingViewController: OutletListingContainerViewController? = nil
     var viewModel : UPCategoryViewModel
+  
     var onBackButtonTapped: (() -> Void)? = nil
+    var showOutlet: ((UPOutletListingTableViewCell.Outlet) -> Void)?
+    var onOfferSelected: ((UPOffer) -> Void)?
   
     
     override func viewDidLoad() {
@@ -25,12 +30,16 @@ class UPCategoriesViewController: UIViewController {
         titleLabel.text = titleString
         viewModel.fetchUserLocation()
         
+        listingContainer.isHidden = true
         showActivityIndicator()
         viewModel.fetchCategories(completion: {[weak self] errorString in
             self?.hideActivityIndicator()
             if let errorString{
                     self?.showAlert(title: .alert, message: errorString)
             }else{
+                DispatchQueue.main.async {
+                    self?.listingContainer.isHidden = false
+                }
                 if let listingController = self?.listingViewController{
                     if  self?.viewModel.currentLocation != nil{
                         listingController.fetchOutletsForListingNearby()
@@ -71,13 +80,8 @@ class UPCategoriesViewController: UIViewController {
             listingViewController = segue.destination as? OutletListingContainerViewController
             listingViewController?.fetchOutletsNearby = fetchOutletsNearby
             listingViewController?.fetchOutletsAlphabatical = fetchOutletsAlphabatical
-            listingViewController?.onOfferSelected = { offer in
-//                let httpClient = UPURLSessionHttpClient(session: .shared)
-//              
-//                    let viewController = UPOfferDetailComposer.createOfferDetailView(offerID: offer.id, httpClient: httpClient)
-//                self.navigationController?.present(viewController,animated: true)
-                
-            }
+            listingViewController?.onOfferSelected = onOfferSelected
+            listingViewController?.onOutletSelected = showOutlet
         }
     }
     

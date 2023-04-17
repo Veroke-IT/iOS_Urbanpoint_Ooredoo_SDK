@@ -7,6 +7,14 @@
 
 import UIKit
 
+
+enum UPOutletListingType{
+    case nearby
+    case newBrand
+    case child(Int,String)
+    case popularCategory(Int,String)
+}
+
 class OutletListingContainerViewController: UIViewController {
 
     //MARK: IB Refrences

@@ -23,6 +23,7 @@ final class UPOutletDetailComposer{
         let outletDetailVC = UPOutletDetailComposer.createOutletDetailView(outletID: outletID, httpClient: httpClient) as! OutletDetailViewController
         outletDetailVC.onOfferSelected = onOfferSelected
         outletDetailVC.recentlyVisitEventDelegate = UserDefaultsRecentlyViewedOutletWrapper.sharedInstance
+        outletDetailVC.onBackButtonTapped = onBackButtonTapped
         navigationController.pushViewController(outletDetailVC, animated: true)
         
     }
@@ -30,6 +31,10 @@ final class UPOutletDetailComposer{
     private func onOfferSelected(withID id: Int){
         let offerDetailComposer = UPOfferDetailComposer(navigationController: navigationController, httpClient: httpClient, offerID: id)
         offerDetailComposer.start()
+    }
+    
+    private func onBackButtonTapped(){
+        navigationController.popViewController(animated: true)
     }
 
     static func createOutletDetailView(outletID id: Int,httpClient: UPHttpClient) -> UIViewController{

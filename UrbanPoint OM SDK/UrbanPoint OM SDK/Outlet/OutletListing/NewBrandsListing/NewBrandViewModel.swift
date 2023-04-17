@@ -36,7 +36,9 @@ final class UPNewBrandViewModel: OutletListingPresenterContract{
                                                        switch result {
                                                        case .success(let data):
                                                            let outlets = data.map { outlet in
-                                                               UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.image ?? "")), distance: outlet.distance?.value ?? "", isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
+                                                               var distance = outlet.distance?.value.getNumberWithoutDecimal() ?? " "
+                                                               distance = "within \(distance) km"
+                                                              return UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.image ?? "")), distance: distance, isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
                                                            }
                                                          completion((outlets,nil))
                                                        case .failure(let error):
@@ -55,8 +57,9 @@ final class UPNewBrandViewModel: OutletListingPresenterContract{
                                                                  let tableOutlets = data.map { outlet in
                                                                      
                                                                      let offers = ((outlet.outlets?.count ?? 0) > 1) ? (outlet.outlets?.first?.offers ?? []) : []
+                                                                     let description = (offers.count == 0) ? "Multiple Locations" : (outlet.outlets?.first?.address ?? "")
                                                                      
-                                                                     return UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: "", isExpanded: false, offers: offers, isParentOutlet: offers.count == 0)
+                                                                     return UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: description, isExpanded: false, offers: offers, isParentOutlet: offers.count == 0)
                                                                  }
                                                                  completion((tableOutlets,nil))
                                                              case .failure(let error):

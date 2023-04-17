@@ -15,10 +15,11 @@ class UPRedeemOfferViewController: UIViewController {
     @IBOutlet weak var outletLogoImage: UIImageView!
     @IBOutlet weak var successContainer: UIView!
     @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var goToHomeButton: UIButton!
     @IBOutlet weak var pinCodeLabel: UILabel!
     
     var viewModel: UPRedeemOfferViewModel? = nil
+    var onBackButtonTapped: (() -> Void)?
+    var goToOutlet: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,13 @@ class UPRedeemOfferViewController: UIViewController {
     }
     
     private func setupUI(){
-//        outletNameLabel.text = viewModel?.voucher.outletName
-//        offerNameLabel.text = viewModel?.voucher.offerName
-//        outletLogoImage.setImage(with: viewModel?.voucher.outletImageURL ?? "")
+        outletNameLabel.text = viewModel?.offerData.outletName
+        offerNameLabel.text = viewModel?.offerData.offerDetails
+        outletLogoImage.sd_setImage(with: viewModel?.offerData.outletImage)
+    }
+    
+    @IBAction func onBackButtonPressed(_ sender: Any){
+        onBackButtonTapped?()
     }
     
     private func setupTextFieldDelegate(){
@@ -45,16 +50,22 @@ class UPRedeemOfferViewController: UIViewController {
     }
     
     private func redeemOffer(){
+        if !successContainer.isHidden{
+            goToOutlet?()
+        }
+        setupSuccessView()
+        return
         var code = ""
         pinCodeInputTextField.forEach {
             if let text = $0.text?.first{
                 code += String(text)
             }
         }
-        viewModel?.redeemOffer(pin: code, completion: { result in
+        showActivityIndicator()
+        viewModel?.redeemOffer(pin: code, completion: {[weak self] result in
+            self?.hideActivityIndicator()
             if let error = result.1{
-                //Show Error
-                debugPrint(error)
+                self?.showAlert(title: .alert, message: error)
             }else{
                 DispatchQueue.main.async {[weak self] in
                     self?.setupSuccessView()
@@ -65,7 +76,6 @@ class UPRedeemOfferViewController: UIViewController {
     
     private func setupSuccessView(){
         self.successContainer.isHidden = false
-        goToHomeButton.isHidden = false
         submitButton.setTitle("Go to Outlet", for: .normal)
     }
     

@@ -39,6 +39,14 @@
                                             <constraint firstAttribute="width" constant="20" id="Frg-HV-M6c"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czp-LC-ics">
+                                        <rect key="frame" x="-3.6666666666666643" y="12.666666666666671" width="75.333333333333314" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="onBackButtonPressed:" destination="IZm-JU-MVi" eventType="touchUpInside" id="Hwq-1J-57x"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNI-hd-NXo">
                                         <rect key="frame" x="68" y="20.666666666666671" width="309" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
@@ -48,12 +56,16 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="Czp-LC-ics" firstAttribute="centerX" secondItem="q74-cd-Wgo" secondAttribute="centerX" id="Jsl-76-Wq8"/>
                                     <constraint firstItem="q74-cd-Wgo" firstAttribute="centerY" secondItem="Yzg-gU-T4a" secondAttribute="centerY" id="UIV-LI-ozW"/>
                                     <constraint firstItem="q74-cd-Wgo" firstAttribute="leading" secondItem="Yzg-gU-T4a" secondAttribute="leading" constant="24" id="akJ-I6-ndl"/>
                                     <constraint firstItem="mNI-hd-NXo" firstAttribute="centerY" secondItem="Yzg-gU-T4a" secondAttribute="centerY" id="cJp-m5-gaQ"/>
+                                    <constraint firstItem="Czp-LC-ics" firstAttribute="width" secondItem="q74-cd-Wgo" secondAttribute="width" multiplier="3.75" id="ePI-fv-acc"/>
                                     <constraint firstAttribute="height" constant="60" id="l8G-a0-Mhg"/>
                                     <constraint firstAttribute="trailing" secondItem="mNI-hd-NXo" secondAttribute="trailing" constant="16" id="oAZ-sR-r6o"/>
                                     <constraint firstItem="mNI-hd-NXo" firstAttribute="leading" secondItem="q74-cd-Wgo" secondAttribute="trailing" constant="24" id="pt1-Dz-pHo"/>
+                                    <constraint firstItem="Czp-LC-ics" firstAttribute="height" secondItem="q74-cd-Wgo" secondAttribute="height" multiplier="1.75" id="rof-SZ-eZC"/>
+                                    <constraint firstItem="Czp-LC-ics" firstAttribute="centerY" secondItem="q74-cd-Wgo" secondAttribute="centerY" id="sIv-lO-E55"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TzR-uE-30D">
@@ -144,6 +156,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="TzR-uE-30D" id="siU-Z0-KCv"/>
+                        <outlet property="listingContainer" destination="ChM-Ox-rIQ" id="re8-Tx-7En"/>
                         <outlet property="titleLabel" destination="mNI-hd-NXo" id="CFb-bE-NNh"/>
                     </connections>
                 </viewController>

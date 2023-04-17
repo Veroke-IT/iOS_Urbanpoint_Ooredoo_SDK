@@ -29,6 +29,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NV-Me-sFe" userLabel="CoverView">
+                                <rect key="frame" x="0.0" y="59" width="375" height="907"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtn-Up-XmO">
                                 <rect key="frame" x="0.0" y="59" width="375" height="907"/>
                                 <subviews>
@@ -94,18 +98,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JS-az-e4h">
-                                        <rect key="frame" x="315" y="20" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="WtM-zV-N9b"/>
-                                            <constraint firstAttribute="width" constant="40" id="fw9-b4-eIT"/>
-                                        </constraints>
-                                        <state key="normal" image="share"/>
+                                        <rect key="frame" x="261" y="14.666666666666671" width="129" height="40"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vH-Nr-nvo">
+                                        <rect key="frame" x="267" y="18.666666666666671" width="79.333333333333314" height="31.666666666666671"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_offer" translatesAutoresizingMaskIntoConstraints="NO" id="ARn-yU-E0u">
+                                        <rect key="frame" x="276" y="24" width="99" height="21"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fh0-99-Z2B" userLabel="OutletDetailView">
                                         <rect key="frame" x="0.0" y="259" width="375" height="120"/>
                                         <subviews>
@@ -585,6 +596,15 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7l4-N3-k2o">
+                                        <rect key="frame" x="14" y="14" width="52" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="26"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9K-H4-0Ju">
                                         <rect key="frame" x="20" y="20" width="40" height="40"/>
                                         <constraints>
@@ -601,22 +621,30 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="zkF-Iw-mDa" firstAttribute="centerX" secondItem="6MF-wL-fRa" secondAttribute="centerX" id="02L-cu-0Kk"/>
+                                    <constraint firstItem="7l4-N3-k2o" firstAttribute="centerX" secondItem="l9K-H4-0Ju" secondAttribute="centerX" id="1g3-KO-5UQ"/>
                                     <constraint firstItem="pxK-tu-BCu" firstAttribute="leading" secondItem="Fh0-99-Z2B" secondAttribute="leading" constant="20" id="59Z-qH-iAA"/>
                                     <constraint firstAttribute="bottom" secondItem="zkF-Iw-mDa" secondAttribute="bottom" constant="23" id="5oW-9D-rET"/>
                                     <constraint firstItem="l9K-H4-0Ju" firstAttribute="leading" secondItem="NIS-eg-zcU" secondAttribute="leading" constant="20" id="6Ju-z9-4cw"/>
                                     <constraint firstItem="s6q-qj-nfm" firstAttribute="width" secondItem="NIS-eg-zcU" secondAttribute="width" id="8yv-tn-e9N"/>
+                                    <constraint firstItem="2JS-az-e4h" firstAttribute="centerY" secondItem="ARn-yU-E0u" secondAttribute="centerY" id="Aiw-rb-DEG"/>
                                     <constraint firstItem="NIS-eg-zcU" firstAttribute="top" secondItem="Rtn-Up-XmO" secondAttribute="top" id="CXh-KX-5wQ"/>
                                     <constraint firstItem="vda-8u-a2l" firstAttribute="centerX" secondItem="NIS-eg-zcU" secondAttribute="centerX" id="Cxs-xe-N5D"/>
+                                    <constraint firstItem="7l4-N3-k2o" firstAttribute="height" secondItem="l9K-H4-0Ju" secondAttribute="height" multiplier="1.3" id="E9K-oE-NKo"/>
                                     <constraint firstItem="wDG-Fz-bzE" firstAttribute="width" secondItem="pxK-tu-BCu" secondAttribute="width" multiplier="1.2" id="EJh-og-aY2"/>
+                                    <constraint firstAttribute="trailing" secondItem="ARn-yU-E0u" secondAttribute="trailing" id="F5p-V0-Pa6"/>
                                     <constraint firstItem="zkF-Iw-mDa" firstAttribute="leading" secondItem="Rtn-Up-XmO" secondAttribute="leading" constant="20" id="GjL-ob-Ah9"/>
                                     <constraint firstItem="Fh0-99-Z2B" firstAttribute="centerX" secondItem="NIS-eg-zcU" secondAttribute="centerX" id="JRr-CX-qni"/>
+                                    <constraint firstItem="6vH-Nr-nvo" firstAttribute="height" secondItem="ARn-yU-E0u" secondAttribute="height" multiplier="1.5" id="JpD-Xs-tFM"/>
                                     <constraint firstAttribute="trailing" secondItem="zkF-Iw-mDa" secondAttribute="trailing" constant="20" id="KP8-6d-cyj"/>
                                     <constraint firstAttribute="trailing" secondItem="NIS-eg-zcU" secondAttribute="trailing" constant="20" symbolic="YES" id="LV2-dX-UWO"/>
+                                    <constraint firstItem="6vH-Nr-nvo" firstAttribute="width" secondItem="ARn-yU-E0u" secondAttribute="width" multiplier="0.8" id="Mrq-fR-lJk"/>
                                     <constraint firstItem="s6q-qj-nfm" firstAttribute="centerY" secondItem="NIS-eg-zcU" secondAttribute="centerY" id="Nzt-yP-nKU"/>
                                     <constraint firstItem="zkF-Iw-mDa" firstAttribute="top" secondItem="6MF-wL-fRa" secondAttribute="bottom" id="Pd3-5m-HhE"/>
                                     <constraint firstItem="vda-8u-a2l" firstAttribute="bottom" secondItem="NIS-eg-zcU" secondAttribute="bottom" id="UdI-jN-MCG"/>
                                     <constraint firstItem="s6q-qj-nfm" firstAttribute="height" secondItem="NIS-eg-zcU" secondAttribute="height" id="XZL-7f-ufd"/>
-                                    <constraint firstAttribute="trailing" secondItem="2JS-az-e4h" secondAttribute="trailing" constant="20" id="YBc-15-TuS"/>
+                                    <constraint firstItem="ARn-yU-E0u" firstAttribute="top" secondItem="Rtn-Up-XmO" secondAttribute="top" constant="24" id="XyX-PF-x3a"/>
+                                    <constraint firstItem="7l4-N3-k2o" firstAttribute="width" secondItem="l9K-H4-0Ju" secondAttribute="width" multiplier="1.3" id="YEH-ps-NPe"/>
+                                    <constraint firstItem="2JS-az-e4h" firstAttribute="height" secondItem="ARn-yU-E0u" secondAttribute="height" multiplier="1.90476" id="YTe-2E-x7i"/>
                                     <constraint firstItem="eLv-Ir-FxH" firstAttribute="top" secondItem="Fh0-99-Z2B" secondAttribute="bottom" id="aTw-Yn-vEz"/>
                                     <constraint firstItem="6MF-wL-fRa" firstAttribute="leading" secondItem="Rtn-Up-XmO" secondAttribute="leading" id="d2R-Ew-Kjz"/>
                                     <constraint firstItem="6MF-wL-fRa" firstAttribute="top" secondItem="eLv-Ir-FxH" secondAttribute="bottom" constant="8" symbolic="YES" id="eNk-w8-Yqk"/>
@@ -629,15 +657,15 @@
                                     <constraint firstItem="Fh0-99-Z2B" firstAttribute="top" secondItem="NIS-eg-zcU" secondAttribute="bottom" constant="9" id="jDt-t7-F4K"/>
                                     <constraint firstAttribute="trailing" secondItem="6MF-wL-fRa" secondAttribute="trailing" id="kTm-Tg-cde"/>
                                     <constraint firstItem="wDG-Fz-bzE" firstAttribute="centerX" secondItem="pxK-tu-BCu" secondAttribute="centerX" id="p1m-Kg-HKp"/>
+                                    <constraint firstItem="2JS-az-e4h" firstAttribute="width" secondItem="ARn-yU-E0u" secondAttribute="width" multiplier="1.3" id="sfq-f3-c7e"/>
                                     <constraint firstItem="s6q-qj-nfm" firstAttribute="centerX" secondItem="NIS-eg-zcU" secondAttribute="centerX" id="ubN-IN-YVm"/>
                                     <constraint firstItem="wqj-H6-Ilx" firstAttribute="leading" secondItem="wDG-Fz-bzE" secondAttribute="trailing" constant="5" id="vBy-xL-fI9"/>
-                                    <constraint firstItem="2JS-az-e4h" firstAttribute="centerY" secondItem="l9K-H4-0Ju" secondAttribute="centerY" id="vxz-mA-BnR"/>
+                                    <constraint firstItem="7l4-N3-k2o" firstAttribute="centerY" secondItem="l9K-H4-0Ju" secondAttribute="centerY" id="xOD-qe-Mq2"/>
+                                    <constraint firstItem="6vH-Nr-nvo" firstAttribute="centerY" secondItem="ARn-yU-E0u" secondAttribute="centerY" id="xsf-e5-KND"/>
+                                    <constraint firstItem="6vH-Nr-nvo" firstAttribute="leading" secondItem="ARn-yU-E0u" secondAttribute="leading" constant="-9" id="zI1-im-gvQ"/>
+                                    <constraint firstItem="2JS-az-e4h" firstAttribute="centerX" secondItem="ARn-yU-E0u" secondAttribute="centerX" id="zbn-A9-3gK"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NV-Me-sFe" userLabel="CoverView">
-                                <rect key="frame" x="0.0" y="59" width="375" height="907"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uzG-E8-GpP"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -680,12 +708,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuW-Zj-BYz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-321" y="9"/>
+            <point key="canvasLocation" x="-321.37404580152668" y="8.4507042253521139"/>
         </scene>
         <!--Outlet Menu Card Image View Controller-->
         <scene sceneID="w24-p0-7wQ">
             <objects>
-                <viewController storyboardIdentifier="OutletMenuCardImageViewController" id="yKK-Px-vD1" customClass="OutletMenuCardImageViewController" customModule="Urban_Point" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OutletMenuCardImageViewController" id="yKK-Px-vD1" customClass="OutletMenuCardImageViewController" customModule="UrbanPoint_OM_SDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ge-l5-FrM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -734,7 +762,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuImageCell" id="1Z6-vp-pv3" customClass="MenuImageCollectionCell" customModule="Urban_Point" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuImageCell" id="1Z6-vp-pv3" customClass="MenuImageCollectionCell" customModule="UrbanPoint_OM_SDK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B29-9D-vhr">
@@ -783,7 +811,7 @@
         <!--Outlet Menu Image Viewer View Controller-->
         <scene sceneID="3EI-xL-3Pp">
             <objects>
-                <viewController storyboardIdentifier="OutletMenuImageViewerViewController" id="nNN-HR-VOU" customClass="OutletMenuImageViewerViewController" customModule="Urban_Point" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OutletMenuImageViewerViewController" id="nNN-HR-VOU" customClass="OutletMenuImageViewerViewController" customModule="UrbanPoint_OM_SDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5DC-1j-rRe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -915,14 +943,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuImageCell" id="Jus-pT-Qxh" customClass="MenuScrollableImageViewCell" customModule="Urban_Point" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuImageCell" id="Jus-pT-Qxh" customClass="MenuScrollableImageViewCell" customModule="UrbanPoint_OM_SDK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jdN-OD-Lbi">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-Dy-unf" customClass="ScrollableImage" customModule="Urban_Point" customModuleProvider="target">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-Dy-unf" customClass="ScrollableImage" customModule="UrbanPoint_OM_SDK" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 </scrollView>
                                             </subviews>
@@ -978,7 +1006,7 @@
         <image name="menu" width="55" height="84"/>
         <image name="noun_Phone_1887317" width="24.333333969116211" height="25"/>
         <image name="noun_drop pin_3838278 (1)" width="17.333333969116211" height="25"/>
-        <image name="share" width="18" height="20"/>
+        <image name="share_offer" width="99" height="21"/>
         <namedColor name="UrbanPointGreen">
             <color red="0.075999997556209564" green="0.56099998950958252" blue="0.58799999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

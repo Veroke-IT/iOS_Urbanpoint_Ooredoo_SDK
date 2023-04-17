@@ -60,7 +60,7 @@ final class UPOutletSearchViewModel{
             switch result {
             case .success(let data):
                 self?.outlets.append(contentsOf: data.map({ outlet in
-                    UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1, outletName: outlet.name ?? "", image: URL(string:  imageBaseURL + (outlet.image ?? "")), distance:outlet.distance?.value ?? "", isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
+                    UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1, outletName: outlet.name ?? "", image: URL(string:  imageBaseURL + (outlet.image ?? "")), distance:outlet.address ?? "", isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
                     
                 }))
                 completion(nil)

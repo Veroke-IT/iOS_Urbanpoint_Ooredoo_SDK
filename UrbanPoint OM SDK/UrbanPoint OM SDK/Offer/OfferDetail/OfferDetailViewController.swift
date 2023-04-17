@@ -20,7 +20,7 @@ class OfferDetailViewController: UIViewController {
     
     //Events
     var TermsAndConditions: (() -> Void)?
-    var redeemOffer: (() -> Void)?
+    var redeemOffer: ((OfferDetailApiResponse.Offer) -> Void)?
     var onBackButtonTapped: (() -> Void)?
     
     
@@ -53,7 +53,8 @@ class OfferDetailViewController: UIViewController {
         outletNameLabel.text = offer.outlet?.name
         offerDetailLabel.text = offer.description
         offerNameLabel.text = offer.title
-        expiryDateLabel.text = offer.endDatetime
+        
+        expiryDateLabel.text = "Offer expires on ".localized + getDate(dateString: offer.endDatetime ?? "")
         savingLabel.text = "Save QAR " + String(offer.approxSaving ?? 0)
         detailExclusionLabel.text = offer.rulesOfPurchase
         
@@ -68,12 +69,24 @@ class OfferDetailViewController: UIViewController {
         savingLabel.text = ""
     }
     
+    private func getDate(dateString: String) -> String{
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        guard let date = formatter.date(from: dateString)else { return "" }
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: date)
+    }
+    
     @IBAction func onTermsAndConditionTapped(_ sender: Any){
         TermsAndConditions?()
     }
     
     @IBAction func onRedeemOfferTapped(_ sender: Any){
-        redeemOffer?()
+        if let offer = offerDetailViewModel?.offer{
+            redeemOffer?(offer)
+        }
     }
     
 }

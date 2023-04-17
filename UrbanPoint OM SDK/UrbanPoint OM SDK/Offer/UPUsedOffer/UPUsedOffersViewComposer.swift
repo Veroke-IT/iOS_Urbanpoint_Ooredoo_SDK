@@ -9,8 +9,29 @@ import UIKit
 
 final class UPUsedOfferViewComposer{
     
-    static func createUsedOfferView(httpClient: UPHttpClient) -> UIViewController{
+    let httpClient: UPHttpClient
+    let navigationController: UINavigationController
+    
+    init(httpClient: UPHttpClient, navigationController: UINavigationController) {
+        self.httpClient = httpClient
+        self.navigationController = navigationController
+    }
+    
+    func start(){
         let offerRepository = URLSessionOfferRepository(httpClient: httpClient)
+        let viewController = UPUsedOfferViewComposer.createUsedOfferView(offerRepository: offerRepository) as! UPUsedOfferViewController
+        viewController.onBackButtonTapped = onBackButtonTapped
+        viewController.viewModel = UPUsedOfferViewModel(offerRepository: offerRepository)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    private func onBackButtonTapped(){
+        navigationController.popViewController(animated: true)
+    }
+    
+    
+    static func createUsedOfferView(offerRepository: OfferRepository) -> UIViewController{
+      
         let viewModel = UPUsedOfferViewModel(offerRepository: offerRepository)
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
         let viewController = UIStoryboard(name: "UPUsedOffer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPUsedOfferViewController") as! UPUsedOfferViewController

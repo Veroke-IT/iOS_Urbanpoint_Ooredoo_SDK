@@ -46,6 +46,8 @@ class OutletDetailViewController: UIViewController {
     
     //Event
     var onOfferSelected: ((Int) -> Void)?
+    var onBackButtonTapped: (() -> Void)?
+    var onOfferShared: ((UPOffer) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -206,7 +208,7 @@ class OutletDetailViewController: UIViewController {
     }
     
     @IBAction func onBackButtonTapped(_ sender: Any){
-        navigationController?.popViewController(animated: true)
+        onBackButtonTapped?()
     }
     
 }

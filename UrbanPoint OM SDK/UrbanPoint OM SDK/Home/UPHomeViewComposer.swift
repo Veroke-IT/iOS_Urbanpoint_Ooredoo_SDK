@@ -31,6 +31,8 @@ final class UPHomeViewComposer{
         homeViewController.onViewAllNearbyOutletsTapped = onViewAllNearbyTapped
         homeViewController.onCategorySelected = onCategorySelected
         homeViewController.onPopoularCategorySelected = onPoularCategorySelected
+        homeViewController.onTopBarTapped = onSearchBarTapped
+        homeViewController.onParentBrandSelected = onParentSelected
         navigationController.pushViewController(homeViewController, animated: true)
     }
     
@@ -44,6 +46,8 @@ final class UPHomeViewComposer{
         return viewController
     }
     
+    
+    
     private func onOutletSelected(_ id: Int){
         let outletDetailComposer = UPOutletDetailComposer(navigationController: navigationController, httpClient: httpClient, outletID: id)
         outletDetailComposer.start()
@@ -54,38 +58,39 @@ final class UPHomeViewComposer{
         navigationController.pushViewController(offerDetailVC, animated: true)
     }
     
+    private func onParentSelected(withID id: Int,name: String){
+        let listingViewController = NewBrandComposer(httpClient: httpClient, navigationController: navigationController)
+        listingViewController.start(withListingType: .child(id, name))
+    }
+    
     private func onViewAllNearbyTapped(){
-        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
-        let nearbyListingViewModel = NearbyListingViewModel(outletRepository: outletRepository)
-        let newBrandVC = NewBrandComposer.createNewBrandViewController(viewModel: nearbyListingViewModel, titleString: "Nearby Outlets", onBackButtonTapped: pop)
-        self.navigationController.pushViewController(newBrandVC, animated: true)
+        let listingViewController = NewBrandComposer(httpClient: httpClient, navigationController: navigationController)
+         listingViewController.start(withListingType: .nearby)
     }
     
     private func onViewAllNewBrandsTapped(){
-        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
-        let nearbyListingViewModel = UPNewBrandViewModel(outletService: outletRepository)
-        let newBrandVC = NewBrandComposer.createNewBrandViewController(viewModel: nearbyListingViewModel, titleString: "New Brands", onBackButtonTapped: pop)
-        
-        self.navigationController.pushViewController(newBrandVC, animated: true)
+        let listingViewController = NewBrandComposer(httpClient: httpClient, navigationController: navigationController)
+         listingViewController.start(withListingType: .newBrand)
     }
     
     private func onCategorySelected(id: Int){
-        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
-        let upCategoryViewModel = UPCategoryViewModel(homeService: homeService, outletRepository: outletRepository,selectedCategoryID: id)
-        let viewController = UPCategoriesListingViewComposer.createViewForUPCategoriesListing(viewModel: upCategoryViewModel)
-        navigationController.pushViewController(viewController, animated: true)
+        let categoryFlow = UPCategoriesListingViewComposer(navigationController: navigationController, httpClient: httpClient)
+        categoryFlow.start(withID: id)
     }
     
     private func onPoularCategorySelected(id: Int,categoryName: String){
-        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
-        let nearbyListingViewModel = UPPopularCategoryViewModel(outletRepository: outletRepository, selectedPopularCategoryID: id)
-        let searchRepository = UPTrendingSearchHttpRepository(httpClient: httpClient)
-        let searchViewModel = UPOutletSearchViewModel(trendingSearchRespository: searchRepository, outletRespository: outletRepository)
-        let newBrandVC = NewBrandComposer.createNewBrandViewController(viewModel: nearbyListingViewModel, titleString: categoryName,searchViewModel: searchViewModel ,onBackButtonTapped: pop)
-        self.navigationController.pushViewController(newBrandVC, animated: true)
+       let listingViewController = NewBrandComposer(httpClient: httpClient, navigationController: navigationController)
+        listingViewController.start(withListingType: .popularCategory(id, categoryName))
     }
     
-    private func pop(){
-        self.navigationController.popViewController(animated: true)
+    private func onSettingButtonTapped(){
+        let settingFlow = UPSettingsViewComposer(navigationController: navigationController, httpClient: httpClient)
+        settingFlow.start()
     }
+    
+    private func onSearchBarTapped(){
+        let searchFlow = UPSearchViewComposer(httpClient: httpClient, naviagtionController: navigationController)
+        searchFlow.start()
+    }
+
 }

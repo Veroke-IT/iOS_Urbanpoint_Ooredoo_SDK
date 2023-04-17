@@ -21,6 +21,8 @@ class NewBrandViewController: UIViewController {
     var listingViewContainer: OutletListingContainerViewController? = nil
 
     var onBackButtonTapped: (() -> Void)?
+    var showOutlet: ((UPOutletListingTableViewCell.Outlet) -> Void)?
+    var onOfferSelected: ((Int) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,9 @@ class NewBrandViewController: UIViewController {
             searchButton.isHidden = true
             searchImageView.isHidden = true
             searchButton.isEnabled = false
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            self.fetchListing()
         }
         
     }
@@ -54,7 +59,7 @@ class NewBrandViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchListing()
+        
     }
     
     private func fetchListing(){
@@ -91,18 +96,17 @@ class NewBrandViewController: UIViewController {
             listingViewContainer = segue.destination as? OutletListingContainerViewController
             listingViewContainer?.fetchOutletsNearby = fetchOutletsNearby
             listingViewContainer?.fetchOutletsAlphabatical = fetchOutletsAlphabatical
-            listingViewContainer?.onOutletSelected = { outlet in
-                
-                outlet.isParentOutlet ? self.navigateToChildListingViewController(outlet: outlet)
-                : self.navigateToOutletDetailScreen(id: outlet.id)
-                
-                
-            }
-            listingViewContainer?.onOfferSelected = { offer in
-
-                
+            listingViewContainer?.onOutletSelected = onOutletSelected
+            listingViewContainer?.onOfferSelected = {[weak self] offer in
+                if let id = offer.id{
+                    self?.onOfferSelected?(id)
+                }
             }
         }
+    }
+    
+    private func onOutletSelected(outlet: UPOutletListingTableViewCell.Outlet){
+        showOutlet?(outlet)
     }
     
     private func navigateToChildListingViewController(outlet: UPOutletListingTableViewCell.Outlet){

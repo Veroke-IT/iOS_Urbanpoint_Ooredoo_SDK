@@ -13,6 +13,8 @@ class UPUsedOfferViewController: UIViewController {
     @IBOutlet weak var offerTableView: UITableView!
     private var index: Int = 1
     
+    var onBackButtonTapped: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,10 +22,14 @@ class UPUsedOfferViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchOffers()
+       // fetchOffers()
         
     }
 
+    @IBAction func onBackButtonTapped(_ sender: Any){
+        onBackButtonTapped?()
+    }
+    
     private func fetchOffers(){
         showActivityIndicator()
         viewModel?.fetchUsedOffer(index: 1, completion: {[weak self] errorString in
@@ -42,15 +48,15 @@ extension UPUsedOfferViewController: UITableViewDelegate,UITableViewDataSource{
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.offers.count ?? 0
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UPUsedOfferTableViewCell.reuseIdentifier, for: indexPath)
         as! UPUsedOfferTableViewCell
-        if let offer = viewModel?.offers[indexPath.row]{
-            cell.configureCell(with: createModel(with: offer))
-        }
+//        if let offer = viewModel?.offers[indexPath.row]{
+//            cell.configureCell(with: createModel(with: offer))
+//        }
         return cell
     }
     
