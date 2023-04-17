@@ -13,7 +13,7 @@ class UPWebViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     var urlToResource: URL? = nil
-    var closeResource: (() -> Void)? = nil
+    var closeWebView: (() -> Void)? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,16 @@ class UPWebViewController: UIViewController {
         super.viewWillAppear(animated)
         
         guard let urlToResource else {
-            closeResource?()
+           closeWebView?()
             return
         }
         let urlRequesst = URLRequest(url: urlToResource)
         self.webView.load(urlRequesst)
     }
     
+    @IBAction func onBackButtonTapped(_ sender: Any){
+        closeWebView?()
+    }
 
   
 

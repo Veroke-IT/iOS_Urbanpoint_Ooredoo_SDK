@@ -29,6 +29,7 @@ enum OutletRepositoryParam{
     case perPage(String)
     case categoryID(String)
     case collectionID(String)
+    case popularCategoryID(String)
     
     var values: (String,String)?{
         switch self {
@@ -59,6 +60,8 @@ enum OutletRepositoryParam{
             return ("category_id",id)
         case .collectionID(let id):
             return ("collection_id",id)
+        case .popularCategoryID(let id):
+            return ("popular_category_id",id)
         default:
             return nil
 
@@ -163,6 +166,7 @@ final class URLSessionOutletRepository: OutletRepository{
                     catch let error{
                         completion(.failure(error))
                     }
+
                 }else{
                     completion(.failure(URLError(.badServerResponse)))
                 }

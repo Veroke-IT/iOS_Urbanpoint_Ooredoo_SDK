@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct UsedOffersResponse: Codable {
+    let status: String
+    let statusCode: Int
+    let message: String
+    let data: [UPOffer]
+}
+
 struct RedeemOfferRequest: Encodable{
     
     let pin: String
@@ -30,17 +37,53 @@ struct RedeemOfferResponse: Decodable{
 }
 
 protocol OfferRepository{
+    func fetchUsedOffer(index: Int, completion: @escaping (Result<[UPOffer],Error>) -> Void)
     func fetchOffer(withID id: Int, completion: @escaping (Result<OfferDetailApiResponse.Offer,Error>) -> Void)
     func redeemOffer(offerData: RedeemOfferRequest, completion: @escaping (Result<RedeemOfferResponse,Error>) -> Void)
 }
 
 final class URLSessionOfferRepository: OfferRepository{
-
+   
     let httpClient: UPHttpClient
     
     init(httpClient: UPHttpClient) {
         self.httpClient = httpClient
     }
+    
+    func fetchUsedOffer(index: Int, completion: @escaping (Result<[UPOffer], Error>) -> Void) {
+        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getAllOfferUseAgain?page=\(index)"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(URLError(.badURL)))
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "get"
+        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
+
+        
+        httpClient.execute(urlRequest: urlRequest) { result in
+            switch result{
+
+            case .success(let response):
+                if response.1.isOK{
+                    do{
+                        
+                        let jsonDecoded = try JSONDecoder().decode(UsedOffersResponse.self, from: response.0)
+                        completion(.success(jsonDecoded.data))
+                    }
+                    catch let error{
+                        completion(.failure(error))
+                    }
+                }else{
+                    completion(.failure(URLError(.badServerResponse)))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     
     func fetchOffer(withID id: Int, completion: @escaping (Result<OfferDetailApiResponse.Offer, Error>) -> Void) {
         

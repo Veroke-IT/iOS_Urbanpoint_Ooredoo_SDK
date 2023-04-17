@@ -34,12 +34,16 @@ class OutletDetailViewController: UIViewController {
     @IBOutlet weak var outletImageView: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
     
+    
     //State
     var currentIndex: Int = 0
     var timer: Timer?
     
     var viewModel: UPOutletDetailViewModel? = nil
     
+    
+    //Event
+    var onOfferSelected: ((Int) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +55,19 @@ class OutletDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel?.fetchOutlet(completion: { errorString in
+        backgroundView.isHidden = false
+        showActivityIndicator()
+        viewModel?.fetchOutlet(completion: {[weak self] errorString in
+            self?.hideActivityIndicator()
             if let errorString{
-                debugPrint(errorString)
+                self?.showAlert(title: .alert, message: errorString,onOkTapped: {
+                    self?.navigationController?.popViewController(animated: true)
+                })
+                
             }else{
-                DispatchQueue.main.async {
-                    self.setupUIWithOutlet()
+                DispatchQueue.main.async {[weak self] in
+                    self?.setupUIWithOutlet()
+                    self?.backgroundView.isHidden = true
                 }
             }
         })
@@ -67,6 +78,7 @@ class OutletDetailViewController: UIViewController {
         setupShadowForTopButtons(button: callButton)
         setupShadowForTopButtons(button: uberButton)
         setupShadowForTopButtons(button: findITButtonView)
+        setupShadowForTopButtons(button: availableMapView)
     }
     
     
@@ -82,25 +94,36 @@ class OutletDetailViewController: UIViewController {
         outletDescription.text = viewModel?.outlet?.outletDescription
         
         if let startEndTime = viewModel?.outlet?.outletTimings {
-            let startEndTimeString = startEndTime.split(separator: ",")
+            let startEndTimeString = startEndTime.split(separator: ";")
                 .map { String($0) }
                 .reduce("", { partialResult,string in
                     partialResult.isEmpty ? string : (partialResult + "\n" + string)
                  })
             self.startTimeDateLabel.text = startEndTimeString
-        }else{
+        }
+        else{
             self.startTimeDateLabel.text = ""
         }
         
-        
+        outletAddress.text = viewModel?.outlet?.outletAddress
         menuButton.isHidden = viewModel?.outlet?.outletMenu == nil
         menuButton.isHidden = viewModel?.outlet?.outletMenu == nil
         offerTableViewHeightConstraint.constant = CGFloat(90 * (viewModel?.outlet?.outletOffers.count ?? 0))
         outletLogoImageView.sd_setImage(with: viewModel?.outlet?.outletImage)
         offersTableView.reloadData()
         
-        outletImagesPageController.numberOfPages = viewModel?.outlet?.bannerImages.count ?? 0
-        imagesCollectionView.reloadData()
+        
+        if viewModel?.outlet?.bannerImages.count ?? 0 > 1{
+            outletImagesPageController.numberOfPages = viewModel?.outlet?.bannerImages.count ?? 0
+            imagesCollectionView.reloadData()
+        }
+        else if let oneAndOnlyImage = viewModel?.outlet?.bannerImages.first{
+            imagesCollectionView.isHidden = true
+            outletImageView.isHidden = false
+            outletImageView.sd_setImage(with: oneAndOnlyImage)
+        }
+        
+        menuButton.isHidden = !(viewModel?.outlet?.outletMenu.count ?? 0 > 0)
         
     }
     
@@ -206,12 +229,8 @@ extension OutletDetailViewController: UITableViewDataSource,UITableViewDelegate{
     
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Present Offer Detail View Here
-        let httpClient = UPURLSessionHttpClient(session: .shared)
-        
         if let offer = viewModel?.outlet?.outletOffers[indexPath.row]{
-            let viewController = UPOfferDetailComposer.createOfferDetailView(offerID: offer.id, httpClient: httpClient)
-            navigationController?.present(viewController,animated: true)
+            onOfferSelected?(offer.id)
         }
     }
 }

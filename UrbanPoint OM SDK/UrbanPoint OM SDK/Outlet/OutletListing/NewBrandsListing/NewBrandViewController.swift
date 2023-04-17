@@ -15,6 +15,8 @@ class NewBrandViewController: UIViewController {
     var viewModel: OutletListingPresenterContract
     var listingViewContainer: OutletListingContainerViewController? = nil
     
+    var onBackButtonTapped: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchUserLocation()
@@ -22,10 +24,13 @@ class NewBrandViewController: UIViewController {
         
     }
     
-    
-    init?(coder: NSCoder, viewModel: OutletListingPresenterContract,titleString: String) {
+    init?(coder: NSCoder,
+          viewModel: OutletListingPresenterContract,
+          titleString: String,
+          onBackButtonTapped: @escaping () -> Void) {
         self.titleString = titleString
         self.viewModel = viewModel
+        self.onBackButtonTapped = onBackButtonTapped
         super.init(coder: coder)
     }
 
@@ -33,6 +38,20 @@ class NewBrandViewController: UIViewController {
         fatalError("You must create this view controller with a home view model.")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let listingController = self.listingViewContainer{
+            if self.viewModel.currentLocation != nil{
+                listingController.fetchOutletsForListingNearby()
+            }else{
+                listingController.fetchOutletsForListingAlphabatical()
+            }
+        }
+    }
+    
+    @IBAction func onBackButtonTapped(_ sender: Any){
+        onBackButtonTapped?()
+    }
     
     
     //MARK: Initialize ChildViewControllers
@@ -60,7 +79,9 @@ class NewBrandViewController: UIViewController {
     
     private func navigateToChildListingViewController(outlet: UPOutletListingTableViewCell.Outlet){
         let childListingViewModel = ChildOutletListingViewModel(outletRepository:viewModel.outletRepository , parentID: outlet.id)
-        let viewController = NewBrandComposer.createNewBrandViewController( viewModel: childListingViewModel, titleString: outlet.outletName )
+        let viewController = NewBrandComposer.createNewBrandViewController( viewModel: childListingViewModel, titleString: outlet.outletName, onBackButtonTapped: { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        } )
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -73,9 +94,11 @@ class NewBrandViewController: UIViewController {
     private func fetchOutletsNearby(index: Int,
                               completion: @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void){
         
-        viewModel.fetchOutletNearby(searchText: nil, categoryID: nil, collectionID: nil, index: index){ response in
+        showActivityIndicator()
+        viewModel.fetchOutletNearby(searchText: nil, categoryID: nil, collectionID: nil, index: index){[weak self] response in
+            self?.hideActivityIndicator()
             if let error = response.1{
-                debugPrint(error)
+                self?.showAlert(title: .alert, message: error)
             }else{
                 completion(response.0)
             }
@@ -85,9 +108,11 @@ class NewBrandViewController: UIViewController {
     
     private func fetchOutletsAlphabatical(index: Int,
                               completion: @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void){
-        viewModel.fetchOutletAlphabatical(searchText: nil, categoryID: nil, collectionID: nil, index: index){ response in
+        showActivityIndicator()
+        viewModel.fetchOutletAlphabatical(searchText: nil, categoryID: nil, collectionID: nil, index: index){[weak self] response in
+                self?.hideActivityIndicator()
                 if let error = response.1{
-                    debugPrint(error)
+                    self?.showAlert(title: .alert, message: error)
                 }else{
                     completion(response.0)
                 }

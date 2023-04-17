@@ -220,6 +220,7 @@
                         <outlet property="searchBarViewTopConstraint" destination="Mgo-dF-ZIx" id="QO8-Xh-qoW"/>
                         <outlet property="searchField" destination="UzA-P6-uaL" id="z8M-Cy-aFK"/>
                         <outlet property="tableView" destination="BBq-iq-FsQ" id="HhF-U8-i4q"/>
+                        <outlet property="trendingSearchLabel" destination="Rn6-bS-E19" id="7hp-rn-7Ui"/>
                         <outlet property="trendingSearchesContainerView" destination="CAf-Ho-gjZ" id="CzF-X5-Uhr"/>
                     </connections>
                 </viewController>

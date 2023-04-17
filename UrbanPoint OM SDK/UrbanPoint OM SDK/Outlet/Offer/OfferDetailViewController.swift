@@ -15,8 +15,14 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var detailExclusionLabel: UILabel!
     @IBOutlet weak var expiryDateLabel: UILabel!
     @IBOutlet weak var savingLabel: UILabel!
-   
+    @IBOutlet weak var coverView: UIView!
     var offerDetailViewModel: OfferDetailViewModel?
+    
+    //Events
+    var TermsAndConditions: (() -> Void)?
+    var redeemOffer: (() -> Void)?
+    var onBackButtonTapped: (() -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +32,16 @@ class OfferDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let offerDetailViewModel else { return }
-        offerDetailViewModel.fetchOfferDetail(completion: { errorString in
+        coverView.isHidden = false
+        showActivityIndicator()
+        offerDetailViewModel.fetchOfferDetail(completion: {[weak self] errorString in
+            self?.hideActivityIndicator()
             if let errorString{
-                debugPrint(errorString)
+                self?.showAlert(title: .alert, message: errorString,onOkTapped: self?.onBackButtonTapped)
             }else{
                 DispatchQueue.main.async {[weak self] in
                     self?.setupOfferDetailUI()
+                    self?.coverView.isHidden = true
                 }
             }
         })
@@ -57,5 +67,10 @@ class OfferDetailViewController: UIViewController {
         expiryDateLabel.text = ""
         savingLabel.text = ""
     }
+    
+    @IBAction func onTermsAndConditionTapped(_ sender: Any){
+        TermsAndConditions?()
+    }
+    @IBAction func onRedeemOfferTapped(_ sender: Any){}
     
 }

@@ -26,7 +26,6 @@ class OutletListingViewController: UIViewController {
         super.viewDidAppear(animated)
         outletTableView.delegate = self
         outletTableView.dataSource = self
-        
     }
   
     internal func showOutletData(_ outlets: [UPOutletListingTableViewCell.Outlet]){

@@ -35,6 +35,7 @@ class OutletSearchViewController: UIViewController {
     @IBOutlet weak var searchBarViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var trendingSearchesContainerView: UIView!
     @IBOutlet weak var outletListinContainerView: UIView!
+    @IBOutlet weak var trendingSearchLabel: UILabel!
     var outletListingController: OutletListingViewController?
     
     override func viewDidLoad() {
@@ -58,22 +59,10 @@ class OutletSearchViewController: UIViewController {
         searchField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
-    @objc private func textFieldDidChange(_ sender: UITextField){
-        guard let searchText  = sender.text else {
-            return
-        }
-        if searchText.isEmpty{
-            if outletListingController?.outlets.count ?? 0 == 0{
-                isShowingTrendingSearches = true
-            }else{
-                trendingSearchesContainerView.isHidden = true
-                outletListinContainerView.isHidden = false
-            }
-        }
-        else if searchText.count >= 1 { viewStoredSearches(searchText: searchText) }
-    }
+
     
     private func viewStoredSearches(searchText: String){
+        trendingSearchLabel.isHidden = true
         outletSearchViewModel.fetchStoredSearches(searchText: searchText) {[weak self] in
             guard let strongSelf = self else { return }
             strongSelf.outletListinContainerView.isHidden = true
@@ -90,6 +79,7 @@ class OutletSearchViewController: UIViewController {
     private func hideCancelButton(){
         if cancelSearchButton.isHidden { return }
         searchField.text = ""
+        outletSearchViewModel.searchText = ""
         isShowingTrendingSearches = true
         self.searchBarViewTopConstraint.constant = CGFloat(self.searchBarTopConstraintHeight + 16)
         self.searchBarTrailingConstraint.constant = 0
@@ -97,8 +87,8 @@ class OutletSearchViewController: UIViewController {
             self.view.layoutIfNeeded()
             self.cancelSearchButton.isHidden = true
             self.searchField.resignFirstResponder()
-
         }
+        tableView.reloadData()
    }
     
     private func showCancelButton(){
@@ -113,7 +103,9 @@ class OutletSearchViewController: UIViewController {
     }
     
     private func fetchTrendingSearches(){
-        outletSearchViewModel.fetchTrendingSearches { success in
+        showActivityIndicator()
+        outletSearchViewModel.fetchTrendingSearches {[weak self] success in
+            self?.hideActivityIndicator()
             if success{
                 DispatchQueue.main.async {  [weak self] in
                     self?.isShowingTrendingSearches = true
@@ -142,10 +134,12 @@ class OutletSearchViewController: UIViewController {
     }
 
     private func fetchOutletData(){
+        showActivityIndicator()
         outletSearchViewModel.fetchOutlet(index: index) {  [weak self] errorString in
             guard let strongSelf = self else { return }
+            self?.hideActivityIndicator()
             if let errorString{
-               debugPrint(errorString)
+                self?.showAlert(title: .alert, message: errorString)
                 return
             }
             strongSelf.showOutletListing(outlets: strongSelf.outletSearchViewModel.outlets)
@@ -178,8 +172,17 @@ class OutletSearchViewController: UIViewController {
 extension OutletSearchViewController: UITableViewDataSource,UITableViewDelegate{
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        (isShowingTrendingSearches ? outletSearchViewModel.trendingSearches.count : outletSearchViewModel.storedSearches.count)
+        if isShowingTrendingSearches{
+            if outletSearchViewModel.searchText.isEmpty{
+                trendingSearchLabel.isHidden = false
+                return outletSearchViewModel.trendingSearches.count
+            }else{
+                trendingSearchLabel.isHidden = true
+                return outletSearchViewModel.autoCompleteOffers.count
+            }
+        }else{
+            return outletSearchViewModel.storedSearches.count
+        }
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -198,11 +201,15 @@ extension OutletSearchViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     private func makeTrendingSearchesTableViewCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell{
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendingTableViewCell.cellIdentifierString, for: indexPath) as? TrendingTableViewCell
         else{
             return UITableViewCell()
         }
-        cell.configureCellWith(outletSearchViewModel.trendingSearches[indexPath.row].text)
+        let searchText = outletSearchViewModel.searchText.isEmpty ? outletSearchViewModel.trendingSearches[indexPath.row].text
+        : outletSearchViewModel.autoCompleteOffers[indexPath.row]
+        
+        cell.configureCellWith(searchText)
         return cell
     }
     
@@ -212,11 +219,22 @@ extension OutletSearchViewController: UITableViewDataSource,UITableViewDelegate{
     
     private func handelTrendingSearchSelection(indexPath: IndexPath){
         var searchText = ""
-        searchText = isShowingTrendingSearches ?  outletSearchViewModel.trendingSearches[indexPath.row].text :
-            outletSearchViewModel.storedSearches[indexPath.row]
+        
+        if isShowingTrendingSearches{
+            if outletSearchViewModel.searchText.isEmpty{
+                searchText = outletSearchViewModel.trendingSearches[indexPath.row].text
+            }else{
+                searchText = outletSearchViewModel.autoCompleteOffers[indexPath.row]
+            }
+        }else{
+            searchText = outletSearchViewModel.storedSearches[indexPath.row]
+        }
+            
         searchField.text = searchText
         showCancelButton()
     }
+    
+    
 }
 
 extension OutletSearchViewController: UITextFieldDelegate{
@@ -229,9 +247,34 @@ extension OutletSearchViewController: UITextFieldDelegate{
         
         if let searchText = textField.text,!searchText.isEmpty{
             index = 1
-            outletSearchViewModel.searchText = searchText
             fetchOutletData()
         }
         return true
+    }
+    
+    @objc private func textFieldDidChange(_ sender: UITextField){
+        guard let searchText  = sender.text else {
+            return
+        }
+        outletSearchViewModel.searchText = searchText
+        if searchText.isEmpty{
+            if outletListingController?.outlets.count ?? 0 == 0{
+                isShowingTrendingSearches = true
+            }
+            else{
+                trendingSearchesContainerView.isHidden = true
+                outletListinContainerView.isHidden = false
+            }
+        }
+        else if searchText.count <= 2 {
+            viewStoredSearches(searchText: searchText)
+        }else{
+            outletSearchViewModel.fetchAutoCompleteOffers {
+                DispatchQueue.main.async {[weak self] in
+                    self?.isShowingTrendingSearches = true
+                    self?.tableView.reloadData()
+                }
+            }
+        }
     }
 }

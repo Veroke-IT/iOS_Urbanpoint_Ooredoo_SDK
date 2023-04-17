@@ -17,6 +17,8 @@ final class UPOutletSearchViewModel{
     private(set) var totalPages: Int = 5
     internal var searchText: String = ""
     private(set) var outlets: [UPOutletListingTableViewCell.Outlet] = []
+    private(set) var autoCompleteOffers: [String] = []
+    private(set) var offersSearchDataTask: UPHttpTask? = nil
     
     init(trendingSearchRespository: UPTrendingSearchRepository, outletRespository: OutletRepository) {
         self.trendingSearchRespository = trendingSearchRespository
@@ -64,6 +66,20 @@ final class UPOutletSearchViewModel{
                 completion(nil)
             case .failure(let error):
                 completion(error.localizedDescription)
+            }
+        }
+    }
+    
+    internal func fetchAutoCompleteOffers(completion:@escaping () -> Void){
+        offersSearchDataTask?.cancel()
+        offersSearchDataTask = trendingSearchRespository.fetchOffersTag(searchText: searchText) { result in
+            switch result {
+            case .success(let success):
+                self.autoCompleteOffers = success
+                completion()
+            case .failure(let error):
+                debugPrint(error)
+                break
             }
         }
     }

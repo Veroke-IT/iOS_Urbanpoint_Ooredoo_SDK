@@ -24,6 +24,8 @@ class UPHomeViewController: UIViewController {
     var onViewAllNearbyOutletsTapped: (() -> Void)?
     
     var onCategorySelected: ((Int) -> Void)?
+    var onPopoularCategorySelected: ((Int,String) -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,8 +148,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
     
     
     private func onPopularCategorySelected(category: PopularCategory){
-        
-        onCategorySelected?(category.id)
+        onPopoularCategorySelected?(category.id, category.name)
         
     }
     

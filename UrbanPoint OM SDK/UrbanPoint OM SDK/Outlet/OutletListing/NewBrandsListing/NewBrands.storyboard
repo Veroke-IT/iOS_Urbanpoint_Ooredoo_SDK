@@ -38,14 +38,26 @@
                                         <color key="textColor" name="UrbanPointRed"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJn-A2-Rsa">
+                                        <rect key="frame" x="19" y="12.666666666666671" width="30" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="onBackButtonTapped:" destination="TLg-XP-1iP" eventType="touchUpInside" id="Chc-nI-MWN"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="c2t-Fr-RTu" firstAttribute="centerY" secondItem="WWI-aO-BqL" secondAttribute="centerY" id="0DU-lz-h6v"/>
                                     <constraint firstAttribute="trailing" secondItem="c2t-Fr-RTu" secondAttribute="trailing" constant="16" id="3EY-qx-GHG"/>
+                                    <constraint firstItem="aJn-A2-Rsa" firstAttribute="centerX" secondItem="wem-bg-7HE" secondAttribute="centerX" id="59d-6n-bVt"/>
                                     <constraint firstItem="wem-bg-7HE" firstAttribute="leading" secondItem="WWI-aO-BqL" secondAttribute="leading" constant="24" id="Cf5-Bb-xHd"/>
+                                    <constraint firstItem="aJn-A2-Rsa" firstAttribute="width" secondItem="wem-bg-7HE" secondAttribute="width" multiplier="1.5" id="H0x-bK-l0v"/>
                                     <constraint firstAttribute="height" constant="60" id="NpU-CX-SSC"/>
+                                    <constraint firstItem="aJn-A2-Rsa" firstAttribute="centerY" secondItem="wem-bg-7HE" secondAttribute="centerY" id="P6Y-Hw-FhB"/>
                                     <constraint firstItem="c2t-Fr-RTu" firstAttribute="leading" secondItem="wem-bg-7HE" secondAttribute="trailing" constant="24" id="cWq-Jb-x03"/>
+                                    <constraint firstItem="aJn-A2-Rsa" firstAttribute="height" secondItem="wem-bg-7HE" secondAttribute="height" multiplier="1.75" id="uXy-Vj-RXg"/>
                                     <constraint firstItem="wem-bg-7HE" firstAttribute="centerY" secondItem="WWI-aO-BqL" secondAttribute="centerY" id="xPN-z4-B63"/>
                                 </constraints>
                             </view>

@@ -18,6 +18,8 @@ final class UPWebViewComposer{
     
     func start(withURL url: URL){
         let viewController = UPWebViewComposer.createWebViewController(withURL: url)
+        as! UPWebViewController
+        viewController.closeWebView = onBackButtonTapped
         navigationController.pushViewController(viewController, animated: true)
     }
     
@@ -27,6 +29,10 @@ final class UPWebViewComposer{
        
         viewController.urlToResource = url
         return viewController
+    }
+    
+    private func onBackButtonTapped(){
+        navigationController.popViewController(animated: true)
     }
     
 }

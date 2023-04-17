@@ -11,6 +11,7 @@ import CoreLocation
 protocol OutletListingPresenterContract: UPLocationManagerDelegate{
     
     var outletRepository: OutletRepository { get  }
+    var currentLocation: CLLocationCoordinate2D? { get }
     
     func fetchOutletNearby(searchText: String?,
                            categoryID: Int?,
@@ -63,7 +64,7 @@ final class OutletListingPresenter:UPLocationManagerDelegate{
                 switch result{
                 case .success(let data):
                       let outlets = data.map({ outlet in
-                          OutletListingPresenter.Outlet(outletID: outlet.id ?? -1, outletName: outlet.name ?? "", outletImage: outlet.image ?? "", outletDistance:  "", offers: [])
+                          OutletListingPresenter.Outlet(outletID: outlet.id  ?? -1, outletName: outlet.name ?? "", outletImage: outlet.image ?? "", outletDistance:  "", offers: [])
                         })
                     completion((outlets,nil))
                 case .failure(let error):

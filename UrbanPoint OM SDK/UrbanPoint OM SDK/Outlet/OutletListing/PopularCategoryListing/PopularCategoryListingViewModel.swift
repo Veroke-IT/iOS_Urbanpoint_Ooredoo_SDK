@@ -1,27 +1,27 @@
 //
-//  NearbyOutletListingViewModel.swift
+//  PopularCategoryListingViewModel.swift
 //  UrbanPoint OM SDK
 //
-//  Created by MamooN_ on 4/14/23.
+//  Created by MamooN_ on 4/16/23.
 //
 
 import Foundation
 import CoreLocation
 
-final class NearbyListingViewModel: OutletListingPresenterContract{
-
-    
-    
-    var nearbyBrands: [UPOutlet] = []
-    var alphabaticalBrands: [UPParentOutlet] = []
+final class UPPopularCategoryViewModel: OutletListingPresenterContract{
+  
     let outletRepository: OutletRepository
     var currentLocation: CLLocationCoordinate2D? = nil
     let locationManager: UPLocationManager = UPLocationManager.sharedInstance
+    let selectedPopularCategoryID: Int
     
-    init(outletRepository: OutletRepository) {
+    
+    init(outletRepository: OutletRepository,selectedPopularCategoryID: Int){
         self.outletRepository = outletRepository
+        self.selectedPopularCategoryID = selectedPopularCategoryID
         locationManager.delegate = self
     }
+    
     
     
     func fetchOutletNearby(searchText: String?, categoryID: Int?, collectionID: Int?, index: Int,  completion: @escaping (([UPOutletListingTableViewCell.Outlet],String?)) -> Void) {
@@ -29,11 +29,12 @@ final class NearbyListingViewModel: OutletListingPresenterContract{
             completion(([],"Enable current location"))
             return
         }
-        outletRepository.fetchNearbyOutlets(param: [.searchOutlets(searchText ?? ""),
-                                                    .paggingIndex(String(index)),
-                                                    .sortBy(.nearby),
-                                                    .longitude(String(currentLocation.longitude)),
-                                                    .latitude(String(currentLocation.latitude))
+        outletRepository.fetchOutlet(param: [.searchOutlets(searchText ?? ""),
+                                             .paggingIndex(String(index)),
+                                             .sortBy(.nearby),
+                                             .popularCategoryID(String(selectedPopularCategoryID)),
+                                             .longitude(String(currentLocation.longitude)),
+                                             .latitude(String(currentLocation.latitude))
         ]) { result in
             switch result{
             case .success(let data):
@@ -47,24 +48,24 @@ final class NearbyListingViewModel: OutletListingPresenterContract{
         }
         
     }
-    
+
     func fetchOutletAlphabatical(searchText: String?, categoryID: Int?, collectionID: Int?, index: Int, completion: @escaping (([UPOutletListingTableViewCell.Outlet], String?)) -> Void) {
-        
-        outletRepository.fetchNearbyOutlets(param: [.searchOutlets(searchText ?? ""),
-                                                    .paggingIndex(String(index)),
-                                                    .sortBy(.alphabatical)
-        ]) { result in
+        outletRepository.fetchOutlet(param:[.popularCategoryID(String(selectedPopularCategoryID)),
+                                            .sortBy(.alphabatical),
+                                            .paggingIndex(String(index))]) { result in
             switch result{
             case .success(let data):
                 let outlets = data.map { outlet in
-                    UPOutletListingTableViewCell.Outlet(id:outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: outlet.logo ?? ""), distance: "", isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
+                    UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1, outletName: outlet.name ?? "", image: URL(string: outlet.image ?? ""), distance: "", isExpanded: false, offers: [], isParentOutlet: false)
                 }
                 completion((outlets,nil))
             case .failure(let error):
                 completion(([],error.localizedDescription))
             }
+                                         
         }
     }
+       
     
 
     
@@ -79,7 +80,5 @@ final class NearbyListingViewModel: OutletListingPresenterContract{
     func tracingLocationDidFailWithError(error: NSError) {
         debugPrint(error.localizedDescription)
     }
-    
-    
     
 }

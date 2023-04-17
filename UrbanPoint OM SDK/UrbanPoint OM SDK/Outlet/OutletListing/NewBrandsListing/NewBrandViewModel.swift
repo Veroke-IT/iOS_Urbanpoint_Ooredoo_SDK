@@ -36,7 +36,7 @@ final class UPNewBrandViewModel: OutletListingPresenterContract{
                                                        switch result {
                                                        case .success(let data):
                                                            let tableOutlets = data.map { outlet in
-                                                               UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1 , outletName: outlet.name ?? "", image: URL(string: outlet.logo ?? ""), distance: "", isExpanded: false, offers: [], isParentOutlet: false)
+                                                               UPOutletListingTableViewCell.Outlet(id:outlet.id  ?? -1 , outletName: outlet.name ?? "", image: URL(string: outlet.logo ?? ""), distance: "", isExpanded: false, offers: [], isParentOutlet: false)
                                                            }
                                                          completion((tableOutlets,nil))
                                                        case .failure(let error):
@@ -49,7 +49,7 @@ final class UPNewBrandViewModel: OutletListingPresenterContract{
     
     func fetchOutletAlphabatical(searchText: String?, categoryID: Int?, collectionID: Int?, index: Int, completion: @escaping (([UPOutletListingTableViewCell.Outlet],String?)) -> Void) {
         outletRepository.fetchNewBrandsAlphabatical(param: [.paggingIndex(String(index)),
-                                                         .searchOutlets(searchText ?? "")]) { result in
+                                                            .searchOutlets(searchText ?? "")]) { result in
                                                              switch result {
                                                              case .success(let data):
                                                                  let tableOutlets = data.map { outlet in

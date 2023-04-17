@@ -17,15 +17,26 @@ final class UPOfferDetailComposer{
         self.navigationController = navigationController
         self.httpClient = httpClient
         self.offerID = offerID
+        
     }
     
     internal func start(){
         let offerDetailVC = UPOfferDetailComposer.createOfferDetailView(offerID: offerID, httpClient: httpClient)
-        navigationController.pushViewController(offerDetailVC, animated: true)
+        offerDetailVC.TermsAndConditions = onTermsAndServiceTapped
+        navigationController.present(offerDetailVC, animated: true)
     }
     
+    private func onTermsAndServiceTapped(){
+        if let url = URL(string: termsAndServiceURL){
+            let webViewComposer = UPWebViewComposer(navigationController: navigationController)
+            webViewComposer.start(withURL: url)
+        }
+    }
     
-    static func createOfferDetailView(offerID id: Int,httpClient: UPHttpClient) -> UIViewController{
+    private func onRedeemOfferTapped(){}
+    
+    
+    static func createOfferDetailView(offerID id: Int,httpClient: UPHttpClient) -> OfferDetailViewController{
         let offerRepository = URLSessionOfferRepository(httpClient: httpClient)
         let viewModel = OfferDetailViewModel(offerID: id,
                                              offerRepository: offerRepository)

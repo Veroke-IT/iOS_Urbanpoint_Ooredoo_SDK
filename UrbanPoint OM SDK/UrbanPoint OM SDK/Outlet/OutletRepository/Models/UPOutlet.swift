@@ -25,37 +25,34 @@ struct UPOutletApiResponse: Codable {
 
 
 
-struct UPOutlet: Codable {
-    let name: String?
-    let emails: String?
-    let phone, pin, searchTags: String?
-    let phones: String?
-    let logo, image, neighborhood, timings: String?
-    let description, type, special, active: String?
-    let merchantID: Int?
-    let latitude, longitude: Double?
-    let categoryIDS: String?
-    let id, parentsID: Int?
-    let address, outletTiming, accessTokenForBeeDelivery: String?
-  //  let pendingEmailsBody: String?
-    let deliveryStatus: String?
-//    let playlistID, deliveryRadius: Int
-    let isnewBrand: String?
-   // let isnewbrandExpiry, isnewbrandCreatedAt: String?
-    let sku: String?
-    let popularCategoryID: Int?
-    let menuCard: String?
-    let enableDeliveryFor: String?
-    let deliveryOperateStatus: String?
-    let deliveryOptions: String?
-    //let menuType: String?
-    let locationImage: String?
-    let busyClosedUntil: String?
-    let createdAt, updatedAt: String?
-   // let distance: String?
-    let offers: [UPOffer]?
-    let outletImages: [OutletImage]?
-
+struct UPOutlet : Codable {
+  
+    let name: String
+    let emails, phone, phones, pin: String
+    let searchTags, logo, image, neighborhood: String
+    let timings, description, type, special: String
+    let active: String
+    let merchantID: Int
+    let latitude, longitude: Double
+    let categoryIDS: String
+    let id, parentsID: Int
+    let address, outletTiming, accessTokenForBeeDelivery: String
+    //let pendingEmailsBody: String?
+    let deliveryStatus: String
+    let playlistID, deliveryRadius: Int
+    let isnewBrand: String
+    // let isnewbrandExpiry, isnewbrandCreatedAt: JSONNull?
+    let sku: String
+    let popularCategoryID: Int
+    let menuCard, enableDeliveryFor, deliveryOperateStatus, deliveryOptions: String
+    let menuType, locationImage: String
+    //  let busyClosedUntil: String?
+    let createdAt, updatedAt: String
+    //let distance: JSONNull?
+    let offers: [UPOffer]
+    let outletImages: [OutletImage]
+   // let outletMenu: [OutletMenu]
+    
     enum CodingKeys: String, CodingKey {
         case name, emails, phone, phones, pin
         case searchTags = "search_tags"
@@ -67,33 +64,33 @@ struct UPOutlet: Codable {
         case parentsID = "parents_id"
         case address, outletTiming
         case accessTokenForBeeDelivery = "access_token_for_bee_delivery"
-      //  case pendingEmailsBody = "pending_emails_body"
+        // case pendingEmailsBody = "pending_emails_body"
         case deliveryStatus = "delivery_status"
-       // case playlistID = "playlist_id"
-       // case deliveryRadius = "delivery_radius"
+        case playlistID = "playlist_id"
+        case deliveryRadius = "delivery_radius"
         case isnewBrand = "isnew_brand"
-       // case isnewbrandExpiry = "isnewbrand_expiry"
-       // case isnewbrandCreatedAt = "isnewbrand_created_at"
+        //   case isnewbrandExpiry = "isnewbrand_expiry"
+        //   case isnewbrandCreatedAt = "isnewbrand_created_at"
         case sku = "SKU"
         case popularCategoryID = "popular_category_id"
         case menuCard = "menu_card"
         case enableDeliveryFor = "enable_delivery_for"
         case deliveryOperateStatus = "delivery_operate_status"
         case deliveryOptions = "delivery_options"
-    //    case menuType = "menu_type"
+        case menuType = "menu_type"
         case locationImage = "location_image"
-        case busyClosedUntil = "busy_closed_until"
+        //case busyClosedUntil = "busy_closed_until"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case offers
         case outletImages = "outlet_images"
-    
+    //    case outletMenu = "outlet_menu"
     }
     
     // MARK: - Images
     struct OutletImage: Codable {
         let file: String
-        let id, orderBy, outletID: Int
+        let id, orderBy, outletID: String
         let type: String
 
         enum CodingKeys: String, CodingKey {
@@ -101,6 +98,15 @@ struct UPOutlet: Codable {
             case outletID = "outlet_id"
             case type
         }
+    }
+
+
+    struct OutletMenu: Codable {
+        var file: String?
+        var id: String?
+        var orderBy: String?
+        var outlet_id: String?
+        var type: String?
     }
 }
 
@@ -120,7 +126,7 @@ struct UPOffer: Codable {
     let active: String
     let rulesOfPurchase: String
     let discountType, percentageSaving, createdAt, updatedAt: String
-    //let outletName: String
+    let outletName: String
     let isRedeeme, isFavorite: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -144,7 +150,7 @@ struct UPOffer: Codable {
         case percentageSaving = "percentage_saving"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        //case outletName = "outlet_name"
+        case outletName = "outlet_name"
         case isRedeeme, isFavorite
     }
 

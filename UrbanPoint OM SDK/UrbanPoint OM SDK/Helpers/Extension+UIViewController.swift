@@ -63,10 +63,10 @@ extension UIViewController {
         }
     }
     
-    internal func showAlert(title:AlertTitle, message: String){
+    internal func showAlert(title:AlertTitle, message: String,onOkTapped: (() -> Void)? = nil){
         DispatchQueue.main.async {
         let alert = UIAlertController(title: title.rawValue, message: message, preferredStyle: .alert)
-           alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in })
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in onOkTapped?() })
            self.present(alert, animated: true){}
         }
     }

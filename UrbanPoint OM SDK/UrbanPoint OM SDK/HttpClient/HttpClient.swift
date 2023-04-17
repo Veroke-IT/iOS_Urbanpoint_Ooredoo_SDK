@@ -39,7 +39,7 @@ final class UPURLSessionHttpClient: UPHttpClient{
     
     func execute(urlRequest: URLRequest, completion: @escaping (HttpResult) -> Void) -> UPHttpTask {
         let dataTask = session.dataTask(with: urlRequest) { data, urlResponse, error in
-            
+            debugPrint("Executeds")
             if let error{
                 completion(.failure(error))
             }else if let data,

@@ -25,6 +25,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-xT-Umy">
+                                <rect key="frame" x="0.0" y="329.66666666666669" width="393" height="522.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SeA-BP-p9h">
                                 <rect key="frame" x="0.0" y="329.66666666666669" width="393" height="522.33333333333326"/>
                                 <subviews>
@@ -43,7 +52,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
@@ -81,7 +89,7 @@
                                                 <color key="textColor" name="UrbanPointRed"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferDetail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-xK-wYU" customClass="TTTAttributedLabel">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferDetail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-xK-wYU">
                                                 <rect key="frame" x="15" y="58.000000000000007" width="304.33333333333331" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,6 +138,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V67-dk-LVC">
                                                 <rect key="frame" x="0.0" y="44.666666666666629" width="334.33333333333331" height="30"/>
+                                                <connections>
+                                                    <action selector="onTermsAndConditionTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1H0-R9-j8F"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer expires on DD/MM/YYYY" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhs-NV-M9e">
                                                 <rect key="frame" x="0.0" y="82.666666666666629" width="334.33333333333331" height="14.333333333333329"/>
@@ -193,6 +204,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onRedeemOfferTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t1V-dc-FFo"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Qz2-6q-4Ms" userLabel="GiftSaveOfferStackView">
                                         <rect key="frame" x="32.666666666666657" y="371.33333333333331" width="327.66666666666674" height="50"/>
@@ -338,17 +352,27 @@
                                     <constraint firstItem="mfA-NN-Qcs" firstAttribute="width" secondItem="SeA-BP-p9h" secondAttribute="width" multiplier="0.85" id="wPy-Tq-YfA"/>
                                     <constraint firstItem="t9y-sX-rjV" firstAttribute="top" secondItem="Qz2-6q-4Ms" secondAttribute="bottom" constant="32" id="ymG-Y7-S2y"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SeA-BP-p9h" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Dks-8t-4Cd"/>
+                            <constraint firstItem="Fg5-xT-Umy" firstAttribute="centerX" secondItem="SeA-BP-p9h" secondAttribute="centerX" id="FFf-rd-Ro6"/>
+                            <constraint firstItem="Fg5-xT-Umy" firstAttribute="centerY" secondItem="SeA-BP-p9h" secondAttribute="centerY" id="Mcd-hm-SR9"/>
                             <constraint firstAttribute="bottom" secondItem="SeA-BP-p9h" secondAttribute="bottom" id="PWy-A0-ltk"/>
+                            <constraint firstItem="Fg5-xT-Umy" firstAttribute="height" secondItem="SeA-BP-p9h" secondAttribute="height" id="jfy-aJ-t6m"/>
+                            <constraint firstItem="Fg5-xT-Umy" firstAttribute="width" secondItem="SeA-BP-p9h" secondAttribute="width" id="roF-Sr-2Vr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SeA-BP-p9h" secondAttribute="trailing" id="utN-ta-2P5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coverView" destination="Fg5-xT-Umy" id="q1k-3o-nkE"/>
                         <outlet property="detailExclusionLabel" destination="j29-1T-qmx" id="wmN-J3-hhr"/>
                         <outlet property="expiryDateLabel" destination="fhs-NV-M9e" id="M1i-Ot-ZLl"/>
                         <outlet property="offerDetailLabel" destination="4aK-xK-wYU" id="eGH-ce-A9R"/>

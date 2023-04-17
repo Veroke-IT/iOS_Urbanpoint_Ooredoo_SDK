@@ -9,13 +9,14 @@ import Foundation
 import CoreLocation
 
 final class UPCategoryViewModel: OutletListingPresenterContract{
+    var currentLocation: CLLocationCoordinate2D?
+    
 
     let homeService: HomeService
     let outletRepository: OutletRepository
     let selectedCategoryID: Int
     var categories: [UPCategory] = []
     let locationManager: UPLocationManager = UPLocationManager.sharedInstance
-    var currentLocation: CLLocationCoordinate2D? = nil
     var selectedCollectionID: Int? = nil
     
     
@@ -70,7 +71,7 @@ final class UPCategoryViewModel: OutletListingPresenterContract{
             switch result{
             case .success(let data):
                 let outlets = data.map { outlet in
-                    UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1, outletName: outlet.name ?? "", image: URL(string: outlet.image ?? ""), distance: "", isExpanded: false, offers: [], isParentOutlet: false)
+                    UPOutletListingTableViewCell.Outlet(id: outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: outlet.image ?? ""), distance: "", isExpanded: false, offers: [], isParentOutlet: false)
                 }
                 completion((outlets,nil))
             case .failure(let error):

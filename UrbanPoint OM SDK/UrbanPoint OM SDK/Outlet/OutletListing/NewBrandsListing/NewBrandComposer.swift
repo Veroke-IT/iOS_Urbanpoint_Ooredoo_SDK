@@ -18,10 +18,12 @@ final class NewBrandComposer{
         self.navigationController = navigationController
     }
     
-    static func createNewBrandViewController(viewModel: OutletListingPresenterContract,titleString: String) -> UIViewController{
+    static func createNewBrandViewController(viewModel: OutletListingPresenterContract,
+                                             titleString: String,
+                                             onBackButtonTapped: @escaping () -> Void) -> UIViewController{
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
         let viewController = UIStoryboard(name: "NewBrands", bundle: storyBoardBundle).instantiateViewController(identifier: "NewBrandViewController") { coder in
-            NewBrandViewController(coder: coder, viewModel: viewModel, titleString: titleString)
+            NewBrandViewController(coder: coder, viewModel: viewModel, titleString: titleString, onBackButtonTapped: onBackButtonTapped)
         }
         
        // viewController.homePresenter = viewModel

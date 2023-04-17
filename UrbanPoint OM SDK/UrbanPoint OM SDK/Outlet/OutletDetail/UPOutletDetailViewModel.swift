@@ -17,12 +17,12 @@ final class UPOutletDetailViewModel{
         let outletAddress: String
         let outletOffers: [UPOffer]
         let outletTimings: String
-        let outletImage: URL
-        let outletLongitude: CGFloat
-        let outletLatitude: CGFloat
+        let outletImage: URL?
+        let outletLongitude: Double
+        let outletLatitude: Double
         let outletPhonenNumber: [String]
-        let outletMenu: URL?
-        let bannerImages: [URL]
+        let outletMenu: [UPOutlet.OutletMenu]
+        let bannerImages: [URL?]
         
     }
     
@@ -42,8 +42,8 @@ final class UPOutletDetailViewModel{
             switch result {
             case .success(let data):
                 if let data = data.first{
-//                    self.outlet = UPOutletDetailViewModel.Outlet(id: data.id, outletName: data.name, outletDescription: data.description, outletAddress: data.address, outletOffers: data.offers, outletTimings: data.outletTiming, outletImage: URL(string: imageBaseURL + data.image)!, outletLongitude: data.longitude, outletLatitude: data.latitude, outletPhonenNumber: [data.phones], outletMenu: URL(string: data.menuCard), bannerImages: data.outletImages?.compactMap({ URL(string: imageBaseURL + $0.file )
-//                    }) ?? [])
+                    self.outlet = UPOutletDetailViewModel.Outlet(id: data.id ?? -1 , outletName: data.name ?? "", outletDescription: data.description ?? "", outletAddress: data.address ?? "", outletOffers: data.offers ?? [], outletTimings: data.outletTiming ?? "", outletImage: URL(string: imageBaseURL + (data.image ?? "")), outletLongitude: data.longitude, outletLatitude: data.latitude , outletPhonenNumber: [data.phones ?? ""], outletMenu:  [], bannerImages:data.outletImages.isEmpty ? [URL(string:  imageBaseURL + data.image)] : data.outletImages.compactMap({ URL(string: imageBaseURL + $0.file )
+                    }) )
                     completion(nil)
                 }else{
                     completion("Oops something went wrong")

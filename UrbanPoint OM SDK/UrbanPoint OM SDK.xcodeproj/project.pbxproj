@@ -23,6 +23,16 @@
 		0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0471208D29EBBFFB003EA8DA /* MBProgressHUD */; };
 		0471209129EBC324003EA8DA /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0471209029EBC324003EA8DA /* WebView.storyboard */; };
 		0471209329EBC375003EA8DA /* UPWebViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209229EBC375003EA8DA /* UPWebViewComposer.swift */; };
+		0471209529EBD1A9003EA8DA /* OutletMenuImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209429EBD1A9003EA8DA /* OutletMenuImageViewerViewController.swift */; };
+		0471209729EBD1CA003EA8DA /* OutletMenuCardImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209629EBD1CA003EA8DA /* OutletMenuCardImageViewController.swift */; };
+		0471209929EBD3F3003EA8DA /* MenuScrollableImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209829EBD3F3003EA8DA /* MenuScrollableImageViewCell.swift */; };
+		0471209B29EBD4E2003EA8DA /* MenuImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209A29EBD4E2003EA8DA /* MenuImageCollectionCell.swift */; };
+		0471209F29EBF183003EA8DA /* PopularCategoryListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209E29EBF183003EA8DA /* PopularCategoryListingViewModel.swift */; };
+		047120A329EBF88D003EA8DA /* UPUsedOffer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047120A229EBF88D003EA8DA /* UPUsedOffer.storyboard */; };
+		047120A529EBF8A4003EA8DA /* UPUsedOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047120A429EBF8A4003EA8DA /* UPUsedOfferViewController.swift */; };
+		047120A729EBFB93003EA8DA /* UPUsedOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047120A629EBFB93003EA8DA /* UPUsedOfferTableViewCell.swift */; };
+		047120A929EC2B20003EA8DA /* UPUsedOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047120A829EC2B20003EA8DA /* UPUsedOfferViewModel.swift */; };
+		047120AB29EC2BE8003EA8DA /* UPUsedOffersViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047120AA29EC2BE8003EA8DA /* UPUsedOffersViewComposer.swift */; };
 		047439B729D408E7005CB671 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047439B629D408E7005CB671 /* HttpClient.swift */; };
 		047439BA29D40B6F005CB671 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047439B929D40B6F005CB671 /* HomeService.swift */; };
 		047439BC29D40D1D005CB671 /* Extension+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047439BB29D40D1D005CB671 /* Extension+URLRequest.swift */; };
@@ -120,6 +130,16 @@
 		04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletDetailViewModel.swift; sourceTree = "<group>"; };
 		0471209029EBC324003EA8DA /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		0471209229EBC375003EA8DA /* UPWebViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPWebViewComposer.swift; sourceTree = "<group>"; };
+		0471209429EBD1A9003EA8DA /* OutletMenuImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletMenuImageViewerViewController.swift; sourceTree = "<group>"; };
+		0471209629EBD1CA003EA8DA /* OutletMenuCardImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletMenuCardImageViewController.swift; sourceTree = "<group>"; };
+		0471209829EBD3F3003EA8DA /* MenuScrollableImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScrollableImageViewCell.swift; sourceTree = "<group>"; };
+		0471209A29EBD4E2003EA8DA /* MenuImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImageCollectionCell.swift; sourceTree = "<group>"; };
+		0471209E29EBF183003EA8DA /* PopularCategoryListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoryListingViewModel.swift; sourceTree = "<group>"; };
+		047120A229EBF88D003EA8DA /* UPUsedOffer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UPUsedOffer.storyboard; sourceTree = "<group>"; };
+		047120A429EBF8A4003EA8DA /* UPUsedOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPUsedOfferViewController.swift; sourceTree = "<group>"; };
+		047120A629EBFB93003EA8DA /* UPUsedOfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPUsedOfferTableViewCell.swift; sourceTree = "<group>"; };
+		047120A829EC2B20003EA8DA /* UPUsedOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPUsedOfferViewModel.swift; sourceTree = "<group>"; };
+		047120AA29EC2BE8003EA8DA /* UPUsedOffersViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPUsedOffersViewComposer.swift; sourceTree = "<group>"; };
 		047439B629D408E7005CB671 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		047439B929D40B6F005CB671 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		047439BB29D40D1D005CB671 /* Extension+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLRequest.swift"; sourceTree = "<group>"; };
@@ -244,10 +264,11 @@
 			isa = PBXGroup;
 			children = (
 				04313A5229DFDCBE00E3CCC8 /* OutletDetail.storyboard */,
+				0409820129E4049E0042009B /* UPOutletDetailComposer.swift */,
 				04313A5429DFDD0400E3CCC8 /* OutletDetailViewController.swift */,
 				04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */,
 				04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */,
-				0409820129E4049E0042009B /* UPOutletDetailComposer.swift */,
+				0471209C29EBD59A003EA8DA /* OutletMenu */,
 			);
 			path = OutletDetail;
 			sourceTree = "<group>";
@@ -260,6 +281,45 @@
 				0471209229EBC375003EA8DA /* UPWebViewComposer.swift */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		0471209C29EBD59A003EA8DA /* OutletMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0471209429EBD1A9003EA8DA /* OutletMenuImageViewerViewController.swift */,
+				0471209629EBD1CA003EA8DA /* OutletMenuCardImageViewController.swift */,
+				0471209829EBD3F3003EA8DA /* MenuScrollableImageViewCell.swift */,
+				0471209A29EBD4E2003EA8DA /* MenuImageCollectionCell.swift */,
+			);
+			path = OutletMenu;
+			sourceTree = "<group>";
+		};
+		0471209D29EBF16A003EA8DA /* PopularCategoryListing */ = {
+			isa = PBXGroup;
+			children = (
+				0471209E29EBF183003EA8DA /* PopularCategoryListingViewModel.swift */,
+			);
+			path = PopularCategoryListing;
+			sourceTree = "<group>";
+		};
+		047120A029EBF878003EA8DA /* Offer */ = {
+			isa = PBXGroup;
+			children = (
+				047120A129EBF881003EA8DA /* UPUsedOffer */,
+			);
+			path = Offer;
+			sourceTree = "<group>";
+		};
+		047120A129EBF881003EA8DA /* UPUsedOffer */ = {
+			isa = PBXGroup;
+			children = (
+				047120A229EBF88D003EA8DA /* UPUsedOffer.storyboard */,
+				047120A429EBF8A4003EA8DA /* UPUsedOfferViewController.swift */,
+				047120A629EBFB93003EA8DA /* UPUsedOfferTableViewCell.swift */,
+				047120A829EC2B20003EA8DA /* UPUsedOfferViewModel.swift */,
+				047120AA29EC2BE8003EA8DA /* UPUsedOffersViewComposer.swift */,
+			);
+			path = UPUsedOffer;
 			sourceTree = "<group>";
 		};
 		047439B529D408D4005CB671 /* HttpClient */ = {
@@ -397,6 +457,7 @@
 				04FC748A29DAD9970099E8C5 /* Assets */,
 				047439B529D408D4005CB671 /* HttpClient */,
 				04E68AB829B8B18C00573B2A /* Helpers */,
+				047120A029EBF878003EA8DA /* Offer */,
 				04313A5029DFDC9300E3CCC8 /* Outlet */,
 				04E68AB229B8B13B00573B2A /* Home */,
 				04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */,
@@ -475,6 +536,7 @@
 		04FC747729DA986D0099E8C5 /* OutletListing */ = {
 			isa = PBXGroup;
 			children = (
+				0471209D29EBF16A003EA8DA /* PopularCategoryListing */,
 				047EBD8429EAA26100953AF9 /* ChildOutletListing */,
 				047EBD7729E970BD00953AF9 /* NearbyOutletListing */,
 				047EBD6629E9520A00953AF9 /* NewBrandsListing */,
@@ -640,6 +702,7 @@
 				04FC74A429DADA180099E8C5 /* Roboto-Medium.ttf in Resources */,
 				04FC74AA29DADA180099E8C5 /* Roboto-Italic.ttf in Resources */,
 				04FC74AF29DADA180099E8C5 /* Mark Simonson - Proxima Nova Alt Bold.otf in Resources */,
+				047120A329EBF88D003EA8DA /* UPUsedOffer.storyboard in Resources */,
 				04FC74BC29DBDDBF0099E8C5 /* Offer.storyboard in Resources */,
 				04FC74B029DADA180099E8C5 /* DIN NEXT™ ARABIC MEDIUM .otf in Resources */,
 				04FC74A629DADA180099E8C5 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */,
@@ -674,6 +737,7 @@
 				047439C029D41489005CB671 /* HomeViewModel.swift in Sources */,
 				0471209329EBC375003EA8DA /* UPWebViewComposer.swift in Sources */,
 				04FC748529DAB4070099E8C5 /* OutletListingPresenter.swift in Sources */,
+				047120AB29EC2BE8003EA8DA /* UPUsedOffersViewComposer.swift in Sources */,
 				047EBD7929E970D000953AF9 /* NearbyOutletListingViewModel.swift in Sources */,
 				04E68B2229B9DDC000573B2A /* Colors.swift in Sources */,
 				047EBD7129E9559300953AF9 /* OutletService+Extension+NewBrands.swift in Sources */,
@@ -685,13 +749,17 @@
 				047EBD6C29E9539000953AF9 /* NewBrandViewModel.swift in Sources */,
 				0409820429E405AB0042009B /* UPHomeViewComposer.swift in Sources */,
 				04FC74C229DBE3F90099E8C5 /* OfferRepository.swift in Sources */,
+				047120A729EBFB93003EA8DA /* UPUsedOfferTableViewCell.swift in Sources */,
 				047EBD6A29E9536C00953AF9 /* NewBrandViewController.swift in Sources */,
 				04FC747129D9C8B20099E8C5 /* Extension+UIImageView.swift in Sources */,
 				04FC746B29D966DA0099E8C5 /* UPNearbyOutletHomeCollectionViewCell.swift in Sources */,
 				04313A5729DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift in Sources */,
+				0471209B29EBD4E2003EA8DA /* MenuImageCollectionCell.swift in Sources */,
 				047439BE29D413B1005CB671 /* EssentialData.swift in Sources */,
+				0471209729EBD1CA003EA8DA /* OutletMenuCardImageViewController.swift in Sources */,
 				0476759029D6E3C00004C885 /* PopularCategoriesTableViewCell.swift in Sources */,
 				04FC74C429DBE6B50099E8C5 /* OfferDetailResponse.swift in Sources */,
+				047120A529EBF8A4003EA8DA /* UPUsedOfferViewController.swift in Sources */,
 				0409820029E4015D0042009B /* TempConstants.swift in Sources */,
 				047EBD6F29E954CF00953AF9 /* NewBrand.swift in Sources */,
 				04FC74CA29DD4D980099E8C5 /* UPCategoriesViewController.swift in Sources */,
@@ -699,6 +767,7 @@
 				047EBD5E29E7E2D200953AF9 /* UPRedeemOfferViewModel.swift in Sources */,
 				04313A5929DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift in Sources */,
 				047439B729D408E7005CB671 /* HttpClient.swift in Sources */,
+				047120A929EC2B20003EA8DA /* UPUsedOfferViewModel.swift in Sources */,
 				047439BC29D40D1D005CB671 /* Extension+URLRequest.swift in Sources */,
 				04E68ABA29B8B1AD00573B2A /* Extension+UIView.swift in Sources */,
 				0409820229E4049E0042009B /* UPOutletDetailComposer.swift in Sources */,
@@ -706,9 +775,11 @@
 				047EBD7429E9620E00953AF9 /* NewBrandComposer.swift in Sources */,
 				0409820E29E68D200042009B /* UPRedeemOfferViewController.swift in Sources */,
 				04FC74C029DBE3990099E8C5 /* OfferDetailViewModel.swift in Sources */,
+				0471209929EBD3F3003EA8DA /* MenuScrollableImageViewCell.swift in Sources */,
 				0476758929D6DE0F0004C885 /* UPHomeCategoriesTableViewCell.swift in Sources */,
 				047439BA29D40B6F005CB671 /* HomeService.swift in Sources */,
 				0479970929D565CF00DDD948 /* OutletSearchViewController.swift in Sources */,
+				0471209529EBD1A9003EA8DA /* OutletMenuImageViewerViewController.swift in Sources */,
 				0409783A29E3CC9F0042009B /* UPWebViewController.swift in Sources */,
 				04FC747629D9CFD00099E8C5 /* NewBrandsTableViewCell.swift in Sources */,
 				0409820629E40BDC0042009B /* OfferDetailComposer.swift in Sources */,
@@ -718,6 +789,7 @@
 				047EBD6029E7F0BA00953AF9 /* UPOutletParent.swift in Sources */,
 				0479971029D6B01D00DDD948 /* OutletRepository.swift in Sources */,
 				047EBD6429E8023D00953AF9 /* UPCataegoryViewModel.swift in Sources */,
+				0471209F29EBF183003EA8DA /* PopularCategoryListingViewModel.swift in Sources */,
 				04313A5529DFDD0400E3CCC8 /* OutletDetailViewController.swift in Sources */,
 				047EBD7629E9702E00953AF9 /* OutletService+NearbyOutlets.swift in Sources */,
 				04FC747429D9CFC10099E8C5 /* NewBrandsHomeCollectionViewCell.swift in Sources */,

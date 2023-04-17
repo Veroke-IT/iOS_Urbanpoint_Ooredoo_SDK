@@ -24,13 +24,56 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jd-pn-QDD">
+                                <rect key="frame" x="24" y="83" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button" translatesAutoresizingMaskIntoConstraints="NO" id="puJ-XK-Wqk">
+                                        <rect key="frame" x="7.6666666666666679" y="7.6666666666666714" width="25.000000000000004" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="hra-JH-CAt"/>
+                                            <constraint firstAttribute="width" constant="25" id="w6n-8E-Qzx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUn-qq-aTD">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="onBackButtonTapped:" destination="OaG-vU-Dw5" eventType="touchUpInside" id="etG-sW-Xgt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uUn-qq-aTD" secondAttribute="bottom" id="4E9-h8-BgG"/>
+                                    <constraint firstAttribute="width" constant="40" id="DbL-EC-m0x"/>
+                                    <constraint firstAttribute="trailing" secondItem="uUn-qq-aTD" secondAttribute="trailing" id="RfX-SS-hfE"/>
+                                    <constraint firstItem="uUn-qq-aTD" firstAttribute="leading" secondItem="6jd-pn-QDD" secondAttribute="leading" id="Sy3-fE-8Yy"/>
+                                    <constraint firstAttribute="height" constant="40" id="Xsj-b6-PEX"/>
+                                    <constraint firstItem="puJ-XK-Wqk" firstAttribute="centerX" secondItem="6jd-pn-QDD" secondAttribute="centerX" id="hGO-pw-AgK"/>
+                                    <constraint firstItem="puJ-XK-Wqk" firstAttribute="centerY" secondItem="6jd-pn-QDD" secondAttribute="centerY" id="i6L-Kb-kbj"/>
+                                    <constraint firstItem="uUn-qq-aTD" firstAttribute="top" secondItem="6jd-pn-QDD" secondAttribute="top" id="yYx-dr-hrb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IsH-uE-bT1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IsH-uE-bT1" firstAttribute="trailing" secondItem="2kB-gO-8EB" secondAttribute="trailing" id="5xI-ZQ-VA3"/>
+                            <constraint firstItem="6jd-pn-QDD" firstAttribute="top" secondItem="IsH-uE-bT1" secondAttribute="top" constant="24" id="CsK-xB-sTe"/>
                             <constraint firstItem="IsH-uE-bT1" firstAttribute="bottom" secondItem="2kB-gO-8EB" secondAttribute="bottom" id="PHg-Gg-vza"/>
                             <constraint firstItem="2kB-gO-8EB" firstAttribute="leading" secondItem="IsH-uE-bT1" secondAttribute="leading" id="YEd-gU-JvZ"/>
+                            <constraint firstItem="6jd-pn-QDD" firstAttribute="leading" secondItem="IsH-uE-bT1" secondAttribute="leading" constant="24" id="Z4R-jD-0Kb"/>
                             <constraint firstItem="2kB-gO-8EB" firstAttribute="top" secondItem="IsH-uE-bT1" secondAttribute="top" id="jRS-IT-PFj"/>
                         </constraints>
                     </view>
@@ -44,6 +87,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back_button" width="27" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
