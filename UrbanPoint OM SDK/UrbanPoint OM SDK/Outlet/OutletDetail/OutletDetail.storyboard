@@ -29,10 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NV-Me-sFe" userLabel="CoverView">
-                                <rect key="frame" x="0.0" y="59" width="375" height="907"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtn-Up-XmO">
                                 <rect key="frame" x="0.0" y="59" width="375" height="907"/>
                                 <subviews>
@@ -104,6 +100,9 @@
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onShareOutletTapped:" destination="64L-qv-DUT" eventType="touchUpInside" id="TgI-DO-4TS"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vH-Nr-nvo">
                                         <rect key="frame" x="267" y="18.666666666666671" width="79.333333333333314" height="31.666666666666671"/>
@@ -176,7 +175,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rr9-yM-CfV">
                                                                 <rect key="frame" x="90.333333333333314" y="0.0" width="82.666666666666686" height="40.333333333333336"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_Phone_1887317" translatesAutoresizingMaskIntoConstraints="NO" id="wyU-DG-JQH">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="wyU-DG-JQH">
                                                                         <rect key="frame" x="10" y="11.999999999999998" width="16" height="16.333333333333329"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="wyU-DG-JQH" secondAttribute="height" multiplier="1:1" id="0pP-dg-4dr"/>
@@ -217,7 +216,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ch4-Cx-P5N">
                                                                 <rect key="frame" x="181" y="0.0" width="82.333333333333314" height="40.333333333333336"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_drop pin_3838278 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="Pjo-KX-BRu">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_pin" translatesAutoresizingMaskIntoConstraints="NO" id="Pjo-KX-BRu">
                                                                         <rect key="frame" x="10" y="11.999999999999998" width="16" height="16.333333333333329"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Pjo-KX-BRu" secondAttribute="height" multiplier="1:1" id="0SY-Kv-JLL"/>
@@ -383,7 +382,7 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7jn-RB-dQn">
+                                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7jn-RB-dQn">
                                                                             <rect key="frame" x="292" y="15.666666666666671" width="30" height="63"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0n-Ne-BXN" userLabel="FavouriteView">
@@ -562,7 +561,7 @@
                                                 <color key="textColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_drop pin_3838278 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-GH-ta5">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_pin" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-GH-ta5">
                                                 <rect key="frame" x="10" y="64.666666666666742" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="RR4-XU-Wm9"/>
@@ -666,6 +665,10 @@
                                     <constraint firstItem="2JS-az-e4h" firstAttribute="centerX" secondItem="ARn-yU-E0u" secondAttribute="centerX" id="zbn-A9-3gK"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NV-Me-sFe" userLabel="CoverView">
+                                <rect key="frame" x="0.0" y="59" width="375" height="907"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uzG-E8-GpP"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1003,9 +1006,9 @@
         <image name="backarrow" width="20.666666030883789" height="15.666666984558105"/>
         <image name="favourite" width="24" height="24"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="location_pin" width="17.333333969116211" height="25"/>
         <image name="menu" width="55" height="84"/>
-        <image name="noun_Phone_1887317" width="24.333333969116211" height="25"/>
-        <image name="noun_drop pin_3838278 (1)" width="17.333333969116211" height="25"/>
+        <image name="phone" width="24.333333969116211" height="25"/>
         <image name="share_offer" width="99" height="21"/>
         <namedColor name="UrbanPointGreen">
             <color red="0.075999997556209564" green="0.56099998950958252" blue="0.58799999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

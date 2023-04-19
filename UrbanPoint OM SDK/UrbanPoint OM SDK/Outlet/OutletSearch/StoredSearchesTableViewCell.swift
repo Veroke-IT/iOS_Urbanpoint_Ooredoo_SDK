@@ -12,6 +12,9 @@ class StoredSearchesTableViewCell: UITableViewCell {
     static let cellIdentifierString = "StoredSearchesTableViewCell"
     @IBOutlet weak var searchTextLabel: UILabel!
   
+    var onDeleteSearchTapped: ((String) -> Void)?
+    
+    var searchString: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +22,7 @@ class StoredSearchesTableViewCell: UITableViewCell {
     }
     
     func configureCellWith(_ trendingSearchText: String){
+        self.searchString = trendingSearchText
         searchTextLabel.text = trendingSearchText
     }
     
@@ -27,6 +31,10 @@ class StoredSearchesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func onDeleteSearchTapped(_ sender: Any){
+        onDeleteSearchTapped?(searchString)
     }
 
 }

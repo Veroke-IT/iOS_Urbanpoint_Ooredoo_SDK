@@ -37,6 +37,10 @@ final class UPOutletSearchViewModel{
         }
     }
     
+    internal func deleteStoredSearch(_ string: String){
+        trendingSearchRespository.deleteStoredSearch(searchString: string)
+    }
+    
     internal func fetchStoredSearches(searchText: String,completion:@escaping () -> Void){
         trendingSearchRespository.fetchStoredSearches {[weak self] data in
             self?.storedSearches = data.filter({ $0.contains(searchText)})

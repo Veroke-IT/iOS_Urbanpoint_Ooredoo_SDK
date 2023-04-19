@@ -14,12 +14,12 @@ protocol UPTrendingSearchRepository{
     func addSearchToStoredSearches(searchText: String)
     
     func fetchOffersTag(searchText: String,completion:@escaping (Result<[String],Error>) -> Void) -> UPHttpTask?
+    func deleteStoredSearch(searchString: String)
     
 }
 
 final class UPTrendingSearchHttpRepository: UPTrendingSearchRepository{
-    
-    
+
     let httpClient: UPHttpClient
     static let storedSearchesIdentifier = "UPstoredSearchesIdentifier"
     
@@ -121,7 +121,17 @@ final class UPTrendingSearchHttpRepository: UPTrendingSearchRepository{
         }
         return []
     }
+
+
     
+    func deleteStoredSearch(searchString: String) {
+        var allSearchesNew = fetchAllStoredSearches()
+        guard  let index = fetchAllStoredSearches().firstIndex(of: searchString) else {
+            return
+        }
+        allSearchesNew.remove(at: index)
+        UserDefaults.standard.set(allSearchesNew, forKey: UPTrendingSearchHttpRepository.storedSearchesIdentifier)
+    }
     
     
 }

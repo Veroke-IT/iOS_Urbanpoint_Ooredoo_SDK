@@ -76,7 +76,7 @@
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="March 30, 2023" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58I-Jf-KjE" userLabel="IDLabel">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="March 30, 2023" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58I-Jf-KjE" userLabel="Date">
                                                             <rect key="frame" x="108" y="25.666666666666661" width="253" height="15.333333333333332"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                                             <color key="textColor" name="UrbanPointDarkGrey"/>
@@ -112,7 +112,7 @@
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aramede Restaurant 25% Off on Lunch Buffet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAM-yC-Jzy">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aramede Restaurant 25% Off on Lunch Buffet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAM-yC-Jzy">
                                                             <rect key="frame" x="106" y="76.666666666666671" width="171" height="30.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,6 +158,13 @@
                                                 <constraint firstItem="jy0-ly-4n9" firstAttribute="top" secondItem="zCD-uW-YdG" secondAttribute="top" constant="8" id="tQY-dV-6vu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="confirmationIDLabel" destination="qhh-hk-ot7" id="qwg-7s-xO6"/>
+                                            <outlet property="dateLabel" destination="58I-Jf-KjE" id="lHh-Ln-aib"/>
+                                            <outlet property="offerDescriptionLabel" destination="wAM-yC-Jzy" id="2Pk-0h-jxi"/>
+                                            <outlet property="outletImageView" destination="ktA-ce-NP3" id="4C5-E7-cMx"/>
+                                            <outlet property="outletNameLabel" destination="Nlb-54-PZz" id="JgY-4D-2eb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -184,6 +191,9 @@
                             <constraint firstItem="mxx-NN-Eru" firstAttribute="leading" secondItem="Ve8-e2-Iia" secondAttribute="leading" constant="24" id="xSn-cy-zFW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="offerTableView" destination="u5l-XZ-h52" id="RWd-iw-zQD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="woK-Fq-vLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

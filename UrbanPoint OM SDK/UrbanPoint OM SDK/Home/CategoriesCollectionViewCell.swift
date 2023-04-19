@@ -27,7 +27,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
                                           shadowRadius: 1,
                                           shadowOpacity: 0.3)
         
-             
+        categoryImageView.contentMode = .scaleAspectFill
         categoryImageView.sd_setImage(with: viewModel.categoryImage)
     }
     

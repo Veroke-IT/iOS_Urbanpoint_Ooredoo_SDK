@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import CoreLocation
 
-final class UPOutletDetailViewModel{
+final class UPOutletDetailViewModel: UPLocationManagerDelegate{
     
     struct Outlet: Identifiable{
      
@@ -26,15 +27,17 @@ final class UPOutletDetailViewModel{
         
     }
     
+    private(set) var currentLocation: CLLocationCoordinate2D? = nil
     private(set) var outletImages: [URL] = []
     private(set) var outlet: Outlet? = nil
-    
+    let locationManager = UPLocationManager.sharedInstance
     private let outletID: Int
     private let outletRepository: OutletRepository
     
     init(outletID: Int, outletRepository: OutletRepository) {
         self.outletID = outletID
         self.outletRepository = outletRepository
+        locationManager.delegate = self
     }
     
     internal func fetchOutlet(completion:@escaping (String?) -> Void){
@@ -65,7 +68,22 @@ final class UPOutletDetailViewModel{
             })
         }
         
-        return UPOutletDetailViewModel.Outlet(id: outlet.id ?? -1 , outletName: outlet.name ?? "" , outletDescription: outlet.description ?? "" , outletAddress: outlet.address ?? "", outletOffers: outlet.offers ?? [], outletTimings: outlet.timings ?? "" , outletImage: URL(string: imageBaseURL + (outlet.image ?? "")), outletLongitude: outlet.longitude ?? 0, outletLatitude: outlet.latitude ?? 0, outletPhonenNumber: [outlet.phones ?? ""], outletMenu: outlet.outletMenu ?? [], bannerImages: bannerImages)
+        let outletPhone = outlet.phones?.split(separator: ",")
+            .map({ String($0) }) ?? []
+        
+        return UPOutletDetailViewModel.Outlet(id: outlet.id ?? -1 , outletName: outlet.name ?? "" , outletDescription: outlet.description ?? "" , outletAddress: outlet.address ?? "", outletOffers: outlet.offers ?? [], outletTimings: outlet.timings ?? "" , outletImage: URL(string: imageBaseURL + (outlet.image ?? "")), outletLongitude: outlet.longitude ?? 0, outletLatitude: outlet.latitude ?? 0, outletPhonenNumber: outletPhone, outletMenu: outlet.outletMenu ?? [], bannerImages: bannerImages)
+    }
+    
+    internal func fetchUserLocation(){
+         locationManager.startUpdatingLocation()
+    }
+    
+    func tracingLocation(currentLocation: CLLocation) {
+        self.currentLocation = currentLocation.coordinate
+    }
+    
+    func tracingLocationDidFailWithError(error: NSError) {
+        debugPrint(error.localizedDescription)
     }
     
 }

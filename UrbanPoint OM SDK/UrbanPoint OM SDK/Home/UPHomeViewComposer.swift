@@ -33,6 +33,9 @@ final class UPHomeViewComposer{
         homeViewController.onPopoularCategorySelected = onPoularCategorySelected
         homeViewController.onTopBarTapped = onSearchBarTapped
         homeViewController.onParentBrandSelected = onParentSelected
+        homeViewController.showUseAgainOffer = onOfferSelected
+        homeViewController.onSettingButtonTapped = onSettingButtonTapped
+        homeViewController.onViewAllOffersTapped = onViewAllOffersTapped
         navigationController.pushViewController(homeViewController, animated: true)
     }
     
@@ -42,7 +45,6 @@ final class UPHomeViewComposer{
         let viewController = UIStoryboard(name: "HomeView", bundle: storyBoardBundle).instantiateViewController(identifier: "UPHomeViewController") { coder in
             UPHomeViewController(coder: coder, presenter: viewModel)
         }
-        
         return viewController
     }
     
@@ -91,6 +93,11 @@ final class UPHomeViewComposer{
     private func onSearchBarTapped(){
         let searchFlow = UPSearchViewComposer(httpClient: httpClient, naviagtionController: navigationController)
         searchFlow.start()
+    }
+    
+    private func onViewAllOffersTapped(){
+        let usedOfferFlow = UPUsedOfferViewComposer(httpClient: httpClient, navigationController: navigationController)
+        usedOfferFlow.start()
     }
 
 }

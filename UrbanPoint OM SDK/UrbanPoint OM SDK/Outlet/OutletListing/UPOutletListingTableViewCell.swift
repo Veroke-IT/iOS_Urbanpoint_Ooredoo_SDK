@@ -94,6 +94,10 @@ class UPOutletListingTableViewCell: UITableViewCell {
             }
             if outlet.isExpanded{
                 offerButtonLabel.text = "Hide all offers"
+                arrowImageView.image = UIImage.loadImageWithName("uparrow")
+            }else{
+                offerButtonLabel.text = "View all offers"
+                arrowImageView.image = UIImage.loadImageWithName("downarrow")
             }
         }
     }

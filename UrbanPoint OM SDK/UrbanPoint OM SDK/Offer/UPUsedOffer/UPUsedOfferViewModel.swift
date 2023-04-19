@@ -20,7 +20,11 @@ final class UPUsedOfferViewModel{
         offerRepository.fetchUsedOffer(index: index) { result in
             switch result {
             case .success(let data):
-                self.offers = data
+                if index == 1{
+                    self.offers = []
+                }
+                self.offers.append(contentsOf: data)
+               
                 completion(nil)
             case .failure(let failure):
                 completion(failure.localizedDescription)

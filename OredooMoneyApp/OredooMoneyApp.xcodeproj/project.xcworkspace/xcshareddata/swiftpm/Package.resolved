@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "ios-branch-deep-linking-attribution",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BranchMetrics/ios-branch-deep-linking-attribution",
+      "state" : {
+        "revision" : "86518c0ba6c7dc4bcd37c249887bd5f8132587cf",
+        "version" : "2.1.1"
+      }
+    },
+    {
       "identity" : "mbprogresshud",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jdg/MBProgressHUD.git",

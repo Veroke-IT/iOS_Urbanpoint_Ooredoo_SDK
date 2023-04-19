@@ -33,7 +33,7 @@ class UPOfferTableViewCell: UITableViewCell {
     
     private func setupCellUI(){
        titleLabel.text = offer?.title
-        if let price = offer?.price,
+        if let price = offer?.approxSaving,
            let type = offer?.discountType{
              fetchTextForSavingLabel(type: type, with: String(price))
         }

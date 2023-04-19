@@ -17,12 +17,13 @@ class UPUsedOfferViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchOffers()
+       
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // fetchOffers()
         
     }
 
@@ -32,12 +33,21 @@ class UPUsedOfferViewController: UIViewController {
     
     private func fetchOffers(){
         showActivityIndicator()
-        viewModel?.fetchUsedOffer(index: 1, completion: {[weak self] errorString in
+        viewModel?.fetchUsedOffer(index: index, completion: {[weak self] errorString in
             self?.hideActivityIndicator()
             if let errorString{
                 self?.showAlert(title: .alert, message: errorString)
             }else{
-                self?.offerTableView.reloadData()
+                DispatchQueue.main.async {
+                    if self?.viewModel?.offers.count == 0{
+                        self?.showAlert(title: .alert, message: "No data found",
+                        onOkTapped: {[weak self] in
+                            self?.navigationController?.popViewController(animated: true)
+                        })
+                    }else{
+                        self?.offerTableView.reloadData()
+                    }
+                }
             }
         })
     }
@@ -48,15 +58,15 @@ extension UPUsedOfferViewController: UITableViewDelegate,UITableViewDataSource{
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        viewModel?.offers.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UPUsedOfferTableViewCell.reuseIdentifier, for: indexPath)
         as! UPUsedOfferTableViewCell
-//        if let offer = viewModel?.offers[indexPath.row]{
-//            cell.configureCell(with: createModel(with: offer))
-//        }
+        if let offer = viewModel?.offers[indexPath.row]{
+            cell.configureCell(with: createModel(with: offer))
+        }
         return cell
     }
     
@@ -68,4 +78,12 @@ extension UPUsedOfferViewController: UITableViewDelegate,UITableViewDataSource{
         UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let offers = viewModel?.offers, !offers.isEmpty{
+            if indexPath.row == offers.count{
+                index += 1
+                fetchOffers()
+            }
+        }
+    }
 }

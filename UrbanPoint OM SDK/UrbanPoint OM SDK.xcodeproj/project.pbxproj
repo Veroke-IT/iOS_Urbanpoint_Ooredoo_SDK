@@ -20,6 +20,8 @@
 		04313A5529DFDD0400E3CCC8 /* OutletDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5429DFDD0400E3CCC8 /* OutletDetailViewController.swift */; };
 		04313A5729DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */; };
 		04313A5929DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */; };
+		0437254C29EE2814007254EB /* NewBrands.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0437254B29EE2814007254EB /* NewBrands.storyboard */; };
+		0437255029EE793A007254EB /* BranchSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0437254F29EE793A007254EB /* BranchSDK */; };
 		046157D329EDAD5200B92A5F /* UPSearchViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046157D229EDAD5200B92A5F /* UPSearchViewComposer.swift */; };
 		046157D529EDB6A300B92A5F /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046157D429EDB6A300B92A5F /* Extension+String.swift */; };
 		0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0471208D29EBBFFB003EA8DA /* MBProgressHUD */; };
@@ -60,7 +62,6 @@
 		047EBD6029E7F0BA00953AF9 /* UPOutletParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD5F29E7F0BA00953AF9 /* UPOutletParent.swift */; };
 		047EBD6229E801C800953AF9 /* CategoryApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6129E801C800953AF9 /* CategoryApiResponse.swift */; };
 		047EBD6429E8023D00953AF9 /* UPCataegoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6329E8023D00953AF9 /* UPCataegoryViewModel.swift */; };
-		047EBD6829E9525500953AF9 /* NewBrands.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047EBD6729E9525500953AF9 /* NewBrands.storyboard */; };
 		047EBD6A29E9536C00953AF9 /* NewBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6929E9536C00953AF9 /* NewBrandViewController.swift */; };
 		047EBD6C29E9539000953AF9 /* NewBrandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6B29E9539000953AF9 /* NewBrandViewModel.swift */; };
 		047EBD6F29E954CF00953AF9 /* NewBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD6E29E954CF00953AF9 /* NewBrand.swift */; };
@@ -137,6 +138,7 @@
 		04313A5429DFDD0400E3CCC8 /* OutletDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailViewController.swift; sourceTree = "<group>"; };
 		04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletDetailViewModel.swift; sourceTree = "<group>"; };
+		0437254B29EE2814007254EB /* NewBrands.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewBrands.storyboard; sourceTree = "<group>"; };
 		046157D229EDAD5200B92A5F /* UPSearchViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPSearchViewComposer.swift; sourceTree = "<group>"; };
 		046157D429EDB6A300B92A5F /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		0471209029EBC324003EA8DA /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		047120B729ED4CFC003EA8DA /* UPSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPSettingsViewController.swift; sourceTree = "<group>"; };
 		047120B929ED4D08003EA8DA /* SettingsViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewComposer.swift; sourceTree = "<group>"; };
 		047120BB29ED4DC7003EA8DA /* RedeemOfferComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemOfferComposer.swift; sourceTree = "<group>"; };
+		047247A129EFD33900A62BCC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		047439B629D408E7005CB671 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		047439B929D40B6F005CB671 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		047439BB29D40D1D005CB671 /* Extension+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLRequest.swift"; sourceTree = "<group>"; };
@@ -176,7 +179,6 @@
 		047EBD5F29E7F0BA00953AF9 /* UPOutletParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletParent.swift; sourceTree = "<group>"; };
 		047EBD6129E801C800953AF9 /* CategoryApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryApiResponse.swift; sourceTree = "<group>"; };
 		047EBD6329E8023D00953AF9 /* UPCataegoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCataegoryViewModel.swift; sourceTree = "<group>"; };
-		047EBD6729E9525500953AF9 /* NewBrands.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBrands.storyboard; sourceTree = "<group>"; };
 		047EBD6929E9536C00953AF9 /* NewBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrandViewController.swift; sourceTree = "<group>"; };
 		047EBD6B29E9539000953AF9 /* NewBrandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrandViewModel.swift; sourceTree = "<group>"; };
 		047EBD6E29E954CF00953AF9 /* NewBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrand.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0437255029EE793A007254EB /* BranchSDK in Frameworks */,
 				0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */,
 				040981F729E400200042009B /* SDWebImage in Frameworks */,
 			);
@@ -361,6 +364,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		047247A029EFD33900A62BCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				047247A129EFD33900A62BCC /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		047439B529D408D4005CB671 /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,7 +441,7 @@
 		047EBD6629E9520A00953AF9 /* NewBrandsListing */ = {
 			isa = PBXGroup;
 			children = (
-				047EBD6729E9525500953AF9 /* NewBrands.storyboard */,
+				0437254B29EE2814007254EB /* NewBrands.storyboard */,
 				047EBD6929E9536C00953AF9 /* NewBrandViewController.swift */,
 				047EBD6B29E9539000953AF9 /* NewBrandViewModel.swift */,
 				047EBD7329E9620E00953AF9 /* NewBrandComposer.swift */,
@@ -480,6 +491,7 @@
 			children = (
 				04E68A9A29B8AABE00573B2A /* UrbanPoint OM SDK */,
 				04E68A9929B8AABE00573B2A /* Products */,
+				047247A029EFD33900A62BCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -684,6 +696,7 @@
 			packageProductDependencies = (
 				040981F629E400200042009B /* SDWebImage */,
 				0471208D29EBBFFB003EA8DA /* MBProgressHUD */,
+				0437254F29EE793A007254EB /* BranchSDK */,
 			);
 			productName = "UrbanPoint OM SDK";
 			productReference = 04E68A9829B8AABE00573B2A /* UrbanPoint_OM_SDK.framework */;
@@ -716,6 +729,7 @@
 			packageReferences = (
 				040981F529E400200042009B /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				0471208C29EBBFFB003EA8DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				0437254E29EE793A007254EB /* XCRemoteSwiftPackageReference "ios-branch-deep-linking-attribution" */,
 			);
 			productRefGroup = 04E68A9929B8AABE00573B2A /* Products */;
 			projectDirPath = "";
@@ -738,6 +752,7 @@
 				0479970729D5638700DDD948 /* OutletSearch.storyboard in Resources */,
 				04FC74AD29DADA180099E8C5 /* Roboto-LightItalic.ttf in Resources */,
 				04E68ABC29B8B5F700573B2A /* Assets.xcassets in Resources */,
+				0437254C29EE2814007254EB /* NewBrands.storyboard in Resources */,
 				04FC74AC29DADA180099E8C5 /* Roboto-BoldItalic.ttf in Resources */,
 				0471209129EBC324003EA8DA /* WebView.storyboard in Resources */,
 				0409820C29E6810A0042009B /* RedeemOffer.storyboard in Resources */,
@@ -752,7 +767,6 @@
 				04FC74AE29DADA180099E8C5 /* proxima_nova_alt_thin.ttf in Resources */,
 				04FC747929DA98870099E8C5 /* OutletListing.storyboard in Resources */,
 				04FC74B529DADA180099E8C5 /* Roboto-Bold.ttf in Resources */,
-				047EBD6829E9525500953AF9 /* NewBrands.storyboard in Resources */,
 				04FC74A929DADA180099E8C5 /* Roboto-BlackItalic.ttf in Resources */,
 				04FC74A729DADA180099E8C5 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */,
 				047120B629ED4CEC003EA8DA /* Settings.storyboard in Resources */,
@@ -1074,6 +1088,14 @@
 				kind = branch;
 			};
 		};
+		0437254E29EE793A007254EB /* XCRemoteSwiftPackageReference "ios-branch-deep-linking-attribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BranchMetrics/ios-branch-deep-linking-attribution";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		0471208C29EBBFFB003EA8DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
@@ -1089,6 +1111,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 040981F529E400200042009B /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		0437254F29EE793A007254EB /* BranchSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0437254E29EE793A007254EB /* XCRemoteSwiftPackageReference "ios-branch-deep-linking-attribution" */;
+			productName = BranchSDK;
 		};
 		0471208D29EBBFFB003EA8DA /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -12,6 +12,9 @@
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--New Brand View Controller-->
@@ -33,7 +36,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Brands" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2t-Fr-RTu">
-                                        <rect key="frame" x="68" y="15.666666666666673" width="309" height="28.666666666666671"/>
+                                        <rect key="frame" x="68" y="14.666666666666673" width="309" height="30.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <color key="textColor" name="UrbanPointRed"/>
                                         <nil key="highlightedColor"/>
@@ -42,13 +45,13 @@
                                         <rect key="frame" x="348" y="0.0" width="21" height="60"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-5N-Zp9">
-                                        <rect key="frame" x="68" y="8.6666666666666714" width="309" height="43"/>
+                                        <rect key="frame" x="68" y="7" width="309" height="46"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-hX-qsf">
-                                                <rect key="frame" x="16" y="4" width="21" height="35"/>
+                                                <rect key="frame" x="16" y="4" width="21" height="38"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search offers" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-7l-iiX">
-                                                <rect key="frame" x="40.999999999999986" y="0.0" width="201.66666666666663" height="43"/>
+                                                <rect key="frame" x="41.000000000000014" y="0.0" width="215.33333333333337" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -56,10 +59,10 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqC-yW-Dbh">
-                                                <rect key="frame" x="242.66666666666671" y="4" width="56.333333333333343" height="35"/>
+                                                <rect key="frame" x="256.33333333333331" y="4" width="52.666666666666686" height="38"/>
                                                 <color key="tintColor" name="UrbanPointDarkGrey"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="cross.fill" catalog="system" title=" "/>
+                                                <buttonConfiguration key="configuration" style="plain" image="cross_white_background" title=" "/>
                                                 <connections>
                                                     <action selector="onHideSearchBarTapped:" destination="TLg-XP-1iP" eventType="touchUpInside" id="yUG-KU-z5G"/>
                                                 </connections>
@@ -74,7 +77,7 @@
                                             <constraint firstItem="XqC-yW-Dbh" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" constant="4" id="Uqw-2P-Dog"/>
                                             <constraint firstItem="qBq-hX-qsf" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" constant="4" id="WsP-Dm-dBQ"/>
                                             <constraint firstAttribute="bottom" secondItem="XqC-yW-Dbh" secondAttribute="bottom" constant="4" id="g25-CD-O19"/>
-                                            <constraint firstAttribute="trailing" secondItem="XqC-yW-Dbh" secondAttribute="trailing" constant="10" id="mq6-em-GKM"/>
+                                            <constraint firstAttribute="trailing" secondItem="XqC-yW-Dbh" secondAttribute="trailing" id="mq6-em-GKM"/>
                                             <constraint firstItem="qBq-hX-qsf" firstAttribute="leading" secondItem="wmm-5N-Zp9" secondAttribute="leading" constant="16" id="pG1-vb-G9f"/>
                                             <constraint firstAttribute="bottom" secondItem="HC7-7l-iiX" secondAttribute="bottom" id="xFo-nh-INU"/>
                                         </constraints>
@@ -138,6 +141,55 @@
                                     <segue destination="MuO-lq-XDl" kind="embed" identifier="OutletListingViewController" id="N8k-bB-Q11"/>
                                 </connections>
                             </containerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uct-zP-XcC">
+                                <rect key="frame" x="68" y="119" width="309" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1DI-6T-EZk"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrendingTableViewCell" id="9wd-cr-BCG" customClass="TrendingTableViewCell" customModule="UrbanPoint_OM_SDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="309" height="39.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wd-cr-BCG" id="fgi-11-njY">
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="39.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPt-0h-GVc">
+                                                    <rect key="frame" x="32" y="10.999999999999998" width="245" height="17.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                    <color key="textColor" name="UrbanPointGreen"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YPt-0h-GVc" secondAttribute="trailing" constant="16" id="7T6-6A-sa7"/>
+                                                <constraint firstItem="YPt-0h-GVc" firstAttribute="top" secondItem="fgi-11-njY" secondAttribute="topMargin" id="8hX-yi-e3A"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YPt-0h-GVc" secondAttribute="bottom" id="kt1-1o-Nb9"/>
+                                                <constraint firstItem="YPt-0h-GVc" firstAttribute="leading" secondItem="fgi-11-njY" secondAttribute="leadingMargin" constant="16" id="lJa-4G-DPX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="trendingLabel" destination="YPt-0h-GVc" id="bL3-yv-p1N"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="UrbanPointDarkGrey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TLg-XP-1iP" id="NZ8-Ct-WkH"/>
+                                    <outlet property="delegate" destination="TLg-XP-1iP" id="P8q-3C-7MH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0du-Na-9i7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -145,9 +197,12 @@
                             <constraint firstItem="0du-Na-9i7" firstAttribute="bottom" secondItem="vwW-D4-HnF" secondAttribute="bottom" id="1HI-w7-NIe"/>
                             <constraint firstItem="vwW-D4-HnF" firstAttribute="top" secondItem="WWI-aO-BqL" secondAttribute="bottom" id="7Gu-cI-qrY"/>
                             <constraint firstItem="WWI-aO-BqL" firstAttribute="leading" secondItem="0du-Na-9i7" secondAttribute="leading" id="AGa-UG-Xby"/>
+                            <constraint firstItem="uct-zP-XcC" firstAttribute="top" secondItem="nto-uX-T1F" secondAttribute="bottom" id="Baf-fo-L6S"/>
+                            <constraint firstItem="uct-zP-XcC" firstAttribute="trailing" secondItem="wmm-5N-Zp9" secondAttribute="trailing" id="CIh-HF-7kQ"/>
                             <constraint firstItem="vwW-D4-HnF" firstAttribute="leading" secondItem="0du-Na-9i7" secondAttribute="leading" id="RDk-Pz-7j3"/>
                             <constraint firstItem="WWI-aO-BqL" firstAttribute="top" secondItem="0du-Na-9i7" secondAttribute="top" id="Sgu-ix-jZQ"/>
                             <constraint firstItem="0du-Na-9i7" firstAttribute="trailing" secondItem="WWI-aO-BqL" secondAttribute="trailing" id="Vcx-oU-fKk"/>
+                            <constraint firstItem="uct-zP-XcC" firstAttribute="leading" secondItem="wmm-5N-Zp9" secondAttribute="leading" id="aCv-NU-grW"/>
                             <constraint firstItem="0du-Na-9i7" firstAttribute="trailing" secondItem="vwW-D4-HnF" secondAttribute="trailing" id="cf4-8O-sCo"/>
                         </constraints>
                     </view>
@@ -156,6 +211,7 @@
                         <outlet property="searchBarView" destination="wmm-5N-Zp9" id="Kfq-Dd-yqy"/>
                         <outlet property="searchButton" destination="o4C-cb-3lK" id="0c5-9t-XbY"/>
                         <outlet property="searchImageView" destination="nto-uX-T1F" id="EJf-NE-DE3"/>
+                        <outlet property="tableView" destination="uct-zP-XcC" id="ZGa-aw-Sk9"/>
                         <outlet property="titleLabel" destination="c2t-Fr-RTu" id="5HP-La-H6a"/>
                     </connections>
                 </viewController>
@@ -174,10 +230,13 @@
     </scenes>
     <resources>
         <image name="back_button" width="27" height="20"/>
-        <image name="cross.fill" catalog="system" width="128" height="116"/>
+        <image name="cross_white_background" width="24" height="24"/>
         <image name="search_icon" width="21" height="20.5"/>
         <namedColor name="UrbanPointDarkGrey">
             <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="UrbanPointGreen">
+            <color red="0.075999997556209564" green="0.56099998950958252" blue="0.58799999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="UrbanPointRed">
             <color red="1" green="0.0" blue="0.12099999934434891" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

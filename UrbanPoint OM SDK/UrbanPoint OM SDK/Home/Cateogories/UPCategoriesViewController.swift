@@ -53,7 +53,7 @@ class UPCategoriesViewController: UIViewController {
             }
         })
     }
-    
+
     
     init?(coder: NSCoder, viewModel: UPCategoryViewModel) {
         self.viewModel = viewModel
@@ -143,6 +143,8 @@ extension UPCategoriesViewController: UICollectionViewDataSource,UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       
         let selectedCategoryID = viewModel.categories[indexPath.row].id
+        let selectedCategoryName = viewModel.categories[indexPath.row].name
+        titleLabel.text = selectedCategoryName
         if selectedCategoryID != viewModel.selectedCollectionID{
             viewModel.selectedCollectionID = selectedCategoryID
             viewModel.currentLocation != nil ? listingViewController?.onNearbyButtonTouched(self)

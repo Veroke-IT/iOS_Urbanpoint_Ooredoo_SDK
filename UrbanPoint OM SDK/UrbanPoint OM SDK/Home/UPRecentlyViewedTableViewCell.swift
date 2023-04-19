@@ -61,7 +61,7 @@ extension UPRecentlyViewedTableViewCell: UICollectionViewDataSource,UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       
-        return CGSize(width:  150, height: collectionView.bounds.height)
+        return CGSize(width:  80, height: collectionView.bounds.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

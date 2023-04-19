@@ -17,7 +17,7 @@ class NewBrandsHomeCollectionViewCell: UICollectionViewCell {
     
     internal func configureOutletCellWith(_ outlet: NewBrand){
 
-        if let url = URL(string: imageBaseURL + outlet.outletImage){
+        if let url = URL(string: imageBaseURL + outlet.outletLogo){
             outletImageView.sd_setImage(with: url)
         }
         outletCategoryLabel.text = outlet.categoryName

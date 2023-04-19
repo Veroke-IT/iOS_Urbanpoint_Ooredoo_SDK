@@ -29,6 +29,8 @@ class UPHomeViewController: UIViewController {
     var onSettingButtonTapped: (() -> Void)?
     var onTopBarTapped: (() -> Void)?
     
+    var onViewAllOffersTapped: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -109,7 +111,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         let heightForOneRow = (tableView.bounds.width - 32) / 3 * 0.99
         let popularCategoriesItemCount = homePresenter.popularCategories.count
         let itemsToShow = isPopularCategoriesListExpanded ? popularCategoriesItemCount : (popularCategoriesItemCount > 6 ? 6 : popularCategoriesItemCount)
-        return (ceil(CGFloat(itemsToShow) / 3) * heightForOneRow) + 105 + 25
+        return (ceil(CGFloat(itemsToShow) / 3) * heightForOneRow) + 105 + 25 + 16
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,11 +141,11 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPPopularCategoriesTableViewCell.reuseIdentifier, for: indexPath) as! UPPopularCategoriesTableViewCell
-            cell.configureCell(with: homePresenter.popularCategories)
+            cell.configureCell(with: homePresenter.popularCategories,isExpanded: isPopularCategoriesListExpanded)
             cell.onPopularCategoruSelected = onPopularCategorySelected
             cell.onShowAllPopularCategoriesTapped = {
                 self.isPopularCategoriesListExpanded.toggle()
-                self.tableView.reloadRows(at: [indexPath], with: .none)
+                self.tableView.reloadData()
             }
             return cell
         case 5:
@@ -164,8 +166,6 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         
     }
     
-    private func onViewAllCategoriesTapped(){}
-  
     private func onCategorySelected(category: Category){
         if let id = Int(category.id){
             onCategorySelected?(id)

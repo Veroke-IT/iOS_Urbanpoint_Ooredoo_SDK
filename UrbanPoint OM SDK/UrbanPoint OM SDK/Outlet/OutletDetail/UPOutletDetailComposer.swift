@@ -36,6 +36,35 @@ final class UPOutletDetailComposer{
     private func onBackButtonTapped(){
         navigationController.popViewController(animated: true)
     }
+    
+    private func onMenuSelected(menu: [UPOutlet.OutletMenu]){
+        
+        if !menu.isEmpty{
+            guard let first = menu.first,
+                  let file = first.file
+            else { return }
+            if first.type == "image"{
+                
+                let vc = UIStoryboard(name: "OutletDetail", bundle: Appbundle   ).instantiateViewController(withIdentifier: "OutletMenuCardImageViewController") as! OutletMenuCardImageViewController
+                vc.outletMenu = menu
+                navigationController.pushViewController(vc, animated: true)
+            }
+            else{
+                var urlString: String = ""
+                if first.type == "url"{
+                    urlString = file
+                }else{
+                    urlString = imageBaseURL + file
+                }
+                
+                if let url = URL(string: urlString){
+                    let webViewFlow = UPWebViewComposer(navigationController: navigationController)
+                    webViewFlow.start(withURL: url)
+                }
+            }
+        }
+        
+    }
 
     static func createOutletDetailView(outletID id: Int,httpClient: UPHttpClient) -> UIViewController{
         let outletRepository = URLSessionOutletRepository(httpClient: httpClient)

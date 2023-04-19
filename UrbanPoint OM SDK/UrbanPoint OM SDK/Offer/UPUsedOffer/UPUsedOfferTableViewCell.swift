@@ -30,8 +30,19 @@ class UPUsedOfferTableViewCell: UITableViewCell {
         outletNameLabel.text = model.outletName
         offerDescriptionLabel.text = model.description
         confirmationIDLabel.text = model.confirmationCode
-        dateLabel.text = model.date
+        dateLabel.text = getDate(dateString: model.date)
         outletImageView.sd_setImage(with: model.image)
+    }
+    
+    
+    private func getDate(dateString: String) -> String{
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        guard let date = formatter.date(from: dateString)else { return "" }
+        formatter.dateFormat = "MMMM dd,yyyy"
+        return formatter.string(from: date)
     }
     
     

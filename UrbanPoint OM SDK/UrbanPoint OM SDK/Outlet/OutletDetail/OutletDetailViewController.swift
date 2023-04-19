@@ -8,6 +8,8 @@
 import UIKit
 import CoreLocation
 import SDWebImage
+import BranchSDK
+
 
 
 
@@ -43,11 +45,14 @@ class OutletDetailViewController: UIViewController {
     
     var viewModel: UPOutletDetailViewModel? = nil
     
+
+    
     
     //Event
     var onOfferSelected: ((Int) -> Void)?
     var onBackButtonTapped: (() -> Void)?
     var onOfferShared: ((UPOffer) -> Void)?
+    var onMenuSelected: (([UPOutlet.OutletMenu]) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,6 +154,7 @@ class OutletDetailViewController: UIViewController {
             
     
     fileprivate func callButtonAlertSheet(_ numbers: [String]) {
+        
         let alert = UIAlertController(title: "Call", message: nil, preferredStyle: .actionSheet)
         for number in numbers {
             let callAction = UIAlertAction(title: "Call \(number)", style: .default) { action in
@@ -166,7 +172,16 @@ class OutletDetailViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+
     
+    
+    private func shareURL(_ url: String){
+        let textToShare = "Check these offers of \(viewModel?.outlet?.outletName ?? "" ) on UrbanPoint.\n" + url
+        let activityViewController = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop]
+        self.present(activityViewController, animated: true, completion: nil)
+    }
     
     @IBAction func onCallOutletTapped(_ sender: Any){
         if let phonesArray = viewModel?.outlet?.outletPhonenNumber
@@ -182,6 +197,13 @@ class OutletDetailViewController: UIViewController {
   
     
     @IBAction func onMenuTapped(_ sender: Any){
+      
+        guard let menu = viewModel?.outlet?.outletMenu else { return }
+        onMenuSelected?(menu)
+
+        
+        
+        
 //            let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
 //            let viewController = UIStoryboard(name: "OutletDetail", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPOutletMenuViewController") as! UPOutletMenuViewController
 //            viewController.urlToResource = URL(string: "https://www.google.com")
@@ -190,8 +212,10 @@ class OutletDetailViewController: UIViewController {
     
     @IBAction func onUberTapped(_ sender: Any){
         
-        guard let outlet = viewModel?.outlet else{ return }
-        
+//        guard let outlet = viewModel?.outlet,
+//        let location = viewModel?.currentLocation
+//        else{ return }
+////        
 //        let builder = RideParametersBuilder()
 ////        let pickupLocation = CLLocation(latitude: (Constants.UPLOCATION.currentLocation?.coordinate.latitude)!, longitude:(Constants.UPLOCATION.currentLocation?.coordinate.longitude)!)
 //        let dropoffLocation = CLLocation(latitude:(outlet.outletLatitude), longitude:outlet.outletLongitude)
@@ -209,6 +233,28 @@ class OutletDetailViewController: UIViewController {
     
     @IBAction func onBackButtonTapped(_ sender: Any){
         onBackButtonTapped?()
+    }
+    
+    @IBAction func onShareOutletTapped(_ sender: Any){
+        let branchIO = BranchUniversalObject(canonicalIdentifier: "UrbanPoint")
+        let appID = "1"
+        let linkProperties = BranchLinkProperties()
+        linkProperties.addControlParam("id", withValue: String(viewModel?.outlet?.id ?? -1) )
+        linkProperties.addControlParam("app_id", withValue: appID)
+        linkProperties.addControlParam("navigation_type", withValue: "merchant")
+        if let outletID = viewModel?.outlet?.id{
+            linkProperties.addControlParam("$android_deeplink_path", withValue: "urban-point.app.link//merchantid=\(outletID)@\(appID)")
+        }
+        branchIO.getShortUrl(with: linkProperties) { (url, error) in
+            if (error == nil) {
+                DispatchQueue.main.async {
+                    self.shareURL(url ?? "")
+                }
+            }
+            else {
+                print(String(format: "Branch error : %@", error! as CVarArg))
+            }
+        }
     }
     
 }

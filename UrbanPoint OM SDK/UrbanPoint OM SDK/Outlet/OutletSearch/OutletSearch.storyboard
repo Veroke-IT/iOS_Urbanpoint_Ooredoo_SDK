@@ -42,7 +42,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYk-dm-jTS">
-                                <rect key="frame" x="24" y="153" width="353" height="23.666666666666657"/>
+                                <rect key="frame" x="24" y="147" width="353" height="23.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                 <color key="textColor" name="UrbanPointRed"/>
                                 <nil key="highlightedColor"/>
@@ -86,9 +86,12 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec9-8J-FpA">
-                                <rect key="frame" x="300" y="193" width="77" height="34.333333333333343"/>
+                                <rect key="frame" x="310" y="194.66666666666666" width="67" height="30.666666666666657"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                    <fontDescription key="titleFontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                    <color key="baseForegroundColor" name="UrbanPointGreen"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="onCancelButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lQh-aA-imm"/>
                                 </connections>
@@ -107,15 +110,15 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrendingTableViewCell" id="Up6-Aa-Pp6" customClass="TrendingTableViewCell" customModule="UrbanPoint_OM_SDK" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="393" height="42.333332061767578"/>
+                                                <rect key="frame" x="0.0" y="50" width="393" height="38.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Up6-Aa-Pp6" id="IJD-ki-UkP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="42.333332061767578"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="38.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-SQ-hae">
-                                                            <rect key="frame" x="36" y="10.999999999999998" width="321" height="20.333333333333329"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="36" y="11.000000000000002" width="321" height="16.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                             <color key="textColor" name="UrbanPointGreen"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -132,30 +135,38 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StoredSearchesTableViewCell" id="o9O-3y-5A9" customClass="StoredSearchesTableViewCell" customModule="UrbanPoint_OM_SDK" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="92.333332061767578" width="393" height="42.333332061767578"/>
+                                                <rect key="frame" x="0.0" y="88.666667938232422" width="393" height="38.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o9O-3y-5A9" id="8JE-Kb-wnH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="42.333332061767578"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="38.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BnA-lo-teH">
-                                                            <rect key="frame" x="16" y="6.3333333333333321" width="30" height="29.999999999999996"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecentClock" translatesAutoresizingMaskIntoConstraints="NO" id="BnA-lo-teH">
+                                                            <rect key="frame" x="16" y="12" width="15" height="15"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="Iyj-TF-kmM"/>
-                                                                <constraint firstAttribute="height" constant="30" id="cDJ-OY-Gb2"/>
+                                                                <constraint firstAttribute="width" constant="15" id="Iyj-TF-kmM"/>
+                                                                <constraint firstAttribute="height" constant="15" id="cDJ-OY-Gb2"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mo-pf-2p5">
-                                                            <rect key="frame" x="62" y="10.999999999999998" width="277" height="20.333333333333329"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="47" y="11.000000000000002" width="312" height="16.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                             <color key="textColor" name="UrbanPointGreen"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-iK-A2b" userLabel="TrailingImage">
-                                                            <rect key="frame" x="347" y="6.3333333333333321" width="30" height="29.999999999999996"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37h-mm-itK">
+                                                            <rect key="frame" x="334.66666666666669" y="2" width="75" height="35"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                            <connections>
+                                                                <action selector="onDeleteSearchTapped:" destination="o9O-3y-5A9" eventType="touchUpInside" id="37M-GH-9dw"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecentClose" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-iK-A2b" userLabel="TrailingImage">
+                                                            <rect key="frame" x="367" y="14.333333333333336" width="10" height="10"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="Der-K6-x4F"/>
-                                                                <constraint firstAttribute="width" constant="30" id="ODD-4K-PD0"/>
+                                                                <constraint firstAttribute="height" constant="10" id="Der-K6-x4F"/>
+                                                                <constraint firstAttribute="width" constant="10" id="ODD-4K-PD0"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
@@ -163,8 +174,12 @@
                                                         <constraint firstItem="0mo-pf-2p5" firstAttribute="centerY" secondItem="BnA-lo-teH" secondAttribute="centerY" id="0dW-Wl-dqZ"/>
                                                         <constraint firstItem="0mo-pf-2p5" firstAttribute="leading" secondItem="BnA-lo-teH" secondAttribute="trailingMargin" constant="24" id="26I-u4-v1d"/>
                                                         <constraint firstItem="0mo-pf-2p5" firstAttribute="top" secondItem="8JE-Kb-wnH" secondAttribute="topMargin" id="9if-XV-Alf"/>
+                                                        <constraint firstItem="37h-mm-itK" firstAttribute="centerX" secondItem="MoE-iK-A2b" secondAttribute="centerX" id="Jkp-RV-LNF"/>
                                                         <constraint firstItem="MoE-iK-A2b" firstAttribute="centerY" secondItem="0mo-pf-2p5" secondAttribute="centerY" id="OnL-SN-cAc"/>
                                                         <constraint firstItem="BnA-lo-teH" firstAttribute="leading" secondItem="8JE-Kb-wnH" secondAttribute="leading" constant="16" id="RXb-2f-Akl"/>
+                                                        <constraint firstItem="37h-mm-itK" firstAttribute="width" secondItem="MoE-iK-A2b" secondAttribute="width" multiplier="7.5" id="c1Q-Pi-UwT"/>
+                                                        <constraint firstItem="37h-mm-itK" firstAttribute="centerY" secondItem="MoE-iK-A2b" secondAttribute="centerY" id="eym-Lg-xde"/>
+                                                        <constraint firstItem="37h-mm-itK" firstAttribute="height" secondItem="MoE-iK-A2b" secondAttribute="height" multiplier="3.5" id="gcP-wx-nzv"/>
                                                         <constraint firstAttribute="trailing" secondItem="MoE-iK-A2b" secondAttribute="trailing" constant="16" id="sPu-c7-biN"/>
                                                         <constraint firstItem="MoE-iK-A2b" firstAttribute="leadingMargin" secondItem="0mo-pf-2p5" secondAttribute="trailing" constant="16" id="tss-Zc-hfc"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="0mo-pf-2p5" secondAttribute="bottom" id="vi4-t1-3kr"/>
@@ -202,7 +217,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pw7-g7-0fk" firstAttribute="width" secondItem="1Xc-et-Zkf" secondAttribute="width" multiplier="1.875" id="3vc-t5-02Y"/>
-                            <constraint firstItem="AYk-dm-jTS" firstAttribute="top" secondItem="1Xc-et-Zkf" secondAttribute="bottom" constant="30" id="4Wk-uP-3T4"/>
+                            <constraint firstItem="AYk-dm-jTS" firstAttribute="top" secondItem="1Xc-et-Zkf" secondAttribute="bottom" constant="24" id="4Wk-uP-3T4"/>
                             <constraint firstItem="pw7-g7-0fk" firstAttribute="centerY" secondItem="1Xc-et-Zkf" secondAttribute="centerY" id="69v-QO-bQq"/>
                             <constraint firstItem="3qu-lL-OZN" firstAttribute="leading" secondItem="CAf-Ho-gjZ" secondAttribute="leading" id="80k-hU-BBu"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ec9-8J-FpA" secondAttribute="trailing" constant="16" id="8n0-Bm-deB"/>
@@ -250,6 +265,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="RecentClock" width="7.6666665077209473" height="7.6666665077209473"/>
+        <image name="RecentClose" width="5" height="5"/>
         <image name="back_button" width="27" height="20"/>
         <image name="search_icon" width="21" height="20.5"/>
         <namedColor name="UrbanPointGreen">

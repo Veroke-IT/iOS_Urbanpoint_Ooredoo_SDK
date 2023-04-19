@@ -24,7 +24,7 @@ class OutletListingContainerViewController: UIViewController {
     
     //MARK: UI State
     private var index: Int = 1
-    private var outletListingViewController: OutletListingViewController?
+    private(set) var outletListingViewController: OutletListingViewController?
     private var selectedSortCondition: OutletRepositoryParam.Sort = .nearby
     
     //MARK: Events

@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVE-fx-LSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240" y="79"/>
+            <point key="canvasLocation" x="1251" y="176"/>
         </scene>
         <!--Outlet Listing View Controller-->
         <scene sceneID="84F-TC-YcX">
@@ -294,13 +294,13 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Hut" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko2-h0-uVM">
-                                                            <rect key="frame" x="117.99999999999999" y="19" width="200.66666666666663" height="16.666666666666671"/>
+                                                            <rect key="frame" x="118" y="19" width="202" height="16.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                             <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiple Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoW-Qq-7C3">
-                                                            <rect key="frame" x="117.99999999999999" y="38.666666666666664" width="200.66666666666663" height="12"/>
+                                                            <rect key="frame" x="118" y="38.666666666666664" width="202" height="12"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                                                             <color key="textColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -313,7 +313,7 @@
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="oIs-or-NXd">
                                                             <rect key="frame" x="207" y="87" width="10" height="10"/>
-                                                            <color key="tintColor" name="Green"/>
+                                                            <color key="tintColor" name="UrbanPointGreen"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="10" id="5SD-Ik-aI6"/>
                                                                 <constraint firstAttribute="height" constant="10" id="5pn-fM-sJy"/>
@@ -339,8 +339,8 @@
                                                                 <action selector="offersButtonTouched:" destination="TdZ-dT-QiI" eventType="touchUpInside" id="0a0-La-yZR"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OutletArrow" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-zA-AJo">
-                                                            <rect key="frame" x="324.66666666666669" y="51.333333333333336" width="9.3333333333333144" height="15.333333333333336"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_forward" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-zA-AJo">
+                                                            <rect key="frame" x="326" y="52.666666666666664" width="8" height="12.999999999999993"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="gc3-zA-AJo" secondAttribute="height" multiplier="8:13" id="TCD-mS-tLX"/>
                                                             </constraints>
@@ -386,7 +386,7 @@
                                                                                             </label>
                                                                                         </subviews>
                                                                                     </stackView>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="prO-1Q-dkn">
+                                                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="prO-1Q-dkn">
                                                                                         <rect key="frame" x="270" y="15.666666666666671" width="30" height="63"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIN-Ah-lJV" userLabel="FavouriteView">
@@ -585,14 +585,11 @@
     </scenes>
     <resources>
         <image name="Gift_Light" width="24.666666030883789" height="28"/>
-        <image name="OutletArrow" width="9.5" height="15"/>
+        <image name="arrow_forward" width="8" height="12"/>
         <image name="back_button" width="27" height="20"/>
-        <image name="downarrow" width="12" height="7.5"/>
+        <image name="downarrow" width="12" height="7.6666665077209473"/>
         <image name="favourite" width="24" height="24"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
-        <namedColor name="Green">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="UrbanPointGreen">
             <color red="0.075999997556209564" green="0.56099998950958252" blue="0.58799999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

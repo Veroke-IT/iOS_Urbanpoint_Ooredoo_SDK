@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BranchSDK
 
 class OfferDetailViewController: UIViewController {
 
@@ -56,9 +57,39 @@ class OfferDetailViewController: UIViewController {
         
         expiryDateLabel.text = "Offer expires on ".localized + getDate(dateString: offer.endDatetime ?? "")
         savingLabel.text = "Save QAR " + String(offer.approxSaving ?? 0)
-        detailExclusionLabel.text = offer.rulesOfPurchase
+        detailExclusionLabel.text = offer.validFor
         
     }
+    
+    @IBAction func shareOffer(_ sender: Any){
+        let branchIO = BranchUniversalObject(canonicalIdentifier: "UrbanPoint")
+        let linkProperties = BranchLinkProperties()
+        
+        let appID = "1"
+        
+        linkProperties.addControlParam("id", withValue: String(offerDetailViewModel?.offer?.id ?? -1 ))
+        linkProperties.addControlParam("app_id", withValue: appID)
+        linkProperties.addControlParam("navigation_type", withValue: "offer")
+        linkProperties.addControlParam("$android_deeplink_path", withValue:  "urban-point.app.link//offerid=\(offerDetailViewModel?.offer?.id ?? -1)@\(appID)" )
+        branchIO.getShortUrl(with: linkProperties) { (url, error) in
+            if (error == nil) {
+                DispatchQueue.main.async {
+                 self.shareURL(url ?? "")
+                }
+            } else {
+                print(String(format: "Branch error : %@", error! as CVarArg))
+            }
+        }
+    }
+    
+    private func shareURL(_ url: String){
+        let textToShare = "Check this offer on UrbanPoint: \(offerDetailViewModel?.offer?.title ?? "") \n" + url
+        let activityViewController = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop]
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
     
     private func setupUI(){
         outletNameLabel.text = ""

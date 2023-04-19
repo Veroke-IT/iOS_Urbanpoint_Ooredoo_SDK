@@ -10,21 +10,29 @@ import UIKit
 class UPPopularCategoriesTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = "UPPopularCategoriesTableViewCell"
+    @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     var onShowAllPopularCategoriesTapped: (() -> Void)?
     var onPopularCategoruSelected: ((PopularCategory) -> Void)?
     var data: [PopularCategory] = []
+    var isExpanded: Bool = false
     
-    internal func configureCell(with data: [PopularCategory]){
+    internal func configureCell(with data: [PopularCategory],isExpanded: Bool){
+        self.isExpanded = isExpanded
         self.data = data
+        let imageName = isExpanded ? "uparrow" : "downarrow"
+        
+        viewAllButton.setImage(UIImage.loadImageWithName(imageName), for: .normal)
         collectionView.reloadData()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        viewAllButton.shadow(shadowColor: Colors.urbanPointGrey, shadowOffset: .zero, shadowRadius: viewAllButton.layer.cornerRadius, shadowOpacity: 0.3, shadowPath: nil)
         collectionView.delegate = self
         collectionView.dataSource = self
+     
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,7 +65,11 @@ extension UPPopularCategoriesTableViewCell: UICollectionViewDataSource,UICollect
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        
+        let popularCategoriesItemCount = data.count
+        let itemsToShow = isExpanded ? popularCategoriesItemCount : (popularCategoriesItemCount > 6 ? 6 : popularCategoriesItemCount)
+        return itemsToShow
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

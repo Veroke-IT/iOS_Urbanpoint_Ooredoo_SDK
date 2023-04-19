@@ -67,13 +67,14 @@ extension OutletMenuCardImageViewController: UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = OutletMenuImageViewerViewController()
-//        vc.modalPresentationStyle = .overFullScreen
-//        vc.currentIndex = indexPath.row + 1
-//        if let tabBar = self.tabBarController {
-//            tabBar.present(vc, animated: true, completion: nil)
-//        } else {
-//            self.present(vc, animated: true, completion: nil)
-//        }
+        
+        let vc = UIStoryboard(name: "OutletDetail", bundle: Appbundle)
+            .instantiateViewController(withIdentifier: "OutletMenuImageViewerViewController")
+        as! OutletMenuImageViewerViewController
+        vc.outletMenu = outletMenu
+        vc.modalPresentationStyle = .overFullScreen
+        vc.currentIndex = indexPath.row + 1
+        self.present(vc, animated: true, completion: nil)
+        
     }
 }

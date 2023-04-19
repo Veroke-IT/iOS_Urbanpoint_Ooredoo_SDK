@@ -97,17 +97,15 @@ class OutletMenuImageViewerViewController: UIViewController {
 extension OutletMenuImageViewerViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuImageCell", for: indexPath) as! MenuScrollableImageViewCell
-//        if let menu = Constants.UPDATA.tempOutletMenu?[indexPath.row] {
-//            cell.scrollableImage.imageName = menu.file ?? ""
-//        }
-//        return cell
-        UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuImageCell", for: indexPath) as! MenuScrollableImageViewCell
+        let menu = outletMenu[indexPath.row]
+        cell.scrollableImage.imageName = menu.file ?? ""
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       // return Constants.UPDATA.tempOutletMenu?.count ?? 0
-        0
+        outletMenu.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

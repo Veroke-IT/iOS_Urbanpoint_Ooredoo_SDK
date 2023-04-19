@@ -52,6 +52,7 @@ extension UPHomeCategoriesTableViewCell: UICollectionViewDataSource,UICollection
     private func fetchCellForCategoriesCollectionView(_ collectionView: UICollectionView,indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.identifier, for: indexPath) as! CategoriesCollectionViewCell
         
+    
         let imageURL = "\(imageBaseURL)\(data[indexPath.row].image)"
         cell.configureCellWith(CategoriesCollectionViewCell.ViewModel(categoryImage: URL(string: imageURL)!))
         return cell

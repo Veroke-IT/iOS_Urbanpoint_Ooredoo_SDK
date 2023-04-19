@@ -60,7 +60,7 @@ final class URLSessionOfferRepository: OfferRepository{
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
         urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-
+        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
         
         httpClient.execute(urlRequest: urlRequest) { result in
             switch result{
@@ -96,7 +96,7 @@ final class URLSessionOfferRepository: OfferRepository{
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
         urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-
+        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
         
         httpClient.execute(urlRequest: urlRequest) { result in
             switch result{

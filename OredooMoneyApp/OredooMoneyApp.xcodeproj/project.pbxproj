@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040981FE29E400740042009B /* UrbanPoint_OM_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040981FD29E400630042009B /* UrbanPoint_OM_SDK.framework */; };
+		046157D729EE233400B92A5F /* UrbanPoint_OM_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040981FD29E400630042009B /* UrbanPoint_OM_SDK.framework */; };
+		046157D829EE233400B92A5F /* UrbanPoint_OM_SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 040981FD29E400630042009B /* UrbanPoint_OM_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04E68AE329B9A80800573B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE229B9A80800573B2A /* AppDelegate.swift */; };
 		04E68AE529B9A80800573B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE429B9A80800573B2A /* SceneDelegate.swift */; };
 		04E68AE729B9A80800573B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AE629B9A80800573B2A /* ViewController.swift */; };
@@ -43,6 +44,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		046157D929EE233400B92A5F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				046157D829EE233400B92A5F /* UrbanPoint_OM_SDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		040981F829E400630042009B /* UrbanPoint OM SDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "UrbanPoint OM SDK.xcodeproj"; path = "../UrbanPoint OM SDK/UrbanPoint OM SDK.xcodeproj"; sourceTree = "<group>"; };
 		04E68ADF29B9A80800573B2A /* OredooMoneyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OredooMoneyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040981FE29E400740042009B /* UrbanPoint_OM_SDK.framework in Frameworks */,
+				046157D729EE233400B92A5F /* UrbanPoint_OM_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +179,7 @@
 				04E68ADB29B9A80800573B2A /* Sources */,
 				04E68ADC29B9A80800573B2A /* Frameworks */,
 				04E68ADD29B9A80800573B2A /* Resources */,
+				046157D929EE233400B92A5F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

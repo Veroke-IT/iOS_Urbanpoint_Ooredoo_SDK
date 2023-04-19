@@ -14,6 +14,7 @@ class NewBrandViewController: UIViewController {
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     private(set) var titleString = ""
     var viewModel: OutletListingPresenterContract
@@ -28,16 +29,42 @@ class NewBrandViewController: UIViewController {
         super.viewDidLoad()
         viewModel.fetchUserLocation()
         titleLabel.text = titleString
+        tableView.isHidden = true
         searchBarView.isHidden = true
         if searchingViewModel == nil{
             searchButton.isHidden = true
             searchImageView.isHidden = true
+           
             searchButton.isEnabled = false
+        }else{
+            searchBar.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+      
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.fetchListing()
         }
         
+    }
+    
+    @objc private func textFieldDidChange(_ sender: UITextField){
+        guard let searchText  = sender.text else {
+            return
+        }
+        if !searchText.isEmpty{
+            searchingViewModel?.fetchAutoCompleteOffers {
+                DispatchQueue.main.async {
+                    if (self.searchingViewModel?.autoCompleteOffers.count ?? 0) > 0{
+                        
+                        self.tableView.isHidden = false
+                        self.tableView.reloadData()
+                    }else{
+                        self.tableView.isHidden = true
+                    }
+                }
+            }
+        }else{
+            tableView.isHidden = true
+        }
     }
     
     init?(coder: NSCoder,
@@ -78,6 +105,7 @@ class NewBrandViewController: UIViewController {
     
     @IBAction func onHideSearchBarTapped(_ sender: Any){
         searchBar.text = ""
+        tableView.isHidden = true
         shouldShowSearchBar(false)
     }
     
@@ -117,11 +145,7 @@ class NewBrandViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    private func navigateToOutletDetailScreen(id: Int){
-        let httlCleint = UPURLSessionHttpClient(session: .shared)
-        let viewController = UPOutletDetailComposer.createOutletDetailView(outletID: id, httpClient: httlCleint)
-        navigationController?.pushViewController(viewController, animated: true)
-    }
+
     
     private func fetchOutletsNearby(index: Int,
                               completion: @escaping ([UPOutletListingTableViewCell.Outlet]) -> Void){
@@ -155,7 +179,7 @@ class NewBrandViewController: UIViewController {
 }
     
 
-extension NewBrandViewController: UITextFieldDelegate{
+extension NewBrandViewController: UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource{
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     
@@ -165,5 +189,29 @@ extension NewBrandViewController: UITextFieldDelegate{
         return true
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        searchingViewModel?.autoCompleteOffers.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrendingTableViewCell.cellIdentifierString) as! TrendingTableViewCell
+        if let text = searchingViewModel?.autoCompleteOffers[indexPath.row]{
+            cell.configureCellWith(text)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let text = searchingViewModel?.autoCompleteOffers[indexPath.row]{
+            self.searchBar.text = text
+        }
+    }
+    
     
 }
+
+

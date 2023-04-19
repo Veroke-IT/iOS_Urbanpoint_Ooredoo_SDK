@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import BranchSDK
+
+
+
 
 final public class UrbanPoint{
     
@@ -30,9 +34,13 @@ final public class UrbanPoint{
 //        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
 //        let offerRepository = URLSessionOfferRepository(httpClient: httpClient)
 //        let homeService = HttpHomeService(httpClient: httpClient)
-
+        
+        Branch.getInstance().initSession(launchOptions: nil) { params, error in
+            debugPrint(error)
+        }
         let homeViewController = UPHomeViewComposer(navigationController: navigationController, httpClient: httpClient)
         homeViewController.start()
+        Branch.getInstance().initSession()
         context.present(navigationController, animated: true)
     }
     

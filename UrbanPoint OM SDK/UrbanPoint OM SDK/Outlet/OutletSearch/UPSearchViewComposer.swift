@@ -19,7 +19,12 @@ final class UPSearchViewComposer{
     
     func start(){
         
+        let trendingSearchesRepository = UPTrendingSearchHttpRepository(httpClient: httpClient)
+      let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
+        let viewModel = UPOutletSearchViewModel(trendingSearchRespository: trendingSearchesRepository, outletRespository: outletRepository)
+        
         let viewController = UPSearchViewComposer.createHomeView(httpClient: httpClient) as! OutletSearchViewController
+        viewController.outletSearchViewModel = viewModel
         viewController.onOfferSelected = onOfferSelected
         viewController.showOutlet = onOutletSelected
         navigationController.pushViewController(viewController, animated: true)
@@ -43,13 +48,10 @@ final class UPSearchViewComposer{
     }
     
     static func createHomeView(httpClient: UPHttpClient) -> UIViewController{
-        
-        let trendingSearchesRepository = UPTrendingSearchHttpRepository(httpClient: httpClient)
-      let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
-        let viewModel = UPOutletSearchViewModel(trendingSearchRespository: trendingSearchesRepository, outletRespository: outletRepository)
+     
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
         let viewController = UIStoryboard(name: "OutletSearch", bundle: storyBoardBundle).instantiateViewController(identifier: "OutletSearchViewController")
-        
+    
         return viewController
     }
     

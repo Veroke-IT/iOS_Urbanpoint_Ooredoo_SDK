@@ -20,7 +20,7 @@ final class NewBrandComposer{
     }
     
     func start(withListingType type: UPOutletListingType){
-        
+        var searchViewModel: UPOutletSearchViewModel? = nil
         var viewModel: OutletListingPresenterContract? = nil
         var titleString = ""
         let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
@@ -35,12 +35,15 @@ final class NewBrandComposer{
             viewModel = UPNewBrandViewModel(outletService: outletRepository)
             titleString = "New Brand"
         case .popularCategory(let id,let name):
+            let trendingSearchRepo = UPTrendingSearchHttpRepository(httpClient: httpClient)
+            searchViewModel = UPOutletSearchViewModel(trendingSearchRespository: trendingSearchRepo, outletRespository: outletRepository)
             viewModel = UPPopularCategoryViewModel(outletRepository: outletRepository, selectedPopularCategoryID: id)
             titleString = name
         }
         let viewController = NewBrandComposer.createNewBrandViewController(viewModel: viewModel!, titleString: titleString, onBackButtonTapped: onBackButtonTapped) as! NewBrandViewController
         viewController.onOfferSelected = onOfferSelected
         viewController.showOutlet = onOutletSelected
+        viewController.searchingViewModel = searchViewModel
         navigationController.pushViewController(viewController, animated: true)
         
     }

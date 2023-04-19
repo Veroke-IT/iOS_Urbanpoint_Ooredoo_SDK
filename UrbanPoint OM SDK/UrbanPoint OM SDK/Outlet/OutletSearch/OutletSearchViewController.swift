@@ -12,13 +12,7 @@ class OutletSearchViewController: UIViewController {
     private let searchBarTopConstraintHeight = 38
     private var index: Int = 1
     
-    let outletSearchViewModel: UPOutletSearchViewModel = {
-        let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
-        let trendingSearchRepository = UPTrendingSearchHttpRepository(httpClient: httpClient)
-        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
-        let viewModel = UPOutletSearchViewModel(trendingSearchRespository: trendingSearchRepository, outletRespository: outletRepository)
-        return viewModel
-    }()
+    var outletSearchViewModel: UPOutletSearchViewModel!
     
     var onBackButtonTapped: (() -> Void)?
     var showOutlet: ((UPOutletListingTableViewCell.Outlet) -> Void)?
@@ -55,6 +49,16 @@ class OutletSearchViewController: UIViewController {
         searchField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
+    private func deleteStoredSearch(_ string: String){
+        outletSearchViewModel.deleteStoredSearch(string)
+        if let searchText = searchField.text{
+            outletSearchViewModel.fetchStoredSearches(searchText: searchText) {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 
     
     private func viewStoredSearches(searchText: String){
@@ -183,6 +187,7 @@ extension OutletSearchViewController: UITableViewDataSource,UITableViewDelegate{
             return UITableViewCell()
         }
         cell.configureCellWith(outletSearchViewModel.storedSearches[indexPath.row])
+        cell.onDeleteSearchTapped = deleteStoredSearch
         return cell
     }
     

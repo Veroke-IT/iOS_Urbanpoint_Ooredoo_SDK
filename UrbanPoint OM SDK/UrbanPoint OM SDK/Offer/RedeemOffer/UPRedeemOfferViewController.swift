@@ -53,8 +53,6 @@ class UPRedeemOfferViewController: UIViewController {
         if !successContainer.isHidden{
             goToOutlet?()
         }
-        setupSuccessView()
-        return
         var code = ""
         pinCodeInputTextField.forEach {
             if let text = $0.text?.first{
@@ -68,14 +66,15 @@ class UPRedeemOfferViewController: UIViewController {
                 self?.showAlert(title: .alert, message: error)
             }else{
                 DispatchQueue.main.async {[weak self] in
-                    self?.setupSuccessView()
+                    self?.setupSuccessView(withPin: result.0 ?? "")
                 }
             }
         })
     }
     
-    private func setupSuccessView(){
+    private func setupSuccessView(withPin: String){
         self.successContainer.isHidden = false
+        pinCodeLabel.text = withPin
         submitButton.setTitle("Go to Outlet", for: .normal)
     }
     

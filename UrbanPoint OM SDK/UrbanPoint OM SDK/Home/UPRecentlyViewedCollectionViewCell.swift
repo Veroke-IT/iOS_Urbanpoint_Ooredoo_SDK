@@ -11,6 +11,8 @@ class UPRecentlyViewedCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var outletImageView: UIImageView!
     @IBOutlet weak var outletName: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    
     
     static let reuseIdentifier = "UPRecentlyViewedCollectionViewCell"
     
@@ -19,6 +21,10 @@ class UPRecentlyViewedCollectionViewCell: UICollectionViewCell {
         self.outletName.text = outlet.outletName
     }
     
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+
+    }
     
     
 }
