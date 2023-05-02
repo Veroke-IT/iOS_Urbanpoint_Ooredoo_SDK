@@ -8,7 +8,6 @@
 import UIKit
 import CoreLocation
 import SDWebImage
-import BranchSDK
 
 
 
@@ -236,25 +235,25 @@ class OutletDetailViewController: UIViewController {
     }
     
     @IBAction func onShareOutletTapped(_ sender: Any){
-        let branchIO = BranchUniversalObject(canonicalIdentifier: "UrbanPoint")
-        let appID = "1"
-        let linkProperties = BranchLinkProperties()
-        linkProperties.addControlParam("id", withValue: String(viewModel?.outlet?.id ?? -1) )
-        linkProperties.addControlParam("app_id", withValue: appID)
-        linkProperties.addControlParam("navigation_type", withValue: "merchant")
-        if let outletID = viewModel?.outlet?.id{
-            linkProperties.addControlParam("$android_deeplink_path", withValue: "urban-point.app.link//merchantid=\(outletID)@\(appID)")
-        }
-        branchIO.getShortUrl(with: linkProperties) { (url, error) in
-            if (error == nil) {
-                DispatchQueue.main.async {
-                    self.shareURL(url ?? "")
-                }
-            }
-            else {
-                print(String(format: "Branch error : %@", error! as CVarArg))
-            }
-        }
+//        let branchIO = BranchUniversalObject(canonicalIdentifier: "UrbanPoint")
+//        let appID = "1"
+//        let linkProperties = BranchLinkProperties()
+//        linkProperties.addControlParam("id", withValue: String(viewModel?.outlet?.id ?? -1) )
+//        linkProperties.addControlParam("app_id", withValue: appID)
+//        linkProperties.addControlParam("navigation_type", withValue: "merchant")
+//        if let outletID = viewModel?.outlet?.id{
+//            linkProperties.addControlParam("$android_deeplink_path", withValue: "urban-point.app.link//merchantid=\(outletID)@\(appID)")
+//        }
+//        branchIO.getShortUrl(with: linkProperties) { (url, error) in
+//            if (error == nil) {
+//                DispatchQueue.main.async {
+//                    self.shareURL(url ?? "")
+//                }
+//            }
+//            else {
+//                print(String(format: "Branch error : %@", error! as CVarArg))
+//            }
+//        }
     }
     
 }

@@ -39,13 +39,15 @@ extension UIView{
         }
     }
     
+    
+    
     func shadow(shadowColor: UIColor? = nil,
                 shadowOffset: CGSize = .zero,
                 shadowRadius: CGFloat = 0,
                 shadowOpacity: Float = 0,
                 shadowPath: CGPath? = nil){
         let layer = self.layer
-       // layer.masksToBounds = false
+        layer.masksToBounds = false
         layer.shadowColor = shadowColor?.cgColor
         layer.shadowOffset = shadowOffset
         layer.shadowRadius = shadowRadius
@@ -53,6 +55,7 @@ extension UIView{
         layer.shadowPath = shadowPath
     }
     
+
     
 }
 

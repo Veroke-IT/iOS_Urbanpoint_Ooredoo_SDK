@@ -56,7 +56,7 @@ class OutletMenuImageViewerViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.isScrollEnabled = false
         
-        backwardImage.transform = CGAffineTransform(rotationAngle: .pi)
+     //   backwardImage.transform = CGAffineTransform(rotationAngle: .pi)
         currentImageIndex = self.currentIndex
         
 
@@ -83,9 +83,9 @@ class OutletMenuImageViewerViewController: UIViewController {
     }
     
     fileprivate func scrollImageForward() {
-//        if currentImageIndex < (Constants.UPDATA.tempOutletMenu?.count ?? 0) {
-//            currentImageIndex += 1
-//        }
+        if currentImageIndex < outletMenu.count {
+            currentImageIndex += 1
+        }
     }
 
     @IBAction func dismissScreen(_ sender: UIButton) {

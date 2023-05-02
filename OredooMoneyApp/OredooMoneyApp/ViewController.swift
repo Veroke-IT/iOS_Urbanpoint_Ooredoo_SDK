@@ -22,8 +22,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let nav = UINavigationController()
-        let up = UrbanPoint(navigationController: nav, context: self)
+        let up = UrbanPoint(context: self)
         
         if p == 0{
             up.start()

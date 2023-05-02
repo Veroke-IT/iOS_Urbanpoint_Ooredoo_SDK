@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import BranchSDK
 
 class OfferDetailViewController: UIViewController {
 
@@ -17,6 +16,10 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var expiryDateLabel: UILabel!
     @IBOutlet weak var savingLabel: UILabel!
     @IBOutlet weak var coverView: UIView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var outletSubnameLabel: UILabel!
+    @IBOutlet weak var ruleOfPurchaseLabel: UILabel!
+    
     var offerDetailViewModel: OfferDetailViewModel?
     
     //Events
@@ -51,35 +54,55 @@ class OfferDetailViewController: UIViewController {
     private func setupOfferDetailUI(){
         guard let offer = offerDetailViewModel?.offer else { return }
         
-        outletNameLabel.text = offer.outlet?.name
-        offerDetailLabel.text = offer.description
-        offerNameLabel.text = offer.title
+        if let outletNameComponents = offer.outlet?.name?.split(separator: "-"),
+           let name = outletNameComponents.first,
+           let brand = outletNameComponents.last{
+            
+            outletNameLabel.text = String(name) + " -"
+            outletSubnameLabel.text = String(brand)
+            
+            offerNameLabel.text = String(brand).removingLeadingSpaces()
+            
+            
+        }else{
+            outletNameLabel.text = offer.outlet?.name
+            outletSubnameLabel.text = ""
+            offerNameLabel.text = ""
+        }
+        
+        offerDetailLabel.text = offer.title
+        ruleOfPurchaseLabel.text = offer.rulesOfPurchase
+        
         
         expiryDateLabel.text = "Offer expires on ".localized + getDate(dateString: offer.endDatetime ?? "")
-        savingLabel.text = "Save QAR " + String(offer.approxSaving ?? 0)
+        
+        savingLabel.text = ""
+        if let saving = offer.approxSaving{
+            savingLabel.text = "Save approximately " + String(saving) + " QAR"
+        }
         detailExclusionLabel.text = offer.validFor
         
     }
     
     @IBAction func shareOffer(_ sender: Any){
-        let branchIO = BranchUniversalObject(canonicalIdentifier: "UrbanPoint")
-        let linkProperties = BranchLinkProperties()
-        
-        let appID = "1"
-        
-        linkProperties.addControlParam("id", withValue: String(offerDetailViewModel?.offer?.id ?? -1 ))
-        linkProperties.addControlParam("app_id", withValue: appID)
-        linkProperties.addControlParam("navigation_type", withValue: "offer")
-        linkProperties.addControlParam("$android_deeplink_path", withValue:  "urban-point.app.link//offerid=\(offerDetailViewModel?.offer?.id ?? -1)@\(appID)" )
-        branchIO.getShortUrl(with: linkProperties) { (url, error) in
-            if (error == nil) {
-                DispatchQueue.main.async {
-                 self.shareURL(url ?? "")
-                }
-            } else {
-                print(String(format: "Branch error : %@", error! as CVarArg))
-            }
-        }
+//        let branchIO = BranchUniversalObject(canonicalIdentifier: "UrbanPoint")
+//        let linkProperties = BranchLinkProperties()
+//
+//        let appID = "1"
+//
+//        linkProperties.addControlParam("id", withValue: String(offerDetailViewModel?.offer?.id ?? -1 ))
+//        linkProperties.addControlParam("app_id", withValue: appID)
+//        linkProperties.addControlParam("navigation_type", withValue: "offer")
+//        linkProperties.addControlParam("$android_deeplink_path", withValue:  "urban-point.app.link//offerid=\(offerDetailViewModel?.offer?.id ?? -1)@\(appID)" )
+//        branchIO.getShortUrl(with: linkProperties) { (url, error) in
+//            if (error == nil) {
+//                DispatchQueue.main.async {
+//                 self.shareURL(url ?? "")
+//                }
+//            } else {
+//                print(String(format: "Branch error : %@", error! as CVarArg))
+//            }
+//        }
     }
     
     private func shareURL(_ url: String){
@@ -98,6 +121,8 @@ class OfferDetailViewController: UIViewController {
         detailExclusionLabel.text = ""
         expiryDateLabel.text = ""
         savingLabel.text = ""
+        
+        containerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
     }
     
     private func getDate(dateString: String) -> String{

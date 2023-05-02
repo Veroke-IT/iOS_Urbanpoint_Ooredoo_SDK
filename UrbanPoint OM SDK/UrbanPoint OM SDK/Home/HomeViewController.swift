@@ -9,7 +9,7 @@ import UIKit
 
 class UPHomeViewController: UIViewController {
 
-    var homePresenter: UPHomeViewModel
+    var homePresenter: UPHomeViewModel!
     var isPopularCategoriesListExpanded: Bool = false
   
     @IBOutlet weak var tableView: UITableView!
@@ -33,20 +33,6 @@ class UPHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    init?(coder: NSCoder, presenter: UPHomeViewModel) {
-        self.homePresenter = presenter
-        super.init(coder: coder)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("You must create this view controller with a home view model.")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       
         showActivityIndicator()
         homePresenter.fetchEssentialData {[weak self] errorString in
             if let errorString{
@@ -69,6 +55,10 @@ class UPHomeViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     @IBAction private func onSettingsButtonTapped(_ sender: Any){
         onSettingButtonTapped?()
     }
@@ -86,10 +76,11 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
             return homePresenter.categories.count > 0 ? UITableView.automaticDimension : 0
         }
         else if indexPath.row == 1{
-            return (homePresenter.recentlyViewedOutlet.count > 0) ? UITableView.automaticDimension : 0
+            return (homePresenter.useAgainOffers.count > 0) ? UITableView.automaticDimension : 0
         }
         else if indexPath.row == 2{
-            return (homePresenter.useAgainOffers.count > 0) ? UITableView.automaticDimension : 0
+            return (homePresenter.recentlyViewedOutlet.count > 0) ? UITableView.automaticDimension : 0
+           
         }
         else if indexPath.row == 3{
             return (homePresenter.nearbyOutlet.count > 0) ? UITableView.automaticDimension : 0
@@ -126,13 +117,14 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
             cell.configureCell(with: homePresenter.categories, onCategorySelected: onCategorySelected)
                 return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPUseAgainOfferHomeTableViewCell.reuseIdentifier, for: indexPath) as! UPUseAgainOfferHomeTableViewCell
+            cell.configureCell(data: homePresenter.useAgainOffers, onOfferSelected: onUsedOfferSelected, onViewAllTapped: onViewAllUsedOffersTapped )
+            return cell
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPRecentlyViewedTableViewCell.reuseIdentifier, for: indexPath)
             as! UPRecentlyViewedTableViewCell
             cell.configureCell(with: homePresenter.recentlyViewedOutlet, onOutletSelected: onRecentlyViewedOutletSelected)
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPUseAgainOfferHomeTableViewCell.reuseIdentifier, for: indexPath) as! UPUseAgainOfferHomeTableViewCell
-            cell.configureCell(data: [], onOfferSelected: onUsedOfferSelected, onViewAllTapped: onViewAllUsedOffersTapped )
+        
             return cell
         case 3:
             
@@ -172,9 +164,14 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         }
     }
     
-    private func onViewAllUsedOffersTapped(){}
+    private func onViewAllUsedOffersTapped(){
+        onViewAllOffersTapped?()
+    }
     private func onUsedOfferSelected(category: UseAgainOffer){
-        showUseAgainOffer?(category.id)
+        if let id = category.id,
+        let offerID = Int(id){
+            showUseAgainOffer?(offerID)
+        }
     }
     
     private func onViewAllNewBrandTapped(){

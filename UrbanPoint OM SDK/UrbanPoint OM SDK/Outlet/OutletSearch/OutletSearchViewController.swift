@@ -9,7 +9,7 @@ import UIKit
 
 class OutletSearchViewController: UIViewController {
     
-    private let searchBarTopConstraintHeight = 38
+    private let searchBarTopConstraintHeight = 48
     private var index: Int = 1
     
     var outletSearchViewModel: UPOutletSearchViewModel!
@@ -240,6 +240,7 @@ extension OutletSearchViewController: UITextFieldDelegate{
             index = 1
             fetchOutletData()
         }
+        textField.resignFirstResponder()
         return true
     }
     

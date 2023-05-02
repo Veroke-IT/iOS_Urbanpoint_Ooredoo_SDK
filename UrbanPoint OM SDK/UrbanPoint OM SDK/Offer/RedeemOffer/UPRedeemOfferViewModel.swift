@@ -16,6 +16,7 @@ final class UPRedeemOfferViewModel{
         let offerID: Int
         let outletID: Int
         let outletImage: URL?
+        let saving: String
         
     }
     
@@ -32,9 +33,9 @@ final class UPRedeemOfferViewModel{
         offerRepository.redeemOffer(offerData: redeemOfferRequest) { result in
             switch result {
             case .success(let response):
-                completion((response.phone,nil))
-            case .failure(let failure):
-                completion((nil,failure.localizedDescription))
+                completion((String(response.data.confirmationPin),nil))
+            case .failure(_):
+                completion((nil,"Oops something went wrong. Try again with a valid pin"))
             }
         }
     }

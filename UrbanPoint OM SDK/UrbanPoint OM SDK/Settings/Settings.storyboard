@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -26,13 +27,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UrbanPointTextLogo" translatesAutoresizingMaskIntoConstraints="NO" id="7Gf-tt-FCU">
-                                <rect key="frame" x="24" y="59" width="147" height="30"/>
+                                <rect key="frame" x="24" y="109" width="147" height="30"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="YRM-XE-x9e">
-                                <rect key="frame" x="349" y="64" width="20" height="20"/>
+                                <rect key="frame" x="349" y="114" width="20" height="20"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s54-jn-m6H">
-                                <rect key="frame" x="327" y="56.666666666666671" width="64" height="34.666666666666671"/>
+                                <rect key="frame" x="327" y="106.66666666666667" width="64" height="34.666666666666671"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
                                 <connections>
@@ -40,26 +41,26 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nvB-aP-itN">
-                                <rect key="frame" x="24" y="115.33333333333331" width="345" height="200"/>
+                                <rect key="frame" x="24" y="165.33333333333337" width="345" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whX-tg-09s" userLabel="UsedOffersView">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbC-51-dXy">
-                                                <rect key="frame" x="0.0" y="49.000000000000014" width="345" height="1"/>
+                                                <rect key="frame" x="0.0" y="49" width="345" height="1"/>
                                                 <color key="backgroundColor" name="UrbanPointGrey"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="s7H-LI-0CX"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your used offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD8-8H-3NZ">
-                                                <rect key="frame" x="0.0" y="16.000000000000014" width="110" height="17.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="16" width="110" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_forward" translatesAutoresizingMaskIntoConstraints="NO" id="klu-1T-RYJ">
-                                                <rect key="frame" x="335" y="19.000000000000014" width="8" height="12"/>
+                                                <rect key="frame" x="335" y="19" width="8" height="12"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbC-Wg-4lI">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="49"/>
@@ -87,10 +88,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-Lv-bpR" userLabel="TermsOfUse">
-                                        <rect key="frame" x="0.0" y="50.000000000000014" width="345" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="345" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWb-IB-dJG">
-                                                <rect key="frame" x="0.0" y="49" width="345" height="1"/>
+                                                <rect key="frame" x="0.0" y="48.999999999999972" width="345" height="1"/>
                                                 <color key="backgroundColor" name="UrbanPointGrey"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="IDG-Zi-C3O"/>
@@ -131,10 +132,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUZ-g2-Qlp" userLabel="DaysLeft">
-                                        <rect key="frame" x="0.0" y="100.00000000000001" width="345" height="49.999999999999986"/>
+                                        <rect key="frame" x="0.0" y="99.999999999999972" width="345" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-lp-aFF">
-                                                <rect key="frame" x="0.0" y="48.999999999999972" width="345" height="1"/>
+                                                <rect key="frame" x="0.0" y="49" width="345" height="1"/>
                                                 <color key="backgroundColor" name="UrbanPointGrey"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="R12-ey-B8I"/>
@@ -147,7 +148,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days of access remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-7s-1hJ">
-                                                <rect key="frame" x="176.33333333333337" y="17.666666666666657" width="152.66666666666663" height="14.333333333333336"/>
+                                                <rect key="frame" x="176.33333333333337" y="17.666666666666686" width="152.66666666666663" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointDarkGrey"/>
                                                 <nil key="highlightedColor"/>
@@ -166,7 +167,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icg-Vb-cLu" userLabel="Language">
-                                        <rect key="frame" x="0.0" y="150" width="345" height="50"/>
+                                        <rect key="frame" x="0.0" y="149.99999999999997" width="345" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8t-yd-abT">
                                                 <rect key="frame" x="0.0" y="49" width="345" height="1"/>
@@ -220,22 +221,18 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bji-Qx-LCz">
-                                <rect key="frame" x="24" y="767" width="30" height="24.333333333333371"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.backward_green" translatesAutoresizingMaskIntoConstraints="NO" id="bji-Qx-LCz">
+                                <rect key="frame" x="24" y="774" width="27" height="20"/>
                                 <color key="tintColor" name="UrbanPointGreen"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="I65-mY-9ye"/>
-                                    <constraint firstAttribute="width" constant="30" id="uAH-uh-7MY"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go back to Oreedoo Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-LB-QJf">
-                                <rect key="frame" x="62" y="768.33333333333337" width="218" height="21.333333333333371"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                                <rect key="frame" x="58.999999999999986" y="775.33333333333337" width="181.66666666666663" height="17.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
                                 <color key="textColor" name="UrbanPointGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Vc-lLA">
-                                <rect key="frame" x="24" y="762" width="256" height="34.333333333333371"/>
+                                <rect key="frame" x="23.999999999999986" y="767" width="216.66666666666663" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
                                 <connections>
@@ -252,7 +249,7 @@
                             <constraint firstItem="s54-jn-m6H" firstAttribute="centerX" secondItem="YRM-XE-x9e" secondAttribute="centerX" id="8CZ-Z7-V76"/>
                             <constraint firstItem="nvB-aP-itN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Ctw-Rp-xWU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nvB-aP-itN" secondAttribute="trailing" constant="24" id="FB2-Ui-aDG"/>
-                            <constraint firstItem="7Gf-tt-FCU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="GuU-i6-uUO"/>
+                            <constraint firstItem="7Gf-tt-FCU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="GuU-i6-uUO"/>
                             <constraint firstItem="YfN-Vc-lLA" firstAttribute="leading" secondItem="bji-Qx-LCz" secondAttribute="leading" id="VPF-SG-GOt"/>
                             <constraint firstItem="s54-jn-m6H" firstAttribute="centerY" secondItem="YRM-XE-x9e" secondAttribute="centerY" id="dps-mW-e8y"/>
                             <constraint firstItem="s54-jn-m6H" firstAttribute="height" secondItem="YRM-XE-x9e" secondAttribute="height" multiplier="1.72131" id="fB5-Ru-NGb"/>
@@ -279,7 +276,7 @@
     </scenes>
     <resources>
         <image name="UrbanPointTextLogo" width="147" height="30"/>
-        <image name="arrow.backward" catalog="system" width="128" height="95"/>
+        <image name="arrow.backward_green" width="27" height="20"/>
         <image name="arrow_forward" width="8" height="12"/>
         <image name="cross" width="20" height="20"/>
         <namedColor name="UrbanPointDarkGrey">

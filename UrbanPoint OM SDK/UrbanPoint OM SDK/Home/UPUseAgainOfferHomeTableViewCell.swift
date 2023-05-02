@@ -25,13 +25,14 @@ class UPUseAgainOfferHomeTableViewCell: UITableViewCell {
         self.data = data
         self.onOfferSelected = onOfferSelected
         self.onViewAllTapped = onViewAllTapped
-        collectionView.delegate = self
-        collectionView.dataSource = self
+   
+        collectionView.reloadData()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,8 +59,9 @@ extension UPUseAgainOfferHomeTableViewCell: UICollectionViewDataSource,UICollect
     }
     
     private func fetchCellForCategoriesCollectionView(_ collectionView: UICollectionView,indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.identifier, for: indexPath) as! CategoriesCollectionViewCell
-        cell.configureCellWith(CategoriesCollectionViewCell.ViewModel(categoryImage: URL(string: "www.google.com")!))
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UPUseAgainOfferCollectionViewCell.identifier, for: indexPath) as! UPUseAgainOfferCollectionViewCell
+       
+        cell.configureCellWith(data[indexPath.item])
         return cell
     }
     
@@ -69,7 +71,7 @@ extension UPUseAgainOfferHomeTableViewCell: UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width * 0.7, height: collectionView.bounds.height)
+        CGSize(width: collectionView.bounds.width * 0.9, height: collectionView.bounds.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

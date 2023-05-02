@@ -71,7 +71,7 @@ final class UPOutletDetailViewModel: UPLocationManagerDelegate{
         let outletPhone = outlet.phones?.split(separator: ",")
             .map({ String($0) }) ?? []
         
-        return UPOutletDetailViewModel.Outlet(id: outlet.id ?? -1 , outletName: outlet.name ?? "" , outletDescription: outlet.description ?? "" , outletAddress: outlet.address ?? "", outletOffers: outlet.offers ?? [], outletTimings: outlet.timings ?? "" , outletImage: URL(string: imageBaseURL + (outlet.image ?? "")), outletLongitude: outlet.longitude ?? 0, outletLatitude: outlet.latitude ?? 0, outletPhonenNumber: outletPhone, outletMenu: outlet.outletMenu ?? [], bannerImages: bannerImages)
+        return UPOutletDetailViewModel.Outlet(id: outlet.id ?? -1 , outletName: outlet.name ?? "" , outletDescription: outlet.description ?? "" , outletAddress: outlet.address ?? "", outletOffers: outlet.offers ?? [], outletTimings: outlet.timings ?? "" , outletImage: URL(string: imageBaseURL + (outlet.logo ?? "")), outletLongitude: outlet.longitude ?? 0, outletLatitude: outlet.latitude ?? 0, outletPhonenNumber: outletPhone, outletMenu: outlet.outletMenu ?? [], bannerImages: bannerImages)
     }
     
     internal func fetchUserLocation(){

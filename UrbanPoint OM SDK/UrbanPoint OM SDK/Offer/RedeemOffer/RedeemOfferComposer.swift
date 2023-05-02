@@ -30,9 +30,7 @@ final class RedeemOfferComposer{
     }
     
     private func goToOutlet(){
-        let outletDetailComposer = UPOutletDetailComposer(navigationController: navigationController, httpClient: httpClient, outletID: offerData.outletID)
-        navigationController.popViewController(animated: false)
-        outletDetailComposer.start()
+        navigationController.popViewController(animated: true)
     }
     
     private func onBackButtonTapped(){

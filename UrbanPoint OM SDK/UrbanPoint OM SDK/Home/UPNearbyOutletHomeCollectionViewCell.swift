@@ -20,7 +20,7 @@ class UPNearbyOutletHomeCollectionViewCell: UICollectionViewCell {
     internal func configureOutletCellWith(_ outlet: NearbyOutlet){
         if let url = URL(string: imageBaseURL + outlet.image){
             
-            outletImageView.sd_setImage(with: url)
+            outletImageView.sd_setImage(with: url,placeholderImage: placeHolderImage)
             
         }
         outletCategoryLabel.text = outlet.linkedOutletCategory.first?.name
@@ -29,7 +29,7 @@ class UPNearbyOutletHomeCollectionViewCell: UICollectionViewCell {
     }
     
     private func createOffersLabelText(numOfOffers: Int) -> String{
-         "\(numOfOffers) are avaialble"
+         "\(numOfOffers) offers available"
     }
     
     override func prepareForReuse() {

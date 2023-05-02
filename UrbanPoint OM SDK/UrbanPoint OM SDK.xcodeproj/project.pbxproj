@@ -21,9 +21,10 @@
 		04313A5729DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */; };
 		04313A5929DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */; };
 		0437254C29EE2814007254EB /* NewBrands.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0437254B29EE2814007254EB /* NewBrands.storyboard */; };
-		0437255029EE793A007254EB /* BranchSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0437254F29EE793A007254EB /* BranchSDK */; };
 		046157D329EDAD5200B92A5F /* UPSearchViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046157D229EDAD5200B92A5F /* UPSearchViewComposer.swift */; };
 		046157D529EDB6A300B92A5F /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046157D429EDB6A300B92A5F /* Extension+String.swift */; };
+		0469F4BE29F128B1005C315E /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = 0469F4BD29F128B1005C315E /* TPKeyboardAvoiding */; };
+		0469F4C029F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F4BF29F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift */; };
 		0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0471208D29EBBFFB003EA8DA /* MBProgressHUD */; };
 		0471209129EBC324003EA8DA /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0471209029EBC324003EA8DA /* WebView.storyboard */; };
 		0471209329EBC375003EA8DA /* UPWebViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209229EBC375003EA8DA /* UPWebViewComposer.swift */; };
@@ -141,6 +142,7 @@
 		0437254B29EE2814007254EB /* NewBrands.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewBrands.storyboard; sourceTree = "<group>"; };
 		046157D229EDAD5200B92A5F /* UPSearchViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPSearchViewComposer.swift; sourceTree = "<group>"; };
 		046157D429EDB6A300B92A5F /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		0469F4BF29F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPUseAgainOfferCollectionViewCell.swift; sourceTree = "<group>"; };
 		0471209029EBC324003EA8DA /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		0471209229EBC375003EA8DA /* UPWebViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPWebViewComposer.swift; sourceTree = "<group>"; };
 		0471209429EBD1A9003EA8DA /* OutletMenuImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletMenuImageViewerViewController.swift; sourceTree = "<group>"; };
@@ -248,9 +250,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0437255029EE793A007254EB /* BranchSDK in Frameworks */,
 				0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */,
 				040981F729E400200042009B /* SDWebImage in Frameworks */,
+				0469F4BE29F128B1005C315E /* TPKeyboardAvoiding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				0476758C29D6E1DB0004C885 /* UPUseAgainOfferHomeTableViewCell.swift */,
+				0469F4BF29F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift */,
 			);
 			name = UseAgainOffers;
 			sourceTree = "<group>";
@@ -696,7 +699,7 @@
 			packageProductDependencies = (
 				040981F629E400200042009B /* SDWebImage */,
 				0471208D29EBBFFB003EA8DA /* MBProgressHUD */,
-				0437254F29EE793A007254EB /* BranchSDK */,
+				0469F4BD29F128B1005C315E /* TPKeyboardAvoiding */,
 			);
 			productName = "UrbanPoint OM SDK";
 			productReference = 04E68A9829B8AABE00573B2A /* UrbanPoint_OM_SDK.framework */;
@@ -729,7 +732,7 @@
 			packageReferences = (
 				040981F529E400200042009B /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				0471208C29EBBFFB003EA8DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
-				0437254E29EE793A007254EB /* XCRemoteSwiftPackageReference "ios-branch-deep-linking-attribution" */,
+				0469F4BC29F128B1005C315E /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */,
 			);
 			productRefGroup = 04E68A9929B8AABE00573B2A /* Products */;
 			projectDirPath = "";
@@ -848,6 +851,7 @@
 				04FC747629D9CFD00099E8C5 /* NewBrandsTableViewCell.swift in Sources */,
 				047120B329ED41EE003EA8DA /* RecentlyViewedService.swift in Sources */,
 				0409820629E40BDC0042009B /* OfferDetailComposer.swift in Sources */,
+				0469F4C029F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift in Sources */,
 				047EBD8129EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift in Sources */,
 				04E68B2029B9D5FB00573B2A /* CategoriesCollectionViewCell.swift in Sources */,
 				0476758D29D6E1DB0004C885 /* UPUseAgainOfferHomeTableViewCell.swift in Sources */,
@@ -1007,6 +1011,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1038,6 +1043,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1088,12 +1094,12 @@
 				kind = branch;
 			};
 		};
-		0437254E29EE793A007254EB /* XCRemoteSwiftPackageReference "ios-branch-deep-linking-attribution" */ = {
+		0469F4BC29F128B1005C315E /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/BranchMetrics/ios-branch-deep-linking-attribution";
+			repositoryURL = "https://github.com/michaeltyson/TPKeyboardAvoiding";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 		0471208C29EBBFFB003EA8DA /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
@@ -1112,10 +1118,10 @@
 			package = 040981F529E400200042009B /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		0437254F29EE793A007254EB /* BranchSDK */ = {
+		0469F4BD29F128B1005C315E /* TPKeyboardAvoiding */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0437254E29EE793A007254EB /* XCRemoteSwiftPackageReference "ios-branch-deep-linking-attribution" */;
-			productName = BranchSDK;
+			package = 0469F4BC29F128B1005C315E /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */;
+			productName = TPKeyboardAvoiding;
 		};
 		0471208D29EBBFFB003EA8DA /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;

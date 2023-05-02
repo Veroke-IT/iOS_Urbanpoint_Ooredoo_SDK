@@ -104,9 +104,9 @@ struct UPOutlet : Codable {
 
     struct OutletMenu: Codable {
         var file: String?
-        var id: String?
-        var orderBy: String?
-        var outlet_id: String?
+        var id: Int?
+        var orderBy: Int?
+        var outlet_id: Int?
         var type: String?
     }
 }
@@ -115,7 +115,8 @@ struct UPOutlet : Codable {
 // MARK: - Offer
 struct UPOffer: Codable {
     let title, image, searchTags: String?
-    let outletID, price, specialPrice, approxSaving: Int?
+    let outletID: Int?
+    let price, specialPrice, approxSaving: Double?
     let description: String?
     let id: Int?
     let startDatetime: String?
@@ -125,6 +126,7 @@ struct UPOffer: Codable {
     let renew: String?
     let redemptions, redeemed, perUser: Int?
     let active: String?
+    let logo: String?
     let rulesOfPurchase: String?
     let discountType, percentageSaving, createdAt, updatedAt: String?
     let outletName: String?
@@ -132,6 +134,7 @@ struct UPOffer: Codable {
 
     enum CodingKeys: String, CodingKey {
         case title, image
+        case logo
         case searchTags = "search_tags"
         case outletID = "outlet_id"
         case price

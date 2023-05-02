@@ -19,6 +19,8 @@ class UPRecentlyViewedCollectionViewCell: UICollectionViewCell {
     internal func configureCell(with outlet: RecentlyViewedOutlet){
         self.outletImageView.sd_setImage(with: URL(string: outlet.outletLogoURL))
         self.outletName.text = outlet.outletName
+        outletImageView.applyshadowWithCorner(containerView: containerView, cornerRadious: 40)
+        
     }
     
     override class func awakeFromNib() {

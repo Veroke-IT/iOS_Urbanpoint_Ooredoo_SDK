@@ -6,41 +6,34 @@
 //
 
 import UIKit
-import BranchSDK
 
 
 
 
 final public class UrbanPoint{
     
-    private let navigationController: UINavigationController
     private let context: UIViewController
     
-    public init(navigationController: UINavigationController,context: UIViewController) {
-        self.navigationController = navigationController
+    public init(context: UIViewController) {
         self.context = context
     }
     
     public func start(){
         
-        navigationController.modalPresentationStyle = .fullScreen
-        navigationController.isNavigationBarHidden = true
         
         FontLoader.loadFont(name: "Roboto-Medium")
         FontLoader.loadFont(name: "Roboto-Bold")
         FontLoader.loadFont(name: "Roboto-Regular")
 
         let httpClient = UPURLSessionHttpClient(session: URLSession.shared)
-//        let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
-//        let offerRepository = URLSessionOfferRepository(httpClient: httpClient)
-//        let homeService = HttpHomeService(httpClient: httpClient)
+    
+        let navigationController = UINavigationController()
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.isNavigationBarHidden = true
         
-        Branch.getInstance().initSession(launchOptions: nil) { params, error in
-            debugPrint(error)
-        }
+        //Branch.getInstance().initSession()
         let homeViewController = UPHomeViewComposer(navigationController: navigationController, httpClient: httpClient)
         homeViewController.start()
-        Branch.getInstance().initSession()
         context.present(navigationController, animated: true)
     }
     

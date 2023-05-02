@@ -42,9 +42,9 @@ final class UPHomeViewComposer{
     static func createHomeView(homeService: HomeService,httpClient: UPHttpClient) -> UIViewController{
         let viewModel = UPHomeViewModel(homeService: homeService)
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "HomeView", bundle: storyBoardBundle).instantiateViewController(identifier: "UPHomeViewController") { coder in
-            UPHomeViewController(coder: coder, presenter: viewModel)
-        }
+        let viewController = UIStoryboard(name: "HomeView", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPHomeViewController") as! UPHomeViewController
+        
+        viewController.homePresenter = viewModel
         return viewController
     }
     
@@ -56,8 +56,8 @@ final class UPHomeViewComposer{
     }
     
     private func onOfferSelected(_ id: Int){
-        let offerDetailVC = UPOfferDetailComposer.createOfferDetailView(offerID: id, httpClient: httpClient)
-        navigationController.pushViewController(offerDetailVC, animated: true)
+        let offerDetailVC = UPOfferDetailComposer(navigationController: navigationController, httpClient: httpClient, offerID: id)
+        offerDetailVC.start()
     }
     
     private func onParentSelected(withID id: Int,name: String){
@@ -99,5 +99,7 @@ final class UPHomeViewComposer{
         let usedOfferFlow = UPUsedOfferViewComposer(httpClient: httpClient, navigationController: navigationController)
         usedOfferFlow.start()
     }
+    
+
 
 }

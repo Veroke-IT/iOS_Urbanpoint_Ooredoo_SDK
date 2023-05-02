@@ -24,6 +24,7 @@ final class UPOutletDetailComposer{
         outletDetailVC.onOfferSelected = onOfferSelected
         outletDetailVC.recentlyVisitEventDelegate = UserDefaultsRecentlyViewedOutletWrapper.sharedInstance
         outletDetailVC.onBackButtonTapped = onBackButtonTapped
+        outletDetailVC.onMenuSelected = onMenuSelected
         navigationController.pushViewController(outletDetailVC, animated: true)
         
     }

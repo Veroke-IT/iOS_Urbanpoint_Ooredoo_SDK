@@ -30,9 +30,21 @@ struct RedeemOfferRequest: Encodable{
         try JSONEncoder().encode(self)
     }
 }
+
+
 struct RedeemOfferResponse: Decodable{
+    let status: String?
+    let statusCode: Int?
+    let message: String?
+    let data: Data
     
-    let phone: String
+    struct Data: Decodable{
+        let confirmationPin: Int
+        
+        enum CodingKeys: String,CodingKey{
+            case confirmationPin = "id"
+        }
+    }
     
 }
 

@@ -14,7 +14,6 @@ class UPOfferTableViewCell: UITableViewCell {
     static let reuseIdentifier = "UPOfferTableViewCell"
     
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var specialFlagBg: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var approxSavingsLabel: UILabel!
     @IBOutlet weak var favouriteButton: UIButton!
@@ -23,6 +22,7 @@ class UPOfferTableViewCell: UITableViewCell {
     @IBOutlet weak var giftView: UIView!
     @IBOutlet weak var favouritImage: UIImageView!
     @IBOutlet weak var titleLabelStackCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var specialOfferImageView: UIImageView!
     
     private var offer: UPOffer?
     
@@ -40,6 +40,25 @@ class UPOfferTableViewCell: UITableViewCell {
         else{
             approxSavingsLabel.isHidden = true
         }
+        
+        switch offer?.specialType {
+            case "Burger","burger":
+            self.specialOfferImageView.image = UIImage.loadImageWithName("burger_icon_offer")
+            case "biryani","Biryani":
+                self.specialOfferImageView.image = UIImage.loadImageWithName("biryani_updated_icon")
+            case "Ramadan","ramadan":
+                self.specialOfferImageView.image = UIImage.loadImageWithName("ramazan_updated_icon")
+
+            case "food_delivery":
+                self.specialOfferImageView.image = UIImage.loadImageWithName("delivery_updated_icon")
+            case "others","other":
+                self.specialOfferImageView.image = UIImage.loadImageWithName("other_updated_icon")
+                
+            default:
+                self.specialOfferImageView.isHidden = true
+            }
+        
+        
         
     }
     

@@ -16,6 +16,14 @@ extension String{
     var localized: String{
         return self
     }
+    
+    func removingLeadingSpaces() -> String {
+        guard let index = firstIndex(where: { !CharacterSet(charactersIn: String($0)).isSubset(of: .whitespaces) }) else {
+            return self
+        }
+        return String(self[index...])
+    }
+    
 }
 extension Float {
        var clean: String {

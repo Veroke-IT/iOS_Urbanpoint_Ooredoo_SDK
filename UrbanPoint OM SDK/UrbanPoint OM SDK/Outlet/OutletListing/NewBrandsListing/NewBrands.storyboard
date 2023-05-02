@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -36,7 +37,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Brands" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2t-Fr-RTu">
-                                        <rect key="frame" x="68" y="14.666666666666673" width="309" height="30.666666666666671"/>
+                                        <rect key="frame" x="68" y="17.333333333333329" width="309" height="25.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <color key="textColor" name="UrbanPointRed"/>
                                         <nil key="highlightedColor"/>
@@ -45,13 +46,13 @@
                                         <rect key="frame" x="348" y="0.0" width="21" height="60"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-5N-Zp9">
-                                        <rect key="frame" x="68" y="7" width="309" height="46"/>
+                                        <rect key="frame" x="68" y="11" width="309" height="38"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-hX-qsf">
-                                                <rect key="frame" x="16" y="4" width="21" height="38"/>
+                                                <rect key="frame" x="16" y="4" width="21" height="30"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search offers" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-7l-iiX">
-                                                <rect key="frame" x="41.000000000000014" y="0.0" width="215.33333333333337" height="46"/>
+                                                <rect key="frame" x="41.000000000000014" y="0.0" width="215.33333333333337" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -59,7 +60,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqC-yW-Dbh">
-                                                <rect key="frame" x="256.33333333333331" y="4" width="52.666666666666686" height="38"/>
+                                                <rect key="frame" x="256.33333333333331" y="0.0" width="52.666666666666686" height="38"/>
                                                 <color key="tintColor" name="UrbanPointDarkGrey"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="cross_white_background" title=" "/>
@@ -74,9 +75,9 @@
                                             <constraint firstAttribute="bottom" secondItem="qBq-hX-qsf" secondAttribute="bottom" constant="4" id="OyZ-UM-hCz"/>
                                             <constraint firstItem="XqC-yW-Dbh" firstAttribute="leading" secondItem="HC7-7l-iiX" secondAttribute="trailing" id="TWq-3s-XiT"/>
                                             <constraint firstItem="HC7-7l-iiX" firstAttribute="leading" secondItem="qBq-hX-qsf" secondAttribute="trailing" constant="4" id="U1x-5f-Oe6"/>
-                                            <constraint firstItem="XqC-yW-Dbh" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" constant="4" id="Uqw-2P-Dog"/>
+                                            <constraint firstItem="XqC-yW-Dbh" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" id="Uqw-2P-Dog"/>
                                             <constraint firstItem="qBq-hX-qsf" firstAttribute="top" secondItem="wmm-5N-Zp9" secondAttribute="top" constant="4" id="WsP-Dm-dBQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="XqC-yW-Dbh" secondAttribute="bottom" constant="4" id="g25-CD-O19"/>
+                                            <constraint firstAttribute="bottom" secondItem="XqC-yW-Dbh" secondAttribute="bottom" id="g25-CD-O19"/>
                                             <constraint firstAttribute="trailing" secondItem="XqC-yW-Dbh" secondAttribute="trailing" id="mq6-em-GKM"/>
                                             <constraint firstItem="qBq-hX-qsf" firstAttribute="leading" secondItem="wmm-5N-Zp9" secondAttribute="leading" constant="16" id="pG1-vb-G9f"/>
                                             <constraint firstAttribute="bottom" secondItem="HC7-7l-iiX" secondAttribute="bottom" id="xFo-nh-INU"/>
@@ -149,14 +150,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrendingTableViewCell" id="9wd-cr-BCG" customClass="TrendingTableViewCell" customModule="UrbanPoint_OM_SDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="309" height="39.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="50" width="309" height="39"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wd-cr-BCG" id="fgi-11-njY">
-                                            <rect key="frame" x="0.0" y="0.0" width="309" height="39.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPt-0h-GVc">
-                                                    <rect key="frame" x="32" y="10.999999999999998" width="245" height="17.333333333333329"/>
+                                                    <rect key="frame" x="32" y="11" width="245" height="17"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <color key="textColor" name="UrbanPointGreen"/>
                                                     <nil key="highlightedColor"/>

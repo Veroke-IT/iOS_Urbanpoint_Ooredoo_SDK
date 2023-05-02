@@ -16,11 +16,13 @@ class UPUsedOfferTableViewCell: UITableViewCell {
     @IBOutlet weak var confirmationIDLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var outletImageView: UIImageView!
+    @IBOutlet weak var outletSavingText: UILabel!
     
     struct Offer{
         let outletName: String
         let description: String
         let confirmationCode: String
+        let saving: String
         let date: String
         let image: URL?
     }
@@ -32,6 +34,7 @@ class UPUsedOfferTableViewCell: UITableViewCell {
         confirmationIDLabel.text = model.confirmationCode
         dateLabel.text = getDate(dateString: model.date)
         outletImageView.sd_setImage(with: model.image)
+        outletSavingText.text = "You saved approximately QAR " + model.saving
     }
     
     

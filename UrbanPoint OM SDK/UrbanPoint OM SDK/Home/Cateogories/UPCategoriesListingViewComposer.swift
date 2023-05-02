@@ -32,10 +32,10 @@ final class UPCategoriesListingViewComposer{
     
     static func createViewForUPCategoriesListing(viewModel: UPCategoryViewModel) -> UIViewController{
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(identifier: "UPCategoriesViewController") { coder in
-            UPCategoriesViewController(coder: coder, viewModel: viewModel)
-        }
+        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPCategoriesViewController")
+        as! UPCategoriesViewController
         
+        viewController.viewModel = viewModel
         return viewController
     }
     

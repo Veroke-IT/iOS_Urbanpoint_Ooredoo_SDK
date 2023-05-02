@@ -36,7 +36,7 @@ final class UPOfferDetailComposer{
     }
     
     private func onRedeemOfferTapped(offer: OfferDetailApiResponse.Offer){
-        let offerData = UPRedeemOfferViewModel.RedeemOfferViewModel(outletName: offer.outlet?.name ?? "", offerDetails: offer.description ?? "", offerID: offerID , outletID: offer.outletID ?? -1, outletImage: URL(string: imageBaseURL + (offer.image ?? "")))
+        let offerData = UPRedeemOfferViewModel.RedeemOfferViewModel(outletName: offer.outlet?.name ?? "", offerDetails: offer.title ?? "", offerID: offerID , outletID: offer.outletID ?? -1, outletImage: URL(string: imageBaseURL + (offer.outlet?.logo ?? "")), saving: String(offer.approxSaving ?? 0))
         let redeemOfferFlow = RedeemOfferComposer(navigationController: navigationController, httpClient: httpClient, offerData: offerData)
         navigationController.presentedViewController?.dismiss(animated: false)
         redeemOfferFlow.start()

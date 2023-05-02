@@ -39,8 +39,12 @@ final class NearbyListingViewModel: OutletListingPresenterContract{
             case .success(let data):
                 let outlets = data.map { outlet in
                     var distance = outlet.distance?.value.getNumberWithoutDecimal() ?? " "
-                    distance = "within \(distance) km"
-                    return UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.image ?? "")), distance: distance, isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
+                    if let dist = Int(distance){
+                        distance = "within \(dist/1000) km"
+                    }else{
+                        distance = ""
+                    }
+                    return UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: distance, isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
                 }
                 completion((outlets,nil))
             case .failure(let error):
@@ -59,7 +63,7 @@ final class NearbyListingViewModel: OutletListingPresenterContract{
             switch result{
             case .success(let data):
                 let outlets = data.map { outlet in
-                    UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.image ?? "")), distance: outlet.address ?? "", isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
+                    UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: outlet.address ?? "", isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
                 }
                 completion((outlets,nil))
             case .failure(let error):

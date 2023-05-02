@@ -17,7 +17,7 @@ class UserDefaultsRecentlyViewedOutletWrapper: RecentlyViewedOutletEventDelegate
 
     private let session: UserDefaults
     static var sharedInstance = UserDefaultsRecentlyViewedOutletWrapper()
-    private let keyIdentifier = "RecentlyViewedOutlets"
+    private let keyIdentifier = "RecentlyViewedOutletsOoredooSDK"
     
     private init(){
         self.session = UserDefaults.standard

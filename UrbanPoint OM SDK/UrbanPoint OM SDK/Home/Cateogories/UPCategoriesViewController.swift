@@ -17,7 +17,7 @@ class UPCategoriesViewController: UIViewController {
     var titleString: String = ""
     
     private var listingViewController: OutletListingContainerViewController? = nil
-    var viewModel : UPCategoryViewModel
+    var viewModel : UPCategoryViewModel!
   
     var onBackButtonTapped: (() -> Void)? = nil
     var showOutlet: ((UPOutletListingTableViewCell.Outlet) -> Void)?
@@ -37,7 +37,9 @@ class UPCategoriesViewController: UIViewController {
             if let errorString{
                     self?.showAlert(title: .alert, message: errorString)
             }else{
+                
                 DispatchQueue.main.async {
+                    self?.titleLabel.text = self?.viewModel.selectedCateogoryName
                     self?.listingContainer.isHidden = false
                 }
                 if let listingController = self?.listingViewController{
@@ -55,14 +57,7 @@ class UPCategoriesViewController: UIViewController {
     }
 
     
-    init?(coder: NSCoder, viewModel: UPCategoryViewModel) {
-        self.viewModel = viewModel
-        super.init(coder: coder)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("You must create this view controller with a home view model.")
-    }
+ 
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -128,9 +123,10 @@ extension UPCategoriesViewController: UICollectionViewDataSource,UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UPCategoriesCollectionViewCell.reuseIdentifier, for: indexPath) as! UPCategoriesCollectionViewCell
         
-        let imageURLString = imageBaseURL + (viewModel.categories[indexPath.row].image ?? "")
+        let category = viewModel.categories[indexPath.row]
+        let imageURLString = imageBaseURL + (category.image ?? "")
         if let url = URL(string: imageURLString){
-            cell.configureCell(with: url)
+            cell.configureCell(with: url, name: category.name ?? "")
         }
         
         return cell

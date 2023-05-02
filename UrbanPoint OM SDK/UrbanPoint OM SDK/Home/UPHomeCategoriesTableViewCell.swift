@@ -54,7 +54,8 @@ extension UPHomeCategoriesTableViewCell: UICollectionViewDataSource,UICollection
         
     
         let imageURL = "\(imageBaseURL)\(data[indexPath.row].image)"
-        cell.configureCellWith(CategoriesCollectionViewCell.ViewModel(categoryImage: URL(string: imageURL)!))
+        let name = data[indexPath.row].name
+        cell.configureCellWith(CategoriesCollectionViewCell.ViewModel(categoryImage: URL(string: imageURL), name: name))
         return cell
     }
     

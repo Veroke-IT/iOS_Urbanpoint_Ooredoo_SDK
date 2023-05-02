@@ -40,8 +40,12 @@ final class UPPopularCategoryViewModel: OutletListingPresenterContract{
             case .success(let data):
                 let outlets = data.map { outlet in
                     var distance = outlet.distance?.value.getNumberWithoutDecimal() ?? " "
-                    distance = "within \(distance) km"
-                    return UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.image ?? "")), distance: distance, isExpanded: false, offers:  outlet.offers ?? [], isParentOutlet: false)
+                    if let dist = Int(distance){
+                        distance = "within \(dist/1000) km"
+                    }else{
+                        distance = ""
+                    }
+                    return UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: distance, isExpanded: false, offers:  outlet.offers ?? [], isParentOutlet: false)
                 }
                 completion((outlets,nil))
             case .failure(let error):
@@ -52,13 +56,16 @@ final class UPPopularCategoryViewModel: OutletListingPresenterContract{
     }
 
     func fetchOutletAlphabatical(searchText: String?, categoryID: Int?, collectionID: Int?, index: Int, completion: @escaping (([UPOutletListingTableViewCell.Outlet], String?)) -> Void) {
-        outletRepository.fetchOutlet(param:[.popularCategoryID(String(selectedPopularCategoryID)),
-                                            .sortBy(.alphabatical),
+        outletRepository.fetchParentOutlet(param:[.popularCategoryID(String(selectedPopularCategoryID)),
+                                                  .sortBy(.name),
+                                                  .sortOrder(.asc),
                                             .paggingIndex(String(index))]) { result in
             switch result{
             case .success(let data):
                 let outlets = data.map { outlet in
-                    UPOutletListingTableViewCell.Outlet(id: outlet.id ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.image ?? "")), distance: outlet.address ?? "", isExpanded: false, offers: outlet.offers ?? [], isParentOutlet: false)
+                    let offers = ((outlet.outlets?.count ?? 0) > 1) ? (outlet.outlets?.first?.offers ?? []) : []
+                    let description = (offers.count == 0) ? "Multiple Locations" : (outlet.outlets?.first?.address ?? "")
+                    return UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: description, isExpanded: false, offers: offers, isParentOutlet: offers.count == 0)
                 }
                 completion((outlets,nil))
             case .failure(let error):

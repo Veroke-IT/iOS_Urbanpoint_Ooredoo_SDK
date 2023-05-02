@@ -16,6 +16,8 @@ class UPRedeemOfferViewController: UIViewController {
     @IBOutlet weak var successContainer: UIView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var pinCodeLabel: UILabel!
+    @IBOutlet weak var savingLabel: UILabel!
+    @IBOutlet weak var outletLogoContainerView: UIView!
     
     var viewModel: UPRedeemOfferViewModel? = nil
     var onBackButtonTapped: (() -> Void)?
@@ -31,7 +33,11 @@ class UPRedeemOfferViewController: UIViewController {
     private func setupUI(){
         outletNameLabel.text = viewModel?.offerData.outletName
         offerNameLabel.text = viewModel?.offerData.offerDetails
-        outletLogoImage.sd_setImage(with: viewModel?.offerData.outletImage)
+        savingLabel.text = "You save approximatly " + (viewModel?.offerData.saving.getNumberWithoutDecimal() ?? "") + " QAR!"
+      
+        outletLogoImage.applyshadowWithCorner(containerView: outletLogoContainerView, cornerRadious: outletLogoImage.layer.cornerRadius)
+        outletLogoImage.sd_setImage(with: viewModel?.offerData.outletImage,placeholderImage: placeHolderImage)
+    
     }
     
     @IBAction func onBackButtonPressed(_ sender: Any){
@@ -52,6 +58,7 @@ class UPRedeemOfferViewController: UIViewController {
     private func redeemOffer(){
         if !successContainer.isHidden{
             goToOutlet?()
+            return
         }
         var code = ""
         pinCodeInputTextField.forEach {
@@ -59,6 +66,7 @@ class UPRedeemOfferViewController: UIViewController {
                 code += String(text)
             }
         }
+        
         showActivityIndicator()
         viewModel?.redeemOffer(pin: code, completion: {[weak self] result in
             self?.hideActivityIndicator()
@@ -75,7 +83,7 @@ class UPRedeemOfferViewController: UIViewController {
     private func setupSuccessView(withPin: String){
         self.successContainer.isHidden = false
         pinCodeLabel.text = withPin
-        submitButton.setTitle("Go to Outlet", for: .normal)
+        submitButton.setTitle("Done", for: .normal)
     }
     
     private func setupInProgressView(){
@@ -84,6 +92,7 @@ class UPRedeemOfferViewController: UIViewController {
         submitButton.setTitle("Confirm", for: .normal)
         submitButton.isEnabled = false
     }
+
 
     
 }
@@ -96,16 +105,14 @@ extension UPRedeemOfferViewController{
         if let text = sender.text?.last{
             sender.text = String(text)
             if index <= 2{
-                sender.resignFirstResponder()
                 pinCodeInputTextField[index+1].becomeFirstResponder()
             }else if index == 3{
                 updateSubmitButton(isEnabled: true)
              }
         }
         else if index >= 1{
-            sender.resignFirstResponder()
             pinCodeInputTextField[index - 1].becomeFirstResponder()
-           updateSubmitButton(isEnabled: false)
+            updateSubmitButton(isEnabled: false)
         }
     }
     
@@ -129,9 +136,12 @@ extension UPRedeemOfferViewController{
     
     private func updateSubmitButton(isEnabled: Bool){
         submitButton.isEnabled = isEnabled
+        if isEnabled{
+            pinCodeInputTextField.last?.resignFirstResponder()
+        }
         submitButton.backgroundColor = isEnabled ? Colors.urbanPointRed : Colors.urbanPointGrey
         submitButton.setTitleColor(isEnabled ?  UIColor.white : UIColor.darkGray, for: .normal)
-        
+        submitButton.titleLabel?.textColor = isEnabled ?  UIColor.white : UIColor.darkGray
     }
     
 }

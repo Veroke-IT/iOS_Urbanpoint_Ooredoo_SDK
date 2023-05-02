@@ -14,6 +14,11 @@ enum OutletRepositoryParam{
     enum Sort: String{
         case alphabatical = "alphabetically"
         case nearby = "location"
+        case name = "name"
+    }
+    enum SortOrder: String{
+        case asc = "ASC"
+        case desc = "DESC"
     }
     
     case outletDetail(String)
@@ -21,7 +26,7 @@ enum OutletRepositoryParam{
     case newBrands
     case searchOutlets(String)
     case childOutlets(String?)
-    case sortBy(OutletRepositoryParam.Sort)
+    case sortBy(Sort)
     case none
     case paggingIndex(String)
     case longitude(String?)
@@ -30,9 +35,12 @@ enum OutletRepositoryParam{
     case categoryID(String)
     case collectionID(String)
     case popularCategoryID(String)
+    case sortOrder(SortOrder)
     
     var values: (String,String)?{
         switch self {
+        case .sortOrder(let sortOrder):
+            return ("sort_order",sortOrder.rawValue)
         case .outletDetail(let id):
             return ("outlet_id",id)
         case .searchOutlets(let searchText):
@@ -40,7 +48,7 @@ enum OutletRepositoryParam{
         case .childOutlets(let parentID):
             return (parentID == nil) ? nil : ("parents_id",parentID ?? "")
         case .sortBy(let sortCondition):
-            return ("sortBy",sortCondition.rawValue)
+            return ("sort_by",sortCondition.rawValue)
         case .paggingIndex(let index):
             return ("page",index)
         case .longitude(let coordinates):
@@ -53,7 +61,6 @@ enum OutletRepositoryParam{
                 return ("latitude",coordinates)
             }
             return nil
-            
         case .perPage(let perPage):
                 return ("per_page",perPage)
         case .categoryID(let id):
@@ -64,7 +71,6 @@ enum OutletRepositoryParam{
             return ("popular_category_id",id)
         default:
             return nil
-
         }
     }
 }
@@ -91,7 +97,7 @@ final class URLSessionOutletRepository: OutletRepository{
    
     
     func fetchParentOutlet(param: [OutletRepositoryParam], completion: @escaping (Result<[UPParentOutlet], Error>) -> Void) {
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getOutlets"
+        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getOutletsParents"
         guard var url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -108,7 +114,6 @@ final class URLSessionOutletRepository: OutletRepository{
         urlRequest.httpMethod = "get"
         urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
         urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
-        debugPrint("Api URLS",urlRequest.url?.absoluteURL)
         httpClient.execute(urlRequest: urlRequest) {  result in
             switch result{
             case .success(let response):
@@ -162,8 +167,7 @@ final class URLSessionOutletRepository: OutletRepository{
         urlRequest.httpMethod = "get"
         urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
         urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
-        debugPrint("Api URLS",urlRequest.url?.absoluteURL)
-    
+      
         httpClient.execute(urlRequest: urlRequest) {  result in
        
             switch result{

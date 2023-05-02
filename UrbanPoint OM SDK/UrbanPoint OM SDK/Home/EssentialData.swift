@@ -21,14 +21,14 @@ struct DataData: Codable {
     let defaults: Defaults
     let superAccessPin: String
     let offerUsedAgain: [UseAgainOffer]
-    let subscriptionBanner: [SubscriptionBanner]
+  //  let subscriptionBanner: [SubscriptionBanner]
     let nearbyOutlets: [NearbyOutlet]
 
     enum CodingKeys: String, CodingKey {
         case defaults
         case superAccessPin = "super_access_pin"
         case offerUsedAgain
-        case subscriptionBanner = "subscription_banner"
+       // case subscriptionBanner = "subscription_banner"
         case nearbyOutlets
     }
 }
@@ -124,6 +124,55 @@ struct LinkedOutletCategory: Codable {
 
 
 struct UseAgainOffer: Codable{
-    let id: Int
-}
-struct SubscriptionBanner: Codable{}
+        let id, outletID, percentageSaving, discountType: String?
+        let sku, title, image, searchTags: String?
+        let price, specialPrice, approxSaving, startDatetime: String?
+        let endDatetime, validFor, interestTags, special: String?
+        //let usageAllowance, specialType: JSONNull?
+        let renew, redemptions, redeemed, perUser: String?
+        let active, description, rulesOfPurchase, createdAt: String?
+        let updatedAt, ordersCount: String?
+      //  let favouriteID: JSONNull?
+        let orderID, outletName, outletLogo, outletAddress: String?
+        let isRedeeme: Int?
+        let isfavourite, categoryID, categoryName: String?
+       // let categoryImage: JSONNull?
+        let categoryLogo: String?
+
+        enum CodingKeys: String, CodingKey {
+            case id
+            case outletID = "outlet_id"
+            case percentageSaving = "percentage_saving"
+            case discountType = "discount_type"
+            case sku = "SKU"
+            case title, image
+            case searchTags = "search_tags"
+            case price
+            case specialPrice = "special_price"
+            case approxSaving = "approx_saving"
+            case startDatetime = "start_datetime"
+            case endDatetime = "end_datetime"
+            case validFor = "valid_for"
+            case interestTags = "interest_tags"
+            case special
+           // case usageAllowance = "usage_allowance"
+           // case specialType = "special_type"
+            case renew, redemptions, redeemed
+            case perUser = "per_user"
+            case active, description
+            case rulesOfPurchase = "rules_of_purchase"
+            case createdAt = "created_at"
+            case updatedAt = "updated_at"
+            case ordersCount = "orders_count"
+          //  case favouriteID = "favourite_id"
+            case orderID = "order_id"
+            case outletName = "outlet_name"
+            case outletLogo = "outlet_logo"
+            case outletAddress = "outlet_address"
+            case isRedeeme, isfavourite
+            case categoryID = "category_id"
+            case categoryName = "category_name"
+           // case categoryImage = "category_image"
+            case categoryLogo = "category_logo"
+        }
+    }

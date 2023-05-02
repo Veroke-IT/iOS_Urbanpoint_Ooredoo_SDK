@@ -5,9 +5,10 @@
 //  Created by MamooN_ on 4/10/23.
 //
 
-import Foundation
+import UIKit
 
 
 let imageBaseURL = "https://urbanpoint-storage.azureedge.net/test/uploads_staging/uploads/"
 let Appbundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-let termsAndServiceURL = "https://www.google.com"
+let termsAndServiceURL = "https://urbanpoint.com/terms-of-service"
+let placeHolderImage = UIImage.loadImageWithName("PlaceHolder")

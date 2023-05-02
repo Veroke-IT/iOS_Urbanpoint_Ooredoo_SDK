@@ -45,6 +45,7 @@ final class UPTrendingSearchHttpRepository: UPTrendingSearchRepository{
                         let jsonDecoded = try JSONDecoder().decode(TrendingSearchesResponse.self, from: response.0)
                         completion(.success(jsonDecoded))
                     }
+
                     catch let error{
                         completion(.failure(error))
                     }

@@ -16,8 +16,8 @@ class NewBrandViewController: UIViewController {
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    private(set) var titleString = ""
-    var viewModel: OutletListingPresenterContract
+    var titleString = ""
+    var viewModel: OutletListingPresenterContract!
     var searchingViewModel: UPOutletSearchViewModel? = nil
     var listingViewContainer: OutletListingContainerViewController? = nil
 
@@ -67,21 +67,21 @@ class NewBrandViewController: UIViewController {
         }
     }
     
-    init?(coder: NSCoder,
-          viewModel: OutletListingPresenterContract,
-          titleString: String,
-          searchViewModel: UPOutletSearchViewModel? = nil,
-          onBackButtonTapped: @escaping () -> Void) {
-        self.titleString = titleString
-        self.viewModel = viewModel
-        self.searchingViewModel = searchViewModel
-        self.onBackButtonTapped = onBackButtonTapped
-        super.init(coder: coder)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("You must create this view controller with a home view model.")
-    }
+//    init?(coder: NSCoder,
+//          viewModel: OutletListingPresenterContract,
+//          titleString: String,
+//          searchViewModel: UPOutletSearchViewModel? = nil,
+//          onBackButtonTapped: @escaping () -> Void) {
+//        self.titleString = titleString
+//        self.viewModel = viewModel
+//        self.searchingViewModel = searchViewModel
+//        self.onBackButtonTapped = onBackButtonTapped
+//        super.init(coder: coder)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("You must create this view controller with a home view model.")
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -107,6 +107,8 @@ class NewBrandViewController: UIViewController {
         searchBar.text = ""
         tableView.isHidden = true
         shouldShowSearchBar(false)
+        searchBar.resignFirstResponder()
+     
     }
     
     private func shouldShowSearchBar(_ visiblity: Bool){
@@ -153,8 +155,8 @@ class NewBrandViewController: UIViewController {
         showActivityIndicator()
         viewModel.fetchOutletNearby(searchText: searchBar.text, categoryID: nil, collectionID: nil, index: index){[weak self] response in
             self?.hideActivityIndicator()
-            if let error = response.1{
-                self?.showAlert(title: .alert, message: error)
+            if let _ = response.1{
+               // self?.showAlert(title: .alert, message: error)
             }else{
                 completion(response.0)
             }
@@ -167,8 +169,8 @@ class NewBrandViewController: UIViewController {
         showActivityIndicator()
         viewModel.fetchOutletAlphabatical(searchText: searchBar.text, categoryID: nil, collectionID: nil, index: index){[weak self] response in
                 self?.hideActivityIndicator()
-                if let error = response.1{
-                    self?.showAlert(title: .alert, message: error)
+                if let _ = response.1{
+                 //   self?.showAlert(title: .alert, message: error)
                 }else{
                     completion(response.0)
                 }
@@ -186,6 +188,7 @@ extension NewBrandViewController: UITextFieldDelegate,UITableViewDelegate,UITabl
         if let searchText = textField.text,!searchText.isEmpty{
            fetchListing()
         }
+        textField.resignFirstResponder()
         return true
     }
     
@@ -209,6 +212,9 @@ extension NewBrandViewController: UITextFieldDelegate,UITableViewDelegate,UITabl
         if let text = searchingViewModel?.autoCompleteOffers[indexPath.row]{
             self.searchBar.text = text
         }
+        self.tableView.isHidden = true
+        searchBar.resignFirstResponder()
+        fetchListing()
     }
     
     
