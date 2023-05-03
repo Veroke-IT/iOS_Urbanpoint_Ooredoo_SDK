@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhV-SN-nQ5">
-                                        <rect key="frame" x="293.66666666666669" y="52" width="70" height="29"/>
+                                        <rect key="frame" x="29.333333333333329" y="52" width="70" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="pTe-6w-G79"/>
@@ -56,16 +56,16 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_offer" translatesAutoresizingMaskIntoConstraints="NO" id="CUi-pP-XjC">
-                                        <rect key="frame" x="299.66666666666669" y="56" width="99" height="21"/>
+                                        <rect key="frame" x="35.333333333333343" y="56" width="99" height="21"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outlet Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="285-qB-8BE">
-                                        <rect key="frame" x="29.333333333333336" y="56" width="90.333333333333314" height="19"/>
+                                        <rect key="frame" x="273.33333333333331" y="56" width="90.333333333333314" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                         <color key="textColor" name="UrbanPointBlack"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Outlet Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQf-H6-piQ">
-                                        <rect key="frame" x="119.66666666666669" y="56" width="93.333333333333314" height="19"/>
+                                        <rect key="frame" x="180" y="56" width="93.333333333333314" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                         <color key="textColor" name="UrbanPointBlack"/>
                                         <nil key="highlightedColor"/>
@@ -73,26 +73,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfA-NN-Qcs">
                                         <rect key="frame" x="29.333333333333343" y="97" width="334.33333333333326" height="120.66666666666669"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-Z6-xOR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferName" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-Z6-xOR">
                                                 <rect key="frame" x="15" y="42.666666666666686" width="304.33333333333331" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="-1" height="-1"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeK-5Z-RdT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeK-5Z-RdT">
                                                 <rect key="frame" x="15" y="14.000000000000002" width="304.33333333333331" height="16.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferDetail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-xK-wYU">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferDetail" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-xK-wYU">
                                                 <rect key="frame" x="15" y="58.000000000000064" width="304.33333333333331" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferDetail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-aa-0rc">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OfferDetail" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-aa-0rc">
                                                 <rect key="frame" x="15" y="82.333333333333314" width="304.33333333333331" height="14.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointDarkGrey"/>
@@ -130,19 +130,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gva-tx-rI1">
                                         <rect key="frame" x="29.333333333333343" y="237.66666666666669" width="334.33333333333326" height="85"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details &amp; Exclusions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiV-3h-tUS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details &amp; Exclusions" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiV-3h-tUS">
                                                 <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="14.333333333333334"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j29-1T-qmx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j29-1T-qmx">
                                                 <rect key="frame" x="0.0" y="18.333333333333371" width="334.33333333333331" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer expires on DD/MM/YYYY" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhs-NV-M9e">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer expires on DD/MM/YYYY" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhs-NV-M9e">
                                                 <rect key="frame" x="0.0" y="36.666666666666629" width="334.33333333333331" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
@@ -243,7 +243,7 @@
                                 <constraints>
                                     <constraint firstItem="t9y-sX-rjV" firstAttribute="width" secondItem="SeA-BP-p9h" secondAttribute="width" multiplier="0.85" id="0k6-aX-CiE"/>
                                     <constraint firstItem="mfA-NN-Qcs" firstAttribute="centerX" secondItem="SeA-BP-p9h" secondAttribute="centerX" id="5pe-m4-MBa"/>
-                                    <constraint firstItem="285-qB-8BE" firstAttribute="leading" secondItem="mfA-NN-Qcs" secondAttribute="leading" id="EZq-8V-d7k"/>
+                                    <constraint firstItem="285-qB-8BE" firstAttribute="trailing" secondItem="mfA-NN-Qcs" secondAttribute="trailing" id="EZq-8V-d7k"/>
                                     <constraint firstItem="t9y-sX-rjV" firstAttribute="top" secondItem="gva-tx-rI1" secondAttribute="bottom" constant="24" id="Ea1-V9-Oht"/>
                                     <constraint firstItem="ysh-Bp-vZk" firstAttribute="centerY" secondItem="GHf-1p-RLK" secondAttribute="centerY" id="F0F-le-bhC"/>
                                     <constraint firstItem="BSV-4C-kKm" firstAttribute="centerX" secondItem="t9y-sX-rjV" secondAttribute="centerX" id="FL6-hZ-zz3"/>
@@ -252,7 +252,7 @@
                                     <constraint firstItem="ysh-Bp-vZk" firstAttribute="leading" secondItem="GHf-1p-RLK" secondAttribute="trailing" constant="5" id="Lw2-tV-Gcq"/>
                                     <constraint firstItem="zhV-SN-nQ5" firstAttribute="centerY" secondItem="CUi-pP-XjC" secondAttribute="centerY" id="T2o-FI-MBf"/>
                                     <constraint firstItem="CUi-pP-XjC" firstAttribute="top" secondItem="285-qB-8BE" secondAttribute="top" id="T3A-kb-UXx"/>
-                                    <constraint firstItem="zhV-SN-nQ5" firstAttribute="trailing" secondItem="mfA-NN-Qcs" secondAttribute="trailing" id="WIh-QN-KJ1"/>
+                                    <constraint firstItem="zhV-SN-nQ5" firstAttribute="leading" secondItem="mfA-NN-Qcs" secondAttribute="leading" id="WIh-QN-KJ1"/>
                                     <constraint firstItem="CUi-pP-XjC" firstAttribute="leading" secondItem="zhV-SN-nQ5" secondAttribute="leading" constant="6" id="X9K-PL-Z5O"/>
                                     <constraint firstItem="BSV-4C-kKm" firstAttribute="width" secondItem="SeA-BP-p9h" secondAttribute="width" multiplier="0.85" id="Xed-8v-vxV"/>
                                     <constraint firstItem="WsQ-Af-wTd" firstAttribute="centerX" secondItem="SeA-BP-p9h" secondAttribute="centerX" id="akg-dk-aOR"/>
@@ -267,7 +267,7 @@
                                     <constraint firstItem="GHf-1p-RLK" firstAttribute="centerY" secondItem="V67-dk-LVC" secondAttribute="centerY" id="ppA-bJ-ufV"/>
                                     <constraint firstItem="WsQ-Af-wTd" firstAttribute="top" secondItem="SeA-BP-p9h" secondAttribute="top" constant="8" id="raD-5s-bc0"/>
                                     <constraint firstItem="mfA-NN-Qcs" firstAttribute="width" secondItem="SeA-BP-p9h" secondAttribute="width" multiplier="0.85" id="wPy-Tq-YfA"/>
-                                    <constraint firstItem="XQf-H6-piQ" firstAttribute="leading" secondItem="285-qB-8BE" secondAttribute="trailing" id="zyy-wu-Y4E"/>
+                                    <constraint firstItem="XQf-H6-piQ" firstAttribute="trailing" secondItem="285-qB-8BE" secondAttribute="leading" id="zyy-wu-Y4E"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -322,7 +322,7 @@
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="UrbanPointBlack">
-            <color red="0.1215686426" green="0.1215686426" blue="0.1215686426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.12200000137090683" blue="0.12200000137090683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="UrbanPointDarkGrey">
             <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

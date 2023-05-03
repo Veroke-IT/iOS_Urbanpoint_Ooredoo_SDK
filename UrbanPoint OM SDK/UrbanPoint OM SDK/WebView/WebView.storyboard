@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -84,6 +85,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvb-KD-e1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-41" y="-38"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="qZK-WW-tmv">
+            <objects>
+                <viewController storyboardIdentifier="UPWebViewController_ar" id="hCV-p4-bSp" customClass="UPWebViewController" customModule="UrbanPoint_OM_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ri3-gb-hSK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Z-mQ-wSx">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hef-Hr-brC">
+                                <rect key="frame" x="329" y="83" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button" translatesAutoresizingMaskIntoConstraints="NO" id="Vq9-EN-tYD">
+                                        <rect key="frame" x="7.6666666666666856" y="7.6666666666666714" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="0W3-qJ-ZaC"/>
+                                            <constraint firstAttribute="height" constant="25" id="MsB-Fj-Xct"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOc-Hg-ePp">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="onBackButtonTapped:" destination="hCV-p4-bSp" eventType="touchUpInside" id="KZU-WB-55v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qOc-Hg-ePp" secondAttribute="trailing" id="4z5-aT-mgt"/>
+                                    <constraint firstAttribute="width" constant="40" id="8ty-cx-duy"/>
+                                    <constraint firstItem="Vq9-EN-tYD" firstAttribute="centerX" secondItem="hef-Hr-brC" secondAttribute="centerX" id="RxU-6V-AdK"/>
+                                    <constraint firstAttribute="height" constant="40" id="YQX-ng-lLp"/>
+                                    <constraint firstItem="qOc-Hg-ePp" firstAttribute="leading" secondItem="hef-Hr-brC" secondAttribute="leading" id="a4p-Z2-z7R"/>
+                                    <constraint firstAttribute="bottom" secondItem="qOc-Hg-ePp" secondAttribute="bottom" id="eFD-xd-iO4"/>
+                                    <constraint firstItem="qOc-Hg-ePp" firstAttribute="top" secondItem="hef-Hr-brC" secondAttribute="top" id="ha6-Ao-gG3"/>
+                                    <constraint firstItem="Vq9-EN-tYD" firstAttribute="centerY" secondItem="hef-Hr-brC" secondAttribute="centerY" id="vDT-WJ-Dge"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1uE-sX-Cp1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hef-Hr-brC" firstAttribute="top" secondItem="1uE-sX-Cp1" secondAttribute="top" constant="24" id="1xA-1C-GOT"/>
+                            <constraint firstItem="1uE-sX-Cp1" firstAttribute="bottom" secondItem="Z6Z-mQ-wSx" secondAttribute="bottom" id="8WW-L3-bkp"/>
+                            <constraint firstItem="hef-Hr-brC" firstAttribute="trailing" secondItem="1uE-sX-Cp1" secondAttribute="trailing" constant="-24" id="BSN-Ym-dV0"/>
+                            <constraint firstItem="Z6Z-mQ-wSx" firstAttribute="leading" secondItem="1uE-sX-Cp1" secondAttribute="leading" id="iZ7-JR-pUX"/>
+                            <constraint firstItem="1uE-sX-Cp1" firstAttribute="trailing" secondItem="Z6Z-mQ-wSx" secondAttribute="trailing" id="kBY-M2-fSh"/>
+                            <constraint firstItem="Z6Z-mQ-wSx" firstAttribute="top" secondItem="1uE-sX-Cp1" secondAttribute="top" id="rdf-eR-QNQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Z6Z-mQ-wSx" id="ae1-cZ-I0I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITj-GG-eTo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="619" y="-38"/>
         </scene>
     </scenes>
     <resources>
