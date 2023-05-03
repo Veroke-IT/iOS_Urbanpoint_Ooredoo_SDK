@@ -25,20 +25,20 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     func configureCellWith(_ viewModel: CategoriesCollectionViewCell.ViewModel){
         
         nameLabel.text = viewModel.name
-        categoryImageView.sd_setImage(with: viewModel.categoryImage,placeholderImage: nil) { image, error, cache, url in
-            if error != nil{
-                DispatchQueue.main.async {[weak self] in
-                    self?.categoryImageView.isHidden = true
-                    self?.categoryImageViewContainer.backgroundColor = Colors.urbanPointGrey
-                }
-            }
-        }
+        categoryImageView.sd_setImage(with: viewModel.categoryImage,placeholderImage: nil)
+//        { image, error, cache, url in
+//            if error != nil{
+//                DispatchQueue.main.async {[weak self] in
+//                    self?.categoryImageView.isHidden = true
+//                    self?.categoryImageViewContainer.backgroundColor = Colors.urbanPointGrey
+//                }
+//            }
+//        }
     }
     
     
     override func prepareForReuse() {
-        categoryImageView.image = nil
-        task?.cancel()
+      //  categoryImageView.image = nil
         super.prepareForReuse()
         
     }

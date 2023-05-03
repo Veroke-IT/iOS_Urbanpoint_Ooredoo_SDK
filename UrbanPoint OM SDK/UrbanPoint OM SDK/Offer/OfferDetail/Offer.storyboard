@@ -26,6 +26,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-xT-Umy">
+                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SeA-BP-p9h">
                                 <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
                                 <subviews>
@@ -128,43 +137,43 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gva-tx-rI1">
-                                        <rect key="frame" x="29.333333333333343" y="237.66666666666669" width="334.33333333333326" height="85"/>
+                                        <rect key="frame" x="44.333333333333343" y="237.66666666666669" width="319.33333333333326" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details &amp; Exclusions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiV-3h-tUS">
-                                                <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="14.333333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="319.33333333333331" height="14.333333333333334"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j29-1T-qmx">
-                                                <rect key="frame" x="0.0" y="18.333333333333371" width="334.33333333333331" height="14.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="18.333333333333371" width="319.33333333333331" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer expires on DD/MM/YYYY" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhs-NV-M9e">
-                                                <rect key="frame" x="0.0" y="36.666666666666629" width="334.33333333333331" height="14.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="36.666666666666629" width="319.33333333333331" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" name="UrbanPointBlack"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V67-dk-LVC">
-                                                <rect key="frame" x="0.0" y="55" width="334.33333333333331" height="30"/>
+                                                <rect key="frame" x="0.0" y="55" width="319.33333333333331" height="30"/>
                                                 <connections>
                                                     <action selector="onTermsAndConditionTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1H0-R9-j8F"/>
                                                 </connections>
                                             </button>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nx4-Er-Bjk">
-                                                <rect key="frame" x="0.0" y="85" width="334.33333333333331" height="20"/>
+                                                <rect key="frame" x="0.0" y="85" width="319.33333333333331" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to outlet's page for more information." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpT-sE-Svd">
-                                                        <rect key="frame" x="0.0" y="3.0000000000000009" width="334.33333333333331" height="14.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="3.0000000000000009" width="319.33333333333331" height="14.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAr-bY-XRN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="319.33333333333331" height="20"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -259,7 +268,7 @@
                                     <constraint firstItem="CUi-pP-XjC" firstAttribute="top" secondItem="WsQ-Af-wTd" secondAttribute="top" constant="48" id="dDh-QQ-Ycj"/>
                                     <constraint firstItem="t9y-sX-rjV" firstAttribute="centerX" secondItem="SeA-BP-p9h" secondAttribute="centerX" id="eZP-eS-B6P"/>
                                     <constraint firstItem="gva-tx-rI1" firstAttribute="top" secondItem="mfA-NN-Qcs" secondAttribute="bottom" constant="20" id="fe0-1y-apr"/>
-                                    <constraint firstItem="gva-tx-rI1" firstAttribute="leading" secondItem="mfA-NN-Qcs" secondAttribute="leading" id="lBX-hy-fre"/>
+                                    <constraint firstItem="gva-tx-rI1" firstAttribute="leading" secondItem="mfA-NN-Qcs" secondAttribute="leading" constant="15" id="lBX-hy-fre"/>
                                     <constraint firstItem="gva-tx-rI1" firstAttribute="trailing" secondItem="mfA-NN-Qcs" secondAttribute="trailing" id="lP5-lw-gBS"/>
                                     <constraint firstItem="WsQ-Af-wTd" firstAttribute="width" secondItem="SeA-BP-p9h" secondAttribute="width" multiplier="0.375" id="lRY-mb-fqa"/>
                                     <constraint firstAttribute="bottom" secondItem="t9y-sX-rjV" secondAttribute="bottom" constant="60" id="m6e-Fi-Keq"/>
@@ -269,15 +278,6 @@
                                     <constraint firstItem="mfA-NN-Qcs" firstAttribute="width" secondItem="SeA-BP-p9h" secondAttribute="width" multiplier="0.85" id="wPy-Tq-YfA"/>
                                     <constraint firstItem="XQf-H6-piQ" firstAttribute="leading" secondItem="285-qB-8BE" secondAttribute="trailing" id="zyy-wu-Y4E"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-xT-Umy">
-                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="40"/>
@@ -322,7 +322,7 @@
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="UrbanPointBlack">
-            <color red="0.1215686426" green="0.1215686426" blue="0.1215686426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.12200000137090683" blue="0.12200000137090683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="UrbanPointDarkGrey">
             <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -21,7 +21,6 @@ class UPPopularCategoriesTableViewCell: UITableViewCell {
         self.isExpanded = isExpanded
         self.data = data
         let imageName = isExpanded ? "uparrow" : "downarrow"
-        
         viewAllButton.setImage(UIImage.loadImageWithName(imageName), for: .normal)
         collectionView.reloadData()
     }
