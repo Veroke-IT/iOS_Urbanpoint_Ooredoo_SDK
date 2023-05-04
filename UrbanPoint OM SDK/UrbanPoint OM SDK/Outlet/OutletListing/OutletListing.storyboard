@@ -190,7 +190,7 @@
                                 <rect key="frame" x="39.333333333333343" y="59" width="314.33333333333326" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5K-L7-qod">
-                                        <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="48"/>
+                                        <rect key="frame" x="157.33333333333331" y="0.0" width="157" height="48"/>
                                         <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="حسب الموقع">
@@ -201,7 +201,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-4F-Mui">
-                                        <rect key="frame" x="157.33333333333331" y="0.0" width="157" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="48"/>
                                         <color key="backgroundColor" name="UrbanPointRed"/>
                                         <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -217,12 +217,12 @@
                                 <constraints>
                                     <constraint firstItem="K5K-L7-qod" firstAttribute="top" secondItem="s7N-Aj-nfs" secondAttribute="top" id="0xn-OV-a1w"/>
                                     <constraint firstAttribute="height" constant="48" id="3Tl-Wr-bfF"/>
-                                    <constraint firstItem="Khh-4F-Mui" firstAttribute="leading" secondItem="K5K-L7-qod" secondAttribute="trailing" id="5aK-lg-hik"/>
+                                    <constraint firstItem="Khh-4F-Mui" firstAttribute="trailing" secondItem="K5K-L7-qod" secondAttribute="leading" id="5aK-lg-hik"/>
                                     <constraint firstAttribute="bottom" secondItem="Khh-4F-Mui" secondAttribute="bottom" id="Kqd-Gt-CzS"/>
                                     <constraint firstItem="Khh-4F-Mui" firstAttribute="width" secondItem="K5K-L7-qod" secondAttribute="width" id="MpC-uP-F7s"/>
                                     <constraint firstItem="Khh-4F-Mui" firstAttribute="top" secondItem="s7N-Aj-nfs" secondAttribute="top" id="NcY-iK-mXy"/>
-                                    <constraint firstItem="K5K-L7-qod" firstAttribute="leading" secondItem="s7N-Aj-nfs" secondAttribute="leading" id="Ngg-4R-irO"/>
-                                    <constraint firstAttribute="trailing" secondItem="Khh-4F-Mui" secondAttribute="trailing" id="rVV-by-5mH"/>
+                                    <constraint firstItem="K5K-L7-qod" firstAttribute="trailing" secondItem="s7N-Aj-nfs" secondAttribute="trailing" id="Ngg-4R-irO"/>
+                                    <constraint firstAttribute="leading" secondItem="Khh-4F-Mui" secondAttribute="leading" id="rVV-by-5mH"/>
                                     <constraint firstAttribute="bottom" secondItem="K5K-L7-qod" secondAttribute="bottom" id="s56-I0-eN6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -431,7 +431,7 @@
                                 <rect key="frame" x="39.333333333333343" y="59" width="314.33333333333326" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8v-t5-N0u">
-                                        <rect key="frame" x="157.33333333333331" y="0.0" width="157" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="48"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Nearby">
@@ -442,7 +442,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aad-hV-E44">
-                                        <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="48"/>
+                                        <rect key="frame" x="157.33333333333331" y="0.0" width="157" height="48"/>
                                         <color key="backgroundColor" name="UrbanPointRed"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -456,14 +456,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Aad-hV-E44" firstAttribute="trailing" secondItem="U8v-t5-N0u" secondAttribute="leading" id="5GV-T4-v0y"/>
+                                    <constraint firstItem="Aad-hV-E44" firstAttribute="leading" secondItem="U8v-t5-N0u" secondAttribute="trailing" id="5GV-T4-v0y"/>
                                     <constraint firstItem="Aad-hV-E44" firstAttribute="width" secondItem="U8v-t5-N0u" secondAttribute="width" id="Ujr-sj-cw1"/>
-                                    <constraint firstItem="U8v-t5-N0u" firstAttribute="trailing" secondItem="ewy-6a-IDr" secondAttribute="trailing" id="dqz-0J-ep8"/>
+                                    <constraint firstItem="U8v-t5-N0u" firstAttribute="leading" secondItem="ewy-6a-IDr" secondAttribute="leading" id="dqz-0J-ep8"/>
                                     <constraint firstItem="U8v-t5-N0u" firstAttribute="top" secondItem="ewy-6a-IDr" secondAttribute="top" id="gAs-vR-Uag"/>
                                     <constraint firstAttribute="bottom" secondItem="Aad-hV-E44" secondAttribute="bottom" id="guR-yb-y6S"/>
                                     <constraint firstAttribute="height" constant="48" id="iz1-qH-5Nc"/>
                                     <constraint firstItem="Aad-hV-E44" firstAttribute="top" secondItem="ewy-6a-IDr" secondAttribute="top" id="rGO-qY-Hsh"/>
-                                    <constraint firstAttribute="leading" secondItem="Aad-hV-E44" secondAttribute="leading" id="s5V-LT-q6C"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aad-hV-E44" secondAttribute="trailing" id="s5V-LT-q6C"/>
                                     <constraint firstAttribute="bottom" secondItem="U8v-t5-N0u" secondAttribute="bottom" id="zXL-cf-zAf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
