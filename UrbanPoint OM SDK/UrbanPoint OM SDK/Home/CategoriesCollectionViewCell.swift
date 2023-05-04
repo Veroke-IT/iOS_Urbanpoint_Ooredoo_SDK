@@ -26,6 +26,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
        
 
         //categoryImageViewContainer.bringSubviewToFront(categoryImageView)
+        categoryImageView.contentMode = .scaleAspectFill
         nameLabel.text = viewModel.name
         categoryImageView.sd_setImage(with: viewModel.categoryImage,placeholderImage: placeHolderImage)
     }

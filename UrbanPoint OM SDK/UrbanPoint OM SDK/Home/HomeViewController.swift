@@ -34,6 +34,7 @@ class UPHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showActivityIndicator()
+        tableView.isHidden = true
         homePresenter.fetchEssentialData {[weak self] errorString in
             if let errorString{
                 self?.hideActivityIndicator()
@@ -45,6 +46,7 @@ class UPHomeViewController: UIViewController {
                         self?.showAlert(title: .alert, message: errorString)
                     }else{
                         DispatchQueue.main.async {
+                            self?.tableView.isHidden = false
                             self?.homePresenter.fetchRecentlyViewedOutlets()
                             self?.tableView.reloadData()
                         }
@@ -57,6 +59,10 @@ class UPHomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        homePresenter.fetchRecentlyViewedOutlets()
+        if homePresenter.recentlyViewedOutlet.count > 0{
+            tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .none)
+        }
     }
     
     @IBAction private func onSettingsButtonTapped(_ sender: Any){
