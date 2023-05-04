@@ -31,8 +31,13 @@ final class UPSettingsViewComposer{
     }
     
     static func createSettingsView() -> UIViewController{
+        var viewControllerName = "UPSettingsViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
+        
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "Settings", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPSettingsViewController") as! UPSettingsViewController
+        let viewController = UIStoryboard(name: "Settings", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName) as! UPSettingsViewController
         return viewController
     }
     
@@ -47,8 +52,17 @@ final class UPSettingsViewComposer{
         }
     }
     
-    private func onSwitchChanged(){
+    private func onSwitchChanged(isOn: Bool){
         
+        if isOn{
+            appLanguage = .english
+        }else{
+            appLanguage = .arabic
+        }
+        navigationController.popToRootViewController(animated: true)
+        navigationController.popViewController(animated: false)
+        let homeViewComposer = UPHomeViewComposer(navigationController: navigationController, httpClient: httpClient)
+        homeViewComposer.start()
     }
     
     private func onUsedOffersTapped(){

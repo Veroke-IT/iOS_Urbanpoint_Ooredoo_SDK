@@ -72,7 +72,11 @@ final class NewBrandComposer{
                                              searchViewModel: UPOutletSearchViewModel? = nil,
                                              onBackButtonTapped: @escaping () -> Void) -> UIViewController{
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "NewBrands", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "NewBrandViewController") as! NewBrandViewController
+        var viewControllerName = "NewBrandViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
+        let viewController = UIStoryboard(name: "NewBrands", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName) as! NewBrandViewController
         viewController.viewModel = viewModel
         viewController.titleString = titleString
         viewController.searchingViewModel = searchViewModel

@@ -24,8 +24,12 @@ final class UPWebViewComposer{
     }
     
     static func createWebViewController(withURL url: URL) -> UIViewController{
+        var viewControllerName = "UPWebViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "WebView", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPWebViewController") as! UPWebViewController
+        let viewController = UIStoryboard(name: "WebView", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName) as! UPWebViewController
        
         viewController.urlToResource = url
         return viewController

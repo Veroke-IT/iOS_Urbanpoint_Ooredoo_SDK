@@ -21,6 +21,12 @@
 		04313A5729DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */; };
 		04313A5929DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */; };
 		0437254C29EE2814007254EB /* NewBrands.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0437254B29EE2814007254EB /* NewBrands.storyboard */; };
+		045F1E6B2A02D131001A4C14 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */ = {isa = PBXBuildFile; fileRef = 045F1E652A02D130001A4C14 /* DIN NEXT™ ARABIC LIGHT.otf */; };
+		045F1E6C2A02D131001A4C14 /* DIN NEXT™ ARABIC BLACK.otf in Resources */ = {isa = PBXBuildFile; fileRef = 045F1E662A02D130001A4C14 /* DIN NEXT™ ARABIC BLACK.otf */; };
+		045F1E6D2A02D131001A4C14 /* DIN NEXT™ ARABIC BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 045F1E672A02D130001A4C14 /* DIN NEXT™ ARABIC BOLD.otf */; };
+		045F1E6E2A02D131001A4C14 /* DIN NEXT™ ARABIC MEDIUM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 045F1E682A02D131001A4C14 /* DIN NEXT™ ARABIC MEDIUM.otf */; };
+		045F1E6F2A02D131001A4C14 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 045F1E692A02D131001A4C14 /* DIN NEXT™ ARABIC REGULAR.otf */; };
+		045F1E702A02D131001A4C14 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */ = {isa = PBXBuildFile; fileRef = 045F1E6A2A02D131001A4C14 /* DIN NEXT™ ARABIC HEAVY.otf */; };
 		046157D329EDAD5200B92A5F /* UPSearchViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046157D229EDAD5200B92A5F /* UPSearchViewComposer.swift */; };
 		046157D529EDB6A300B92A5F /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046157D429EDB6A300B92A5F /* Extension+String.swift */; };
 		0469F4BE29F128B1005C315E /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = 0469F4BD29F128B1005C315E /* TPKeyboardAvoiding */; };
@@ -96,28 +102,18 @@
 		04FC748529DAB4070099E8C5 /* OutletListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC748429DAB4070099E8C5 /* OutletListingPresenter.swift */; };
 		04FC748729DAC1500099E8C5 /* OutletListingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC748629DAC1500099E8C5 /* OutletListingContainerViewController.swift */; };
 		04FC748929DAC2A50099E8C5 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC748829DAC2A50099E8C5 /* Extension+UIViewController.swift */; };
-		04FC74A229DADA180099E8C5 /* DIN NEXT™ ARABIC BLACK.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC748C29DADA160099E8C5 /* DIN NEXT™ ARABIC BLACK.otf */; };
 		04FC74A329DADA180099E8C5 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC748D29DADA160099E8C5 /* Roboto-Light.ttf */; };
 		04FC74A429DADA180099E8C5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC748E29DADA160099E8C5 /* Roboto-Medium.ttf */; };
 		04FC74A529DADA180099E8C5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC748F29DADA160099E8C5 /* Roboto-Thin.ttf */; };
-		04FC74A629DADA180099E8C5 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749029DADA160099E8C5 /* DIN NEXT™ ARABIC LIGHT.otf */; };
-		04FC74A729DADA180099E8C5 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749129DADA160099E8C5 /* DIN NEXT™ ARABIC REGULAR.otf */; };
-		04FC74A829DADA180099E8C5 /* proxima_nova_alt_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749229DADA170099E8C5 /* proxima_nova_alt_regular.ttf */; };
 		04FC74A929DADA180099E8C5 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749329DADA170099E8C5 /* Roboto-BlackItalic.ttf */; };
 		04FC74AA29DADA180099E8C5 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749429DADA170099E8C5 /* Roboto-Italic.ttf */; };
 		04FC74AB29DADA180099E8C5 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749529DADA170099E8C5 /* Roboto-Black.ttf */; };
 		04FC74AC29DADA180099E8C5 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749629DADA170099E8C5 /* Roboto-BoldItalic.ttf */; };
 		04FC74AD29DADA180099E8C5 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749729DADA170099E8C5 /* Roboto-LightItalic.ttf */; };
-		04FC74AE29DADA180099E8C5 /* proxima_nova_alt_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749829DADA170099E8C5 /* proxima_nova_alt_thin.ttf */; };
-		04FC74AF29DADA180099E8C5 /* Mark Simonson - Proxima Nova Alt Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749929DADA170099E8C5 /* Mark Simonson - Proxima Nova Alt Bold.otf */; };
-		04FC74B029DADA180099E8C5 /* DIN NEXT™ ARABIC MEDIUM .otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749A29DADA170099E8C5 /* DIN NEXT™ ARABIC MEDIUM .otf */; };
 		04FC74B129DADA180099E8C5 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749B29DADA170099E8C5 /* Roboto-MediumItalic.ttf */; };
-		04FC74B229DADA180099E8C5 /* DIN NEXT™ ARABIC BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749C29DADA180099E8C5 /* DIN NEXT™ ARABIC BOLD.otf */; };
-		04FC74B329DADA180099E8C5 /* proximanova-semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749D29DADA180099E8C5 /* proximanova-semibold.otf */; };
 		04FC74B429DADA180099E8C5 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749E29DADA180099E8C5 /* Roboto-ThinItalic.ttf */; };
 		04FC74B529DADA180099E8C5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC749F29DADA180099E8C5 /* Roboto-Bold.ttf */; };
 		04FC74B629DADA180099E8C5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC74A029DADA180099E8C5 /* Roboto-Regular.ttf */; };
-		04FC74B729DADA180099E8C5 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04FC74A129DADA180099E8C5 /* DIN NEXT™ ARABIC HEAVY.otf */; };
 		04FC74BC29DBDDBF0099E8C5 /* Offer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FC74BB29DBDDBF0099E8C5 /* Offer.storyboard */; };
 		04FC74BE29DBDE9C0099E8C5 /* OfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC74BD29DBDE9C0099E8C5 /* OfferDetailViewController.swift */; };
 		04FC74C029DBE3990099E8C5 /* OfferDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC74BF29DBE3990099E8C5 /* OfferDetailViewModel.swift */; };
@@ -140,6 +136,13 @@
 		04313A5629DFDDCF00E3CCC8 /* OutletDetailHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		04313A5829DFE3EC00E3CCC8 /* UPOutletDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletDetailViewModel.swift; sourceTree = "<group>"; };
 		0437254B29EE2814007254EB /* NewBrands.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewBrands.storyboard; sourceTree = "<group>"; };
+		045F1E582A02D075001A4C14 /* DINNextLTArabicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DINNextLTArabicBold.ttf; sourceTree = "<group>"; };
+		045F1E652A02D130001A4C14 /* DIN NEXT™ ARABIC LIGHT.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC LIGHT.otf"; sourceTree = "<group>"; };
+		045F1E662A02D130001A4C14 /* DIN NEXT™ ARABIC BLACK.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC BLACK.otf"; sourceTree = "<group>"; };
+		045F1E672A02D130001A4C14 /* DIN NEXT™ ARABIC BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC BOLD.otf"; sourceTree = "<group>"; };
+		045F1E682A02D131001A4C14 /* DIN NEXT™ ARABIC MEDIUM.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC MEDIUM.otf"; sourceTree = "<group>"; };
+		045F1E692A02D131001A4C14 /* DIN NEXT™ ARABIC REGULAR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC REGULAR.otf"; sourceTree = "<group>"; };
+		045F1E6A2A02D131001A4C14 /* DIN NEXT™ ARABIC HEAVY.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC HEAVY.otf"; sourceTree = "<group>"; };
 		046157D229EDAD5200B92A5F /* UPSearchViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPSearchViewComposer.swift; sourceTree = "<group>"; };
 		046157D429EDB6A300B92A5F /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		0469F4BF29F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPUseAgainOfferCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -162,7 +165,6 @@
 		047120B729ED4CFC003EA8DA /* UPSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPSettingsViewController.swift; sourceTree = "<group>"; };
 		047120B929ED4D08003EA8DA /* SettingsViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewComposer.swift; sourceTree = "<group>"; };
 		047120BB29ED4DC7003EA8DA /* RedeemOfferComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemOfferComposer.swift; sourceTree = "<group>"; };
-		047247A129EFD33900A62BCC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		047439B629D408E7005CB671 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		047439B929D40B6F005CB671 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		047439BB29D40D1D005CB671 /* Extension+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLRequest.swift"; sourceTree = "<group>"; };
@@ -215,28 +217,18 @@
 		04FC748429DAB4070099E8C5 /* OutletListingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletListingPresenter.swift; sourceTree = "<group>"; };
 		04FC748629DAC1500099E8C5 /* OutletListingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletListingContainerViewController.swift; sourceTree = "<group>"; };
 		04FC748829DAC2A50099E8C5 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
-		04FC748C29DADA160099E8C5 /* DIN NEXT™ ARABIC BLACK.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC BLACK.otf"; sourceTree = "<group>"; };
 		04FC748D29DADA160099E8C5 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		04FC748E29DADA160099E8C5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		04FC748F29DADA160099E8C5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		04FC749029DADA160099E8C5 /* DIN NEXT™ ARABIC LIGHT.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC LIGHT.otf"; sourceTree = "<group>"; };
-		04FC749129DADA160099E8C5 /* DIN NEXT™ ARABIC REGULAR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC REGULAR.otf"; sourceTree = "<group>"; };
-		04FC749229DADA170099E8C5 /* proxima_nova_alt_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = proxima_nova_alt_regular.ttf; sourceTree = "<group>"; };
 		04FC749329DADA170099E8C5 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		04FC749429DADA170099E8C5 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		04FC749529DADA170099E8C5 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		04FC749629DADA170099E8C5 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		04FC749729DADA170099E8C5 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
-		04FC749829DADA170099E8C5 /* proxima_nova_alt_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = proxima_nova_alt_thin.ttf; sourceTree = "<group>"; };
-		04FC749929DADA170099E8C5 /* Mark Simonson - Proxima Nova Alt Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Bold.otf"; sourceTree = "<group>"; };
-		04FC749A29DADA170099E8C5 /* DIN NEXT™ ARABIC MEDIUM .otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC MEDIUM .otf"; sourceTree = "<group>"; };
 		04FC749B29DADA170099E8C5 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
-		04FC749C29DADA180099E8C5 /* DIN NEXT™ ARABIC BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC BOLD.otf"; sourceTree = "<group>"; };
-		04FC749D29DADA180099E8C5 /* proximanova-semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.otf"; sourceTree = "<group>"; };
 		04FC749E29DADA180099E8C5 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		04FC749F29DADA180099E8C5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		04FC74A029DADA180099E8C5 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		04FC74A129DADA180099E8C5 /* DIN NEXT™ ARABIC HEAVY.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC HEAVY.otf"; sourceTree = "<group>"; };
 		04FC74BB29DBDDBF0099E8C5 /* Offer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Offer.storyboard; sourceTree = "<group>"; };
 		04FC74BD29DBDE9C0099E8C5 /* OfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailViewController.swift; sourceTree = "<group>"; };
 		04FC74BF29DBE3990099E8C5 /* OfferDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailViewModel.swift; sourceTree = "<group>"; };
@@ -369,7 +361,6 @@
 		047247A029EFD33900A62BCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				047247A129EFD33900A62BCC /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -509,11 +500,11 @@
 		04E68A9A29B8AABE00573B2A /* UrbanPoint OM SDK */ = {
 			isa = PBXGroup;
 			children = (
+				047439B529D408D4005CB671 /* HttpClient */,
+				04FC748A29DAD9970099E8C5 /* Assets */,
+				04E68AB829B8B18C00573B2A /* Helpers */,
 				047120B429ED4CE1003EA8DA /* Settings */,
 				0471208F29EBC30F003EA8DA /* WebView */,
-				04FC748A29DAD9970099E8C5 /* Assets */,
-				047439B529D408D4005CB671 /* HttpClient */,
-				04E68AB829B8B18C00573B2A /* Helpers */,
 				047120A029EBF878003EA8DA /* Offer */,
 				04313A5029DFDC9300E3CCC8 /* Outlet */,
 				04E68AB229B8B13B00573B2A /* Home */,
@@ -620,16 +611,13 @@
 		04FC748B29DAD9A20099E8C5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				04FC748C29DADA160099E8C5 /* DIN NEXT™ ARABIC BLACK.otf */,
-				04FC749C29DADA180099E8C5 /* DIN NEXT™ ARABIC BOLD.otf */,
-				04FC74A129DADA180099E8C5 /* DIN NEXT™ ARABIC HEAVY.otf */,
-				04FC749029DADA160099E8C5 /* DIN NEXT™ ARABIC LIGHT.otf */,
-				04FC749A29DADA170099E8C5 /* DIN NEXT™ ARABIC MEDIUM .otf */,
-				04FC749129DADA160099E8C5 /* DIN NEXT™ ARABIC REGULAR.otf */,
-				04FC749929DADA170099E8C5 /* Mark Simonson - Proxima Nova Alt Bold.otf */,
-				04FC749229DADA170099E8C5 /* proxima_nova_alt_regular.ttf */,
-				04FC749829DADA170099E8C5 /* proxima_nova_alt_thin.ttf */,
-				04FC749D29DADA180099E8C5 /* proximanova-semibold.otf */,
+				045F1E662A02D130001A4C14 /* DIN NEXT™ ARABIC BLACK.otf */,
+				045F1E672A02D130001A4C14 /* DIN NEXT™ ARABIC BOLD.otf */,
+				045F1E6A2A02D131001A4C14 /* DIN NEXT™ ARABIC HEAVY.otf */,
+				045F1E652A02D130001A4C14 /* DIN NEXT™ ARABIC LIGHT.otf */,
+				045F1E682A02D131001A4C14 /* DIN NEXT™ ARABIC MEDIUM.otf */,
+				045F1E692A02D131001A4C14 /* DIN NEXT™ ARABIC REGULAR.otf */,
+				045F1E582A02D075001A4C14 /* DINNextLTArabicBold.ttf */,
 				04FC749529DADA170099E8C5 /* Roboto-Black.ttf */,
 				04FC748E29DADA160099E8C5 /* Roboto-Medium.ttf */,
 				04FC749329DADA170099E8C5 /* Roboto-BlackItalic.ttf */,
@@ -748,39 +736,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04FC74B729DADA180099E8C5 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */,
-				04FC74B229DADA180099E8C5 /* DIN NEXT™ ARABIC BOLD.otf in Resources */,
 				04FC74A529DADA180099E8C5 /* Roboto-Thin.ttf in Resources */,
+				045F1E702A02D131001A4C14 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */,
 				04FC74B629DADA180099E8C5 /* Roboto-Regular.ttf in Resources */,
 				0479970729D5638700DDD948 /* OutletSearch.storyboard in Resources */,
 				04FC74AD29DADA180099E8C5 /* Roboto-LightItalic.ttf in Resources */,
+				045F1E6E2A02D131001A4C14 /* DIN NEXT™ ARABIC MEDIUM.otf in Resources */,
 				04E68ABC29B8B5F700573B2A /* Assets.xcassets in Resources */,
 				0437254C29EE2814007254EB /* NewBrands.storyboard in Resources */,
 				04FC74AC29DADA180099E8C5 /* Roboto-BoldItalic.ttf in Resources */,
 				0471209129EBC324003EA8DA /* WebView.storyboard in Resources */,
 				0409820C29E6810A0042009B /* RedeemOffer.storyboard in Resources */,
+				045F1E6C2A02D131001A4C14 /* DIN NEXT™ ARABIC BLACK.otf in Resources */,
 				04FC74A329DADA180099E8C5 /* Roboto-Light.ttf in Resources */,
+				045F1E6D2A02D131001A4C14 /* DIN NEXT™ ARABIC BOLD.otf in Resources */,
 				04FC74A429DADA180099E8C5 /* Roboto-Medium.ttf in Resources */,
 				04FC74AA29DADA180099E8C5 /* Roboto-Italic.ttf in Resources */,
-				04FC74AF29DADA180099E8C5 /* Mark Simonson - Proxima Nova Alt Bold.otf in Resources */,
 				047120A329EBF88D003EA8DA /* UPUsedOffer.storyboard in Resources */,
 				04FC74BC29DBDDBF0099E8C5 /* Offer.storyboard in Resources */,
-				04FC74B029DADA180099E8C5 /* DIN NEXT™ ARABIC MEDIUM .otf in Resources */,
-				04FC74A629DADA180099E8C5 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */,
-				04FC74AE29DADA180099E8C5 /* proxima_nova_alt_thin.ttf in Resources */,
 				04FC747929DA98870099E8C5 /* OutletListing.storyboard in Resources */,
 				04FC74B529DADA180099E8C5 /* Roboto-Bold.ttf in Resources */,
 				04FC74A929DADA180099E8C5 /* Roboto-BlackItalic.ttf in Resources */,
-				04FC74A729DADA180099E8C5 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */,
 				047120B629ED4CEC003EA8DA /* Settings.storyboard in Resources */,
 				04E68AB529B8B16600573B2A /* HomeView.storyboard in Resources */,
 				04FC74B129DADA180099E8C5 /* Roboto-MediumItalic.ttf in Resources */,
 				04313A5329DFDCBE00E3CCC8 /* OutletDetail.storyboard in Resources */,
 				04FC74AB29DADA180099E8C5 /* Roboto-Black.ttf in Resources */,
-				04FC74B329DADA180099E8C5 /* proximanova-semibold.otf in Resources */,
-				04FC74A229DADA180099E8C5 /* DIN NEXT™ ARABIC BLACK.otf in Resources */,
 				04FC74B429DADA180099E8C5 /* Roboto-ThinItalic.ttf in Resources */,
-				04FC74A829DADA180099E8C5 /* proxima_nova_alt_regular.ttf in Resources */,
+				045F1E6B2A02D131001A4C14 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */,
+				045F1E6F2A02D131001A4C14 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

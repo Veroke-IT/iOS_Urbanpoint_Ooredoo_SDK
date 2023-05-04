@@ -10,6 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="DIN NEXT™ ARABIC MEDIUM.otf">
+            <string>DINNextLTW23-Medium</string>
+        </array>
+        <array key="DIN NEXT™ ARABIC REGULAR.otf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
@@ -187,7 +193,7 @@
                                                 <color key="onTintColor" name="UrbanPointGreen"/>
                                                 <color key="thumbTintColor" name="UrbanPointGrey"/>
                                                 <connections>
-                                                    <action selector="onSwitchChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Vmm-4t-Glf"/>
+                                                    <action selector="onSwitchChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="e6h-JN-xbp"/>
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWc-mD-4ze" userLabel="English">
@@ -267,6 +273,7 @@
                         <outlet property="arabicLanguageLabel" destination="UV5-Bv-B3g" id="kwn-Vv-Dsb"/>
                         <outlet property="daysOfAccessRemaining" destination="0Zv-7s-1hJ" id="q2b-L0-aaU"/>
                         <outlet property="englishLanguageLabel" destination="NWc-mD-4ze" id="wrI-Lp-U7Z"/>
+                        <outlet property="languageSwitch" destination="cwp-nN-SHN" id="mMX-y5-VuR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -308,9 +315,9 @@
                                                     <constraint firstAttribute="height" constant="1" id="QXB-ah-Yf9"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your used offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-qG-O3q">
-                                                <rect key="frame" x="235" y="16" width="110" height="17.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العروض المستخدمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-qG-O3q">
+                                                <rect key="frame" x="233" y="13.666666666666655" width="112" height="22.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -352,9 +359,9 @@
                                                     <constraint firstAttribute="height" constant="1" id="2R0-Er-pHm"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="828-o6-dCj">
-                                                <rect key="frame" x="256" y="16" width="89" height="17.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شروط الاستخدام" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="828-o6-dCj">
+                                                <rect key="frame" x="248.33333333333329" y="13.666666666666655" width="96.666666666666657" height="22.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -396,9 +403,9 @@
                                                     <constraint firstAttribute="height" constant="1" id="c7t-zO-Zct"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Urban Point access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEW-ms-eMU">
-                                                <rect key="frame" x="215.66666666666663" y="16" width="129.33333333333337" height="17.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="باقي على اشتراك أوربان بوينت" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEW-ms-eMU">
+                                                <rect key="frame" x="175.66666666666663" y="13.666666666666684" width="169.33333333333337" height="22.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -431,8 +438,8 @@
                                                     <constraint firstAttribute="height" constant="1" id="bZ0-hc-Dam"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT0-UC-eWF">
-                                                <rect key="frame" x="256" y="16" width="89" height="17.666666666666671"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اللغات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT0-UC-eWF">
+                                                <rect key="frame" x="313" y="16" width="32" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -442,7 +449,7 @@
                                                 <color key="onTintColor" name="UrbanPointGreen"/>
                                                 <color key="thumbTintColor" name="UrbanPointGrey"/>
                                                 <connections>
-                                                    <action selector="onSwitchChanged:" destination="82K-qH-eMy" eventType="valueChanged" id="ua6-42-xhr"/>
+                                                    <action selector="onSwitchChanged:" destination="82K-qH-eMy" eventType="valueChanged" id="K0r-oB-Wak"/>
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGO-if-kX0" userLabel="English">
@@ -480,14 +487,14 @@
                                 <rect key="frame" x="342" y="774" width="27" height="20"/>
                                 <color key="tintColor" name="UrbanPointGreen"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go back to Oreedoo Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-el-YlO">
-                                <rect key="frame" x="152.33333333333337" y="775.33333333333337" width="181.66666666666663" height="17.666666666666629"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرجوع الى Ooredoo money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksn-el-YlO">
+                                <rect key="frame" x="168.33333333333337" y="773" width="165.66666666666663" height="22.333333333333371"/>
+                                <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="15"/>
                                 <color key="textColor" name="UrbanPointGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ia-bD-86X">
-                                <rect key="frame" x="152.33333333333337" y="767" width="189.66666666666663" height="34.333333333333371"/>
+                                <rect key="frame" x="168.33333333333337" y="767" width="173.66666666666663" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
                                 <connections>
@@ -522,6 +529,7 @@
                         <outlet property="arabicLanguageLabel" destination="T4Q-j9-OxG" id="Iki-nP-Sgd"/>
                         <outlet property="daysOfAccessRemaining" destination="6gU-RL-CBW" id="cbZ-zN-VME"/>
                         <outlet property="englishLanguageLabel" destination="oGO-if-kX0" id="VJ6-g1-xu1"/>
+                        <outlet property="languageSwitch" destination="dnB-bs-QxQ" id="jxX-Yc-m8c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FA5-1W-4Nl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

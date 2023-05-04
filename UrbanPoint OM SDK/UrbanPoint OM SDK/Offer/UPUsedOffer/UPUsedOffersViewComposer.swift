@@ -31,10 +31,13 @@ final class UPUsedOfferViewComposer{
     
     
     static func createUsedOfferView(offerRepository: OfferRepository) -> UIViewController{
-      
+        var viewControllerName = "UPUsedOfferViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
         let viewModel = UPUsedOfferViewModel(offerRepository: offerRepository)
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "UPUsedOffer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPUsedOfferViewController") as! UPUsedOfferViewController
+        let viewController = UIStoryboard(name: "UPUsedOffer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName) as! UPUsedOfferViewController
         viewController.viewModel = viewModel
         return viewController
         

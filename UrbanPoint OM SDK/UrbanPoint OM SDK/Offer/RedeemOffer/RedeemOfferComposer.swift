@@ -39,8 +39,12 @@ final class RedeemOfferComposer{
     
 
     static func createRedeemOfferView() -> UIViewController{
+        var viewControllerName = "UPRedeemOfferViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "RedeemOffer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPRedeemOfferViewController")
+        let viewController = UIStoryboard(name: "RedeemOffer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName)
       return viewController
     }
     

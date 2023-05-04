@@ -49,8 +49,12 @@ final class UPSearchViewComposer{
     
     static func createHomeView(httpClient: UPHttpClient) -> UIViewController{
      
+        var vcName = "OutletSearchViewController"
+        if appLanguage == .arabic{
+            vcName += "_ar"
+        }
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletSearch", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "OutletSearchViewController")
+        let viewController = UIStoryboard(name: "OutletSearch", bundle: storyBoardBundle).instantiateViewController(withIdentifier: vcName)
     
         return viewController
     }

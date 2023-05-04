@@ -19,6 +19,8 @@ final class UPCategoriesListingViewComposer{
     }
     
     func start(withID id: Int){
+        
+        
         let homeService = HttpHomeService(httpClient: httpClient)
         let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
         let viewModel = UPCategoryViewModel(homeService: homeService, outletRepository: outletRepository, selectedCategoryID: id)
@@ -31,8 +33,13 @@ final class UPCategoriesListingViewComposer{
     
     
     static func createViewForUPCategoriesListing(viewModel: UPCategoryViewModel) -> UIViewController{
+        
+        var vcName = "UPCategoriesViewController"
+        if appLanguage == .arabic{
+            vcName += "_ar"
+        }
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPCategoriesViewController")
+        let viewController = UIStoryboard(name: "OutletListing", bundle: storyBoardBundle).instantiateViewController(withIdentifier: vcName)
         as! UPCategoriesViewController
         
         viewController.viewModel = viewModel

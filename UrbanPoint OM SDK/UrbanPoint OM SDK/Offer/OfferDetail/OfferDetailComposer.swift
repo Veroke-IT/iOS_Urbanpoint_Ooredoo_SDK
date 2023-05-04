@@ -44,11 +44,15 @@ final class UPOfferDetailComposer{
     
     
     static func createOfferDetailView(offerID id: Int,httpClient: UPHttpClient) -> OfferDetailViewController{
+        var viewControllerName = "OfferDetailViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
         let offerRepository = URLSessionOfferRepository(httpClient: httpClient)
         let viewModel = OfferDetailViewModel(offerID: id,
                                              offerRepository: offerRepository)
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "Offer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "OfferDetailViewController") as! OfferDetailViewController
+        let viewController = UIStoryboard(name: "Offer", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName) as! OfferDetailViewController
         viewController.offerDetailViewModel = viewModel
         return viewController
     }

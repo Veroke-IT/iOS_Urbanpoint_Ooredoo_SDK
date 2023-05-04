@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let up = UrbanPoint(context: self)
+        let up = UrbanPoint(context: self, authorization: "")
         
         if p == 0{
             up.start()

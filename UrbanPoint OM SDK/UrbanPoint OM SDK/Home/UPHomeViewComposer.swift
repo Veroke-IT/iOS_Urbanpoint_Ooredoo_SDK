@@ -40,9 +40,14 @@ final class UPHomeViewComposer{
     }
     
     static func createHomeView(homeService: HomeService,httpClient: UPHttpClient) -> UIViewController{
+        
+        var viewControllerName = "UPHomeViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
         let viewModel = UPHomeViewModel(homeService: homeService)
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "HomeView", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "UPHomeViewController") as! UPHomeViewController
+        let viewController = UIStoryboard(name: "HomeView", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName) as! UPHomeViewController
         
         viewController.homePresenter = viewModel
         return viewController

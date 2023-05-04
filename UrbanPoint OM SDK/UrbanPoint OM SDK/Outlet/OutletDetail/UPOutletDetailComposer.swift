@@ -70,8 +70,12 @@ final class UPOutletDetailComposer{
     static func createOutletDetailView(outletID id: Int,httpClient: UPHttpClient) -> UIViewController{
         let outletRepository = URLSessionOutletRepository(httpClient: httpClient)
         let viewModel = UPOutletDetailViewModel(outletID: id, outletRepository: outletRepository)
+        var viewControllerName = "OutletDetailViewController"
+        if appLanguage == .arabic{
+            viewControllerName += "_ar"
+        }
         let storyBoardBundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
-        let viewController = UIStoryboard(name: "OutletDetail", bundle: storyBoardBundle).instantiateViewController(withIdentifier: "OutletDetailViewController") as! OutletDetailViewController
+        let viewController = UIStoryboard(name: "OutletDetail", bundle: storyBoardBundle).instantiateViewController(withIdentifier: viewControllerName) as! OutletDetailViewController
         viewController.viewModel = viewModel
         return viewController
     }
