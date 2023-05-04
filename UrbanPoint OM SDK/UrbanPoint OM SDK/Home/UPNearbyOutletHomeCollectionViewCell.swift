@@ -33,8 +33,8 @@ class UPNearbyOutletHomeCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        outletImageView.image = nil
-        task?.cancel()
+        //outletImageView.image = nil
+        //task?.cancel()
         super.prepareForReuse()
         
     }

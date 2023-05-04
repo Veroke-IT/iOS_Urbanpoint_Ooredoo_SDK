@@ -149,7 +149,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ChM-Ox-rIQ">
                                 <rect key="frame" x="0.0" y="263" width="393" height="555"/>
                                 <connections>
-                                    <segue destination="uEg-a4-gLn" kind="embed" id="o0z-lm-NC5"/>
+                                    <segue destination="uEg-a4-gLn" kind="embed" identifier="OutletListingViewController" id="o0z-lm-NC5"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -390,7 +390,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpD-l2-rcW">
                                 <rect key="frame" x="0.0" y="263" width="393" height="555"/>
                                 <connections>
-                                    <segue destination="8Bu-KU-84z" kind="embed" id="ZkN-v9-gTa"/>
+                                    <segue destination="8Bu-KU-84z" kind="embed" identifier="OutletListingViewController" id="ZkN-v9-gTa"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -852,11 +852,11 @@
             <objects>
                 <viewController storyboardIdentifier="OutletListingViewController_ar" id="rjI-jY-q3i" customClass="OutletListingViewController" customModule="UrbanPoint_OM_SDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jaL-ee-jjW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="424"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6SJ-eN-OFD" customClass="TPKeyboardAvoidingTableView">
-                                <rect key="frame" x="0.0" y="59" width="393" height="628"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="365"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>

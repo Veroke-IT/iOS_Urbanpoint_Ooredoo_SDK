@@ -34,7 +34,7 @@ class UPUsedOfferTableViewCell: UITableViewCell {
         confirmationIDLabel.text = model.confirmationCode
         dateLabel.text = getDate(dateString: model.date)
         outletImageView.sd_setImage(with: model.image)
-        outletSavingText.text = "You saved approximately QAR " + model.saving
+        outletSavingText.text = "You saved approximately QAR " + model.saving.getNumberWithoutDecimal()
     }
     
     

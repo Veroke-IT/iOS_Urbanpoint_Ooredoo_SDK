@@ -60,7 +60,6 @@ class OfferDetailViewController: UIViewController {
             
             outletNameLabel.text = String(name) + " -"
             outletSubnameLabel.text = String(brand)
-            
             offerNameLabel.text = String(brand).removingLeadingSpaces()
             
             
@@ -71,8 +70,7 @@ class OfferDetailViewController: UIViewController {
         }
         
         offerDetailLabel.text = offer.title
-        ruleOfPurchaseLabel.text = offer.rulesOfPurchase
-        
+        ruleOfPurchaseLabel.text = offer.description
         
         expiryDateLabel.text = "Offer expires on ".localized + getDate(dateString: offer.endDatetime ?? "")
         

@@ -63,9 +63,11 @@ final class UPPopularCategoryViewModel: OutletListingPresenterContract{
             switch result{
             case .success(let data):
                 let outlets = data.map { outlet in
-                    let offers = ((outlet.outlets?.count ?? 0) > 1) ? (outlet.outlets?.first?.offers ?? []) : []
+                    let offers = ((outlet.totalOutlets ?? 0 ) > 1 ) ? [] : (outlet.outlets?.first?.offers ?? [])
                     let description = (offers.count == 0) ? "Multiple Locations" : (outlet.outlets?.first?.address ?? "")
-                    return UPOutletListingTableViewCell.Outlet(id:  outlet.id  ?? -1, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: description, isExpanded: false, offers: offers, isParentOutlet: offers.count == 0)
+                    let outletID = offers.count == 0 ? outlet.id ?? -1 : (outlet.outlets?.first?.id ?? -1)
+                   
+                    return UPOutletListingTableViewCell.Outlet(id:  outletID, outletName: outlet.name ?? "", image: URL(string: imageBaseURL + (outlet.logo ?? "")), distance: description, isExpanded: false, offers: offers, isParentOutlet: offers.count == 0)
                 }
                 completion((outlets,nil))
             case .failure(let error):

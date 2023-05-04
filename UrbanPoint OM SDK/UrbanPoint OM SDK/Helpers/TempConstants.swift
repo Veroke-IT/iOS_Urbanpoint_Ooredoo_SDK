@@ -11,7 +11,7 @@ import UIKit
 let imageBaseURL = "https://urbanpoint-storage.azureedge.net/test/uploads_staging/uploads/"
 let Appbundle = Bundle(identifier: "com.UrbanPoint-OM-SDK")
 let termsAndServiceURL = "https://urbanpoint.com/terms-of-service"
-let placeHolderImage = UIImage.loadImageWithName("PlaceHolder")
+let placeHolderImage = UIImage.loadImageWithName("placeholder")
 
 enum UrbanPointLanguage: String{
     case english = "english"

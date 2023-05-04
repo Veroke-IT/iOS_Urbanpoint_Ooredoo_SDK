@@ -16,15 +16,17 @@ class UPCategoriesCollectionViewCell: UICollectionViewCell {
     
     internal func configureCell(with url: URL,name: String){
         categoryName.text = name
-        imageView.sd_setImage(with: url) { image, error, cache, url in
-            if error != nil{
-                DispatchQueue.main.async {[weak self] in
-                    self?.imageView.isHidden = true
-                    self?.containerView.backgroundColor = Colors.urbanPointGrey
-                }
-            }
-        }
+        imageView.sd_setImage(with: url,placeholderImage: placeHolderImage)
     }
+    
+    override func prepareForReuse() {
+        //categoryImageView.image = nil
+       // task?.cancel()
+        super.prepareForReuse()
+        
+    }
+    
+
     
 
     

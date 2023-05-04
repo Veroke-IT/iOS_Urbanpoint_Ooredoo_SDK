@@ -53,8 +53,8 @@ class UPUseAgainOfferCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        offerImageView.image = nil
-        task?.cancel()
+      //  offerImageView.image = nil
+       // task?.cancel()
         super.prepareForReuse()
         
     }

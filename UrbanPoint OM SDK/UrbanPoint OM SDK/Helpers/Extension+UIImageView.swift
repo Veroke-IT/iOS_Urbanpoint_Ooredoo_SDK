@@ -32,4 +32,13 @@ extension UIImageView{
         self.clipsToBounds = true
         self.layer.cornerRadius = cornerRadious
     }
+    
+    func addGradientBackground(){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.lightGray.cgColor, UIColor.gray.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer, at:0)
+        self.backgroundColor = .clear
+    }
 }
