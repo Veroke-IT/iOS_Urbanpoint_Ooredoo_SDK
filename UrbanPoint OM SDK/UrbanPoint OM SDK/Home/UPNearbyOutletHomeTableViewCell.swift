@@ -53,6 +53,8 @@ extension UPNearbyOutletHomeTableViewCell: UICollectionViewDataSource,UICollecti
         fetchCellCollectionView(collectionView, indexPath: indexPath)
     }
     
+    
+    
     private func fetchCellCollectionView(_ collectionView: UICollectionView,indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UPNearbyOutletHomeCollectionViewCell.reuseIdentifier, for: indexPath) as! UPNearbyOutletHomeCollectionViewCell
         

@@ -11,7 +11,7 @@ extension URLSessionOutletRepository{
  //   getOutletNew
     func fetchNearbyOutlets(param: [OutletRepositoryParam], completion: @escaping (Result<[UPOutlet],Error>) -> Void){
         
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getOutletsNew"
+        let urlString = "\(baseURL)mobile/getOutletsNew"
         guard var url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -26,8 +26,8 @@ extension URLSessionOutletRepository{
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         
         httpClient.execute(urlRequest: urlRequest) {  result in
        

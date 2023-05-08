@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0409783A29E3CC9F0042009B /* UPWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409783929E3CC9F0042009B /* UPWebViewController.swift */; };
 		040981F729E400200042009B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 040981F629E400200042009B /* SDWebImage */; };
-		0409820029E4015D0042009B /* TempConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040981FF29E4015D0042009B /* TempConstants.swift */; };
+		0409820029E4015D0042009B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040981FF29E4015D0042009B /* Constants.swift */; };
 		0409820229E4049E0042009B /* UPOutletDetailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409820129E4049E0042009B /* UPOutletDetailComposer.swift */; };
 		0409820429E405AB0042009B /* UPHomeViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409820329E405AB0042009B /* UPHomeViewComposer.swift */; };
 		0409820629E40BDC0042009B /* OfferDetailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409820529E40BDC0042009B /* OfferDetailComposer.swift */; };
@@ -31,6 +31,28 @@
 		046157D529EDB6A300B92A5F /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046157D429EDB6A300B92A5F /* Extension+String.swift */; };
 		0469F4BE29F128B1005C315E /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = 0469F4BD29F128B1005C315E /* TPKeyboardAvoiding */; };
 		0469F4C029F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469F4BF29F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift */; };
+		046E88F22A04E3B60036FDA2 /* CryptoJS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E88DD2A04E3B60036FDA2 /* CryptoJS.swift */; };
+		046E88F32A04E3B60036FDA2 /* sha1.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88DF2A04E3B60036FDA2 /* sha1.js */; };
+		046E88F42A04E3B60036FDA2 /* sha256.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E02A04E3B60036FDA2 /* sha256.js */; };
+		046E88F52A04E3B60036FDA2 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E12A04E3B60036FDA2 /* aes.js */; };
+		046E88F62A04E3B60036FDA2 /* sha384.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E22A04E3B60036FDA2 /* sha384.js */; };
+		046E88F72A04E3B60036FDA2 /* tripledes.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E32A04E3B60036FDA2 /* tripledes.js */; };
+		046E88F82A04E3B60036FDA2 /* pad-iso10126.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E42A04E3B60036FDA2 /* pad-iso10126.js */; };
+		046E88F92A04E3B60036FDA2 /* mode-ecb.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E52A04E3B60036FDA2 /* mode-ecb.js */; };
+		046E88FA2A04E3B60036FDA2 /* pad-iso97971.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E62A04E3B60036FDA2 /* pad-iso97971.js */; };
+		046E88FB2A04E3B60036FDA2 /* sha512.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E72A04E3B60036FDA2 /* sha512.js */; };
+		046E88FC2A04E3B60036FDA2 /* mode-cfb.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E82A04E3B60036FDA2 /* mode-cfb.js */; };
+		046E88FD2A04E3B60036FDA2 /* pad-zeropadding.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88E92A04E3B60036FDA2 /* pad-zeropadding.js */; };
+		046E88FE2A04E3B60036FDA2 /* mode-ofb.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88EA2A04E3B60036FDA2 /* mode-ofb.js */; };
+		046E88FF2A04E3B60036FDA2 /* pad-ansix923.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88EB2A04E3B60036FDA2 /* pad-ansix923.js */; };
+		046E89002A04E3B60036FDA2 /* md5.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88EC2A04E3B60036FDA2 /* md5.js */; };
+		046E89012A04E3B60036FDA2 /* pad-nopadding.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88ED2A04E3B60036FDA2 /* pad-nopadding.js */; };
+		046E89022A04E3B60036FDA2 /* sha3.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88EE2A04E3B60036FDA2 /* sha3.js */; };
+		046E89032A04E3B60036FDA2 /* ripemd160.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88EF2A04E3B60036FDA2 /* ripemd160.js */; };
+		046E89042A04E3B60036FDA2 /* mode-ctr.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88F02A04E3B60036FDA2 /* mode-ctr.js */; };
+		046E89052A04E3B60036FDA2 /* sha224.js in Resources */ = {isa = PBXBuildFile; fileRef = 046E88F12A04E3B60036FDA2 /* sha224.js */; };
+		046E89072A04E4100036FDA2 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E89062A04E4100036FDA2 /* AuthorizationManager.swift */; };
+		046E89092A04E41B0036FDA2 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E89082A04E41B0036FDA2 /* AuthorizationService.swift */; };
 		0471208E29EBBFFB003EA8DA /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0471208D29EBBFFB003EA8DA /* MBProgressHUD */; };
 		0471209129EBC324003EA8DA /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0471209029EBC324003EA8DA /* WebView.storyboard */; };
 		0471209329EBC375003EA8DA /* UPWebViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471209229EBC375003EA8DA /* UPWebViewComposer.swift */; };
@@ -79,6 +101,7 @@
 		047EBD7F29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD7E29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift */; };
 		047EBD8129EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD8029EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift */; };
 		047EBD8329EAA25C00953AF9 /* ChildOutletListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD8229EAA25C00953AF9 /* ChildOutletListingViewModel.swift */; };
+		0490EE992A08D04100AF1A6D /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EE982A08D04100AF1A6D /* FontLoader.swift */; };
 		04E68A9D29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */; };
 		04E68AB529B8B16600573B2A /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E68AB429B8B16600573B2A /* HomeView.storyboard */; };
 		04E68AB729B8B17200573B2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AB629B8B17200573B2A /* HomeViewController.swift */; };
@@ -124,7 +147,7 @@
 
 /* Begin PBXFileReference section */
 		0409783929E3CC9F0042009B /* UPWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPWebViewController.swift; sourceTree = "<group>"; };
-		040981FF29E4015D0042009B /* TempConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempConstants.swift; sourceTree = "<group>"; };
+		040981FF29E4015D0042009B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0409820129E4049E0042009B /* UPOutletDetailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPOutletDetailComposer.swift; sourceTree = "<group>"; };
 		0409820329E405AB0042009B /* UPHomeViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPHomeViewComposer.swift; sourceTree = "<group>"; };
 		0409820529E40BDC0042009B /* OfferDetailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailComposer.swift; sourceTree = "<group>"; };
@@ -146,6 +169,28 @@
 		046157D229EDAD5200B92A5F /* UPSearchViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPSearchViewComposer.swift; sourceTree = "<group>"; };
 		046157D429EDB6A300B92A5F /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		0469F4BF29F137D0005C315E /* UPUseAgainOfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPUseAgainOfferCollectionViewCell.swift; sourceTree = "<group>"; };
+		046E88DD2A04E3B60036FDA2 /* CryptoJS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoJS.swift; sourceTree = "<group>"; };
+		046E88DF2A04E3B60036FDA2 /* sha1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha1.js; sourceTree = "<group>"; };
+		046E88E02A04E3B60036FDA2 /* sha256.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha256.js; sourceTree = "<group>"; };
+		046E88E12A04E3B60036FDA2 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
+		046E88E22A04E3B60036FDA2 /* sha384.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha384.js; sourceTree = "<group>"; };
+		046E88E32A04E3B60036FDA2 /* tripledes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tripledes.js; sourceTree = "<group>"; };
+		046E88E42A04E3B60036FDA2 /* pad-iso10126.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-iso10126.js"; sourceTree = "<group>"; };
+		046E88E52A04E3B60036FDA2 /* mode-ecb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-ecb.js"; sourceTree = "<group>"; };
+		046E88E62A04E3B60036FDA2 /* pad-iso97971.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-iso97971.js"; sourceTree = "<group>"; };
+		046E88E72A04E3B60036FDA2 /* sha512.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha512.js; sourceTree = "<group>"; };
+		046E88E82A04E3B60036FDA2 /* mode-cfb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-cfb.js"; sourceTree = "<group>"; };
+		046E88E92A04E3B60036FDA2 /* pad-zeropadding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-zeropadding.js"; sourceTree = "<group>"; };
+		046E88EA2A04E3B60036FDA2 /* mode-ofb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-ofb.js"; sourceTree = "<group>"; };
+		046E88EB2A04E3B60036FDA2 /* pad-ansix923.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-ansix923.js"; sourceTree = "<group>"; };
+		046E88EC2A04E3B60036FDA2 /* md5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = md5.js; sourceTree = "<group>"; };
+		046E88ED2A04E3B60036FDA2 /* pad-nopadding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-nopadding.js"; sourceTree = "<group>"; };
+		046E88EE2A04E3B60036FDA2 /* sha3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha3.js; sourceTree = "<group>"; };
+		046E88EF2A04E3B60036FDA2 /* ripemd160.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ripemd160.js; sourceTree = "<group>"; };
+		046E88F02A04E3B60036FDA2 /* mode-ctr.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-ctr.js"; sourceTree = "<group>"; };
+		046E88F12A04E3B60036FDA2 /* sha224.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha224.js; sourceTree = "<group>"; };
+		046E89062A04E4100036FDA2 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		046E89082A04E41B0036FDA2 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		0471209029EBC324003EA8DA /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		0471209229EBC375003EA8DA /* UPWebViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPWebViewComposer.swift; sourceTree = "<group>"; };
 		0471209429EBD1A9003EA8DA /* OutletMenuImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletMenuImageViewerViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +238,7 @@
 		047EBD7E29EA78AD00953AF9 /* UPCategoriesListingViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCategoriesListingViewComposer.swift; sourceTree = "<group>"; };
 		047EBD8029EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		047EBD8229EAA25C00953AF9 /* ChildOutletListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOutletListingViewModel.swift; sourceTree = "<group>"; };
+		0490EE982A08D04100AF1A6D /* FontLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLoader.swift; sourceTree = "<group>"; };
 		04E68A9829B8AABE00573B2A /* UrbanPoint_OM_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UrbanPoint_OM_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UrbanPoint_OM_SDK.docc; sourceTree = "<group>"; };
 		04E68AB429B8B16600573B2A /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
@@ -285,6 +331,41 @@
 				0471209C29EBD59A003EA8DA /* OutletMenu */,
 			);
 			path = OutletDetail;
+			sourceTree = "<group>";
+		};
+		046E88DC2A04E3B60036FDA2 /* CryptoJs */ = {
+			isa = PBXGroup;
+			children = (
+				046E88DD2A04E3B60036FDA2 /* CryptoJS.swift */,
+				046E88DE2A04E3B60036FDA2 /* Components */,
+			);
+			path = CryptoJs;
+			sourceTree = "<group>";
+		};
+		046E88DE2A04E3B60036FDA2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				046E88DF2A04E3B60036FDA2 /* sha1.js */,
+				046E88E02A04E3B60036FDA2 /* sha256.js */,
+				046E88E12A04E3B60036FDA2 /* aes.js */,
+				046E88E22A04E3B60036FDA2 /* sha384.js */,
+				046E88E32A04E3B60036FDA2 /* tripledes.js */,
+				046E88E42A04E3B60036FDA2 /* pad-iso10126.js */,
+				046E88E52A04E3B60036FDA2 /* mode-ecb.js */,
+				046E88E62A04E3B60036FDA2 /* pad-iso97971.js */,
+				046E88E72A04E3B60036FDA2 /* sha512.js */,
+				046E88E82A04E3B60036FDA2 /* mode-cfb.js */,
+				046E88E92A04E3B60036FDA2 /* pad-zeropadding.js */,
+				046E88EA2A04E3B60036FDA2 /* mode-ofb.js */,
+				046E88EB2A04E3B60036FDA2 /* pad-ansix923.js */,
+				046E88EC2A04E3B60036FDA2 /* md5.js */,
+				046E88ED2A04E3B60036FDA2 /* pad-nopadding.js */,
+				046E88EE2A04E3B60036FDA2 /* sha3.js */,
+				046E88EF2A04E3B60036FDA2 /* ripemd160.js */,
+				046E88F02A04E3B60036FDA2 /* mode-ctr.js */,
+				046E88F12A04E3B60036FDA2 /* sha224.js */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		0471208F29EBC30F003EA8DA /* WebView */ = {
@@ -511,6 +592,8 @@
 				04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */,
 				04E68ABB29B8B5F700573B2A /* Assets.xcassets */,
 				04E68AC029B9A62800573B2A /* UrbanPoint.swift */,
+				046E89062A04E4100036FDA2 /* AuthorizationManager.swift */,
+				046E89082A04E41B0036FDA2 /* AuthorizationService.swift */,
 			);
 			path = "UrbanPoint OM SDK";
 			sourceTree = "<group>";
@@ -545,14 +628,16 @@
 		04E68AB829B8B18C00573B2A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				046E88DC2A04E3B60036FDA2 /* CryptoJs */,
 				04E68AB929B8B1AD00573B2A /* Extension+UIView.swift */,
 				04E68B2129B9DDC000573B2A /* Colors.swift */,
 				047439BB29D40D1D005CB671 /* Extension+URLRequest.swift */,
 				04FC747029D9C8B20099E8C5 /* Extension+UIImageView.swift */,
 				04FC748829DAC2A50099E8C5 /* Extension+UIViewController.swift */,
-				040981FF29E4015D0042009B /* TempConstants.swift */,
+				040981FF29E4015D0042009B /* Constants.swift */,
 				0409820729E51FFF0042009B /* LocationManager.swift */,
 				046157D429EDB6A300B92A5F /* Extension+String.swift */,
+				0490EE982A08D04100AF1A6D /* FontLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -740,29 +825,48 @@
 				045F1E702A02D131001A4C14 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */,
 				04FC74B629DADA180099E8C5 /* Roboto-Regular.ttf in Resources */,
 				0479970729D5638700DDD948 /* OutletSearch.storyboard in Resources */,
+				046E89042A04E3B60036FDA2 /* mode-ctr.js in Resources */,
+				046E88F82A04E3B60036FDA2 /* pad-iso10126.js in Resources */,
+				046E88FA2A04E3B60036FDA2 /* pad-iso97971.js in Resources */,
+				046E88FB2A04E3B60036FDA2 /* sha512.js in Resources */,
+				046E88F42A04E3B60036FDA2 /* sha256.js in Resources */,
 				04FC74AD29DADA180099E8C5 /* Roboto-LightItalic.ttf in Resources */,
+				046E88FE2A04E3B60036FDA2 /* mode-ofb.js in Resources */,
 				045F1E6E2A02D131001A4C14 /* DIN NEXT™ ARABIC MEDIUM.otf in Resources */,
+				046E88F62A04E3B60036FDA2 /* sha384.js in Resources */,
 				04E68ABC29B8B5F700573B2A /* Assets.xcassets in Resources */,
 				0437254C29EE2814007254EB /* NewBrands.storyboard in Resources */,
 				04FC74AC29DADA180099E8C5 /* Roboto-BoldItalic.ttf in Resources */,
+				046E88F72A04E3B60036FDA2 /* tripledes.js in Resources */,
+				046E89002A04E3B60036FDA2 /* md5.js in Resources */,
+				046E88F52A04E3B60036FDA2 /* aes.js in Resources */,
 				0471209129EBC324003EA8DA /* WebView.storyboard in Resources */,
 				0409820C29E6810A0042009B /* RedeemOffer.storyboard in Resources */,
 				045F1E6C2A02D131001A4C14 /* DIN NEXT™ ARABIC BLACK.otf in Resources */,
+				046E89022A04E3B60036FDA2 /* sha3.js in Resources */,
 				04FC74A329DADA180099E8C5 /* Roboto-Light.ttf in Resources */,
 				045F1E6D2A02D131001A4C14 /* DIN NEXT™ ARABIC BOLD.otf in Resources */,
 				04FC74A429DADA180099E8C5 /* Roboto-Medium.ttf in Resources */,
 				04FC74AA29DADA180099E8C5 /* Roboto-Italic.ttf in Resources */,
 				047120A329EBF88D003EA8DA /* UPUsedOffer.storyboard in Resources */,
+				046E88FC2A04E3B60036FDA2 /* mode-cfb.js in Resources */,
 				04FC74BC29DBDDBF0099E8C5 /* Offer.storyboard in Resources */,
 				04FC747929DA98870099E8C5 /* OutletListing.storyboard in Resources */,
 				04FC74B529DADA180099E8C5 /* Roboto-Bold.ttf in Resources */,
 				04FC74A929DADA180099E8C5 /* Roboto-BlackItalic.ttf in Resources */,
 				047120B629ED4CEC003EA8DA /* Settings.storyboard in Resources */,
+				046E89032A04E3B60036FDA2 /* ripemd160.js in Resources */,
+				046E88FD2A04E3B60036FDA2 /* pad-zeropadding.js in Resources */,
+				046E89012A04E3B60036FDA2 /* pad-nopadding.js in Resources */,
 				04E68AB529B8B16600573B2A /* HomeView.storyboard in Resources */,
+				046E88FF2A04E3B60036FDA2 /* pad-ansix923.js in Resources */,
 				04FC74B129DADA180099E8C5 /* Roboto-MediumItalic.ttf in Resources */,
+				046E89052A04E3B60036FDA2 /* sha224.js in Resources */,
 				04313A5329DFDCBE00E3CCC8 /* OutletDetail.storyboard in Resources */,
+				046E88F92A04E3B60036FDA2 /* mode-ecb.js in Resources */,
 				04FC74AB29DADA180099E8C5 /* Roboto-Black.ttf in Resources */,
 				04FC74B429DADA180099E8C5 /* Roboto-ThinItalic.ttf in Resources */,
+				046E88F32A04E3B60036FDA2 /* sha1.js in Resources */,
 				045F1E6B2A02D131001A4C14 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */,
 				045F1E6F2A02D131001A4C14 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */,
 			);
@@ -782,6 +886,7 @@
 				04E68A9D29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc in Sources */,
 				047439C029D41489005CB671 /* HomeViewModel.swift in Sources */,
 				0471209329EBC375003EA8DA /* UPWebViewComposer.swift in Sources */,
+				046E88F22A04E3B60036FDA2 /* CryptoJS.swift in Sources */,
 				04FC748529DAB4070099E8C5 /* OutletListingPresenter.swift in Sources */,
 				047120AB29EC2BE8003EA8DA /* UPUsedOffersViewComposer.swift in Sources */,
 				047EBD7929E970D000953AF9 /* NearbyOutletListingViewModel.swift in Sources */,
@@ -789,10 +894,13 @@
 				047EBD7129E9559300953AF9 /* OutletService+Extension+NewBrands.swift in Sources */,
 				047EBD8329EAA25C00953AF9 /* ChildOutletListingViewModel.swift in Sources */,
 				04E68AC129B9A62800573B2A /* UrbanPoint.swift in Sources */,
+				046E89092A04E41B0036FDA2 /* AuthorizationService.swift in Sources */,
 				04E68AB729B8B17200573B2A /* HomeViewController.swift in Sources */,
 				04FC748929DAC2A50099E8C5 /* Extension+UIViewController.swift in Sources */,
 				04FC747D29DA9E750099E8C5 /* UPOutletListingTableViewCell.swift in Sources */,
+				046E89072A04E4100036FDA2 /* AuthorizationManager.swift in Sources */,
 				047EBD6C29E9539000953AF9 /* NewBrandViewModel.swift in Sources */,
+				0490EE992A08D04100AF1A6D /* FontLoader.swift in Sources */,
 				046157D329EDAD5200B92A5F /* UPSearchViewComposer.swift in Sources */,
 				0409820429E405AB0042009B /* UPHomeViewComposer.swift in Sources */,
 				04FC74C229DBE3F90099E8C5 /* OfferRepository.swift in Sources */,
@@ -808,7 +916,7 @@
 				0476759029D6E3C00004C885 /* PopularCategoriesTableViewCell.swift in Sources */,
 				04FC74C429DBE6B50099E8C5 /* OfferDetailResponse.swift in Sources */,
 				047120A529EBF8A4003EA8DA /* UPUsedOfferViewController.swift in Sources */,
-				0409820029E4015D0042009B /* TempConstants.swift in Sources */,
+				0409820029E4015D0042009B /* Constants.swift in Sources */,
 				047EBD6F29E954CF00953AF9 /* NewBrand.swift in Sources */,
 				04FC74CA29DD4D980099E8C5 /* UPCategoriesViewController.swift in Sources */,
 				047120BC29ED4DC7003EA8DA /* RedeemOfferComposer.swift in Sources */,
@@ -866,6 +974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -929,6 +1038,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -995,7 +1105,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1004,7 +1114,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.UrbanPoint-OM-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1027,7 +1137,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1036,7 +1146,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.UrbanPoint-OM-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -10,7 +10,7 @@ import Foundation
 extension URLSessionOutletRepository{
     func fetchNewBrandsNearby(param: [OutletRepositoryParam], completion: @escaping (Result<[UPOutlet],Error>) -> Void)
     {
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getBrandsOutlets"
+        let urlString = "\(baseURL)mobile/getBrandsOutlets"
         guard var url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -26,8 +26,8 @@ extension URLSessionOutletRepository{
         debugPrint("Api URL", url.absoluteURL)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         httpClient.execute(urlRequest: urlRequest) {  result in
             switch result{
             case .success(let response):
@@ -52,7 +52,7 @@ extension URLSessionOutletRepository{
     
     func fetchNewBrandsAlphabatical(param: [OutletRepositoryParam], completion: @escaping (Result<[UPParentOutlet],Error>) -> Void)
     {
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getAllNewBrands"
+        let urlString = "\(baseURL)mobile/getAllNewBrands"
         guard var url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -69,8 +69,8 @@ extension URLSessionOutletRepository{
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         
         httpClient.execute(urlRequest: urlRequest) {  result in
        

@@ -28,15 +28,15 @@ final class UPTrendingSearchHttpRepository: UPTrendingSearchRepository{
     }
     
     func fetchTrendingSearches(completion: @escaping (Result<TrendingSearchesResponse,Error>) -> Void) {
-        guard let url = URL(string: "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getTrendingSearchTag")else
+        guard let url = URL(string: "\(baseURL)mobile/getTrendingSearchTag")else
         {
             completion(.failure(URLError(.badURL)))
             return
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         httpClient.execute(urlRequest: urlRequest) { result in
             switch result{
             case .success(let response):
@@ -59,7 +59,7 @@ final class UPTrendingSearchHttpRepository: UPTrendingSearchRepository{
     }
     
     func fetchOffersTag(searchText: String,completion:@escaping (Result<[String],Error>) -> Void) -> UPHttpTask?{
-       guard let url = URL(string: "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getOffersSearchTags?search=\(searchText)")else
+       guard let url = URL(string: "\(baseURL)mobile/getOffersSearchTags?search=\(searchText)")else
         {
             completion(.failure(URLError(.badURL)))
             return nil
@@ -68,9 +68,8 @@ final class UPTrendingSearchHttpRepository: UPTrendingSearchRepository{
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
-        debugPrint(url)
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         return httpClient.execute(urlRequest: urlRequest) { result in
             switch result{
                 case .success(let response):
@@ -79,17 +78,7 @@ final class UPTrendingSearchHttpRepository: UPTrendingSearchRepository{
                         let jsonDecoded = try JSONDecoder().decode(UPAutoCompleteSearchesResponse.self, from: response.0)
                         completion(.success(jsonDecoded.data.tags))
                     }
-                    catch DecodingError.keyNotFound(let key, let context) {
-                        Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
-                    } catch DecodingError.valueNotFound(let type, let context) {
-                        Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
-                    } catch DecodingError.typeMismatch(let type, let context) {
-                        Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
-                    } catch DecodingError.dataCorrupted(let context) {
-                        Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
-                    } catch let error as NSError {
-                        NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
-                    }
+
                     catch let error{
                         completion(.failure(error))
                     }

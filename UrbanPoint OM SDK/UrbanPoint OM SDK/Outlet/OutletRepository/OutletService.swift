@@ -97,7 +97,7 @@ final class URLSessionOutletRepository: OutletRepository{
    
     
     func fetchParentOutlet(param: [OutletRepositoryParam], completion: @escaping (Result<[UPParentOutlet], Error>) -> Void) {
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getOutletsParents"
+        let urlString = "\(baseURL)mobile/getOutletsParents"
         guard var url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -112,8 +112,8 @@ final class URLSessionOutletRepository: OutletRepository{
       
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         httpClient.execute(urlRequest: urlRequest) {  result in
             switch result{
             case .success(let response):
@@ -150,7 +150,7 @@ final class URLSessionOutletRepository: OutletRepository{
     
     func fetchOutlet(param: [OutletRepositoryParam],completion: @escaping (Result<[UPOutlet],Error>) -> Void){
         
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getOutlets"
+        let urlString = "\(baseURL)mobile/getOutlets"
         guard var url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -165,8 +165,8 @@ final class URLSessionOutletRepository: OutletRepository{
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
       
         httpClient.execute(urlRequest: urlRequest) {  result in
        

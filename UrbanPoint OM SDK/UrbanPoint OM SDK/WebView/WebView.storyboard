@@ -105,7 +105,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hef-Hr-brC">
                                 <rect key="frame" x="329" y="83" width="40" height="40"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button" translatesAutoresizingMaskIntoConstraints="NO" id="Vq9-EN-tYD">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="Vq9-EN-tYD">
                                         <rect key="frame" x="7.6666666666666856" y="7.6666666666666714" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="0W3-qJ-ZaC"/>
@@ -166,6 +166,7 @@
     </scenes>
     <resources>
         <image name="back_button" width="27" height="20"/>
+        <image name="back_button_inverted" width="27" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

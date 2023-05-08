@@ -32,15 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKP-jW-1wj">
-                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74W-KA-6dl">
                                 <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
                                 <subviews>
@@ -70,7 +61,7 @@
                                             <action selector="shareOffer:" destination="MNM-qI-6ZE" eventType="touchUpInside" id="CPA-2o-Dp5"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_offer" translatesAutoresizingMaskIntoConstraints="NO" id="Sbp-BL-DBE">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_offer" translatesAutoresizingMaskIntoConstraints="NO" id="Sbp-BL-DBE">
                                         <rect key="frame" x="35.333333333333343" y="56" width="99" height="21"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outlet Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEi-mQ-vGc">
@@ -290,6 +281,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKP-jW-1wj">
+                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d9i-Yb-wKt"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -329,15 +329,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-hG-1ro">
-                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBb-1A-zmt">
                                 <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
                                 <subviews>
@@ -367,7 +358,7 @@
                                             <action selector="shareOffer:" destination="erW-br-tWy" eventType="touchUpInside" id="EV5-ai-cSz"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_offer" translatesAutoresizingMaskIntoConstraints="NO" id="SZ1-mL-zFP">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_offer" translatesAutoresizingMaskIntoConstraints="NO" id="SZ1-mL-zFP">
                                         <rect key="frame" x="299.66666666666669" y="56" width="99" height="21"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outlet Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rog-Jn-QSw">
@@ -581,6 +572,15 @@
                                     <constraint firstItem="HX3-Y4-I4w" firstAttribute="width" secondItem="qBb-1A-zmt" secondAttribute="width" multiplier="0.85" id="voX-1v-6er"/>
                                     <constraint firstItem="GRD-ka-GLA" firstAttribute="centerY" secondItem="SZ1-mL-zFP" secondAttribute="centerY" id="wAb-pq-Unp"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-hG-1ro">
+                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="40"/>

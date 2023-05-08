@@ -229,7 +229,7 @@
                                     <action selector="onBackButtonTapped:" destination="ARF-vQ-ipC" eventType="touchUpInside" id="MTq-dt-6Dm"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button" translatesAutoresizingMaskIntoConstraints="NO" id="bPI-qF-MeW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="bPI-qF-MeW">
                                 <rect key="frame" x="333" y="83" width="40" height="40"/>
                                 <color key="tintColor" name="UrbanPointGrey"/>
                                 <constraints>
@@ -405,6 +405,7 @@
     </scenes>
     <resources>
         <image name="back_button" width="27" height="20"/>
+        <image name="back_button_inverted" width="27" height="20"/>
         <namedColor name="UrbanPointDarkGrey">
             <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

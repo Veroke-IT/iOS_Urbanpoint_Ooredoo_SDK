@@ -483,7 +483,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.backward_green" translatesAutoresizingMaskIntoConstraints="NO" id="VTT-cj-Wz0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.backward_green_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="VTT-cj-Wz0">
                                 <rect key="frame" x="342" y="774" width="27" height="20"/>
                                 <color key="tintColor" name="UrbanPointGreen"/>
                             </imageView>
@@ -540,6 +540,7 @@
     <resources>
         <image name="UrbanPointTextLogo" width="147" height="30"/>
         <image name="arrow.backward_green" width="27" height="20"/>
+        <image name="arrow.backward_green_inverted" width="27" height="20"/>
         <image name="arrow_forward" width="8" height="12"/>
         <image name="cross" width="20" height="20"/>
         <namedColor name="UrbanPointDarkGrey">

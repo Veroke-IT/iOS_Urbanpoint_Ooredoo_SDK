@@ -8,10 +8,10 @@
 import UIKit
 
 class UPHomeViewController: UIViewController {
-
+    
     var homePresenter: UPHomeViewModel!
     var isPopularCategoriesListExpanded: Bool = false
-  
+    
     @IBOutlet weak var tableView: UITableView!
     
     //Events
@@ -34,7 +34,18 @@ class UPHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showActivityIndicator()
-        tableView.isHidden = true
+        
+        homePresenter.fetchUserLocation()
+        
+        //tableView.isHidden = true
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {[weak self] in
+//            self?.fetchData()
+//        })
+    }
+    
+    
+    private func fetchData(){
         homePresenter.fetchEssentialData {[weak self] errorString in
             if let errorString{
                 self?.hideActivityIndicator()
@@ -48,6 +59,7 @@ class UPHomeViewController: UIViewController {
                         DispatchQueue.main.async {
                             self?.tableView.isHidden = false
                             self?.homePresenter.fetchRecentlyViewedOutlets()
+                            
                             self?.tableView.reloadData()
                         }
                     }
@@ -59,6 +71,7 @@ class UPHomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        fetchData()
         homePresenter.fetchRecentlyViewedOutlets()
         if homePresenter.recentlyViewedOutlet.count > 0{
             tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .none)
@@ -133,9 +146,11 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         
             return cell
         case 3:
-            
+  
             let cell = tableView.dequeueReusableCell(withIdentifier: UPNearbyOutletHomeTableViewCell.reuseIdentifier, for: indexPath) as! UPNearbyOutletHomeTableViewCell
+
             cell.configureCell(data: homePresenter.nearbyOutlet, onViewAllTapped: onViewAllNearbyTapped, onOutletSelected: onNeerbyOutletSelected)
+
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPPopularCategoriesTableViewCell.reuseIdentifier, for: indexPath) as! UPPopularCategoriesTableViewCell

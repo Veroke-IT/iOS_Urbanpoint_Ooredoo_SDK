@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="DINNextLTArabicBold.ttf">
+            <string>DINNextLTArabic-Bold</string>
+        </array>
         <array key="Roboto-Black.ttf">
             <string>Roboto-Black</string>
         </array>
@@ -451,7 +454,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jae-4P-TFp">
-                                                <rect key="frame" x="64.666666666666686" y="348" width="264" height="60"/>
+                                                <rect key="frame" x="64.666666666666686" y="353" width="264" height="60"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-7O-tiE">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -566,61 +569,37 @@
                                             <button opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6q4-sC-g0k">
                                                 <rect key="frame" x="329.33333333333331" y="24.000000000000004" width="55.666666666666686" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="back_button" title=" "/>
+                                                <buttonConfiguration key="configuration" style="plain" image="back_button_inverted" title=" "/>
                                                 <connections>
                                                     <action selector="onBackButtonTapped:" destination="NKi-OJ-qK8" eventType="touchUpInside" id="fgt-0q-nIY"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynt-At-nmA">
-                                                <rect key="frame" x="40.333333333333343" y="284" width="312.33333333333326" height="20"/>
+                                                <rect key="frame" x="43.333333333333343" y="284" width="306.33333333333326" height="25"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please let the " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTt-cL-jBD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أظهر هذه الشاشة للتاجر لتحصل على العرض" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTt-cL-jBD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="290.33333333333331" height="25"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="17"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="staff" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-To-V7i">
-                                                        <rect key="frame" x="112.33333333333331" y="0.0" width="36" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
-                                                        <color key="textColor" name="UrbanPointRed"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enter their" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-oB-Sb3">
-                                                        <rect key="frame" x="152.33333333333331" y="0.0" width="79.333333333333314" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="outlet PIN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA1-b9-35R">
-                                                        <rect key="frame" x="235.66666666666666" y="0.0" width="76.666666666666657" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
-                                                        <color key="textColor" name="UrbanPointRed"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="CQI-oB-Sb3" firstAttribute="leading" secondItem="dxd-To-V7i" secondAttribute="trailing" constant="4" id="1MS-e9-tIm"/>
-                                                    <constraint firstItem="iA1-b9-35R" firstAttribute="leading" secondItem="CQI-oB-Sb3" secondAttribute="trailing" constant="4" id="8Aw-fp-KBB"/>
                                                     <constraint firstAttribute="bottom" secondItem="kTt-cL-jBD" secondAttribute="bottom" id="AeN-fm-S8K"/>
-                                                    <constraint firstItem="iA1-b9-35R" firstAttribute="centerY" secondItem="CQI-oB-Sb3" secondAttribute="centerY" id="MjE-wt-lB7"/>
                                                     <constraint firstItem="kTt-cL-jBD" firstAttribute="top" secondItem="ynt-At-nmA" secondAttribute="top" id="Qno-aw-LLp"/>
                                                     <constraint firstItem="kTt-cL-jBD" firstAttribute="leading" secondItem="ynt-At-nmA" secondAttribute="leading" id="Sfk-uX-HGX"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iA1-b9-35R" secondAttribute="trailing" id="dY6-7U-V7g"/>
-                                                    <constraint firstItem="CQI-oB-Sb3" firstAttribute="centerY" secondItem="dxd-To-V7i" secondAttribute="centerY" id="dvn-w7-8KC"/>
-                                                    <constraint firstItem="dxd-To-V7i" firstAttribute="centerY" secondItem="kTt-cL-jBD" secondAttribute="centerY" id="eRO-3O-mQl"/>
-                                                    <constraint firstItem="dxd-To-V7i" firstAttribute="leading" secondItem="kTt-cL-jBD" secondAttribute="trailing" constant="4" id="h03-dT-Sli"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kTt-cL-jBD" secondAttribute="trailing" constant="16" id="ikb-Eg-vaa"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You should present this screen at the outlet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-6X-7Ak">
-                                                <rect key="frame" x="33.333333333333343" y="304" width="326.66666666666663" height="20"/>
+                                                <rect key="frame" x="33.333333333333343" y="309" width="326.66666666666663" height="20"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULu-OM-JPl">
-                                                <rect key="frame" x="0.0" y="284" width="393" height="124"/>
+                                                <rect key="frame" x="0.0" y="284" width="393" height="129"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua3-7l-WkE">
                                                         <rect key="frame" x="8" y="15.999999999999998" width="377" height="21.333333333333329"/>
@@ -735,6 +714,7 @@
         <image name="TestOutletImage" width="47.5" height="47.5"/>
         <image name="UrbanPointTextLogo" width="147" height="30"/>
         <image name="back_button" width="27" height="20"/>
+        <image name="back_button_inverted" width="27" height="20"/>
         <namedColor name="UrbanPointDarkGrey">
             <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

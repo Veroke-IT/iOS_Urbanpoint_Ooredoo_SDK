@@ -22,10 +22,15 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let up = UrbanPoint(context: self, authorization: "")
+        let up = UrbanPoint(context: self, walletID: "wallet_11223344", env: "test-up-intrnl", publicKey: "CC32FFA7F856DB79-UP-0")
         
         if p == 0{
-            up.start()
+            do{
+                try up.start()
+            }
+            catch let error{
+                debugPrint(error.localizedDescription)
+            }
         }
         p+=1
     }

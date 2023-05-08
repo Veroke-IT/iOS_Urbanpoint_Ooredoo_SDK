@@ -93,7 +93,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec9-8J-FpA">
-                                <rect key="frame" x="299" y="212.66666666666666" width="78" height="31"/>
+                                <rect key="frame" x="299.66666666666669" y="212.66666666666666" width="77.333333333333314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="CANCEL">
                                     <fontDescription key="titleFontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
@@ -286,7 +286,7 @@
                                     <action selector="onBackButtonPressed:" destination="uKQ-X7-TDm" eventType="touchUpInside" id="HmE-0m-n61"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button" translatesAutoresizingMaskIntoConstraints="NO" id="9QL-ex-aXR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_button_inverted" translatesAutoresizingMaskIntoConstraints="NO" id="9QL-ex-aXR">
                                 <rect key="frame" x="333" y="83" width="40" height="40"/>
                                 <color key="tintColor" name="UrbanPointGrey"/>
                                 <constraints>
@@ -295,7 +295,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بحث" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdL-0G-8xi">
-                                <rect key="frame" x="16" y="147" width="352" height="30"/>
+                                <rect key="frame" x="16" y="147" width="352" height="29.666666666666657"/>
                                 <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
                                 <color key="textColor" name="UrbanPointRed"/>
                                 <nil key="highlightedColor"/>
@@ -521,6 +521,7 @@
         <image name="RecentClock" width="7.6666665077209473" height="7.6666665077209473"/>
         <image name="RecentClose" width="5" height="5"/>
         <image name="back_button" width="27" height="20"/>
+        <image name="back_button_inverted" width="27" height="20"/>
         <image name="search_icon_lightGrey" width="20.5" height="20"/>
         <namedColor name="UrbanPointGreen">
             <color red="0.075999997556209564" green="0.56099998950958252" blue="0.58799999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

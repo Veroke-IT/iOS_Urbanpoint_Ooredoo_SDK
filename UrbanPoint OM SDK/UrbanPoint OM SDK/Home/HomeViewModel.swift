@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct RecentlyViewedOutlet: Identifiable,Codable{
     var id: Int
@@ -13,7 +14,7 @@ struct RecentlyViewedOutlet: Identifiable,Codable{
     let outletLogoURL: String
 }
 
-final class UPHomeViewModel{
+final class UPHomeViewModel: UPLocationManagerDelegate{
     
     private let homeService: HomeService
     private(set) var recentlyViewedOutlet: [RecentlyViewedOutlet] = []
@@ -23,13 +24,25 @@ final class UPHomeViewModel{
     private(set) var categories: [Category] = []
     private(set) var newBrand: [NewBrand] = []
     
+    let locationManager: UPLocationManager = UPLocationManager.sharedInstance
+    private var currentLocation: CLLocationCoordinate2D? = nil
+    
     
     init(homeService: HomeService) {
         self.homeService = homeService
+        locationManager.delegate = self
     }
     
     func fetchEssentialData(completion: @escaping (String?) -> Void){
-        homeService.fetchEssentialHomeData { result in
+        
+        var longitude = ""
+        var latitude = ""
+        if let currentLocation{
+            longitude = String(currentLocation.longitude)
+            latitude = String(currentLocation.latitude)
+        }
+        
+        homeService.fetchEssentialHomeData(location: (longitude,latitude)) { result in
             switch result{
                 case .success(let data):
                     self.nearbyOutlet = data.data.nearbyOutlets
@@ -58,4 +71,20 @@ final class UPHomeViewModel{
             .getRecentlyViewedOutlet()
     }
     
+    
+    func fetchLocation(completion: @escaping () -> Void){
+        
+    }
+    
+    internal func fetchUserLocation(){
+         locationManager.startUpdatingLocation()
+    }
+    
+    func tracingLocation(currentLocation: CLLocation) {
+        self.currentLocation = currentLocation.coordinate
+    }
+    
+    func tracingLocationDidFailWithError(error: NSError) {
+        debugPrint(error.localizedDescription)
+    }
 }

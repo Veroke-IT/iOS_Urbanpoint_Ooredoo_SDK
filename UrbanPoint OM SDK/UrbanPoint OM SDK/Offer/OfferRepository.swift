@@ -63,7 +63,7 @@ final class URLSessionOfferRepository: OfferRepository{
     }
     
     func fetchUsedOffer(index: Int, completion: @escaping (Result<[UPOffer], Error>) -> Void) {
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getAllOfferUseAgain?page=\(index)"
+        let urlString = "\(baseURL)mobile/getAllOfferUseAgain?page=\(index)"
         guard let url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -71,8 +71,8 @@ final class URLSessionOfferRepository: OfferRepository{
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         
         httpClient.execute(urlRequest: urlRequest) { result in
             switch result{
@@ -99,7 +99,7 @@ final class URLSessionOfferRepository: OfferRepository{
     
     func fetchOffer(withID id: Int, completion: @escaping (Result<OfferDetailApiResponse.Offer, Error>) -> Void) {
         
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/getOffers?offer_id=\(id)"
+        let urlString = "\(baseURL)mobile/getOffers?offer_id=\(id)"
         guard let url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -107,8 +107,8 @@ final class URLSessionOfferRepository: OfferRepository{
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         
         httpClient.execute(urlRequest: urlRequest) { result in
             switch result{
@@ -140,7 +140,7 @@ final class URLSessionOfferRepository: OfferRepository{
     
     func redeemOffer(offerData: RedeemOfferRequest, completion: @escaping (Result<RedeemOfferResponse, Error>) -> Void) {
         
-        let urlString = "http://ooredoo-sdk-internal.adminurban.com/api/mobile/redeemOffer"
+        let urlString = "\(baseURL)mobile/redeemOffer"
         guard let url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
@@ -148,11 +148,10 @@ final class URLSessionOfferRepository: OfferRepository{
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "post"
-        urlRequest.setValue("83cdff852bb72d9d99b5aec88888", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+        urlRequest.setValue(UPUserAuthToken, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(appID, forHTTPHeaderField: "APP_ID")
         urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
-                  
-        urlRequest.setValue("1", forHTTPHeaderField: "APP_ID")
+    
         do{
             urlRequest.httpBody = try offerData.encoded()
         }

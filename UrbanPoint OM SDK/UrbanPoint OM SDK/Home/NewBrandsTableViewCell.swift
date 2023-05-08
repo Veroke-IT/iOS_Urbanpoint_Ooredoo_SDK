@@ -23,14 +23,13 @@ class NewBrandsTableViewCell: UITableViewCell {
         self.data = data
         self.onViewAllTapped = onViewAllTapped
         self.onOutletSelected = onOutletSelected
-
         collectionView.reloadData()
         
     }
     
     override func awakeFromNib() {
+     
         super.awakeFromNib()
-        // Initialization code
         collectionView.delegate = self
         collectionView.dataSource = self
     }
