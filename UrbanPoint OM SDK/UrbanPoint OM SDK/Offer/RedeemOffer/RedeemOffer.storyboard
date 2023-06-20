@@ -553,8 +553,8 @@
                                                     <constraint firstAttribute="height" constant="50" id="H95-bx-byp"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Confirm">
-                                                    <fontDescription key="titleFontDescription" name="Roboto-Black" family="Roboto" pointSize="17"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="تأكيد">
+                                                    <fontDescription key="titleFontDescription" name="DINNextLTW23-Bold" family="DIN Next LT W23" pointSize="17"/>
                                                     <color key="baseForegroundColor" name="UrbanPointDarkGrey"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
@@ -592,7 +592,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="kTt-cL-jBD" secondAttribute="trailing" constant="16" id="ikb-Eg-vaa"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You should present this screen at the outlet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-6X-7Ak">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You should present this screen at the outlet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-6X-7Ak">
                                                 <rect key="frame" x="33.333333333333343" y="309" width="326.66666666666663" height="20"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                 <nil key="textColor"/>

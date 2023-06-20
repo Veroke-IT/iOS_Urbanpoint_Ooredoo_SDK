@@ -61,7 +61,7 @@
                                         <rect key="frame" x="24" y="0.0" width="21" height="50"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Brands, offers, locations, etc." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-P6-uaL">
-                                        <rect key="frame" x="61" y="0.0" width="292" height="50"/>
+                                        <rect key="frame" x="61" y="0.0" width="276" height="50"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -73,7 +73,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="UzA-P6-uaL" secondAttribute="bottom" id="5SW-iz-sO2"/>
                                     <constraint firstAttribute="height" constant="50" id="5u8-Rt-G2g"/>
-                                    <constraint firstAttribute="trailing" secondItem="UzA-P6-uaL" secondAttribute="trailing" id="POJ-10-UB4"/>
+                                    <constraint firstAttribute="trailing" secondItem="UzA-P6-uaL" secondAttribute="trailing" constant="16" id="POJ-10-UB4"/>
                                     <constraint firstItem="UzA-P6-uaL" firstAttribute="leading" secondItem="gP3-cj-7lo" secondAttribute="trailing" constant="16" id="mtt-jR-G25"/>
                                     <constraint firstAttribute="bottom" secondItem="gP3-cj-7lo" secondAttribute="bottom" id="odb-NV-QOf"/>
                                     <constraint firstItem="gP3-cj-7lo" firstAttribute="top" secondItem="kuc-bL-WBH" secondAttribute="top" id="rf5-t6-am5"/>
@@ -307,7 +307,7 @@
                                         <rect key="frame" x="308.66666666666669" y="0.0" width="20.333333333333314" height="50"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="العلامات التجارية، العروض، المواقع" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JIs-cF-Cis">
-                                        <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="50"/>
+                                        <rect key="frame" x="16" y="0.0" width="276.66666666666669" height="50"/>
                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -323,7 +323,7 @@
                                     <constraint firstItem="JIs-cF-Cis" firstAttribute="trailing" secondItem="7oK-vC-8p5" secondAttribute="leading" constant="-16" id="8Fy-AQ-Tjo"/>
                                     <constraint firstAttribute="height" constant="50" id="Aqw-Mg-dru"/>
                                     <constraint firstItem="7oK-vC-8p5" firstAttribute="trailing" secondItem="xcN-m8-ANO" secondAttribute="trailing" constant="-24" id="ZRT-5y-acu"/>
-                                    <constraint firstAttribute="leading" secondItem="JIs-cF-Cis" secondAttribute="leading" id="huR-Z3-dy1"/>
+                                    <constraint firstAttribute="leading" secondItem="JIs-cF-Cis" secondAttribute="leading" constant="-16" id="huR-Z3-dy1"/>
                                     <constraint firstItem="7oK-vC-8p5" firstAttribute="top" secondItem="xcN-m8-ANO" secondAttribute="top" id="wnn-JV-2Fh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>

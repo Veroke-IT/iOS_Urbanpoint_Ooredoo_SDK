@@ -59,6 +59,7 @@ final class UPSettingsViewComposer{
         }else{
             appLanguage = .arabic
         }
+        
         navigationController.popToRootViewController(animated: true)
         navigationController.popViewController(animated: false)
         let homeViewComposer = UPHomeViewComposer(navigationController: navigationController, httpClient: httpClient)

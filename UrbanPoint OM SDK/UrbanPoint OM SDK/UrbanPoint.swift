@@ -45,8 +45,6 @@ final public class UrbanPoint{
         let storedEnvProduction = authorizationManager.decrypt(key: environmentEncryptedProduction)
         
         
-       
-        
         if self.publicKey == storedPublicKeyInternal && self.environment == storedEnvInternal{
             appEnvironment = .test_up_intrnl
         }else if self.publicKey == storedPublicKeyProduction && self.environment == storedEnvProduction{

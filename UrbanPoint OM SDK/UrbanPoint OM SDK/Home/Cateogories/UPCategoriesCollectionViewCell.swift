@@ -15,13 +15,20 @@ class UPCategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     
     internal func configureCell(with url: URL,name: String){
-        categoryName.text = name
-        imageView.sd_setImage(with: url,placeholderImage: placeHolderImage)
+    categoryName.text = name
+    imageView.sd_setImage(with: url,placeholderImage: nil)
+
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+     
+
     }
     
+    
     override func prepareForReuse() {
-        //categoryImageView.image = nil
-       // task?.cancel()
+       
         super.prepareForReuse()
         
     }

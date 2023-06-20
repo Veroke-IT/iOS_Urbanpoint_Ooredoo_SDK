@@ -55,7 +55,21 @@ extension UIView{
         layer.shadowPath = shadowPath
     }
     
+    func addGradientBackground(startColor: UIColor,endColor: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer, at:0)
+        self.backgroundColor = .clear
+    }
+    
 
     
 }
 
+extension UICollectionViewFlowLayout{
+    open override var flipsHorizontallyInOppositeLayoutDirection: Bool{
+        return true
+    }
+}

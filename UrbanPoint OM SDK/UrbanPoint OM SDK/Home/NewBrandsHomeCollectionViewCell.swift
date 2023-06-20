@@ -13,6 +13,7 @@ class NewBrandsHomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var outletCategoryLabel: UILabel!
     @IBOutlet weak var outletImageView: UIImageView!
     @IBOutlet weak var outletTitleLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     var task: URLSessionDataTask?
     
     internal func configureOutletCellWith(_ outlet: NewBrand){
@@ -22,6 +23,7 @@ class NewBrandsHomeCollectionViewCell: UICollectionViewCell {
         }
         outletCategoryLabel.text = outlet.categoryName
         outletTitleLabel.text = outlet.parentOutletName
+        outletImageView.applyshadowWithCorner(containerView: containerView, cornerRadious: 16)
     }
 
     override func prepareForReuse() {

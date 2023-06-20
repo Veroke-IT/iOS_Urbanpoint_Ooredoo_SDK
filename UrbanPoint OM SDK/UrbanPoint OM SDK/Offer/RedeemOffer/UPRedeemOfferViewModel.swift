@@ -35,7 +35,7 @@ final class UPRedeemOfferViewModel{
             case .success(let response):
                 completion((String(response.data.confirmationPin),nil))
             case .failure(_):
-                completion((nil,"Oops something went wrong. Try again with a valid pin"))
+                completion((nil,"Invalid pin"))
             }
         }
     }

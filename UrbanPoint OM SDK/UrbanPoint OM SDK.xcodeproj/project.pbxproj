@@ -102,6 +102,8 @@
 		047EBD8129EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD8029EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift */; };
 		047EBD8329EAA25C00953AF9 /* ChildOutletListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EBD8229EAA25C00953AF9 /* ChildOutletListingViewModel.swift */; };
 		0490EE992A08D04100AF1A6D /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EE982A08D04100AF1A6D /* FontLoader.swift */; };
+		04A6EC312A13987B00CB9098 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6EC302A13987B00CB9098 /* CustomSwitch.swift */; };
+		04C133EA2A0BA97500A0DF71 /* Arabic.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04C133E92A0BA97500A0DF71 /* Arabic.strings */; };
 		04E68A9D29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */; };
 		04E68AB529B8B16600573B2A /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E68AB429B8B16600573B2A /* HomeView.storyboard */; };
 		04E68AB729B8B17200573B2A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E68AB629B8B17200573B2A /* HomeViewController.swift */; };
@@ -239,6 +241,8 @@
 		047EBD8029EA8D0C00953AF9 /* UPCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		047EBD8229EAA25C00953AF9 /* ChildOutletListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildOutletListingViewModel.swift; sourceTree = "<group>"; };
 		0490EE982A08D04100AF1A6D /* FontLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLoader.swift; sourceTree = "<group>"; };
+		04A6EC302A13987B00CB9098 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		04C133E92A0BA97500A0DF71 /* Arabic.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Arabic.strings; sourceTree = "<group>"; };
 		04E68A9829B8AABE00573B2A /* UrbanPoint_OM_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UrbanPoint_OM_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E68A9C29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UrbanPoint_OM_SDK.docc; sourceTree = "<group>"; };
 		04E68AB429B8B16600573B2A /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
@@ -561,6 +565,14 @@
 			path = ChildOutletListing;
 			sourceTree = "<group>";
 		};
+		04C133E82A0BA96800A0DF71 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				04C133E92A0BA97500A0DF71 /* Arabic.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		04E68A8E29B8AABE00573B2A = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +593,7 @@
 		04E68A9A29B8AABE00573B2A /* UrbanPoint OM SDK */ = {
 			isa = PBXGroup;
 			children = (
+				04C133E82A0BA96800A0DF71 /* Strings */,
 				047439B529D408D4005CB671 /* HttpClient */,
 				04FC748A29DAD9970099E8C5 /* Assets */,
 				04E68AB829B8B18C00573B2A /* Helpers */,
@@ -638,6 +651,7 @@
 				0409820729E51FFF0042009B /* LocationManager.swift */,
 				046157D429EDB6A300B92A5F /* Extension+String.swift */,
 				0490EE982A08D04100AF1A6D /* FontLoader.swift */,
+				04A6EC302A13987B00CB9098 /* CustomSwitch.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -800,6 +814,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 04E68A8E29B8AABE00573B2A;
 			packageReferences = (
@@ -860,6 +875,7 @@
 				046E89012A04E3B60036FDA2 /* pad-nopadding.js in Resources */,
 				04E68AB529B8B16600573B2A /* HomeView.storyboard in Resources */,
 				046E88FF2A04E3B60036FDA2 /* pad-ansix923.js in Resources */,
+				04C133EA2A0BA97500A0DF71 /* Arabic.strings in Resources */,
 				04FC74B129DADA180099E8C5 /* Roboto-MediumItalic.ttf in Resources */,
 				046E89052A04E3B60036FDA2 /* sha224.js in Resources */,
 				04313A5329DFDCBE00E3CCC8 /* OutletDetail.storyboard in Resources */,
@@ -881,6 +897,7 @@
 			files = (
 				046157D529EDB6A300B92A5F /* Extension+String.swift in Sources */,
 				0409820829E51FFF0042009B /* LocationManager.swift in Sources */,
+				04A6EC312A13987B00CB9098 /* CustomSwitch.swift in Sources */,
 				04FC747B29DA9A260099E8C5 /* OutletListingViewController.swift in Sources */,
 				04FC748329DAB23E0099E8C5 /* UPOutlet.swift in Sources */,
 				04E68A9D29B8AABE00573B2A /* UrbanPoint_OM_SDK.docc in Sources */,
@@ -1105,7 +1122,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1137,7 +1154,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -315,6 +315,7 @@
                         <outlet property="outletSubnameLabel" destination="G2E-P4-06f" id="bdq-Le-dx0"/>
                         <outlet property="ruleOfPurchaseLabel" destination="wCW-Wh-OBL" id="jNn-pC-a9V"/>
                         <outlet property="savingLabel" destination="Qes-CH-4NL" id="ErX-Wq-AmZ"/>
+                        <outlet property="useOfferButton" destination="YCN-HM-a0d" id="A1i-Qe-DLC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SY8-yj-E1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -612,6 +613,7 @@
                         <outlet property="outletSubnameLabel" destination="wxL-1m-zLU" id="1yp-Iv-bUa"/>
                         <outlet property="ruleOfPurchaseLabel" destination="R5Y-QZ-RrL" id="UT0-kJ-dDO"/>
                         <outlet property="savingLabel" destination="6cZ-t3-HrE" id="V5M-NS-5ah"/>
+                        <outlet property="useOfferButton" destination="HX3-Y4-I4w" id="MMk-1c-Ra2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfX-mM-oCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

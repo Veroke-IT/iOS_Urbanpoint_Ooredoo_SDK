@@ -40,9 +40,15 @@ final class ChildOutletListingViewModel: OutletListingPresenterContract{
             switch result{
             case .success(let data):
                 let outlets = data.map { outlet in
-                    var distance = outlet.distance?.value.getNumberWithoutDecimal() ?? " "
-                    if let dist = Int(distance){
-                        distance = "within \(dist/1000) km"
+                    var distance = outlet.distance?.value ?? ""
+                    
+                    if let dist = Float(distance){
+                        let distanceInMeters = Int(dist)
+                        if distanceInMeters < 1000{
+                            distance = "Within ".localized + "\(distanceInMeters) m"
+                        }else{
+                            distance = "Within ".localized + "\(Int(dist)/1000) km"
+                        }
                     }else{
                         distance = ""
                     }

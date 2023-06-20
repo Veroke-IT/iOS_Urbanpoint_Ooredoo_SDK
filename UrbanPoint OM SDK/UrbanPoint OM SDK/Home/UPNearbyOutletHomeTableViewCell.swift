@@ -23,16 +23,17 @@ class UPNearbyOutletHomeTableViewCell: UITableViewCell {
         self.data = data
         self.onViewAllTapped = onViewAllTapped
         self.onOutletSelected = onOutletSelected
-
+        // Initialization code
         collectionView.reloadData()
+
         
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         collectionView.delegate = self
         collectionView.dataSource = self
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,11 +58,13 @@ extension UPNearbyOutletHomeTableViewCell: UICollectionViewDataSource,UICollecti
     
     private func fetchCellCollectionView(_ collectionView: UICollectionView,indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UPNearbyOutletHomeCollectionViewCell.reuseIdentifier, for: indexPath) as! UPNearbyOutletHomeCollectionViewCell
-        
+
         cell.configureOutletCellWith(data[indexPath.item])
-        
+
         return cell
     }
+
+
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -78,3 +81,4 @@ extension UPNearbyOutletHomeTableViewCell: UICollectionViewDataSource,UICollecti
         onOutletSelected?(data[indexPath.row])
     }
 }
+

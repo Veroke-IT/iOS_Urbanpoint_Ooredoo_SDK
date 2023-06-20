@@ -7,12 +7,14 @@
 
 import UIKit
 
-class UPSettingsViewController: UIViewController {
+class UPSettingsViewController: UIViewController,CustomSwitchDelegate {
+    
+    
 
     @IBOutlet weak var daysOfAccessRemaining: UILabel!
     @IBOutlet weak var englishLanguageLabel: UILabel!
     @IBOutlet weak var arabicLanguageLabel: UILabel!
-    @IBOutlet weak var languageSwitch: UISwitch!
+    @IBOutlet weak var languageSwitch: CustomSwitch!
     
     /// Events
     var onBack: (() -> Void)?
@@ -24,7 +26,8 @@ class UPSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        languageSwitch.isOn = appLanguage == .english
+        
+        languageSwitch.delegate = self
     }
 
     @IBAction func onUsedOffersTapped(_ sender: Any){
@@ -35,12 +38,9 @@ class UPSettingsViewController: UIViewController {
         showTermsAndConditions?()
     }
 
-    
-    @IBAction func onSwitchChanged(_ sender:Any){
-        
-        onSwitchMoved?((sender as? UISwitch)?.isOn ?? false)
+    func switchButtonAction(_ isOn: Bool, sender: CustomSwitch) {
+        onSwitchMoved?(!isOn)
     }
-    
     @IBAction func onGoBackToOoredooTapped(_ sender: Any){
         onGoBackToOoreddo?()
     }

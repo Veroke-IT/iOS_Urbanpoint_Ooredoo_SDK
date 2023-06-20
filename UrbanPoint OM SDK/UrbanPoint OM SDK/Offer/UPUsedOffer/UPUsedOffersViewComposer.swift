@@ -22,11 +22,17 @@ final class UPUsedOfferViewComposer{
         let viewController = UPUsedOfferViewComposer.createUsedOfferView(offerRepository: offerRepository) as! UPUsedOfferViewController
         viewController.onBackButtonTapped = onBackButtonTapped
         viewController.viewModel = UPUsedOfferViewModel(offerRepository: offerRepository)
+        viewController.showOfferDetail = navigateToOfferDetail
         navigationController.pushViewController(viewController, animated: true)
     }
-
+    
     private func onBackButtonTapped(){
         navigationController.popViewController(animated: true)
+    }
+    
+    private func navigateToOfferDetail(id: Int){
+        let offerDetailComposer = UPOfferDetailComposer(navigationController: navigationController, httpClient: httpClient, offerID: id)
+        offerDetailComposer.start()
     }
     
     

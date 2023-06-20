@@ -14,6 +14,8 @@ class UPUsedOfferViewController: UIViewController {
     private var index: Int = 1
     
     var onBackButtonTapped: (() -> Void)?
+    var showOfferDetail: ((Int) -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,8 @@ class UPUsedOfferViewController: UIViewController {
     @IBAction func onBackButtonTapped(_ sender: Any){
         onBackButtonTapped?()
     }
+    
+    
     
     private func fetchOffers(){
         showActivityIndicator()
@@ -85,5 +89,13 @@ extension UPUsedOfferViewController: UITableViewDelegate,UITableViewDataSource{
                 fetchOffers()
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedOffer = viewModel?.offers[indexPath.row] else { return }
+        if let id = selectedOffer.id{
+            showOfferDetail?(id)
+        }
+        
     }
 }

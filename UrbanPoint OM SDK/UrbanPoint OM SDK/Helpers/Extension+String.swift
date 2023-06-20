@@ -14,8 +14,17 @@ extension String{
      }
     
     var localized: String{
-        return self
+        
+        if appLanguage == .english { return self }
+        else {
+            if let bundle = Appbundle{
+                return  NSLocalizedString(self, tableName: "Arabic", bundle: bundle, value: self, comment: "")
+            }else{
+                return self
+            }
+        }
     }
+    
     
     func removingLeadingSpaces() -> String {
         guard let index = firstIndex(where: { !CharacterSet(charactersIn: String($0)).isSubset(of: .whitespaces) }) else {
@@ -24,12 +33,14 @@ extension String{
         return String(self[index...])
     }
     
+    
+    
 }
 extension Float {
        var clean: String {
           return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
        }
-   }
+}
 extension Double {
     var clean: String {
        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)

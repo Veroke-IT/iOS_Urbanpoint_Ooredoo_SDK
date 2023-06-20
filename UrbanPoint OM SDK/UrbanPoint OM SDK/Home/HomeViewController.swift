@@ -37,30 +37,31 @@ class UPHomeViewController: UIViewController {
         
         homePresenter.fetchUserLocation()
         
-        //tableView.isHidden = true
-//        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {[weak self] in
-//            self?.fetchData()
-//        })
+        tableView.isHidden = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {[weak self] in
+            self?.fetchData()
+        })
     }
     
     
     private func fetchData(){
+        tableView.isHidden = true
         homePresenter.fetchEssentialData {[weak self] errorString in
             if let errorString{
                 self?.hideActivityIndicator()
                 self?.showAlert(title: .alert, message: errorString)
             }else{
+              
                 self?.homePresenter.fetchCachedData {[weak self]  errorString in
                     self?.hideActivityIndicator()
                     if let errorString{
                         self?.showAlert(title: .alert, message: errorString)
                     }else{
                         DispatchQueue.main.async {
-                            self?.tableView.isHidden = false
                             self?.homePresenter.fetchRecentlyViewedOutlets()
-                            
                             self?.tableView.reloadData()
+                            self?.tableView.isHidden = false
                         }
                     }
                 }
@@ -71,7 +72,6 @@ class UPHomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchData()
         homePresenter.fetchRecentlyViewedOutlets()
         if homePresenter.recentlyViewedOutlet.count > 0{
             tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .none)
@@ -102,6 +102,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
            
         }
         else if indexPath.row == 3{
+           // return UITableView.automaticDimension
             return (homePresenter.nearbyOutlet.count > 0) ? UITableView.automaticDimension : 0
         }
         else if indexPath.row == 4{
@@ -146,7 +147,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
         
             return cell
         case 3:
-  
+ 
             let cell = tableView.dequeueReusableCell(withIdentifier: UPNearbyOutletHomeTableViewCell.reuseIdentifier, for: indexPath) as! UPNearbyOutletHomeTableViewCell
 
             cell.configureCell(data: homePresenter.nearbyOutlet, onViewAllTapped: onViewAllNearbyTapped, onOutletSelected: onNeerbyOutletSelected)
@@ -201,7 +202,7 @@ extension UPHomeViewController: UITableViewDataSource,UITableViewDelegate{
    
     private func onNewBrandSelected(_ brand: NewBrand){
         
-        guard let id = Int(brand.id) else { return }
+        guard let id = Int(brand.parentOutletID) else { return }
         if brand.isMultipleChild{
             onParentBrandSelected?(id,brand.parentOutletName)
         }else{

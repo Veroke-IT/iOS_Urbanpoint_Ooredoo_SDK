@@ -33,7 +33,7 @@ class UPRedeemOfferViewController: UIViewController {
     private func setupUI(){
         outletNameLabel.text = viewModel?.offerData.outletName
         offerNameLabel.text = viewModel?.offerData.offerDetails
-        savingLabel.text = "You save approximatly " + (viewModel?.offerData.saving.getNumberWithoutDecimal() ?? "") + " QAR!"
+        savingLabel.text = "You save approximatly ".localized + (viewModel?.offerData.saving.getNumberWithoutDecimal() ?? "") + " QAR!"
       
         outletLogoImage.applyshadowWithCorner(containerView: outletLogoContainerView, cornerRadious: outletLogoImage.layer.cornerRadius)
         outletLogoImage.sd_setImage(with: viewModel?.offerData.outletImage,placeholderImage: placeHolderImage)
@@ -83,13 +83,13 @@ class UPRedeemOfferViewController: UIViewController {
     private func setupSuccessView(withPin: String){
         self.successContainer.isHidden = false
         pinCodeLabel.text = withPin
-        submitButton.setTitle("Done", for: .normal)
+        submitButton.setTitle("Done".localized, for: .normal)
     }
     
     private func setupInProgressView(){
         self.successContainer.isHidden = true
         self.pinCodeLabel.text = ""
-        submitButton.setTitle("Confirm", for: .normal)
+        submitButton.setTitle("Confirm".localized, for: .normal)
         submitButton.isEnabled = false
     }
 

@@ -53,7 +53,7 @@ final class UPOutletSearchViewModel{
     }
     
     internal func fetchOutlet(index: Int, completion:@escaping (String?) -> Void){
-        outletRespository.fetchOutlet(param: [.searchOutlets(searchText)]) {[weak self] result in
+        outletRespository.fetchOutlet(param: [.searchOutlets(searchText),.paggingIndex(String(index))]) {[weak self] result in
             
             guard let strongSelf = self else {
                 completion("Oops something went wrong")

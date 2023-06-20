@@ -64,10 +64,10 @@ class UPOfferTableViewCell: UITableViewCell {
     
     private func fetchTextForSavingLabel(type: String,with price: String){
         if type == "0"{
-            approxSavingsLabel.text = "Save QAR " + price
+            approxSavingsLabel.text = "Save QAR " + price.getNumberWithoutDecimal()
         }
         else{
-            approxSavingsLabel.text =  "\(price) % OFF"
+            approxSavingsLabel.text =  "\(price.getNumberWithoutDecimal()) % OFF"
         }
     }
     

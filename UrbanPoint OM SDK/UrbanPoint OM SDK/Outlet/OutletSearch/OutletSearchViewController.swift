@@ -93,7 +93,11 @@ class OutletSearchViewController: UIViewController {
     
     private func showCancelButton(){
         if !cancelSearchButton.isHidden { return }
-        self.searchBarTrailingConstraint.constant += self.cancelSearchButton.frame.width + 8
+        if appLanguage == .english{
+            self.searchBarTrailingConstraint.constant += self.cancelSearchButton.frame.width + 8
+        }else{
+            self.searchBarTrailingConstraint.constant -= self.cancelSearchButton.frame.width + 8
+        }
         self.searchBarViewTopConstraint.constant = 16
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
@@ -137,11 +141,12 @@ class OutletSearchViewController: UIViewController {
 
     private func fetchOutletData(){
         showActivityIndicator()
+        outletSearchViewModel.searchText = searchField.text ?? ""
         outletSearchViewModel.fetchOutlet(index: index) {  [weak self] errorString in
             guard let strongSelf = self else { return }
             self?.hideActivityIndicator()
-            if let errorString{
-                self?.showAlert(title: .alert, message: errorString)
+            if errorString != nil{
+           //     self?.showAlert(title: .alert, message: errorString)
                 return
             }
             strongSelf.showOutletListing(outlets: strongSelf.outletSearchViewModel.outlets)
@@ -223,6 +228,7 @@ extension OutletSearchViewController: UITableViewDataSource,UITableViewDelegate{
             
         searchField.text = searchText
         showCancelButton()
+        fetchOutletData()
     }
     
     

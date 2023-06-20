@@ -19,6 +19,7 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var outletSubnameLabel: UILabel!
     @IBOutlet weak var ruleOfPurchaseLabel: UILabel!
+    @IBOutlet weak var useOfferButton: UIButton!
     
     var offerDetailViewModel: OfferDetailViewModel?
     
@@ -76,7 +77,13 @@ class OfferDetailViewController: UIViewController {
         
         savingLabel.text = ""
         if let saving = offer.approxSaving{
-            savingLabel.text = "Save approximately " + String(saving) + " QAR"
+            savingLabel.text = "Save approximately ".localized + String(saving).getNumberWithoutDecimal() + " QAR"
+        }
+        if (offer.isRedeeme ?? true) == false{
+            useOfferButton.setTitle("Offer used".localized, for: .normal)
+            useOfferButton.isEnabled = false
+            useOfferButton.backgroundColor = Colors.urbanPointGrey
+            
         }
         detailExclusionLabel.text = offer.validFor
         

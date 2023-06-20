@@ -29,8 +29,16 @@ class UPCategoriesViewController: UIViewController {
         
         titleLabel.text = titleString
         viewModel.fetchUserLocation()
-        
         listingContainer.isHidden = true
+
+    }
+
+    
+ 
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         showActivityIndicator()
         viewModel.fetchCategories(completion: {[weak self] errorString in
             self?.hideActivityIndicator()
@@ -54,14 +62,6 @@ class UPCategoriesViewController: UIViewController {
                 }
             }
         })
-    }
-
-    
- 
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     //MARK: onBackButtonPressed
@@ -117,7 +117,7 @@ class UPCategoriesViewController: UIViewController {
 extension UPCategoriesViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.height, height: collectionView.bounds.height)
+        CGSize(width: 114, height: 114)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
