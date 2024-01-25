@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+@_implementationOnly import SDWebImage
 
 class MenuScrollableImageViewCell: UICollectionViewCell {
     

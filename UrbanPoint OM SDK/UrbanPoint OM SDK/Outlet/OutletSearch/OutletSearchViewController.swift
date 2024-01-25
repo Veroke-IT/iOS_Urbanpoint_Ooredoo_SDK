@@ -219,7 +219,7 @@ extension OutletSearchViewController: UITableViewDataSource,UITableViewDelegate{
         if isShowingTrendingSearches{
             if outletSearchViewModel.searchText.isEmpty{
                 searchText = outletSearchViewModel.trendingSearches[indexPath.row].text
-            }else{
+            }else if outletSearchViewModel.autoCompleteOffers.count > indexPath.row {
                 searchText = outletSearchViewModel.autoCompleteOffers[indexPath.row]
             }
         }else{

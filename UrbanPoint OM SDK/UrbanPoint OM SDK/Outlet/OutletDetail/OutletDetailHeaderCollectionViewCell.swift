@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SDWebImage
+@_implementationOnly import SDWebImage
 
 class OutletDetailHeaderCollectionViewCell: UICollectionViewCell {
 

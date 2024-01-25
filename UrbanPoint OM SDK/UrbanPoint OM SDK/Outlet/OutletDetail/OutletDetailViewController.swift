@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreLocation
-import SDWebImage
+@_implementationOnly import SDWebImage
 
 
 

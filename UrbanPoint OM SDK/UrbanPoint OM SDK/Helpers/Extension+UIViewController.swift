@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import MBProgressHUD
+
+@_implementationOnly import MBProgressHUD
 
 extension UIViewController {
     

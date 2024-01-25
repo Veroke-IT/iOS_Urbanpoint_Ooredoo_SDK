@@ -330,6 +330,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-hG-1ro">
+                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBb-1A-zmt">
                                 <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
                                 <subviews>
@@ -573,15 +582,6 @@
                                     <constraint firstItem="HX3-Y4-I4w" firstAttribute="width" secondItem="qBb-1A-zmt" secondAttribute="width" multiplier="0.85" id="voX-1v-6er"/>
                                     <constraint firstItem="GRD-ka-GLA" firstAttribute="centerY" secondItem="SZ1-mL-zFP" secondAttribute="centerY" id="wAb-pq-Unp"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-hG-1ro">
-                                <rect key="frame" x="0.0" y="400.33333333333326" width="393" height="451.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="40"/>
